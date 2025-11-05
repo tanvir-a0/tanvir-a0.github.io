@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Drone - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .project-detail {
+        min-height: 100vh;
+        padding: 8rem 0 4rem;
+      }
+      
+      .project-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      
+      .project-header h1 {
+        font-size: 3.5rem;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+      
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+      
+      .meta-item {
+        padding: 0.8rem 1.5rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+      }
+      
+      .project-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      .content-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+      }
+      
+      .content-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+      
+      .content-section p {
+        line-height: 1.8;
+        color: var(--text-gray);
+        margin-bottom: 1rem;
+      }
+      
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      
+      .tech-tag {
+        padding: 0.5rem 1rem;
+        background: linear-gradient(45deg, rgba(0, 245, 255, 0.2), rgba(255, 0, 255, 0.2));
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+      
+      .back-button {
+        display: inline-block;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+      
+      .back-button:hover {
+        background: var(--primary-color);
+        color: var(--bg-dark);
+        box-shadow: 0 5px 20px rgba(0, 245, 255, 0.4);
+      }
+      
+      .image-placeholder {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        border-radius: 20px;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        position: relative;
+        overflow: hidden;
+        animation: fadeInScale 0.8s ease-out;
+      }
+
+      .image-placeholder::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        animation: shimmer 3s infinite;
+      }
+
+      .image-placeholder::after {
+        content: 'Replace with your image';
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        font-size: 0.9rem;
+        color: white;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .gallery-item {
+        height: 250px;
+        background: linear-gradient(135deg, rgba(240, 147, 251, 0.3), rgba(245, 87, 108, 0.3));
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+      .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+      .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+      .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+      .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+      .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+      .gallery-item:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4);
+      }
+
+      .gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+
+      .gallery-item:hover::before {
+        left: 100%;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .video-placeholder {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, rgba(240, 147, 251, 0.2), rgba(245, 87, 108, 0.2));
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+        border: 2px dashed var(--border-color);
+        position: relative;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+
+      .video-placeholder .play-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: bounce 1s ease-in-out infinite;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .stat-card {
+        padding: 1.5rem;
+        background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1));
+        border: 1px solid var(--border-color);
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .stat-card:nth-child(1) { animation-delay: 0.1s; }
+      .stat-card:nth-child(2) { animation-delay: 0.2s; }
+      .stat-card:nth-child(3) { animation-delay: 0.3s; }
+      .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .stat-label {
+        color: var(--text-gray);
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="cube-container">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </nav>
+
+    <section class="project-detail">
+      <div class="container">
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+        
+        <div class="project-header">
+          <h1>Autonomous Drone</h1>
+          <p class="subtitle">Self-navigating drone with computer vision and obstacle avoidance</p>
+          
+          <div class="project-meta">
+            <div class="meta-item">📅 Status: <strong>Completed</strong></div>
+            <div class="meta-item">⏱️ Duration: <strong>8 Months</strong></div>
+            <div class="meta-item">👥 Team: <strong>3 Members</strong></div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="image-placeholder">
+            🚁
+          </div>
+
+          <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+              The Autonomous Drone project represents a significant advancement in unmanned aerial vehicle (UAV) technology. 
+              This drone is equipped with state-of-the-art computer vision systems and sophisticated obstacle avoidance algorithms, 
+              enabling it to navigate complex environments without human intervention.
+            </p>
+            <p>
+              Designed for both indoor and outdoor navigation, the drone can autonomously map environments, plan optimal flight paths, 
+              and adapt to dynamic obstacles in real-time. It features advanced GPS integration, LiDAR sensors, and multi-camera arrays 
+              for comprehensive environmental awareness.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Key Features</h2>
+            <p>
+              <strong>Autonomous Navigation:</strong> Advanced pathfinding algorithms enable the drone to navigate complex 3D spaces without human input.
+            </p>
+            <p>
+              <strong>Real-time Obstacle Detection:</strong> Multiple sensors work in tandem to detect and avoid obstacles at high speeds.
+            </p>
+            <p>
+              <strong>Environmental Mapping:</strong> SLAM (Simultaneous Localization and Mapping) technology creates detailed 3D maps of surroundings.
+            </p>
+            <p>
+              <strong>Precision Landing:</strong> AI-powered landing system enables safe touchdown on dynamic or moving platforms.
+            </p>
+            <p>
+              <strong>Long Flight Time:</strong> Optimized power management system providing up to 45 minutes of continuous flight.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">ROS</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">YOLO</span>
+              <span class="tech-tag">LiDAR</span>
+              <span class="tech-tag">GPS/GNSS</span>
+              <span class="tech-tag">IMU Sensors</span>
+              <span class="tech-tag">Pixhawk</span>
+              <span class="tech-tag">MAVLink</span>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Technical Specifications</h2>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-value">45</div>
+                <div class="stat-label">Minutes Flight</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">60</div>
+                <div class="stat-label">km/h Speed</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">5</div>
+                <div class="stat-label">km Range</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">2</div>
+                <div class="stat-label">kg Payload</div>
+              </div>
+            </div>
+            <p style="margin-top: 2rem;">• <strong>Camera:</strong> 4K Ultra HD with gimbal stabilization</p>
+            <p>• <strong>Weight:</strong> 1.5 kg (without payload)</p>
+            <p>• <strong>Wind Resistance:</strong> Up to 40 km/h winds</p>
+            <p>• <strong>Battery:</strong> LiPo 6S 22.2V 6000mAh</p>
+          </div>
+
+          <div class="content-section">
+            <h2>Applications</h2>
+            <p>
+              <strong>Search and Rescue:</strong> Autonomous terrain scanning and thermal imaging for locating individuals in emergency situations.
+            </p>
+            <p>
+              <strong>Infrastructure Inspection:</strong> Detailed visual inspection of bridges, power lines, and buildings without human risk.
+            </p>
+            <p>
+              <strong>Agriculture:</strong> Crop monitoring, precision spraying, and field analysis for optimized farming.
+            </p>
+            <p>
+              <strong>Surveillance:</strong> Automated security patrols and perimeter monitoring for large areas.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Flight Tests & Demonstrations</h2>
+            <p>Photos from various test flights and demonstrations (replace with your actual photos):</p>
+            <div class="gallery-grid">
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Flight Demo Video</h2>
+            <div class="video-placeholder">
+              <div class="play-icon">▶️</div>
+              <p>Add your flight demo video here</p>
+              <p style="font-size: 0.9rem; color: var(--text-gray);">Show autonomous navigation and obstacle avoidance</p>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Future Development</h2>
+            <p>• Swarm intelligence for multi-drone coordination</p>
+            <p>• Enhanced AI for predictive obstacle avoidance</p>
+            <p>• Increased payload capacity and flight duration</p>
+            <p>• Weather-resistant design for all-condition operation</p>
+            <p>• Integration with 5G networks for real-time data streaming</p>
+          </div>
+        </div>
+
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

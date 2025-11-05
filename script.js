@@ -1,3 +1,24 @@
+// Theme Toggle Functionality
+const themeSwitch = document.getElementById('theme-switch');
+const body = document.body;
+
+// Check for saved theme preference or default to dark mode
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+  body.classList.add('light-mode');
+  themeSwitch.checked = true;
+}
+
+themeSwitch.addEventListener('change', function() {
+  if (this.checked) {
+    body.classList.add('light-mode');
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.classList.remove('light-mode');
+    localStorage.setItem('theme', 'dark');
+  }
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

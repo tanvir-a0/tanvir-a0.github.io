@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home System - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .project-detail {
+        min-height: 100vh;
+        padding: 8rem 0 4rem;
+      }
+      
+      .project-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      
+      .project-header h1 {
+        font-size: 3.5rem;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+      
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+      
+      .meta-item {
+        padding: 0.8rem 1.5rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+      }
+      
+      .project-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      .content-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+      }
+      
+      .content-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+      
+      .content-section p {
+        line-height: 1.8;
+        color: var(--text-gray);
+        margin-bottom: 1rem;
+      }
+      
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      
+      .tech-tag {
+        padding: 0.5rem 1rem;
+        background: linear-gradient(45deg, rgba(0, 245, 255, 0.2), rgba(255, 0, 255, 0.2));
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+      
+      .back-button {
+        display: inline-block;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+      
+      .back-button:hover {
+        background: var(--primary-color);
+        color: var(--bg-dark);
+        box-shadow: 0 5px 20px rgba(0, 245, 255, 0.4);
+      }
+      
+      .image-placeholder {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        border-radius: 20px;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        position: relative;
+        overflow: hidden;
+        animation: fadeInScale 0.8s ease-out;
+      }
+
+      .image-placeholder::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        animation: shimmer 3s infinite;
+      }
+
+      .image-placeholder::after {
+        content: 'Replace with your image';
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        font-size: 0.9rem;
+        color: white;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .feature-item {
+        padding: 1.5rem;
+        background: rgba(0, 245, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .feature-item:nth-child(1) { animation-delay: 0.1s; }
+      .feature-item:nth-child(2) { animation-delay: 0.2s; }
+      .feature-item:nth-child(3) { animation-delay: 0.3s; }
+      .feature-item:nth-child(4) { animation-delay: 0.4s; }
+      .feature-item:nth-child(5) { animation-delay: 0.5s; }
+      .feature-item:nth-child(6) { animation-delay: 0.6s; }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+        box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+      }
+
+      .feature-item-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .gallery-item {
+        height: 250px;
+        background: linear-gradient(135deg, rgba(79, 172, 254, 0.3), rgba(0, 242, 254, 0.3));
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+      .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+      .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+      .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+      .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+      .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+      .gallery-item:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(79, 172, 254, 0.4);
+      }
+
+      .gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+
+      .gallery-item:hover::before {
+        left: 100%;
+      }
+
+      .video-placeholder {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(0, 242, 254, 0.2));
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+        border: 2px dashed var(--border-color);
+        position: relative;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+
+      .video-placeholder .play-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: bounce 1s ease-in-out infinite;
+      }
+
+      .dashboard-preview {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
+        border-radius: 20px;
+        border: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dashboard-preview::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(79, 172, 254, 0.05) 0px,
+          rgba(79, 172, 254, 0.05) 1px,
+          transparent 1px,
+          transparent 20px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(79, 172, 254, 0.05) 0px,
+          rgba(79, 172, 254, 0.05) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+        animation: gridMove 20s linear infinite;
+      }
+
+      @keyframes gridMove {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(20px, 20px); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="cube-container">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </nav>
+
+    <section class="project-detail">
+      <div class="container">
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+        
+        <div class="project-header">
+          <h1>Smart Home System</h1>
+          <p class="subtitle">IoT-based home automation with voice control and AI integration</p>
+          
+          <div class="project-meta">
+            <div class="meta-item">📅 Status: <strong>Active</strong></div>
+            <div class="meta-item">⏱️ Duration: <strong>Ongoing</strong></div>
+            <div class="meta-item">👥 Team: <strong>Solo Project</strong></div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="image-placeholder">
+            🏠
+          </div>
+
+          <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+              The Smart Home System is a comprehensive IoT solution that transforms traditional homes into intelligent, 
+              energy-efficient living spaces. This project integrates various smart devices and sensors into a unified ecosystem 
+              controlled through voice commands, mobile apps, and AI-driven automation.
+            </p>
+            <p>
+              The system learns from user behavior patterns to optimize comfort, security, and energy consumption. It features 
+              advanced security monitoring, climate control, intelligent lighting, and seamless integration with popular voice 
+              assistants like Alexa, Google Assistant, and custom AI modules.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Connected Devices</h2>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <div class="feature-item-icon">💡</div>
+                <h3>Smart Lighting</h3>
+                <p>Automated brightness and color control</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-icon">🌡️</div>
+                <h3>Climate Control</h3>
+                <p>Intelligent temperature management</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-icon">🔒</div>
+                <h3>Security System</h3>
+                <p>Smart locks and surveillance</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-icon">📺</div>
+                <h3>Entertainment</h3>
+                <p>Unified media control</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-icon">🔌</div>
+                <h3>Energy Monitor</h3>
+                <p>Real-time consumption tracking</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-item-icon">🪟</div>
+                <h3>Automated Blinds</h3>
+                <p>Light and privacy control</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Key Features</h2>
+            <p>
+              <strong>Voice Control:</strong> Comprehensive voice command integration with custom wake words and natural language processing.
+            </p>
+            <p>
+              <strong>AI Learning:</strong> Machine learning algorithms that adapt to user routines and preferences for predictive automation.
+            </p>
+            <p>
+              <strong>Energy Optimization:</strong> Smart scheduling and device management to reduce energy consumption by up to 30%.
+            </p>
+            <p>
+              <strong>Remote Access:</strong> Secure cloud-based control from anywhere in the world via mobile app or web interface.
+            </p>
+            <p>
+              <strong>Scene Creation:</strong> Custom automation scenarios triggered by time, location, or environmental conditions.
+            </p>
+            <p>
+              <strong>Security Alerts:</strong> Real-time notifications for unusual activities, door/window sensors, and motion detection.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">MQTT</span>
+              <span class="tech-tag">Home Assistant</span>
+              <span class="tech-tag">Raspberry Pi</span>
+              <span class="tech-tag">ESP32</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">WebSocket</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">AWS IoT</span>
+              <span class="tech-tag">TensorFlow</span>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>System Architecture</h2>
+            <p>
+              The Smart Home System uses a hub-and-spoke architecture with a central Raspberry Pi serving as the main controller. 
+              ESP32 microcontrollers act as edge devices for various sensors and actuators throughout the home.
+            </p>
+            <p>
+              Communication between devices uses the MQTT protocol for lightweight, efficient messaging. The system employs a 
+              local-first approach with cloud backup, ensuring functionality even during internet outages while providing remote 
+              access capabilities when needed.
+            </p>
+            <p>
+              Data is stored locally in MongoDB with encrypted cloud synchronization for access across multiple devices. The mobile 
+              app provides real-time updates via WebSocket connections and features an intuitive dashboard for monitoring and control.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Automation Examples</h2>
+            <p>
+              <strong>Morning Routine:</strong> Gradually increase bedroom lighting, adjust thermostat, start coffee maker, and play news briefing.
+            </p>
+            <p>
+              <strong>Away Mode:</strong> Randomize lights, lock all doors, arm security system, and adjust temperature for energy savings.
+            </p>
+            <p>
+              <strong>Movie Time:</strong> Dim lights, close blinds, turn on TV and sound system, and set optimal room temperature.
+            </p>
+            <p>
+              <strong>Sleep Mode:</strong> Turn off all lights except night lights, lock doors, lower temperature, and activate sleep tracking.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>System Dashboard Preview</h2>
+            <p>Interactive control panel mockup (replace with screenshots of your actual dashboard):</p>
+            <div class="dashboard-preview">
+              <div style="z-index: 1; text-align: center;">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                <p>Dashboard Screenshot Here</p>
+                <p style="font-size: 0.9rem; color: var(--text-gray);">Mobile & Web Interface</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Installation Photos</h2>
+            <p>Photos of the smart home devices and setup (replace with your actual installation photos):</p>
+            <div class="gallery-grid">
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>System Demonstration</h2>
+            <div class="video-placeholder">
+              <div class="play-icon">▶️</div>
+              <p>Add your system demo video here</p>
+              <p style="font-size: 0.9rem; color: var(--text-gray);">Show voice control and automation in action</p>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Future Enhancements</h2>
+            <p>• Integration with solar panels and battery storage systems</p>
+            <p>• Advanced predictive maintenance for connected appliances</p>
+            <p>• Gesture control using computer vision</p>
+            <p>• Integration with electric vehicle charging optimization</p>
+            <p>• Health monitoring through environmental sensors</p>
+            <p>• Water usage monitoring and leak detection</p>
+          </div>
+        </div>
+
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

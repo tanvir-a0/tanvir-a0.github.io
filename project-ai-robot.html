@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant Robot - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .project-detail {
+        min-height: 100vh;
+        padding: 8rem 0 4rem;
+      }
+      
+      .project-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      
+      .project-header h1 {
+        font-size: 3.5rem;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+      
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+      
+      .meta-item {
+        padding: 0.8rem 1.5rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+      }
+      
+      .project-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      .content-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+      }
+      
+      .content-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+      
+      .content-section p {
+        line-height: 1.8;
+        color: var(--text-gray);
+        margin-bottom: 1rem;
+      }
+      
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      
+      .tech-tag {
+        padding: 0.5rem 1rem;
+        background: linear-gradient(45deg, rgba(0, 245, 255, 0.2), rgba(255, 0, 255, 0.2));
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+      
+      .back-button {
+        display: inline-block;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+      
+      .back-button:hover {
+        background: var(--primary-color);
+        color: var(--bg-dark);
+        box-shadow: 0 5px 20px rgba(0, 245, 255, 0.4);
+      }
+      
+      .image-placeholder {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        position: relative;
+        overflow: hidden;
+        animation: fadeInScale 0.8s ease-out;
+      }
+
+      .image-placeholder::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        animation: shimmer 3s infinite;
+      }
+
+      .image-placeholder::after {
+        content: 'Replace with your image';
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        font-size: 0.9rem;
+        color: white;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .gallery-item {
+        height: 250px;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+      .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+      .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+      .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+
+      .gallery-item:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+      }
+
+      .gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+
+      .gallery-item:hover::before {
+        left: 100%;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .video-placeholder {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0;
+        border: 2px dashed var(--border-color);
+        position: relative;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+
+      .video-placeholder .play-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: bounce 1s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="cube-container">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </nav>
+
+    <section class="project-detail">
+      <div class="container">
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+        
+        <div class="project-header">
+          <h1>AI Assistant Robot</h1>
+          <p class="subtitle">An intelligent robotic system with natural language processing capabilities</p>
+          
+          <div class="project-meta">
+            <div class="meta-item">📅 Status: <strong>In Development</strong></div>
+            <div class="meta-item">⏱️ Duration: <strong>6 Months</strong></div>
+            <div class="meta-item">👥 Team: <strong>Solo Project</strong></div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="image-placeholder">
+            🤖
+          </div>
+
+          <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+              The AI Assistant Robot is an advanced intelligent system designed to interact with users through natural language processing. 
+              This project combines cutting-edge machine learning algorithms with robotics to create a helpful companion capable of 
+              understanding context, learning from interactions, and performing various tasks autonomously.
+            </p>
+            <p>
+              The robot features multi-modal interaction capabilities including voice recognition, gesture detection, and visual processing. 
+              It can assist with daily tasks, answer questions, control smart home devices, and continuously learn from user preferences.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Key Features</h2>
+            <p>
+              <strong>Natural Language Understanding:</strong> Advanced NLP models enable the robot to understand and respond to complex queries in multiple languages.
+            </p>
+            <p>
+              <strong>Computer Vision:</strong> Integrated camera system with object recognition and facial detection capabilities for enhanced interaction.
+            </p>
+            <p>
+              <strong>Adaptive Learning:</strong> Machine learning algorithms that adapt to user preferences and improve responses over time.
+            </p>
+            <p>
+              <strong>Smart Integration:</strong> Seamless connectivity with IoT devices and smart home systems for comprehensive automation.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">ROS (Robot Operating System)</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Raspberry Pi</span>
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">MQTT</span>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Challenges & Solutions</h2>
+            <p>
+              <strong>Challenge:</strong> Achieving real-time processing of voice commands while maintaining low latency.<br>
+              <strong>Solution:</strong> Implemented edge computing with optimized neural network models and efficient hardware acceleration.
+            </p>
+            <p>
+              <strong>Challenge:</strong> Ensuring privacy and security of user interactions and data.<br>
+              <strong>Solution:</strong> Developed local processing capabilities with encrypted communications and secure data storage.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Project Gallery</h2>
+            <p>Images and demonstrations of the AI Assistant Robot in action (replace these placeholders with your actual photos):</p>
+            <div class="gallery-grid">
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+              <div class="gallery-item">📸</div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Demo Video</h2>
+            <div class="video-placeholder">
+              <div class="play-icon">▶️</div>
+              <p>Add your demo video here</p>
+              <p style="font-size: 0.9rem; color: var(--text-gray);">Upload to YouTube/Vimeo or embed directly</p>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Future Enhancements</h2>
+            <p>• Enhanced emotional intelligence and sentiment analysis</p>
+            <p>• Multi-robot coordination and swarm intelligence</p>
+            <p>• Advanced mobility and navigation capabilities</p>
+            <p>• Integration with augmented reality for enhanced user experience</p>
+            <p>• Expanded language support and cultural adaptation</p>
+          </div>
+        </div>
+
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
