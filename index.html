@@ -1,10 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Tanvir’s Robotics Lab</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Welcome to My Website</h1>
-    <p>This site is powered by GitHub Pages.</p>
+    <!-- Animated Background -->
+    <div class="background">
+      <div class="cube-container">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="glitch" data-text="Welcome to My Robotics Lab">Welcome to My Robotics Lab</h1>
+        <p class="subtitle">Exploring the Future of Technology & Innovation</p>
+        <button class="cta-button">Explore My Work</button>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-card">
+            <div class="card-3d">
+              <div class="card-face card-front">
+                <div class="icon">🤖</div>
+                <h3>Robotics</h3>
+                <p>Building intelligent systems</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="card-3d">
+              <div class="card-face card-front">
+                <div class="icon">💻</div>
+                <h3>Development</h3>
+                <p>Creating innovative solutions</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="card-3d">
+              <div class="card-face card-front">
+                <div class="icon">🚀</div>
+                <h3>Innovation</h3>
+                <p>Pushing boundaries forward</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <div class="gradient-bg gradient-1"></div>
+            </div>
+            <div class="project-info">
+              <h3>AI Assistant Robot</h3>
+              <p>An intelligent robotic system with natural language processing capabilities.</p>
+              <button class="btn-learn-more">Learn More</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div class="gradient-bg gradient-2"></div>
+            </div>
+            <div class="project-info">
+              <h3>Autonomous Drone</h3>
+              <p>Self-navigating drone with computer vision and obstacle avoidance.</p>
+              <button class="btn-learn-more">Learn More</button>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <div class="gradient-bg gradient-3"></div>
+            </div>
+            <div class="project-info">
+              <h3>Smart Home System</h3>
+              <p>IoT-based home automation with voice control and AI integration.</p>
+              <button class="btn-learn-more">Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-item">
+              <span class="info-icon">📧</span>
+              <p>email@example.com</p>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🌐</span>
+              <p>github.com/tanvir-a0</p>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <p>Earth, Solar System</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-icon">GitHub</a>
+            <a href="#" class="social-icon">LinkedIn</a>
+            <a href="#" class="social-icon">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
