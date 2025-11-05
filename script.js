@@ -56,17 +56,65 @@ document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-// Navbar background on scroll
+// Navbar background on scroll - now respects light/dark mode
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
+  const isLightMode = document.body.classList.contains('light-mode');
+  
   if (window.scrollY > 100) {
-    navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-    navbar.style.boxShadow = '0 5px 20px rgba(0, 245, 255, 0.1)';
+    if (isLightMode) {
+      navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+      navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+    } else {
+      navbar.style.background = 'rgba(10, 10, 10, 0.9)';
+      navbar.style.boxShadow = '0 8px 32px rgba(0, 245, 255, 0.2)';
+    }
   } else {
-    navbar.style.background = 'rgba(10, 10, 10, 0.8)';
-    navbar.style.boxShadow = 'none';
+    if (isLightMode) {
+      navbar.style.background = 'rgba(255, 255, 255, 0.8)';
+      navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+    } else {
+      navbar.style.background = 'rgba(10, 10, 10, 0.7)';
+      navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+    }
   }
 });
+
+// Active navigation indicator based on scroll position
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+function updateActiveNav() {
+  const scrollY = window.pageYOffset;
+  
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 150;
+    const sectionId = section.getAttribute('id');
+    
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+  
+  // If at the very top, activate Home
+  if (scrollY < 300) {
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#home') {
+        link.classList.add('active');
+      }
+    });
+  }
+}
+
+window.addEventListener('scroll', updateActiveNav);
+window.addEventListener('load', updateActiveNav);
 
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
