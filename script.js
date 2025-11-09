@@ -269,3 +269,175 @@ if (subtitle) {
 }
 
 console.log('🚀 Website loaded successfully!');
+
+// Interactive Particle Network Background
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+
+// Set canvas size
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Mouse tracking
+const mouse = {
+  x: null,
+  y: null,
+  radius: 150
+};
+
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+});
+
+window.addEventListener('mouseout', () => {
+  mouse.x = null;
+  mouse.y = null;
+});
+
+// Particle class
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 3 + 1;
+    this.baseX = this.x;
+    this.baseY = this.y;
+    this.density = (Math.random() * 30) + 1;
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
+  }
+
+  draw() {
+    const isLightMode = document.body.classList.contains('light-mode');
+    ctx.fillStyle = isLightMode ? 'rgba(0, 136, 255, 0.8)' : 'rgba(0, 245, 255, 0.8)';
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  update() {
+    // Mouse interaction
+    if (mouse.x != null && mouse.y != null) {
+      const dx = mouse.x - this.x;
+      const dy = mouse.y - this.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const forceDirectionX = dx / distance;
+      const forceDirectionY = dy / distance;
+      const maxDistance = mouse.radius;
+      const force = (maxDistance - distance) / maxDistance;
+      const directionX = forceDirectionX * force * this.density;
+      const directionY = forceDirectionY * force * this.density;
+
+      if (distance < mouse.radius) {
+        this.x -= directionX;
+        this.y -= directionY;
+      } else {
+        if (this.x !== this.baseX) {
+          const dx = this.x - this.baseX;
+          this.x -= dx / 10;
+        }
+        if (this.y !== this.baseY) {
+          const dy = this.y - this.baseY;
+          this.y -= dy / 10;
+        }
+      }
+    } else {
+      if (this.x !== this.baseX) {
+        const dx = this.x - this.baseX;
+        this.x -= dx / 10;
+      }
+      if (this.y !== this.baseY) {
+        const dy = this.y - this.baseY;
+        this.y -= dy / 10;
+      }
+    }
+
+    // Gentle floating animation
+    this.baseX += this.speedX;
+    this.baseY += this.speedY;
+
+    // Boundary check
+    if (this.baseX < 0 || this.baseX > canvas.width) this.speedX *= -1;
+    if (this.baseY < 0 || this.baseY > canvas.height) this.speedY *= -1;
+  }
+}
+
+// Create particle array
+const particlesArray = [];
+const numberOfParticles = (canvas.width * canvas.height) / 9000;
+
+for (let i = 0; i < numberOfParticles; i++) {
+  particlesArray.push(new Particle());
+}
+
+// Connect particles
+function connectParticles() {
+  const isLightMode = document.body.classList.contains('light-mode');
+  for (let a = 0; a < particlesArray.length; a++) {
+    for (let b = a; b < particlesArray.length; b++) {
+      const dx = particlesArray[a].x - particlesArray[b].x;
+      const dy = particlesArray[a].y - particlesArray[b].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 100) {
+        const opacity = 1 - (distance / 100);
+        ctx.strokeStyle = isLightMode 
+          ? `rgba(0, 136, 255, ${opacity * 0.3})` 
+          : `rgba(0, 245, 255, ${opacity * 0.2})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+// Animation loop
+function animateParticles() {
+  const isLightMode = document.body.classList.contains('light-mode');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Add subtle gradient background
+  const gradient = ctx.createRadialGradient(
+    canvas.width / 2, canvas.height / 2, 0,
+    canvas.width / 2, canvas.height / 2, canvas.width / 2
+  );
+  
+  if (isLightMode) {
+    gradient.addColorStop(0, 'rgba(224, 224, 224, 0.05)');
+    gradient.addColorStop(1, 'rgba(240, 240, 240, 0.05)');
+  } else {
+    gradient.addColorStop(0, 'rgba(26, 10, 46, 0.3)');
+    gradient.addColorStop(1, 'rgba(10, 10, 10, 0.1)');
+  }
+  
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < particlesArray.length; i++) {
+    particlesArray[i].update();
+    particlesArray[i].draw();
+  }
+  
+  connectParticles();
+  requestAnimationFrame(animateParticles);
+}
+
+animateParticles();
+
+// Recreate particles on window resize
+window.addEventListener('resize', () => {
+  particlesArray.length = 0;
+  const newNumberOfParticles = (canvas.width * canvas.height) / 9000;
+  for (let i = 0; i < newNumberOfParticles; i++) {
+    particlesArray.push(new Particle());
+  }
+});

@@ -52,41 +52,12 @@ body {
   transition: background 0.5s ease;
 }
 
-.cube-container {
+#particle-canvas {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  perspective: 1000px;
-}
-
-.cube {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: rotateCube 20s infinite linear;
-}
-
-.face {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 2px solid rgba(0, 245, 255, 0.3);
-  background: rgba(0, 245, 255, 0.05);
-  backdrop-filter: blur(10px);
-}
-
-.front  { transform: rotateY(0deg) translateZ(100px); }
-.back   { transform: rotateY(180deg) translateZ(100px); }
-.right  { transform: rotateY(90deg) translateZ(100px); }
-.left   { transform: rotateY(-90deg) translateZ(100px); }
-.top    { transform: rotateX(90deg) translateZ(100px); }
-.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-@keyframes rotateCube {
-  from { transform: rotateX(0deg) rotateY(0deg); }
-  to { transform: rotateX(360deg) rotateY(360deg); }
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Navbar */
@@ -817,11 +788,6 @@ body.light-mode .nav-links a.active {
 }
 
 /* Light mode specific adjustments */
-body.light-mode .face {
-  border-color: rgba(0, 136, 255, 0.4);
-  background: rgba(0, 136, 255, 0.1);
-}
-
 body.light-mode .navbar {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -899,15 +865,5 @@ body.light-mode .glitch::after {
   .contact-info {
     flex-direction: column;
     align-items: center;
-  }
-  
-  .cube {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .face {
-    width: 150px;
-    height: 150px;
   }
 }
