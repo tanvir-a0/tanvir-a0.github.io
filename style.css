@@ -453,6 +453,51 @@ body.light-mode .nav-links a.active {
   align-items: center;
 }
 
+.about-intro {
+  max-width: 900px;
+  margin: 2rem auto 3rem;
+  padding: 2.5rem;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.about-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 1.2rem;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.about-intro strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
 .about-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -463,6 +508,14 @@ body.light-mode .nav-links a.active {
 @media (max-width: 768px) {
   .about-content {
     grid-template-columns: 1fr;
+  }
+  
+  .about-intro {
+    padding: 2rem;
+  }
+  
+  .about-intro p {
+    font-size: 1rem;
   }
 }
 
@@ -745,6 +798,22 @@ body.light-mode .nav-links a.active {
   background: var(--bg-dark-2);
   border-top: 1px solid rgba(0, 245, 255, 0.1);
   color: var(--text-gray);
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.last-updated {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+.last-updated span {
+  color: var(--primary-color);
+  font-weight: 500;
 }
 
 /* Light mode specific adjustments */
