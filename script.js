@@ -272,8 +272,8 @@ const createParticles = () => {
     particle.style.borderRadius = '50%';
     particle.style.left = Math.random() * 100 + '%';
     particle.style.top = Math.random() * 100 + '%';
-    particle.style.animation = `float ${Math.random() * 10 + 5}s ease-in-out infinite`;
-    particle.style.animationDelay = Math.random() * 5 + 's';
+    particle.style.animation = `float ${Math.random() * 4 + 3}s ease-in-out infinite`; // Faster: 3-7s instead of 5-15s
+    particle.style.animationDelay = Math.random() * 3 + 's'; // Reduced delay
     background.appendChild(particle);
   }
 };
@@ -338,8 +338,8 @@ class Particle {
     this.baseX = this.x;
     this.baseY = this.y;
     this.density = (Math.random() * 30) + 1;
-    this.speedX = (Math.random() - 0.5) * 0.5;
-    this.speedY = (Math.random() - 0.5) * 0.5;
+    this.speedX = (Math.random() - 0.5) * 1.5; // Increased from 0.5 to 1.5
+    this.speedY = (Math.random() - 0.5) * 1.5; // Increased from 0.5 to 1.5
   }
 
   draw() {
