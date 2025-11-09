@@ -40,9 +40,11 @@ function updateLastUpdatedTime() {
   }
 }
 
-// Update time immediately and every minute
-updateLastUpdatedTime();
-setInterval(updateLastUpdatedTime, 60000);
+// Wait for DOM to load before updating time
+document.addEventListener('DOMContentLoaded', function() {
+  updateLastUpdatedTime();
+  setInterval(updateLastUpdatedTime, 60000);
+});
 
 // ============================================
 // SMOOTH SCROLLING & NAVIGATION

@@ -37,7 +37,7 @@ body {
   color: var(--text-light);
   overflow-x: hidden;
   line-height: 1.6;
-  cursor: default !important;
+  cursor: default;
 }
 
 /* Animated Background */
