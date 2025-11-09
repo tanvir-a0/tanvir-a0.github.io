@@ -19,6 +19,159 @@ themeSwitch.addEventListener('change', function() {
   }
 });
 
+// ============================================
+// INTERACTIVE MOUSE FOLLOWER
+// ============================================
+const cursorFollower = document.querySelector('.cursor-follower');
+const trailCanvas = document.getElementById('cursor-trail');
+const trailCtx = trailCanvas.getContext('2d');
+
+// Set canvas size
+trailCanvas.width = window.innerWidth;
+trailCanvas.height = window.innerHeight;
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+
+// Trail particles
+const trailParticles = [];
+
+class TrailParticle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.size = Math.random() * 3 + 1;
+    this.speedX = Math.random() * 2 - 1;
+    this.speedY = Math.random() * 2 - 1;
+    this.life = 1;
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    this.life -= 0.02;
+    this.size *= 0.97;
+  }
+
+  draw() {
+    const isLightMode = document.body.classList.contains('light-mode');
+    trailCtx.beginPath();
+    trailCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    
+    if (isLightMode) {
+      trailCtx.fillStyle = `rgba(59, 130, 246, ${this.life * 0.5})`;
+      trailCtx.shadowBlur = 10;
+      trailCtx.shadowColor = 'rgba(59, 130, 246, 0.5)';
+    } else {
+      trailCtx.fillStyle = `rgba(0, 245, 255, ${this.life})`;
+      trailCtx.shadowBlur = 15;
+      trailCtx.shadowColor = 'rgba(0, 245, 255, 0.8)';
+    }
+    
+    trailCtx.fill();
+    trailCtx.shadowBlur = 0;
+  }
+}
+
+// Mouse move event
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  
+  // Create trail particles
+  if (Math.random() > 0.5) {
+    trailParticles.push(new TrailParticle(mouseX, mouseY));
+  }
+});
+
+// Update cursor follower position
+function updateCursor() {
+  const speed = 0.15;
+  cursorX += (mouseX - cursorX) * speed;
+  cursorY += (mouseY - cursorY) * speed;
+  
+  cursorFollower.style.left = cursorX + 'px';
+  cursorFollower.style.top = cursorY + 'px';
+  
+  requestAnimationFrame(updateCursor);
+}
+updateCursor();
+
+// Animate trail particles
+function animateTrail() {
+  const isLightMode = document.body.classList.contains('light-mode');
+  
+  // Clear with slight fade effect
+  if (isLightMode) {
+    trailCtx.fillStyle = 'rgba(243, 244, 246, 0.1)';
+  } else {
+    trailCtx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+  }
+  trailCtx.fillRect(0, 0, trailCanvas.width, trailCanvas.height);
+
+  // Update and draw particles
+  for (let i = trailParticles.length - 1; i >= 0; i--) {
+    trailParticles[i].update();
+    trailParticles[i].draw();
+    
+    if (trailParticles[i].life <= 0) {
+      trailParticles.splice(i, 1);
+    }
+  }
+  
+  requestAnimationFrame(animateTrail);
+}
+animateTrail();
+
+// Resize trail canvas
+window.addEventListener('resize', () => {
+  trailCanvas.width = window.innerWidth;
+  trailCanvas.height = window.innerHeight;
+});
+
+// Add ripple effect on click
+document.addEventListener('click', (e) => {
+  const ripple = document.createElement('div');
+  ripple.className = 'cursor-ripple';
+  ripple.style.left = e.clientX + 'px';
+  ripple.style.top = e.clientY + 'px';
+  document.body.appendChild(ripple);
+  
+  setTimeout(() => {
+    ripple.remove();
+  }, 600);
+});
+
+// ============================================
+// DYNAMIC TIME UPDATE
+// ============================================
+function updateLastUpdatedTime() {
+  const now = new Date();
+  const options = { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true
+  };
+  const dateString = now.toLocaleString('en-US', options);
+  
+  const dateElement = document.getElementById('last-updated-date');
+  if (dateElement) {
+    dateElement.textContent = dateString;
+  }
+}
+
+// Update time immediately and every minute
+updateLastUpdatedTime();
+setInterval(updateLastUpdatedTime, 60000);
+
+// ============================================
+// SMOOTH SCROLLING & NAVIGATION
+// ============================================
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

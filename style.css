@@ -37,8 +37,79 @@ body {
   color: var(--text-light);
   overflow-x: hidden;
   line-height: 1.6;
+  cursor: none;
 }
 
+/* ============================================
+   INTERACTIVE MOUSE CURSOR
+   ============================================ */
+.cursor-follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.6), transparent);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+  mix-blend-mode: screen;
+}
+
+body.light-mode .cursor-follower {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.6), transparent);
+}
+
+#cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+.cursor-ripple {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9997;
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+/* Show default cursor on interactive elements */
+a, button, input, textarea, select, .theme-checkbox, .theme-label {
+  cursor: pointer !important;
+}
+
+/* Hover effect for cursor follower */
+a:hover ~ .cursor-follower,
+button:hover ~ .cursor-follower {
+  width: 40px;
+  height: 40px;
+}
+
+/* ============================================
+   BACKGROUND & LAYOUT
+   ============================================ */
 /* Animated Background */
 .background {
   position: fixed;
