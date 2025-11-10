@@ -269,13 +269,110 @@ body.light-mode .theme-label:hover {
   position: relative;
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+  animation: fadeInScale 1s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.28, 0.11, 0.32, 1);
+  position: relative;
+  z-index: 2;
+}
+
+body.light-mode .profile-image {
+  border: 4px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.profile-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(94, 92, 230, 0.4) 0%, rgba(0, 113, 227, 0.2) 40%, transparent 70%);
+  filter: blur(30px);
+  z-index: 1;
+  opacity: 0.6;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+body.light-mode .profile-glow {
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.2) 0%, rgba(94, 92, 230, 0.1) 40%, transparent 70%);
+  opacity: 0.4;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.profile-image-container:hover .profile-image {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.4),
+    0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .profile-image-container:hover .profile-image {
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 24px 48px rgba(0, 0, 0, 0.16),
+    0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.profile-image-container:hover .profile-glow {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
 .hero-content h1 {
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.05;
   margin-bottom: 0.5rem;
-  animation: fadeInUp 0.8s cubic-bezier(0.28, 0.11, 0.32, 1);
+  animation: fadeInUp 0.8s cubic-bezier(0.28, 0.11, 0.32, 1) 0.2s backwards;
 }
 
 .glitch {
@@ -306,7 +403,7 @@ body.light-mode .theme-label:hover {
   margin-bottom: 2.5rem;
   letter-spacing: -0.01em;
   line-height: 1.38;
-  animation: fadeInUp 0.8s cubic-bezier(0.28, 0.11, 0.32, 1) 0.15s backwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.28, 0.11, 0.32, 1) 0.35s backwards;
 }
 
 .cta-button {
@@ -319,7 +416,7 @@ body.light-mode .theme-label:hover {
   font-weight: 400;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.28, 0.11, 0.32, 1);
-  animation: fadeInUp 0.8s cubic-bezier(0.28, 0.11, 0.32, 1) 0.3s backwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.28, 0.11, 0.32, 1) 0.5s backwards;
   position: relative;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
@@ -784,6 +881,20 @@ body.light-mode .glitch {
 
   .hero {
     padding-top: 66px;
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-glow {
+    width: 160px;
+    height: 160px;
+  }
+
+  .profile-image-container {
+    margin-bottom: 2rem;
   }
 
   .hero-content h1 {
