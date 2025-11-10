@@ -150,11 +150,38 @@ window.addEventListener('load', updateActiveNav);
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
   const hero = document.querySelector('.hero-content');
+  const heroBg = document.querySelector('.hero-profile-bg');
+  
   if (hero && scrolled < window.innerHeight) {
     hero.style.transform = `translateY(${scrolled * 0.3}px)`;
     hero.style.opacity = 1 - scrolled / 800;
   }
+  
+  if (heroBg && scrolled < window.innerHeight) {
+    heroBg.style.transform = `translate(-50%, -50%) scale(${1 + scrolled * 0.0001})`;
+  }
 });
+
+// Interactive background image movement on mouse move
+const hero = document.querySelector('.hero');
+const heroBg = document.querySelector('.hero-profile-bg');
+
+if (hero && heroBg) {
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    
+    const moveX = x * 20;
+    const moveY = y * 20;
+    
+    heroBg.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+  });
+  
+  hero.addEventListener('mouseleave', () => {
+    heroBg.style.transform = 'translate(-50%, -50%)';
+  });
+}
 
 // 3D card tilt effect (subtle Apple-style)
 const cards = document.querySelectorAll('.about-card, .project-card');
