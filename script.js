@@ -91,21 +91,21 @@ window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   const isLightMode = document.body.classList.contains('light-mode');
   
-  if (window.scrollY > 100) {
+  if (window.scrollY > 50) {
     if (isLightMode) {
-      navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-      navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+      navbar.style.background = 'rgba(251, 251, 253, 0.72)';
+      navbar.style.boxShadow = '0 1px 0 0 rgba(0, 0, 0, 0.08)';
     } else {
-      navbar.style.background = 'rgba(10, 10, 10, 0.9)';
-      navbar.style.boxShadow = '0 8px 32px rgba(0, 245, 255, 0.2)';
+      navbar.style.background = 'rgba(29, 29, 31, 0.8)';
+      navbar.style.boxShadow = '0 1px 0 0 rgba(255, 255, 255, 0.1)';
     }
   } else {
     if (isLightMode) {
-      navbar.style.background = 'rgba(255, 255, 255, 0.8)';
-      navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+      navbar.style.background = 'rgba(255, 255, 255, 0.64)';
+      navbar.style.boxShadow = '0 1px 0 0 rgba(0, 0, 0, 0.04)';
     } else {
-      navbar.style.background = 'rgba(10, 10, 10, 0.7)';
-      navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+      navbar.style.background = 'rgba(29, 29, 31, 0.64)';
+      navbar.style.boxShadow = 'none';
     }
   }
 });
@@ -146,17 +146,17 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav);
 window.addEventListener('load', updateActiveNav);
 
-// Parallax effect for hero section
+// Parallax effect for hero section (subtle)
 window.addEventListener('scroll', () => {
   const scrolled = window.pageYOffset;
   const hero = document.querySelector('.hero-content');
-  if (hero) {
-    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    hero.style.opacity = 1 - scrolled / 600;
+  if (hero && scrolled < window.innerHeight) {
+    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+    hero.style.opacity = 1 - scrolled / 800;
   }
 });
 
-// 3D card tilt effect
+// 3D card tilt effect (subtle Apple-style)
 const cards = document.querySelectorAll('.about-card, .project-card');
 
 cards.forEach(card => {
@@ -168,16 +168,16 @@ cards.forEach(card => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
+    const rotateX = (y - centerY) / 30;
+    const rotateY = (centerX - x) / 30;
     
     const cardInner = card.querySelector('.card-3d') || card;
-    cardInner.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+    cardInner.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
   
   card.addEventListener('mouseleave', () => {
     const cardInner = card.querySelector('.card-3d') || card;
-    cardInner.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    cardInner.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
   });
 });
 
@@ -280,7 +280,8 @@ const createParticles = () => {
 
 createParticles();
 
-// Typing effect for subtitle (optional enhancement)
+// Typing effect for subtitle (optional enhancement) - Disabled for cleaner look
+/*
 const subtitle = document.querySelector('.subtitle');
 if (subtitle) {
   const text = subtitle.textContent;
@@ -297,6 +298,7 @@ if (subtitle) {
   
   setTimeout(typeWriter, 1000);
 }
+*/
 
 console.log('🚀 Website loaded successfully!');
 
@@ -334,17 +336,17 @@ class Particle {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 3 + 1;
+    this.size = Math.random() * 2 + 0.5;
     this.baseX = this.x;
     this.baseY = this.y;
     this.density = (Math.random() * 30) + 1;
-    this.speedX = (Math.random() - 0.5) * 1.5; // Increased from 0.5 to 1.5
-    this.speedY = (Math.random() - 0.5) * 1.5; // Increased from 0.5 to 1.5
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
   }
 
   draw() {
     const isLightMode = document.body.classList.contains('light-mode');
-    ctx.fillStyle = isLightMode ? 'rgba(0, 136, 255, 0.8)' : 'rgba(0, 245, 255, 0.8)';
+    ctx.fillStyle = isLightMode ? 'rgba(0, 113, 227, 0.3)' : 'rgba(94, 92, 230, 0.4)';
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -415,11 +417,11 @@ function connectParticles() {
       const dy = particlesArray[a].y - particlesArray[b].y;
       const distance = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance < 100) {
-        const opacity = 1 - (distance / 100);
+      if (distance < 120) {
+        const opacity = 1 - (distance / 120);
         ctx.strokeStyle = isLightMode 
-          ? `rgba(0, 136, 255, ${opacity * 0.3})` 
-          : `rgba(0, 245, 255, ${opacity * 0.2})`;
+          ? `rgba(0, 113, 227, ${opacity * 0.15})` 
+          : `rgba(94, 92, 230, ${opacity * 0.2})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -442,11 +444,11 @@ function animateParticles() {
   );
   
   if (isLightMode) {
-    gradient.addColorStop(0, 'rgba(224, 224, 224, 0.05)');
-    gradient.addColorStop(1, 'rgba(240, 240, 240, 0.05)');
+    gradient.addColorStop(0, 'rgba(245, 245, 247, 0)');
+    gradient.addColorStop(1, 'rgba(251, 251, 253, 0)');
   } else {
-    gradient.addColorStop(0, 'rgba(26, 10, 46, 0.3)');
-    gradient.addColorStop(1, 'rgba(10, 10, 10, 0.1)');
+    gradient.addColorStop(0, 'rgba(10, 10, 10, 0)');
+    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
   }
   
   ctx.fillStyle = gradient;
