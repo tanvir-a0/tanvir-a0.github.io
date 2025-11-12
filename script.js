@@ -10,12 +10,31 @@ if (currentTheme === 'light') {
 }
 
 themeSwitch.addEventListener('change', function() {
+  const navbar = document.querySelector('.navbar');
+  const isScrolled = window.scrollY > 50;
+  
   if (this.checked) {
     body.classList.add('light-mode');
     localStorage.setItem('theme', 'light');
+    // Update navbar background instantly for light mode
+    if (isScrolled) {
+      navbar.style.background = 'rgba(251, 251, 253, 0.72)';
+      navbar.style.boxShadow = '0 1px 0 0 rgba(0, 0, 0, 0.08)';
+    } else {
+      navbar.style.background = 'rgba(255, 255, 255, 0.64)';
+      navbar.style.boxShadow = '0 1px 0 0 rgba(0, 0, 0, 0.04)';
+    }
   } else {
     body.classList.remove('light-mode');
     localStorage.setItem('theme', 'dark');
+    // Update navbar background instantly for dark mode
+    if (isScrolled) {
+      navbar.style.background = 'rgba(29, 29, 31, 0.8)';
+      navbar.style.boxShadow = '0 1px 0 0 rgba(255, 255, 255, 0.1)';
+    } else {
+      navbar.style.background = 'rgba(29, 29, 31, 0.64)';
+      navbar.style.boxShadow = 'none';
+    }
   }
 });
 
