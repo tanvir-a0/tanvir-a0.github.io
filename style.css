@@ -422,7 +422,7 @@ body.light-mode .hero-content h1 {
 .subtitle {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 400;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   margin-bottom: 2.5rem;
   letter-spacing: -0.01em;
   line-height: 1.38;
@@ -431,6 +431,7 @@ body.light-mode .hero-content h1 {
 }
 
 body.light-mode .subtitle {
+  color: var(--text-gray);
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.6);
 }
 
