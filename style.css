@@ -392,6 +392,7 @@ body.light-mode .hero-overlay {
 
 .hero-text {
   text-align: center;
+  color: white;
 }
 
 body.light-mode .hero-content h1 {
