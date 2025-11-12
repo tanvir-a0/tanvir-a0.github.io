@@ -307,6 +307,8 @@ body.light-mode .theme-label:hover {
   height: 130%;
   z-index: 0;
   overflow: visible;
+  background: transparent;
+  isolation: isolate;
 }
 
 .hero-profile-bg {
@@ -318,8 +320,10 @@ body.light-mode .theme-label:hover {
   height: 130%;
   object-fit: cover;
   object-position: center 20%;
-  filter: none;
-  opacity: 1;
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  isolation: isolate;
   transition: all 0.6s cubic-bezier(0.28, 0.11, 0.32, 1);
   animation: slowZoom 20s ease-in-out infinite alternate;
 }
@@ -329,8 +333,9 @@ body.light-mode .theme-label:hover {
 
 body.light-mode .hero-profile-bg {
   /* Same as dark mode - no filters */
-  filter: none;
-  opacity: 1;
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
 }
 
 @keyframes slowZoom {
@@ -909,12 +914,17 @@ body.light-mode .glitch {
   }
 
   .hero-profile-bg {
-    /* mobile: keep a more neutral brightness to avoid extreme darkening */
-    filter: blur(2px) brightness(0.9) saturate(1.02);
+    /* Same as desktop - no filters at all */
+    filter: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
   }
 
   body.light-mode .hero-profile-bg {
-    filter: blur(2px) brightness(1.02) saturate(1.0);
+    /* Same as desktop and dark mode - no filters at all */
+    filter: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
   }
 
   .hero-content h1 {
