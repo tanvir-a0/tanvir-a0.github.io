@@ -541,16 +541,16 @@
         function (gltf) {
           const model = gltf.scene;
           
-          // Calculate bounding box to center and scale the model
+          // First rotate the model: Z-axis up (rotate -90° around X-axis)
+          model.rotation.x = -Math.PI / 2;
+          
+          // Calculate bounding box AFTER rotation to get correct center
           const box = new THREE.Box3().setFromObject(model);
           const center = box.getCenter(new THREE.Vector3());
           const size = box.getSize(new THREE.Vector3());
           
           // Center the model at origin
           model.position.set(-center.x, -center.y, -center.z);
-          
-          // Rotate model: Z-axis up (rotate -90° around X-axis)
-          model.rotation.x = -Math.PI / 2;
           
           // Scale the model to fit in view
           const maxDim = Math.max(size.x, size.y, size.z);
