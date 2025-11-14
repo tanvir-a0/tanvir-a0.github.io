@@ -454,7 +454,7 @@
     <script src="script.js"></script>
     <script type="module">
       import * as THREE from 'three';
-      import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
       import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
       // Scene setup
@@ -534,42 +534,37 @@
       controls.maxPolarAngle = Math.PI / 2;
       controls.target.set(0, 0, 0);
       
-      // Load OBJ model
-      const loader = new OBJLoader();
+      // Load GLB model
+      const loader = new GLTFLoader();
       loader.load(
-        'assets/models/projects/fire_fighting_robot/Main.obj',
-        function (object) {
+        'assets/models/projects/fire_fighting_robot/Main.glb',
+        function (gltf) {
+          const model = gltf.scene;
+          
           // Calculate bounding box to center and scale the model
-          const box = new THREE.Box3().setFromObject(object);
+          const box = new THREE.Box3().setFromObject(model);
           const center = box.getCenter(new THREE.Vector3());
           const size = box.getSize(new THREE.Vector3());
           
           // Center the model
-          object.position.x = -center.x;
-          object.position.y = -center.y;
-          object.position.z = -center.z;
+          model.position.x = -center.x;
+          model.position.y = -center.y;
+          model.position.z = -center.z;
           
           // Scale the model to fit in view
           const maxDim = Math.max(size.x, size.y, size.z);
           const scale = 5 / maxDim;
-          object.scale.multiplyScalar(scale);
+          model.scale.multiplyScalar(scale);
           
-          // Apply material to all meshes with better visibility
-          object.traverse(function (child) {
+          // Enable shadows for all meshes
+          model.traverse(function (child) {
             if (child instanceof THREE.Mesh) {
-              child.material = new THREE.MeshStandardMaterial({
-                color: 0xff6600,
-                metalness: 0.4,
-                roughness: 0.6,
-                emissive: 0x442200,
-                emissiveIntensity: 0.1
-              });
               child.castShadow = true;
               child.receiveShadow = true;
             }
           });
           
-          scene.add(object);
+          scene.add(model);
           loadingText.style.display = 'none';
           
           // Adjust camera to look at the model
