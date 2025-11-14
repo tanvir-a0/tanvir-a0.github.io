@@ -247,6 +247,69 @@
         color: var(--text-light);
         font-size: 1.2rem;
       }
+
+      /* Section Grid Layout */
+      .sections-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 3rem 0;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .section-card {
+        padding: 2rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 150px;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 245, 255, 0.3);
+        border-color: var(--primary-color);
+      }
+
+      .section-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      .section-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-card p {
+        font-size: 0.9rem;
+        color: var(--text-gray);
+        margin: 0;
+      }
+
+      .detailed-sections {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 3rem;
+      }
+
+      .detailed-sections .content-section {
+        scroll-margin-top: 100px;
+      }
     </style>
   </head>
   <body>
@@ -308,7 +371,63 @@
 
           <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot" class="project-image">
 
-          <div class="content-section">
+          <!-- Section Cards Grid -->
+          <div class="sections-grid">
+            <a href="#overview" class="section-card">
+              <div class="icon">📋</div>
+              <h3>Project Overview</h3>
+              <p>Full-scale firefighting system</p>
+            </a>
+            <a href="#features" class="section-card">
+              <div class="icon">⚡</div>
+              <h3>Key Features</h3>
+              <p>Capabilities & highlights</p>
+            </a>
+            <a href="#design" class="section-card">
+              <div class="icon">🔧</div>
+              <h3>Design & Engineering</h3>
+              <p>CAD-based development</p>
+            </a>
+            <a href="#tech-stack" class="section-card">
+              <div class="icon">💻</div>
+              <h3>Technology Stack</h3>
+              <p>Tools & frameworks</p>
+            </a>
+            <a href="#cad" class="section-card">
+              <div class="icon">📐</div>
+              <h3>CAD Design</h3>
+              <p>Detailed 3D modeling</p>
+            </a>
+            <a href="#control" class="section-card">
+              <div class="icon">🎮</div>
+              <h3>Control Interface</h3>
+              <p>Tkinter desktop app</p>
+            </a>
+            <a href="#gallery" class="section-card">
+              <div class="icon">🖼️</div>
+              <h3>Project Gallery</h3>
+              <p>Photos & visuals</p>
+            </a>
+            <a href="#challenges" class="section-card">
+              <div class="icon">🎯</div>
+              <h3>Challenges & Solutions</h3>
+              <p>Problem solving</p>
+            </a>
+            <a href="#future" class="section-card">
+              <div class="icon">🚀</div>
+              <h3>Future Enhancements</h3>
+              <p>Planned upgrades</p>
+            </a>
+            <a href="#impact" class="section-card">
+              <div class="icon">🌟</div>
+              <h3>Project Impact</h3>
+              <p>Real-world applications</p>
+            </a>
+          </div>
+
+          <!-- Detailed Sections -->
+          <div class="detailed-sections">
+          <div class="content-section" id="overview">
             <h2>Project Overview</h2>
             <p>
               The Intelligent Firefighting Robot is a large-scale, fully remote-controlled firefighting system designed to navigate 
@@ -323,7 +442,7 @@
             </p>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="features">
             <h2>Key Features & Capabilities</h2>
             <ul class="feature-list">
               <li>Developed a fully remote-controlled firefighting robot capable of navigating hazardous areas</li>
@@ -334,7 +453,7 @@
             </ul>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="design">
             <h2>Design & Engineering</h2>
             <p>
               <strong>CAD-Based Design:</strong> The entire robot was meticulously designed using CAD software before any physical 
@@ -356,7 +475,7 @@
             </p>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="tech-stack">
             <h2>Technology Stack</h2>
             <div class="tech-stack">
               <span class="tech-tag">Python</span>
@@ -371,7 +490,7 @@
             </div>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="cad">
             <h2>CAD Design</h2>
             <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD Design" class="project-image">
             <p>
@@ -381,7 +500,7 @@
             </p>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="control">
             <h2>Control Interface</h2>
             <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="Control Interface" class="project-image">
             <p>
@@ -391,7 +510,7 @@
             </p>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="gallery">
             <h2>Project Gallery</h2>
             <div class="gallery-grid">
               <div class="gallery-item">
@@ -409,7 +528,7 @@
             </div>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="challenges">
             <h2>Challenges & Solutions</h2>
             <p>
               <strong>Challenge:</strong> Designing a robust mechanical system capable of carrying firefighting equipment while maintaining maneuverability.<br>
@@ -425,7 +544,7 @@
             </p>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="future">
             <h2>Future Enhancements</h2>
             <p>• Upgrade to more robust long-range communication system (RF or cellular)</p>
             <p>• Integration of thermal imaging cameras for fire detection and mapping</p>
@@ -435,7 +554,7 @@
             <p>• Development of multi-robot coordination for large-scale firefighting operations</p>
           </div>
 
-          <div class="content-section">
+          <div class="content-section" id="impact">
             <h2>Project Impact</h2>
             <p>
               This project demonstrates the potential of robotics in emergency response scenarios, particularly in situations 
@@ -443,6 +562,7 @@
               end-to-end engineering capabilities from design to deployment. The prototype serves as a proof of concept for 
               larger-scale firefighting automation systems.
             </p>
+          </div>
           </div>
         </div>
 
