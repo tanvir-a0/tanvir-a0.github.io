@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Firefighting Robot - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .project-detail {
+        min-height: 100vh;
+        padding: 8rem 0 4rem;
+      }
+      
+      .project-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      
+      .project-header h1 {
+        font-size: 3.5rem;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+      
+      .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+      
+      .meta-item {
+        padding: 0.8rem 1.5rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+      }
+      
+      .project-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      .content-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+      }
+      
+      .content-section h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+      
+      .content-section p {
+        line-height: 1.8;
+        color: var(--text-gray);
+        margin-bottom: 1rem;
+      }
+      
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      
+      .tech-tag {
+        padding: 0.5rem 1rem;
+        background: linear-gradient(45deg, rgba(0, 245, 255, 0.2), rgba(255, 0, 255, 0.2));
+        border: 1px solid var(--primary-color);
+        border-radius: 20px;
+        color: var(--text-light);
+        font-size: 0.9rem;
+      }
+      
+      .back-button {
+        display: inline-block;
+        margin: 2rem 0;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+      
+      .back-button:hover {
+        background: var(--primary-color);
+        color: var(--bg-dark);
+        box-shadow: 0 5px 20px rgba(0, 245, 255, 0.4);
+      }
+      
+      .project-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin: 2rem 0;
+        display: block;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-out backwards;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+      .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+      .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+      .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+
+      .gallery-item:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(255, 69, 0, 0.4);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+        z-index: 1;
+      }
+
+      .gallery-item:hover::before {
+        left: 100%;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .feature-list li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        line-height: 1.8;
+      }
+
+      .feature-list li:before {
+        content: "🔥";
+        margin-right: 1rem;
+      }
+
+      .feature-list li:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="cube-container">
+        <div class="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </nav>
+
+    <section class="project-detail">
+      <div class="container">
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+        
+        <div class="project-header">
+          <h1>Intelligent Firefighting Robot</h1>
+          <p class="subtitle">Large Scale Fire Fighting Robot - Personal Project</p>
+          
+          <div class="project-meta">
+            <div class="meta-item">🛠️ Role: <strong>Hardware & Software</strong></div>
+            <div class="meta-item">💻 Software: <strong>Tkinter Desktop App</strong></div>
+            <div class="meta-item">👥 Team: <strong>Personal Project</strong></div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot" class="project-image">
+
+          <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+              The Intelligent Firefighting Robot is a large-scale, fully remote-controlled firefighting system designed to navigate 
+              and operate in hazardous environments where human intervention is dangerous. This personal project showcases the 
+              integration of mechanical design, electronics, and software development to create a functional prototype capable of 
+              real-time firefighting operations.
+            </p>
+            <p>
+              From concept to completion, I handled every aspect of this project - from CAD design and hardware assembly to 
+              developing the control software and implementing wireless communication protocols. The robot represents a comprehensive 
+              solution for remote firefighting operations in extreme conditions.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Key Features & Capabilities</h2>
+            <ul class="feature-list">
+              <li>Developed a fully remote-controlled firefighting robot capable of navigating hazardous areas</li>
+              <li>Designed and implemented the complete software, including control algorithms and communication protocols</li>
+              <li>Built the entire hardware and electronics system, integrating actuators and power management for real-time operation</li>
+              <li>Everything designed in CAD software before physical construction to ensure precision and functionality</li>
+              <li>Uses WiFi communication (as a prototype) to transmit control signals for remote operation</li>
+            </ul>
+          </div>
+
+          <div class="content-section">
+            <h2>Design & Engineering</h2>
+            <p>
+              <strong>CAD-Based Design:</strong> The entire robot was meticulously designed using CAD software before any physical 
+              construction began. This allowed for precise modeling, stress analysis, and optimization of all mechanical components.
+            </p>
+            <p>
+              <strong>Hardware Integration:</strong> Custom-built electronics system featuring integrated actuators, motor controllers, 
+              sensors, and a robust power management system. All components were carefully selected and tested for reliability in 
+              high-temperature environments.
+            </p>
+            <p>
+              <strong>Software Development:</strong> Developed a Tkinter-based desktop application providing an intuitive interface 
+              for robot control. The software includes real-time telemetry display, emergency stop functions, and customizable 
+              control schemes.
+            </p>
+            <p>
+              <strong>Communication System:</strong> Implemented WiFi-based communication as a prototype solution, enabling wireless 
+              control with low latency. The system includes error handling and connection monitoring for reliable operation.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Tkinter</span>
+              <span class="tech-tag">Arduino/Microcontroller</span>
+              <span class="tech-tag">WiFi Communication</span>
+              <span class="tech-tag">CAD (SolidWorks/Fusion 360)</span>
+              <span class="tech-tag">Motor Control</span>
+              <span class="tech-tag">Embedded Systems</span>
+              <span class="tech-tag">Power Electronics</span>
+              <span class="tech-tag">Sensor Integration</span>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>CAD Design</h2>
+            <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD Design" class="project-image">
+            <p>
+              The CAD design phase was critical in ensuring all components fit together perfectly and the robot could withstand 
+              the operational stresses. The design includes detailed mechanical assemblies, mounting points for electronics, 
+              and optimal weight distribution for stability.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Control Interface</h2>
+            <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="Control Interface" class="project-image">
+            <p>
+              The Tkinter-based desktop application provides a user-friendly interface for controlling the robot remotely. 
+              Features include real-time status monitoring, manual control options, and system diagnostics. The interface 
+              was designed with operator safety and ease of use as top priorities.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Project Gallery</h2>
+            <div class="gallery-grid">
+              <div class="gallery-item">
+                <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Robot View 1">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/projects/fire_fighting_robot/Robot2.png" alt="Robot View 2">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD Design">
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="User Interface">
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Challenges & Solutions</h2>
+            <p>
+              <strong>Challenge:</strong> Designing a robust mechanical system capable of carrying firefighting equipment while maintaining maneuverability.<br>
+              <strong>Solution:</strong> Utilized CAD simulation to optimize weight distribution and selected high-torque motors with appropriate gear ratios.
+            </p>
+            <p>
+              <strong>Challenge:</strong> Ensuring reliable WiFi communication in potentially signal-degraded environments.<br>
+              <strong>Solution:</strong> Implemented robust error handling, automatic reconnection protocols, and signal strength monitoring in the control software.
+            </p>
+            <p>
+              <strong>Challenge:</strong> Integrating complex electronics and power management for real-time operation.<br>
+              <strong>Solution:</strong> Designed a modular electronics architecture with proper power regulation, circuit protection, and efficient thermal management.
+            </p>
+          </div>
+
+          <div class="content-section">
+            <h2>Future Enhancements</h2>
+            <p>• Upgrade to more robust long-range communication system (RF or cellular)</p>
+            <p>• Integration of thermal imaging cameras for fire detection and mapping</p>
+            <p>• Autonomous navigation capabilities using SLAM algorithms</p>
+            <p>• Enhanced water delivery system with adjustable pressure control</p>
+            <p>• Addition of environmental sensors for gas detection and temperature monitoring</p>
+            <p>• Development of multi-robot coordination for large-scale firefighting operations</p>
+          </div>
+
+          <div class="content-section">
+            <h2>Project Impact</h2>
+            <p>
+              This project demonstrates the potential of robotics in emergency response scenarios, particularly in situations 
+              where human safety is at risk. By developing both the hardware and software from scratch, this project showcases 
+              end-to-end engineering capabilities from design to deployment. The prototype serves as a proof of concept for 
+              larger-scale firefighting automation systems.
+            </p>
+          </div>
+        </div>
+
+        <a href="index.html#projects" class="back-button">← Back to Projects</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+      <p class="last-updated">Last Updated: <span id="last-updated-date">November 14, 2025</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
