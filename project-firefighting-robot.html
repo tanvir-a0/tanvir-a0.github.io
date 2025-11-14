@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligent Firefighting Robot - Tanvir's Robotics Lab</title>
     <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
     <style>
       .project-detail {
         min-height: 100vh;
@@ -195,6 +203,46 @@
       .feature-list li:last-child {
         border-bottom: none;
       }
+
+      #model-container {
+        width: 100%;
+        height: 500px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 2rem 0;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9));
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      #model-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .model-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: white;
+        font-size: 0.9rem;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+      }
+
+      .loading-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--text-light);
+        font-size: 1.2rem;
+      }
     </style>
   </head>
   <body>
@@ -245,6 +293,15 @@
         </div>
 
         <div class="project-content">
+          <div class="content-section">
+            <h2>3D Model View</h2>
+            <div id="model-container">
+              <canvas id="model-canvas"></canvas>
+              <div class="loading-text" id="loading-text">Loading 3D Model...</div>
+              <div class="model-controls">🖱️ Click and drag to rotate • Scroll to zoom</div>
+            </div>
+          </div>
+
           <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot" class="project-image">
 
           <div class="content-section">
@@ -395,5 +452,110 @@
     </footer>
 
     <script src="script.js"></script>
+    <script type="module">
+      import * as THREE from 'three';
+      import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+      // Scene setup
+      const container = document.getElementById('model-container');
+      const canvas = document.getElementById('model-canvas');
+      const loadingText = document.getElementById('loading-text');
+      
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x1a1a1a);
+      
+      const camera = new THREE.PerspectiveCamera(
+        50,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(0, 5, 10);
+      
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+      
+      const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.8);
+      directionalLight1.position.set(5, 10, 5);
+      scene.add(directionalLight1);
+      
+      const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.4);
+      directionalLight2.position.set(-5, 5, -5);
+      scene.add(directionalLight2);
+      
+      // Controls
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.minDistance = 2;
+      controls.maxDistance = 50;
+      
+      // Load OBJ model
+      const loader = new OBJLoader();
+      loader.load(
+        'assets/models/projects/fire_fighting_robot/Main.obj',
+        function (object) {
+          // Calculate bounding box to center and scale the model
+          const box = new THREE.Box3().setFromObject(object);
+          const center = box.getCenter(new THREE.Vector3());
+          const size = box.getSize(new THREE.Vector3());
+          
+          // Center the model
+          object.position.x = -center.x;
+          object.position.y = -center.y;
+          object.position.z = -center.z;
+          
+          // Scale the model to fit in view
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 5 / maxDim;
+          object.scale.multiplyScalar(scale);
+          
+          // Apply material to all meshes
+          object.traverse(function (child) {
+            if (child instanceof THREE.Mesh) {
+              child.material = new THREE.MeshStandardMaterial({
+                color: 0xff6600,
+                metalness: 0.3,
+                roughness: 0.5
+              });
+            }
+          });
+          
+          scene.add(object);
+          loadingText.style.display = 'none';
+        },
+        function (xhr) {
+          const percentComplete = (xhr.loaded / xhr.total) * 100;
+          loadingText.textContent = 'Loading 3D Model... ' + Math.round(percentComplete) + '%';
+        },
+        function (error) {
+          console.error('Error loading model:', error);
+          loadingText.textContent = 'Error loading 3D model';
+        }
+      );
+      
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      animate();
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+      });
+    </script>
   </body>
 </html>
