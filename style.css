@@ -734,6 +734,10 @@ body.light-mode .subtitle {
   background: linear-gradient(135deg, #30d158 0%, #32ade6 100%);
 }
 
+.gradient-4 {
+  background: linear-gradient(135deg, #ff3b00 0%, #ff9500 100%);
+}
+
 .project-info {
   padding: 1.75rem;
 }
