@@ -1,1 +1,2 @@
+*.obj filter=lfs diff=lfs merge=lfs -text
 assets/models/projects/fire_fighting_robot/*.obj filter=lfs diff=lfs merge=lfs -text
