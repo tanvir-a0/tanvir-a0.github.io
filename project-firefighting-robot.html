@@ -91,21 +91,26 @@
       }
       
       .back-button {
-        display: inline-block;
-        margin: 2rem 0;
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
         padding: 1rem 2rem;
-        background: transparent;
+        background: var(--primary-color);
         border: 2px solid var(--primary-color);
-        color: var(--primary-color);
+        color: var(--bg-dark);
         text-decoration: none;
         border-radius: 30px;
         transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3);
+        font-weight: 600;
       }
       
       .back-button:hover {
-        background: var(--primary-color);
-        color: var(--bg-dark);
-        box-shadow: 0 5px 20px rgba(0, 245, 255, 0.4);
+        background: transparent;
+        color: var(--primary-color);
+        box-shadow: 0 5px 30px rgba(0, 245, 255, 0.5);
+        transform: translateY(-3px);
       }
       
       .project-image {
@@ -119,10 +124,10 @@
       }
 
       .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
         gap: 1.5rem;
         margin: 2rem 0;
+        align-items: flex-start;
       }
 
       .gallery-item {
@@ -130,12 +135,12 @@
         overflow: hidden;
         border-radius: 15px;
         border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
         animation: fadeInUp 0.6s ease-out backwards;
-      }
-
-      .gallery-item {
-        aspect-ratio: 4/3;
+        flex: 1;
+        height: 250px;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(255, 69, 0, 0.2);
       }
 
       .gallery-item img {
@@ -143,7 +148,7 @@
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.3s ease;
+        transition: all 0.4s ease;
       }
 
       .gallery-item:nth-child(1) { animation-delay: 0.1s; }
@@ -152,12 +157,16 @@
       .gallery-item:nth-child(4) { animation-delay: 0.4s; }
 
       .gallery-item:hover {
-        transform: translateY(-10px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(255, 69, 0, 0.4);
+        flex: 2.5;
+        height: 500px;
+        transform: translateY(-10px);
+        z-index: 10;
+        box-shadow: 0 20px 60px rgba(255, 69, 0, 0.5);
+        border-color: var(--primary-color);
       }
 
       .gallery-item:hover img {
-        transform: scale(1.1);
+        object-fit: contain;
       }
 
       .gallery-item::before {
@@ -250,17 +259,15 @@
 
       /* Section Grid Layout */
       .sections-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-        margin: 3rem 0;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 3rem auto;
+        max-width: 100%;
       }
 
       .section-card {
-        padding: 2rem;
+        padding: 1.5rem 3rem;
         background: var(--card-bg);
         border: 1px solid var(--border-color);
         border-radius: 20px;
@@ -285,21 +292,21 @@
       }
 
       .section-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
         color: var(--primary-color);
       }
 
       .section-card .icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
       }
 
       .section-card p {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
         color: var(--text-gray);
-        margin: 0;
       }
+      
 
       .detailed-sections {
         max-width: 1200px;
@@ -309,6 +316,90 @@
 
       .detailed-sections .content-section {
         scroll-margin-top: 100px;
+      }
+
+      /* Horizontal 3-card layout for main sections */
+      .main-sections-horizontal {
+        display: flex;
+        gap: 2.5rem;
+        margin: 3rem auto;
+        max-width: 1400px;
+        width: 100%;
+        padding: 0 2rem;
+        align-items: flex-start;
+      }
+
+      .main-sections-horizontal .content-section {
+        margin-bottom: 0;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        padding: 2rem;
+        height: 300px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 245, 255, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      .main-sections-horizontal .content-section:hover {
+        flex: 2;
+        height: auto;
+        min-height: 500px;
+        transform: translateY(-10px);
+        z-index: 10;
+        box-shadow: 0 20px 60px rgba(0, 245, 255, 0.5);
+        overflow-y: auto;
+      }
+
+      .main-sections-horizontal .content-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.4s ease;
+      }
+
+      .main-sections-horizontal .content-section p {
+        font-size: 0.9rem;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        margin: 0;
+      }
+
+      .main-sections-horizontal .content-section:hover p {
+        opacity: 1;
+        max-height: 500px;
+        margin-bottom: 1rem;
+      }
+
+      .main-sections-horizontal .project-image {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 2rem 0;
+        border-radius: 15px;
+        transition: all 0.4s ease;
+        object-fit: cover;
+        height: 150px;
+      }
+
+      .main-sections-horizontal .content-section:hover .project-image {
+        height: 250px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 968px) {
+        .main-sections-horizontal {
+          flex-direction: column;
+        }
+        
+        .main-sections-horizontal .content-section:hover {
+          flex: 1;
+          transform: scale(1.05);
+        }
       }
     </style>
   </head>
@@ -346,8 +437,6 @@
 
     <section class="project-detail">
       <div class="container">
-        <a href="index.html#projects" class="back-button">← Back to Projects</a>
-        
         <div class="project-header">
           <h1>Intelligent Firefighting Robot</h1>
           <p class="subtitle">Large Scale Fire Fighting Robot - Personal Project</p>
@@ -355,7 +444,7 @@
           <div class="project-meta">
             <div class="meta-item">🛠️ Role: <strong>Hardware & Software</strong></div>
             <div class="meta-item">💻 Software: <strong>Tkinter Desktop App</strong></div>
-            <div class="meta-item">👥 Team: <strong>Personal Project</strong></div>
+            <div class="meta-item">👥 Team: <strong>Collaborative Project</strong></div>
           </div>
         </div>
 
@@ -368,64 +457,48 @@
               <div class="model-controls">🖱️ Click and drag to rotate • Scroll to zoom</div>
             </div>
           </div>
+        </div>
 
-          <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot" class="project-image">
+        <!-- Main 3 Sections Horizontal -->
+        <div class="main-sections-horizontal">
+          <div class="content-section" id="design">
+              <h2>Design & Engineering</h2>
+              <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot" class="project-image">
+              <p>
+                <strong>CAD-Based Design:</strong> The entire robot was meticulously designed using CAD software before any physical 
+                construction began. This allowed for precise modeling, stress analysis, and optimization of all mechanical components.
+              </p>
+              <p>
+                <strong>Hardware Integration:</strong> Custom-built electronics system featuring integrated actuators, motor controllers, 
+                sensors, and a robust power management system. All components were carefully selected and tested for reliability in 
+                high-temperature environments.
+              </p>
+            </div>
 
-          <!-- Section Cards Grid -->
-          <div class="sections-grid">
-            <a href="#overview" class="section-card">
-              <div class="icon">📋</div>
-              <h3>Project Overview</h3>
-              <p>Full-scale firefighting system</p>
-            </a>
-            <a href="#features" class="section-card">
-              <div class="icon">⚡</div>
-              <h3>Key Features</h3>
-              <p>Capabilities & highlights</p>
-            </a>
-            <a href="#design" class="section-card">
-              <div class="icon">🔧</div>
-              <h3>Design & Engineering</h3>
-              <p>CAD-based development</p>
-            </a>
-            <a href="#tech-stack" class="section-card">
-              <div class="icon">💻</div>
-              <h3>Technology Stack</h3>
-              <p>Tools & frameworks</p>
-            </a>
-            <a href="#cad" class="section-card">
-              <div class="icon">📐</div>
-              <h3>CAD Design</h3>
-              <p>Detailed 3D modeling</p>
-            </a>
-            <a href="#control" class="section-card">
-              <div class="icon">🎮</div>
-              <h3>Control Interface</h3>
-              <p>Tkinter desktop app</p>
-            </a>
-            <a href="#gallery" class="section-card">
-              <div class="icon">🖼️</div>
-              <h3>Project Gallery</h3>
-              <p>Photos & visuals</p>
-            </a>
-            <a href="#challenges" class="section-card">
-              <div class="icon">🎯</div>
-              <h3>Challenges & Solutions</h3>
-              <p>Problem solving</p>
-            </a>
-            <a href="#future" class="section-card">
-              <div class="icon">🚀</div>
-              <h3>Future Enhancements</h3>
-              <p>Planned upgrades</p>
-            </a>
-            <a href="#impact" class="section-card">
-              <div class="icon">🌟</div>
-              <h3>Project Impact</h3>
-              <p>Real-world applications</p>
-            </a>
+            <div class="content-section" id="cad">
+              <h2>CAD Design</h2>
+              <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD Design" class="project-image">
+              <p>
+                The CAD design phase was critical in ensuring all components fit together perfectly and the robot could withstand 
+                the operational stresses. The design includes detailed mechanical assemblies, mounting points for electronics, 
+                and optimal weight distribution for stability.
+              </p>
+            </div>
+
+            <div class="content-section" id="control">
+              <h2>Control Interface</h2>
+              <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="Control Interface" class="project-image">
+              <p>
+                The Tkinter-based desktop application provides a user-friendly interface for controlling the robot remotely. 
+                Features include real-time status monitoring, manual control options, and system diagnostics. The interface 
+                was designed with operator safety and ease of use as top priorities.
+              </p>
+            </div>
           </div>
+        </div>
 
-          <!-- Detailed Sections -->
+        <div class="project-content">
+          <!-- Other Sections -->
           <div class="detailed-sections">
           <div class="content-section" id="overview">
             <h2>Project Overview</h2>
@@ -434,6 +507,11 @@
               and operate in hazardous environments where human intervention is dangerous. This personal project showcases the 
               integration of mechanical design, electronics, and software development to create a functional prototype capable of 
               real-time firefighting operations.
+            </p>
+            <p>
+              <strong>Note:</strong> This project was built as a prototype to demonstrate the concept and feasibility of remote-controlled 
+              firefighting systems. It was tested in a controlled environment and is not intended as a perfect, production-ready solution. 
+              The prototype serves as a proof of concept for future development and refinement.
             </p>
             <p>
               From concept to completion, I handled every aspect of this project - from CAD design and hardware assembly to 
@@ -453,28 +531,6 @@
             </ul>
           </div>
 
-          <div class="content-section" id="design">
-            <h2>Design & Engineering</h2>
-            <p>
-              <strong>CAD-Based Design:</strong> The entire robot was meticulously designed using CAD software before any physical 
-              construction began. This allowed for precise modeling, stress analysis, and optimization of all mechanical components.
-            </p>
-            <p>
-              <strong>Hardware Integration:</strong> Custom-built electronics system featuring integrated actuators, motor controllers, 
-              sensors, and a robust power management system. All components were carefully selected and tested for reliability in 
-              high-temperature environments.
-            </p>
-            <p>
-              <strong>Software Development:</strong> Developed a Tkinter-based desktop application providing an intuitive interface 
-              for robot control. The software includes real-time telemetry display, emergency stop functions, and customizable 
-              control schemes.
-            </p>
-            <p>
-              <strong>Communication System:</strong> Implemented WiFi-based communication as a prototype solution, enabling wireless 
-              control with low latency. The system includes error handling and connection monitoring for reliable operation.
-            </p>
-          </div>
-
           <div class="content-section" id="tech-stack">
             <h2>Technology Stack</h2>
             <div class="tech-stack">
@@ -488,26 +544,6 @@
               <span class="tech-tag">Power Electronics</span>
               <span class="tech-tag">Sensor Integration</span>
             </div>
-          </div>
-
-          <div class="content-section" id="cad">
-            <h2>CAD Design</h2>
-            <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD Design" class="project-image">
-            <p>
-              The CAD design phase was critical in ensuring all components fit together perfectly and the robot could withstand 
-              the operational stresses. The design includes detailed mechanical assemblies, mounting points for electronics, 
-              and optimal weight distribution for stability.
-            </p>
-          </div>
-
-          <div class="content-section" id="control">
-            <h2>Control Interface</h2>
-            <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="Control Interface" class="project-image">
-            <p>
-              The Tkinter-based desktop application provides a user-friendly interface for controlling the robot remotely. 
-              Features include real-time status monitoring, manual control options, and system diagnostics. The interface 
-              was designed with operator safety and ease of use as top priorities.
-            </p>
           </div>
 
           <div class="content-section" id="gallery">
@@ -527,48 +563,13 @@
               </div>
             </div>
           </div>
-
-          <div class="content-section" id="challenges">
-            <h2>Challenges & Solutions</h2>
-            <p>
-              <strong>Challenge:</strong> Designing a robust mechanical system capable of carrying firefighting equipment while maintaining maneuverability.<br>
-              <strong>Solution:</strong> Utilized CAD simulation to optimize weight distribution and selected high-torque motors with appropriate gear ratios.
-            </p>
-            <p>
-              <strong>Challenge:</strong> Ensuring reliable WiFi communication in potentially signal-degraded environments.<br>
-              <strong>Solution:</strong> Implemented robust error handling, automatic reconnection protocols, and signal strength monitoring in the control software.
-            </p>
-            <p>
-              <strong>Challenge:</strong> Integrating complex electronics and power management for real-time operation.<br>
-              <strong>Solution:</strong> Designed a modular electronics architecture with proper power regulation, circuit protection, and efficient thermal management.
-            </p>
-          </div>
-
-          <div class="content-section" id="future">
-            <h2>Future Enhancements</h2>
-            <p>• Upgrade to more robust long-range communication system (RF or cellular)</p>
-            <p>• Integration of thermal imaging cameras for fire detection and mapping</p>
-            <p>• Autonomous navigation capabilities using SLAM algorithms</p>
-            <p>• Enhanced water delivery system with adjustable pressure control</p>
-            <p>• Addition of environmental sensors for gas detection and temperature monitoring</p>
-            <p>• Development of multi-robot coordination for large-scale firefighting operations</p>
-          </div>
-
-          <div class="content-section" id="impact">
-            <h2>Project Impact</h2>
-            <p>
-              This project demonstrates the potential of robotics in emergency response scenarios, particularly in situations 
-              where human safety is at risk. By developing both the hardware and software from scratch, this project showcases 
-              end-to-end engineering capabilities from design to deployment. The prototype serves as a proof of concept for 
-              larger-scale firefighting automation systems.
-            </p>
-          </div>
           </div>
         </div>
-
-        <a href="index.html#projects" class="back-button">← Back to Projects</a>
       </div>
     </section>
+
+    <!-- Floating Back Button -->
+    <a href="index.html#projects" class="back-button">← Back to Projects</a>
 
     <footer class="footer">
       <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
