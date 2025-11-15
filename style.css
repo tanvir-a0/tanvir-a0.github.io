@@ -509,6 +509,15 @@ body.light-mode .subtitle {
   animation: fadeIn 0.8s ease forwards;
 }
 
+.section-subtitle {
+  max-width: 720px;
+  margin: -2.5rem auto 3.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -661,6 +670,24 @@ body.light-mode .subtitle {
   animation-delay: 6s;
 }
 
+.floating-ring.ring-7 {
+  width: 300px;
+  height: 300px;
+  top: 12%;
+  left: 32%;
+  border-color: var(--primary-color);
+  animation-delay: 3s;
+}
+
+.floating-ring.ring-8 {
+  width: 360px;
+  height: 360px;
+  bottom: 18%;
+  right: 18%;
+  border-color: var(--secondary-color);
+  animation-delay: 8s;
+}
+
 /* Animated Lines */
 .animated-line {
   position: absolute;
@@ -703,6 +730,18 @@ body.light-mode .subtitle {
   right: 40%;
   animation-delay: 5s;
   background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+}
+
+.animated-line.line-7 {
+  left: 25%;
+  animation-delay: 0.5s;
+  background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+}
+
+.animated-line.line-8 {
+  right: 25%;
+  animation-delay: 3.5s;
+  background: linear-gradient(to bottom, transparent, var(--secondary-color), transparent);
 }
 
 .gradient-orb {
@@ -765,6 +804,24 @@ body.light-mode .subtitle {
   bottom: 0%;
   right: 15%;
   animation-delay: 5s;
+}
+
+.gradient-orb.orb-7 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+  top: 10%;
+  right: -5%;
+  animation-delay: 2.5s;
+}
+
+.gradient-orb.orb-8 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+  bottom: -5%;
+  left: 10%;
+  animation-delay: 7s;
 }
 
 @keyframes float {
@@ -1091,6 +1148,305 @@ body.light-mode .animated-line {
 
 .btn-learn-more:active {
   transform: scale(0.98);
+}
+
+/* Certifications Section */
+.certifications {
+  min-height: 80vh;
+  padding: 6rem 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem 0;
+  width: 100vw;
+  margin-left: calc((100vw - 100%) / -2);
+  margin-right: calc((100vw - 100%) / -2);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.cert-fade-left,
+.cert-fade-right {
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cert-fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-dark), transparent);
+}
+
+.cert-fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-dark), transparent);
+}
+
+.cert-track {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  width: max-content;
+  align-items: stretch;
+  --marquee-duration: 45s;
+}
+
+.cert-track.is-animated {
+  animation: cert-marquee var(--marquee-duration) linear infinite;
+}
+
+@keyframes cert-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.cert-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.75rem;
+  min-width: clamp(260px, 28vw, 360px);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: rgba(44, 44, 46, 0.8);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  box-shadow: var(--shadow-md);
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: transform 0.4s cubic-bezier(0.28, 0.11, 0.32, 1),
+              box-shadow 0.4s cubic-bezier(0.28, 0.11, 0.32, 1),
+              border-color 0.4s ease;
+  position: relative;
+  isolation: isolate;
+}
+
+.cert-card::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.18), rgba(255, 59, 48, 0.18));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.cert-card:hover,
+.cert-card:focus-visible {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.cert-card:hover::after,
+.cert-card:focus-visible::after {
+  opacity: 1;
+}
+
+.cert-card img {
+  width: 100%;
+  height: clamp(160px, 24vw, 220px);
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.cert-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-align: left;
+}
+
+.cert-card-hint {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: left;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.light-mode .cert-card {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .cert-card-hint {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+body.light-mode .cert-fade-left {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.85), transparent);
+}
+
+body.light-mode .cert-fade-right {
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.85), transparent);
+}
+
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cert-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cert-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.cert-modal-dialog {
+  position: relative;
+  max-width: min(680px, 92vw);
+  background: var(--card-bg);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  z-index: 1;
+}
+
+.cert-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cert-modal-close:hover,
+.cert-modal-close:focus-visible {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.cert-modal-media {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.cert-modal-media figcaption {
+  width: 100%;
+}
+
+.cert-modal-image {
+  width: 100%;
+  max-height: clamp(320px, 65vh, 520px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.75rem;
+}
+
+.cert-modal-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.cert-modal-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-gray);
+}
+
+body.light-mode .cert-modal-dialog {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .cert-modal-image {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+body.light-mode .cert-modal-close {
+  background: rgba(0, 0, 0, 0.06);
+  color: #000;
+}
+
+body.light-mode .cert-modal-close:hover,
+body.light-mode .cert-modal-close:focus-visible {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-track.is-animated {
+    animation: none;
+  }
+
+  .cert-card,
+  .cert-modal-close {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications {
+    padding: 5rem 0;
+  }
+
+  .cert-marquee {
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  }
+
+  .cert-card {
+    min-width: clamp(180px, 60vw, 260px);
+  }
+
+  .cert-modal-dialog {
+    padding: 1.75rem;
+    border-radius: 20px;
+  }
+
+  .cert-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
 }
 
 /* Contact Section */

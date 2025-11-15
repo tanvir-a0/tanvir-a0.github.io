@@ -369,3 +369,180 @@ if (canvas) {
     initParticles();
   });
 }
+
+// ============================================
+// CERTIFICATIONS MARQUEE & MODAL
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  const marquee = document.querySelector('.cert-marquee');
+  const modal = document.querySelector('.cert-modal');
+
+  if (!marquee || !modal) {
+    return;
+  }
+
+  const track = marquee.querySelector('.cert-track');
+  if (!track) {
+    return;
+  }
+
+  const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const originalMarkup = track.innerHTML;
+  const modalTitle = modal.querySelector('.cert-modal-title');
+  const modalBody = modal.querySelector('.cert-modal-body');
+  const modalImage = modal.querySelector('.cert-modal-image');
+  const modalClose = modal.querySelector('.cert-modal-close');
+  let lastFocusedCard = null;
+
+  function setMarqueeDuration() {
+    const speed = parseFloat(track.dataset.speed || '80');
+    const totalWidth = track.scrollWidth;
+    const originalWidth = track.dataset.duplicated === 'true' ? totalWidth / 2 : totalWidth;
+    const duration = Math.max(originalWidth / speed, 24);
+    track.style.setProperty('--marquee-duration', `${duration}s`);
+  }
+
+  function enableMarquee() {
+    if (track.dataset.duplicated !== 'true') {
+      track.innerHTML += originalMarkup;
+      track.dataset.duplicated = 'true';
+    }
+
+    requestAnimationFrame(() => {
+      setMarqueeDuration();
+      track.classList.add('is-animated');
+    });
+  }
+
+  function disableMarquee() {
+    track.classList.remove('is-animated');
+  }
+
+  if (!reduceMotionQuery.matches) {
+    enableMarquee();
+  } else {
+    disableMarquee();
+  }
+
+  function handleMotionPreference(event) {
+    if (event.matches) {
+      disableMarquee();
+    } else {
+      enableMarquee();
+    }
+  }
+
+  if (typeof reduceMotionQuery.addEventListener === 'function') {
+    reduceMotionQuery.addEventListener('change', handleMotionPreference);
+  } else if (typeof reduceMotionQuery.addListener === 'function') {
+    reduceMotionQuery.addListener(handleMotionPreference);
+  }
+
+  let resizeRafId;
+  window.addEventListener('resize', () => {
+    if (!track.classList.contains('is-animated')) {
+      return;
+    }
+
+    cancelAnimationFrame(resizeRafId);
+    resizeRafId = requestAnimationFrame(() => {
+      setMarqueeDuration();
+    });
+  });
+
+  function openModal(card) {
+    if (!modalTitle || !modalBody || !modalImage) {
+      return;
+    }
+
+    const detail = card.getAttribute('data-detail') || '';
+    const title = card.getAttribute('data-title') || '';
+    const image = card.querySelector('img');
+
+    modalTitle.textContent = title;
+    modalBody.textContent = detail;
+    if (image) {
+      modalImage.src = image.getAttribute('src');
+      modalImage.alt = image.getAttribute('alt') || title;
+    } else {
+      modalImage.removeAttribute('src');
+      modalImage.alt = '';
+    }
+
+    modal.removeAttribute('hidden');
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    lastFocusedCard = card;
+
+    requestAnimationFrame(() => {
+      modalClose?.focus();
+    });
+  }
+
+  function closeModal() {
+    if (!modal.classList.contains('is-open')) {
+      return;
+    }
+
+    modal.classList.remove('is-open');
+
+    setTimeout(() => {
+      if (!modal.classList.contains('is-open')) {
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        if (lastFocusedCard && typeof lastFocusedCard.focus === 'function') {
+          lastFocusedCard.focus();
+        }
+      }
+    }, 320);
+  }
+
+  track.addEventListener('click', (event) => {
+    const card = event.target.closest('.cert-card');
+    if (!card) {
+      return;
+    }
+    openModal(card);
+  });
+
+  modalClose?.addEventListener('click', () => {
+    closeModal();
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal || event.target.classList.contains('cert-modal-backdrop')) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener('keydown', (event) => {
+    if (event.key !== 'Tab') {
+      return;
+    }
+
+    const focusable = modal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+    if (!focusable.length) {
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+});
