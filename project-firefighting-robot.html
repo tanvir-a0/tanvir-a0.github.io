@@ -5,416 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligent Firefighting Robot - Tanvir's Robotics Lab</title>
     <link rel="stylesheet" href="style.css">
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-        }
-      }
-    </script>
-    <style>
-      .project-detail {
-        min-height: 100vh;
-        padding: 8rem 0 4rem;
-      }
-      
-      .project-header {
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-      
-      .project-header h1 {
-        font-size: 3.5rem;
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1rem;
-      }
-      
-      .project-meta {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 2rem 0;
-        flex-wrap: wrap;
-      }
-      
-      .meta-item {
-        padding: 0.8rem 1.5rem;
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
-      }
-      
-      .project-content {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      
-      .content-section {
-        margin-bottom: 3rem;
-        padding: 2rem;
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-      }
-      
-      .content-section h2 {
-        color: var(--primary-color);
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-      }
-      
-      .content-section p {
-        line-height: 1.8;
-        color: var(--text-gray);
-        margin-bottom: 1rem;
-      }
-      
-      .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-      
-      .tech-tag {
-        padding: 0.5rem 1rem;
-        background: linear-gradient(45deg, rgba(0, 245, 255, 0.2), rgba(255, 0, 255, 0.2));
-        border: 1px solid var(--primary-color);
-        border-radius: 20px;
-        color: var(--text-light);
-        font-size: 0.9rem;
-      }
-      
-      .back-button {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        padding: 1rem 2rem;
-        background: var(--primary-color);
-        border: 2px solid var(--primary-color);
-        color: var(--bg-dark);
-        text-decoration: none;
-        border-radius: 30px;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3);
-        font-weight: 600;
-      }
-      
-      .back-button:hover {
-        background: transparent;
-        color: var(--primary-color);
-        box-shadow: 0 5px 30px rgba(0, 245, 255, 0.5);
-        transform: translateY(-3px);
-      }
-      
-      .project-image {
-        width: 50%;
-        max-width: 50%;
-        height: auto;
-        border-radius: 20px;
-        margin: 2rem auto;
-        display: block;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      .gallery-grid {
-        display: flex;
-        gap: 1.5rem;
-        margin: 2rem 0;
-        align-items: flex-start;
-      }
-
-      .gallery-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-        border: 1px solid var(--border-color);
-        transition: all 0.4s ease;
-        animation: fadeInUp 0.6s ease-out backwards;
-        flex: 1;
-        height: 250px;
-        cursor: pointer;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(255, 69, 0, 0.2);
-      }
-
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: all 0.4s ease;
-      }
-
-      .gallery-item:nth-child(1) { animation-delay: 0.1s; }
-      .gallery-item:nth-child(2) { animation-delay: 0.2s; }
-      .gallery-item:nth-child(3) { animation-delay: 0.3s; }
-      .gallery-item:nth-child(4) { animation-delay: 0.4s; }
-
-      .gallery-item:hover {
-        flex: 2.5;
-        height: 500px;
-        transform: translateY(-10px);
-        z-index: 10;
-        box-shadow: 0 20px 60px rgba(255, 69, 0, 0.5);
-        border-color: var(--primary-color);
-      }
-
-      .gallery-item:hover img {
-        object-fit: contain;
-      }
-
-      .gallery-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
-        z-index: 1;
-      }
-
-      .gallery-item:hover::before {
-        left: 100%;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .feature-list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .feature-list li {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid var(--border-color);
-        color: var(--text-gray);
-        line-height: 1.8;
-      }
-
-      .feature-list li:before {
-        content: "🔥";
-        margin-right: 1rem;
-      }
-
-      .feature-list li:last-child {
-        border-bottom: none;
-      }
-
-      #model-container {
-        width: 100%;
-        height: 500px;
-        border-radius: 20px;
-        overflow: hidden;
-        margin: 2rem 0;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9));
-        position: relative;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      #model-canvas {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-
-      .model-controls {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.7);
-        padding: 10px 20px;
-        border-radius: 20px;
-        color: white;
-        font-size: 0.9rem;
-        backdrop-filter: blur(10px);
-        z-index: 10;
-      }
-
-      .loading-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: var(--text-light);
-        font-size: 1.2rem;
-      }
-
-      /* Section Grid Layout */
-      .sections-grid {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 3rem auto;
-        max-width: 100%;
-      }
-
-      .section-card {
-        padding: 1.5rem 3rem;
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        min-height: 150px;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .section-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 245, 255, 0.3);
-        border-color: var(--primary-color);
-      }
-
-      .section-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.3rem;
-        color: var(--primary-color);
-      }
-
-      .section-card .icon {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .section-card p {
-        font-size: 0.75rem;
-        color: var(--text-gray);
-      }
-      
-
-      .detailed-sections {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-top: 3rem;
-      }
-
-      .detailed-sections .content-section {
-        scroll-margin-top: 100px;
-      }
-
-      /* Horizontal 3-card layout for main sections */
-      .main-sections-horizontal {
-        display: flex;
-        gap: 2.5rem;
-        margin: 3rem auto;
-        max-width: 1400px;
-        width: 100%;
-        padding: 0 2rem;
-        align-items: flex-start;
-      }
-
-      .main-sections-horizontal .content-section {
-        margin-bottom: 0;
-        transition: all 0.4s ease;
-        cursor: pointer;
-        padding: 2rem;
-        height: 300px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 245, 255, 0.2);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        position: relative;
-        flex: 1;
-        overflow: hidden;
-      }
-
-      .main-sections-horizontal .content-section:hover {
-        flex: 2;
-        height: auto;
-        min-height: 500px;
-        transform: translateY(-10px);
-        z-index: 10;
-        box-shadow: 0 20px 60px rgba(0, 245, 255, 0.5);
-        overflow-y: auto;
-      }
-
-      .main-sections-horizontal .content-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        transition: all 0.4s ease;
-      }
-
-      .main-sections-horizontal .content-section p {
-        font-size: 0.9rem;
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.4s ease;
-        margin: 0;
-      }
-
-      .main-sections-horizontal .content-section:hover p {
-        opacity: 1;
-        max-height: 500px;
-        margin-bottom: 1rem;
-      }
-
-      .main-sections-horizontal .project-image {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 0 2rem 0;
-        border-radius: 15px;
-        transition: all 0.4s ease;
-        object-fit: cover;
-        height: 150px;
-      }
-
-      .main-sections-horizontal .content-section:hover .project-image {
-        height: 250px;
-        object-fit: contain;
-      }
-
-      @media (max-width: 968px) {
-        .main-sections-horizontal {
-          flex-direction: column;
-        }
-        
-        .main-sections-horizontal .content-section:hover {
-          flex: 1;
-          transform: scale(1.05);
-        }
-      }
-    </style>
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </head>
-  <body>
+  <body class="project-page project-fire-robot">
     <div class="background">
-      <div class="cube-container">
-        <div class="cube">
-          <div class="face front"></div>
-          <div class="face back"></div>
-          <div class="face right"></div>
-          <div class="face left"></div>
-          <div class="face top"></div>
-          <div class="face bottom"></div>
-        </div>
-      </div>
+      <div class="gradient-layer gradient-one"></div>
+      <div class="gradient-layer gradient-two"></div>
     </div>
 
     <nav class="navbar">
@@ -434,139 +32,205 @@
         </label>
       </div>
     </nav>
-
-    <section class="project-detail">
-      <div class="container">
-        <div class="project-header">
-          <h1>Intelligent Firefighting Robot</h1>
-          <p class="subtitle">Large Scale Fire Fighting Robot - Personal Project</p>
-          
-          <div class="project-meta">
-            <div class="meta-item">🛠️ Role: <strong>Hardware & Software</strong></div>
-            <div class="meta-item">💻 Software: <strong>Tkinter Desktop App</strong></div>
-            <div class="meta-item">👥 Team: <strong>Collaborative Project</strong></div>
+    <main class="project-detail">
+      <section class="project-hero" id="top">
+        <div class="project-frame hero-grid">
+          <div class="hero-copy">
+            <span class="hero-eyebrow">Flagship Robotics Concept</span>
+            <h1>Intelligent Firefighting Robot</h1>
+            <p class="hero-lede">An end-to-end remote suppression platform engineered to keep first responders out of harm's way while delivering situational awareness, precision actuation, and thermal resilience.</p>
+            <p class="hero-subtitle">Large-scale prototype &mdash; designed, fabricated, and programmed across the full stack.</p>
+            <div class="hero-meta">
+              <div class="meta-card">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Hardware + Software</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Control Surface</span>
+                <span class="meta-value">Tkinter Desktop App</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Collaboration</span>
+                <span class="meta-value">Collaboration Project</span>
+              </div>
+            </div>
+            <div class="hero-cta">
+              <a href="#overview" class="project-btn primary">Read the case study</a>
+              <a href="#gallery" class="project-btn outline">View gallery</a>
+            </div>
           </div>
-        </div>
-
-        <div class="project-content">
-          <div class="content-section">
-            <h2>3D Model View</h2>
-            <div id="model-container">
-              <canvas id="model-canvas"></canvas>
-              <div class="loading-text" id="loading-text">Loading 3D Model...</div>
-              <div class="model-controls">🖱️ Click and drag to rotate • Scroll to zoom</div>
+          <div class="hero-visual">
+            <div class="model-shell">
+              <model-viewer
+                  class="fire-model"
+                  src="assets/models/projects/fire_fighting_robot/Main.glb"
+                  alt="Firefighting Robot 3D Model"
+                  auto-rotate
+                  camera-controls
+                  loading="eager"
+                  reveal="auto"
+                  shadow-intensity="0.35"
+                  environment-image="neutral"
+                  exposure="0.45"
+                  tone-mapping="neutral"
+                  shadow-softness="0.85"
+                  orientation="60deg -75deg 0deg"
+                  camera-orbit="0deg 75deg 105%"
+                  min-camera-orbit="auto auto 50%"
+                  max-camera-orbit="auto auto 200%">
+              </model-viewer>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Main 3 Sections Horizontal -->
-        <div class="main-sections-horizontal">
-          <div class="content-section" id="design">
-              <h2>Design & Engineering</h2>
-              <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot" class="project-image">
-              <p>
-                <strong>CAD-Based Design:</strong> The entire robot was meticulously designed using CAD software before any physical 
-                construction began. This allowed for precise modeling, stress analysis, and optimization of all mechanical components.
-              </p>
-              <p>
-                <strong>Hardware Integration:</strong> Custom-built electronics system featuring integrated actuators, motor controllers, 
-                sensors, and a robust power management system. All components were carefully selected and tested for reliability in 
-                high-temperature environments.
-              </p>
+      <section class="project-panels" id="capabilities">
+        <div class="project-frame panel-grid">
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting robot chassis">
+            </figure>
+            <div class="panel-content">
+              <h2>Design &amp; Engineering</h2>
+              <p>Integrated drive modules, motor controllers, sensors, and power delivery were selected to tolerate high power needed environment. The outer layer is then cover in a temperature resistant material. This was just a prototype for much larger project.</p>
             </div>
+          </article>
 
-            <div class="content-section" id="cad">
-              <h2>CAD Design</h2>
-              <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD Design" class="project-image">
-              <p>
-                The CAD design phase was critical in ensuring all components fit together perfectly and the robot could withstand 
-                the operational stresses. The design includes detailed mechanical assemblies, mounting points for electronics, 
-                and optimal weight distribution for stability.
-              </p>
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="Fusion 360 CAD assembly of the robot">
+            </figure>
+            <div class="panel-content">
+              <h2>Precision CAD Workflow</h2>
+              <p>Every subsystem was validated in Fusion 360 before fabrication, enabling compatibility checks between the systems, validation of fit and function, and fast iteration without wasting material.</p>
             </div>
+          </article>
 
-            <div class="content-section" id="control">
-              <h2>Control Interface</h2>
-              <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="Control Interface" class="project-image">
-              <p>
-                The Tkinter-based desktop application provides a user-friendly interface for controlling the robot remotely. 
-                Features include real-time status monitoring, manual control options, and system diagnostics. The interface 
-                was designed with operator safety and ease of use as top priorities.
-              </p>
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="Desktop control interface for the robot">
+            </figure>
+            <div class="panel-content">
+              <h2>Human-Centered Control</h2>
+              <p>A CustomTkinter desktop console provides real-time status, direct images from the robot, manual overrides, and diagnostics. I tried to mimic the layout of a modern mission control system, simple and smooth.</p>
             </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-story" id="overview">
+        <div class="project-frame story-grid">
+          <article class="story-card">
+            <h2>Mission Overview</h2>
+            <p>The Intelligent Firefighting Robot is a large-format, teleoperated platform built to move through hazardous zones, deliver high-volume suppression, and stream live situational data back to incident command.</p>
+            <p>It fuses mechanical design, embedded electronics, and software into a cohesive response system capable of real-time firefighting operations without exposing humans to extreme conditions.</p>
+          </article>
+          <article class="story-card note">
+            <h3>Prototype Scope</h3>
+            <p>This build is a functional proof of concept validated in controlled test burns. It demonstrates feasibility and informs future ruggedization, autonomy, and certification work.</p>
+            <p>From concept to deployment demos, I owned CAD, fabrication, electronics integration, control software, and wireless comms &mdash; shaping a full-stack robotics experience end to end.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-subsystems" id="subsystems">
+        <div class="project-frame subsystem-layout">
+          <header class="subsystem-intro">
+            <h2>Subsystem Engineering</h2>
+            <p>Each critical subsystem was authored digitally in CAD, validated to see weather it will fit in the robot or not, then applied that knowledge in physical robot.</p>
+          </header>
+          <div class="subsystem-grid">
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/fire_fighting_robot/subsystem_motor.png" alt="Drive motor assembly for the firefighting robot">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>High-Torque Drive Motor</h3>
+                <p>High-Torque motor was used to drive the robot. This motor is powerful enough to carry 10 liters of water/fire suppression liquid inside the robot. All these parameters ware calculated during the robot design process. </p>
+              </div>
+            </article>
+
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/fire_fighting_robot/subsystem_pump.png" alt="Water pump module for the firefighting robot">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>Suppression Pump Module</h3>
+                <p>Another important consideration during the desing was setting/placing the pump and then routing the cables. All these ware done in Fusion 360 before the fabrication process. </p>
+              </div>
+            </article>
+
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/fire_fighting_robot/subsystem_driver.png" alt="Motor driver board integrated for the firefighting robot">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>Electrical Systems</h3>
+                <p>Other electronics ware also designed and tested in Fuision 360 and then fabricated. The challange for Electrical system as to ensure that they are kept away from fire while making sure they can release heat efficiently. </p>
+              </div>
+            </article>
           </div>
         </div>
+      </section>
 
-        <div class="project-content">
-          <!-- Other Sections -->
-          <div class="detailed-sections">
-          <div class="content-section" id="overview">
-            <h2>Project Overview</h2>
-            <p>
-              The Intelligent Firefighting Robot is a large-scale, fully remote-controlled firefighting system designed to navigate 
-              and operate in hazardous environments where human intervention is dangerous. This personal project showcases the 
-              integration of mechanical design, electronics, and software development to create a functional prototype capable of 
-              real-time firefighting operations.
-            </p>
-            <p>
-              <strong>Note:</strong> This project was built as a prototype to demonstrate the concept and feasibility of remote-controlled 
-              firefighting systems. It was tested in a controlled environment and is not intended as a perfect, production-ready solution. 
-              The prototype serves as a proof of concept for future development and refinement.
-            </p>
-            <p>
-              From concept to completion, I handled every aspect of this project - from CAD design and hardware assembly to 
-              developing the control software and implementing wireless communication protocols. The robot represents a comprehensive 
-              solution for remote firefighting operations in extreme conditions.
-            </p>
-          </div>
-
-          <div class="content-section" id="features">
-            <h2>Key Features & Capabilities</h2>
+      <section class="project-features" id="features">
+        <div class="project-frame features-grid">
+          <article class="feature-card">
+            <h2>Key Capabilities</h2>
             <ul class="feature-list">
-              <li>Developed a fully remote-controlled firefighting robot capable of navigating hazardous areas</li>
-              <li>Designed and implemented the complete software, including control algorithms and communication protocols</li>
-              <li>Built the entire hardware and electronics system, integrating actuators and power management for real-time operation</li>
-              <li>Everything designed in CAD software before physical construction to ensure precision and functionality</li>
-              <li>Uses WiFi communication (as a prototype) to transmit control signals for remote operation</li>
+              <li>Teleoperated firefighting platform for hazardous environment and remote suppression.</li>
+              <li>End-to-end software stack handling motion control, telemetry, and visual feedback.</li>
+              <li>Custom electronics includes integrating actuators, sensing, and power distribution.</li>
+              <li>CAD-to-fabrication design process ensures structural precision.</li>
+              <li>Fully wireless communication using Wi-Fi.</li>
             </ul>
-          </div>
-
-          <div class="content-section" id="tech-stack">
+          </article>
+          <article class="feature-card tech" id="tech-stack">
             <h2>Technology Stack</h2>
-            <div class="tech-stack">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Tkinter</span>
-              <span class="tech-tag">Arduino/Microcontroller</span>
-              <span class="tech-tag">WiFi Communication</span>
-              <span class="tech-tag">CAD (SolidWorks/Fusion 360)</span>
-              <span class="tech-tag">Motor Control</span>
-              <span class="tech-tag">Embedded Systems</span>
-              <span class="tech-tag">Power Electronics</span>
-              <span class="tech-tag">Sensor Integration</span>
+            <div class="pill-cloud">
+              <span class="pill">Python</span>
+              <span class="pill">Tkinter</span>
+              <span class="pill">CustomTkinter</span>
+              <span class="pill">Arduino</span>
+              <span class="pill">ESP32</span>
+              <span class="pill">ESP32-CAM</span>
+              <span class="pill">Wi-Fi (TCP / UDP)</span>
+              <span class="pill">Fusion 360</span>
+              <span class="pill">Embedded Systems</span>
+              <span class="pill">Power Electronics</span>
+              <span class="pill">Sensor Integration</span>
             </div>
-          </div>
+          </article>
+        </div>
+      </section>
 
-          <div class="content-section" id="gallery">
+      <section class="project-gallery" id="gallery">
+        <div class="project-frame">
+          <div class="gallery-header">
             <h2>Project Gallery</h2>
-            <div class="gallery-grid">
-              <div class="gallery-item">
-                <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Robot View 1">
-              </div>
-              <div class="gallery-item">
-                <img src="assets/images/projects/fire_fighting_robot/Robot2.png" alt="Robot View 2">
-              </div>
-              <div class="gallery-item">
-                <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD Design">
-              </div>
-              <div class="gallery-item">
-                <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="User Interface">
-              </div>
-            </div>
+            <p>Moments from the CAD lab, fabrication floor, and operator console.</p>
           </div>
+          <div class="gallery-grid">
+            <figure class="gallery-card">
+              <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting robot full assembly">
+              <figcaption>Chassis, suppression cannon, and thermal shielding in place. (Closeup)</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/fire_fighting_robot/Robot2.png" alt="Firefighting robot from rear angle">
+              <figcaption>Chassis, suppression cannon, and thermal shielding in place. (from far)</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/fire_fighting_robot/CAD.png" alt="CAD detail of the firefighting robot">
+              <figcaption>Fusion 360 assembly used to validate tolerances pre-build.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/fire_fighting_robot/UI.jpg" alt="Desktop interface for remote operation">
+              <figcaption>Operator Interface with live  diagnostics, and video feed.</figcaption>
+            </figure>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Floating Back Button -->
     <a href="index.html#projects" class="back-button">← Back to Projects</a>
@@ -577,158 +241,25 @@
     </footer>
 
     <script src="script.js"></script>
-    <script type="module">
-      import * as THREE from 'three';
-      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
-      // Scene setup
-      const container = document.getElementById('model-container');
-      const canvas = document.getElementById('model-canvas');
-      const loadingText = document.getElementById('loading-text');
-      
-      const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x2a2a2a);
-      
-      const camera = new THREE.PerspectiveCamera(
-        60,
-        container.clientWidth / container.clientHeight,
-        0.1,
-        1000
-      );
-      camera.position.set(0, 0, 12);
-      
-      const renderer = new THREE.WebGLRenderer({ 
-        canvas: canvas, 
-        antialias: true,
-        alpha: false 
-      });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.shadowMap.enabled = true;
-      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-      renderer.outputColorSpace = THREE.SRGBColorSpace;
-      
-      // Enhanced lighting setup
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-      scene.add(ambientLight);
-      
-      const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1.5);
-      directionalLight1.position.set(10, 15, 10);
-      directionalLight1.castShadow = true;
-      directionalLight1.shadow.mapSize.width = 2048;
-      directionalLight1.shadow.mapSize.height = 2048;
-      scene.add(directionalLight1);
-      
-      const directionalLight2 = new THREE.DirectionalLight(0xffffff, 0.8);
-      directionalLight2.position.set(-10, 10, -10);
-      scene.add(directionalLight2);
-      
-      const directionalLight3 = new THREE.DirectionalLight(0xff9966, 0.6);
-      directionalLight3.position.set(0, -5, 5);
-      scene.add(directionalLight3);
-      
-      // Add a hemisphere light for better overall lighting
-      const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.8);
-      scene.add(hemisphereLight);
-      
-      // Add ground plane for reference
-      const groundGeometry = new THREE.CircleGeometry(15, 64);
-      const groundMaterial = new THREE.MeshStandardMaterial({ 
-        color: 0x333333,
-        roughness: 0.8,
-        metalness: 0.2
-      });
-      const ground = new THREE.Mesh(groundGeometry, groundMaterial);
-      ground.rotation.x = -Math.PI / 2;
-      ground.position.y = -0.5;
-      ground.receiveShadow = true;
-      scene.add(ground);
-      
-      // Add grid helper for better spatial reference
-      const gridHelper = new THREE.GridHelper(20, 20, 0x00f5ff, 0x404040);
-      gridHelper.position.y = -0.49;
-      scene.add(gridHelper);
-      
-      // Controls
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.dampingFactor = 0.05;
-      controls.minDistance = 3;
-      controls.maxDistance = 30;
-      controls.maxPolarAngle = Math.PI / 2;
-      controls.target.set(0, 0, 0);
-      
-      // Load GLB model
-      const loader = new GLTFLoader();
-      loader.load(
-        'assets/models/projects/fire_fighting_robot/Main.glb',
-        function (gltf) {
-          const model = gltf.scene;
-          
-          // Calculate bounding box to center and scale the model
-          const box = new THREE.Box3().setFromObject(model);
-          const center = box.getCenter(new THREE.Vector3());
-          const size = box.getSize(new THREE.Vector3());
-          
-          // Center the model at origin
-          model.position.set(-center.x, -center.y, -center.z);
-          
-          // Rotate model: Z-axis up (rotate -90° around X-axis)
-          model.rotation.x = -Math.PI / 2;
-          
-          // Scale the model to fit in view
-          const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 5 / maxDim;
-          model.scale.set(scale, scale, scale);
-          
-          // Enable shadows for all meshes
-          model.traverse(function (child) {
-            if (child instanceof THREE.Mesh) {
-              child.castShadow = true;
-              child.receiveShadow = true;
-            }
-          });
-          
-          scene.add(model);
-          loadingText.style.display = 'none';
-          
-          // Set camera to look at center
-          camera.lookAt(0, 0, 0);
-          controls.target.set(0, 0, 0);
-          controls.update();
-        },
-        function (xhr) {
-          if (xhr.lengthComputable) {
-            const percentComplete = (xhr.loaded / xhr.total) * 100;
-            loadingText.textContent = 'Loading 3D Model... ' + Math.round(percentComplete) + '%';
-          } else {
-            loadingText.textContent = 'Loading 3D Model...';
-          }
-        },
-        function (error) {
-          console.error('Error loading model:', error);
-          loadingText.textContent = 'Error loading 3D model. Please check the console.';
-          loadingText.style.color = '#ff4444';
-        }
-      );
-      
-      // Animation loop
-      function animate() {
-        requestAnimationFrame(animate);
-        controls.update();
-        renderer.render(scene, camera);
+    <script>
+      // Debug model-viewer loading
+      const modelViewer = document.querySelector('model-viewer');
+      if (modelViewer) {
+        modelViewer.addEventListener('load', () => {
+          console.log('✅ 3D Model loaded successfully!');
+        });
+        
+        modelViewer.addEventListener('error', (e) => {
+          console.error('❌ Error loading 3D model:', e);
+        });
+        
+        modelViewer.addEventListener('progress', (e) => {
+          const progress = (e.detail.totalProgress * 100).toFixed(0);
+          console.log(`Loading model: ${progress}%`);
+        });
+      } else {
+        console.error('❌ model-viewer element not found!');
       }
-      animate();
-      
-      // Handle window resize
-      window.addEventListener('resize', function() {
-        const width = container.clientWidth;
-        const height = container.clientHeight;
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
-      });
     </script>
   </body>
 </html>

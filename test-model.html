@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Test</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        .model-container {
+            width: 100%;
+            height: 600px;
+            background: #222;
+            border-radius: 10px;
+            border: 2px solid #00ff88;
+            overflow: hidden;
+        }
+        model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>3D Model Loading Test</h1>
+        <p>If you see the 3D model below, it's working correctly:</p>
+        <div class="model-container">
+            <model-viewer 
+                src="assets/models/projects/fire_fighting_robot/Main.glb"
+                alt="Firefighting Robot 3D Model" 
+                auto-rotate 
+                camera-controls
+                loading="eager"
+                reveal="auto">
+            </model-viewer>
+        </div>
+        <p id="status">Loading model...</p>
+    </div>
+    
+    <script>
+        const modelViewer = document.querySelector('model-viewer');
+        const status = document.getElementById('status');
+        
+        modelViewer.addEventListener('load', () => {
+            status.textContent = '✅ Model loaded successfully!';
+            status.style.color = '#00ff88';
+        });
+        
+        modelViewer.addEventListener('error', (e) => {
+            status.textContent = '❌ Error loading model: ' + e.detail;
+            status.style.color = '#ff0000';
+        });
+        
+        modelViewer.addEventListener('progress', (e) => {
+            const progress = e.detail.totalProgress * 100;
+            status.textContent = `Loading: ${progress.toFixed(0)}%`;
+        });
+    </script>
+</body>
+</html>
