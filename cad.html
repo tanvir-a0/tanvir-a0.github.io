@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Models - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Import the component -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body class="project-page">
+    <div class="background">
+        <div class="gradient-layer gradient-one"></div>
+        <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Tanvir</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="cad.html" class="active">CAD</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="theme-checkbox">
+            <label for="theme-switch" class="theme-label">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+                <div class="theme-ball"></div>
+            </label>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-hero" id="top">
+            <div class="project-frame hero-grid">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow">3D Models Showcase</span>
+                    <h1>CAD Model Gallery</h1>
+                    <p class="hero-lede">A collection of various 3D models I have designed over the years. Feel free to browse and check out my GrabCAD profile for more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery" id="cad-models">
+            <div class="project-frame">
+                <div class="gallery-grid" id="model-grid">
+                    <!-- Models will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="project-story" id="grabcad-link">
+            <div class="project-frame story-grid">
+                <article class="story-card">
+                    <h2>GrabCAD Profile</h2>
+                    <p>For more of my work, and to download the original files, please visit my GrabCAD profile.</p>
+                    <a href="https://grabcad.com/tanvir.ahmed-41/models" target="_blank" rel="noopener noreferrer" class="grabcad-link">
+                        <img src="assets/images/3dprinting_logos/grabcad.jpg" alt="GrabCAD logo">
+                        <span>View on GrabCAD</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+
+    <footer class="footer">
+        <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+        <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modelGrid = document.getElementById('model-grid');
+            const models = [
+                'Main copy 10.glb',
+                'Main copy 2.glb',
+                'Main copy 3.glb',
+                'Main copy 4.glb',
+                'Main copy 5.glb',
+                'Main copy 6.glb',
+                'Main copy 7.glb',
+                'Main copy 8.glb',
+                'Main copy 9.glb',
+                'Main copy.glb',
+                'Main.glb'
+            ];
+
+            models.forEach(model => {
+                const modelCard = document.createElement('figure');
+                modelCard.classList.add('gallery-card');
+
+                const modelViewer = document.createElement('model-viewer');
+                modelViewer.setAttribute('src', `assets/models/cad_page_models/${model}`);
+                modelViewer.setAttribute('alt', 'A 3D model');
+                modelViewer.setAttribute('auto-rotate', '');
+                modelViewer.setAttribute('camera-controls', '');
+                modelViewer.style.width = '100%';
+                modelViewer.style.height = '300px';
+
+                const modelCaption = document.createElement('figcaption');
+                modelCaption.textContent = model.replace('.glb', '').replace(/_/g, ' ');
+
+                modelCard.appendChild(modelViewer);
+                modelCard.appendChild(modelCaption);
+                modelGrid.appendChild(modelCard);
+            });
+        });
+    </script>
+</body>
+</html>
