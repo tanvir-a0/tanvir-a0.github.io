@@ -2998,6 +2998,33 @@ body.project-page.light-mode .gallery-placeholder {
   opacity: 1;
 }
 
+.interaction-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.hand-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6 6 6 0 0 0-6-6 6 6 0 0 0-6 6 6 6 0 0 0 6 6Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75h.008v.008H12v-.008Z" /></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
 body.project-page.light-mode .panel-card:hover,
 body.project-page.light-mode .story-card:hover,
 body.project-page.light-mode .feature-card:hover,
@@ -3536,4 +3563,37 @@ model-viewer:not([reveal]) {
 
 .model-button:active {
   transform: translateY(0);
+}
+
+.platform-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: all 0.2s ease-in-out;
+}
+
+.platform-chip:hover {
+  background-color: var(--card-bg-hover);
+  border-color: var(--primary-color);
+}
+
+.platform-chip .logo-frame {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.platform-chip .logo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

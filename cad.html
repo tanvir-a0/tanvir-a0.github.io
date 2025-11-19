@@ -35,33 +35,34 @@
 
     <main class="project-detail">
         <section class="project-hero" id="top">
-            <div class="project-frame hero-grid">
-                <div class="hero-copy">
-                    <span class="hero-eyebrow">3D Models Showcase</span>
-                    <h1>CAD Model Gallery</h1>
-                    <p class="hero-lede">A collection of various 3D models I have designed over the years. Feel free to browse and check out my GrabCAD profile for more.</p>
+            <div class="project-frame">
+                <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <span class="hero-eyebrow">3D Models Showcase</span>
+                        <h1>CAD Model Gallery</h1>
+                    </div>
+                    <div style="flex: 2;">
+                        <p class="hero-lede">After I joined the Robotics Department, I didn’t have a high-performance computer to design anything properly. When I finally bought one, everything became much easier, and I got addicted to CAD. Since then, I’ve designed a lot of things at my university—from random parts to complete robots. I’m genuinely grateful for that opportunity, and I hope that one day I can contribute even more to the global CAD community.<br> Feel free to browse and check out my GrabCAD profile for more.</p>
+                        <a href="https://grabcad.com/tanvir.ahmed-41/models" target="_blank" rel="noopener noreferrer" class="platform-chip interactive">
+                            <span class="logo-frame">
+                              <img src="assets/images/3dprinting_logos/grabcad.jpg" alt="GrabCAD logo">
+                            </span>
+                            <span>GrabCAD</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="project-gallery" id="cad-models">
             <div class="project-frame">
+                <div class="interaction-prompt">
+                    <div class="hand-icon"></div>
+                    <p>Click and drag to interact with the models</p>
+                </div>
                 <div class="gallery-grid" id="model-grid">
                     <!-- Models will be dynamically inserted here -->
                 </div>
-            </div>
-        </section>
-
-        <section class="project-story" id="grabcad-link">
-            <div class="project-frame story-grid">
-                <article class="story-card">
-                    <h2>GrabCAD Profile</h2>
-                    <p>For more of my work, and to download the original files, please visit my GrabCAD profile.</p>
-                    <a href="https://grabcad.com/tanvir.ahmed-41/models" target="_blank" rel="noopener noreferrer" class="grabcad-link">
-                        <img src="assets/images/3dprinting_logos/grabcad.jpg" alt="GrabCAD logo">
-                        <span>View on GrabCAD</span>
-                    </a>
-                </article>
             </div>
         </section>
     </main>
@@ -81,17 +82,16 @@
                 '12V High Pressure Pump.glb.glb',
                 '37 GB 555 Gear Motor v3.gltf.glb',
                 'Arduino Nano v6 v1.glb.glb',
-                'Articulated Creeper.stl',
-                'Complete Robot 1 v4 v2.glb.glb',
+                'Assult Riffle.glb',
+                'Complete Soccer Robot 1 v4 v2.glb.glb',
+                'Fingerprint Reader stand v7 v1.glb.glb',
+                'Fire Fighting Robot.glb',
                 'HCSR04 Ultrasonic Sensor v1 v1.glb.glb',
-                'HCSR04.glb.glb',
                 'HTD-85H v3 v1.glb.glb',
-                'Main.glb',
                 'Off Road Tyre v3 v1.glb.glb',
                 'Planetary Motor.glb.glb',
                 'Plastic Wheel 130mm v1 v1.glb.glb',
-                'UAV 1.glb.glb',
-                'Untitled v8 v2.glb.glb'
+                'UAV 1.glb.glb'
             ];
 
             models.forEach(model => {
@@ -102,6 +102,7 @@
                 modelViewer.setAttribute('src', `assets/models/cad_page_models/${model}`);
                 modelViewer.setAttribute('alt', 'A 3D model');
                 modelViewer.setAttribute('camera-controls', '');
+                modelViewer.setAttribute('orientation', '60deg -75deg 0deg');
                 modelViewer.setAttribute('interaction-prompt', 'none');
                 modelViewer.style.width = '100%';
                 modelViewer.style.height = '300px';
