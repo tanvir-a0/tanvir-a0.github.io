@@ -78,17 +78,20 @@
         document.addEventListener('DOMContentLoaded', function() {
             const modelGrid = document.getElementById('model-grid');
             const models = [
-                'Main copy 10.glb',
-                'Main copy 2.glb',
-                'Main copy 3.glb',
-                'Main copy 4.glb',
-                'Main copy 5.glb',
-                'Main copy 6.glb',
-                'Main copy 7.glb',
-                'Main copy 8.glb',
-                'Main copy 9.glb',
-                'Main copy.glb',
-                'Main.glb'
+                '12V High Pressure Pump.glb.glb',
+                '37 GB 555 Gear Motor v3.gltf.glb',
+                'Arduino Nano v6 v1.glb.glb',
+                'Articulated Creeper.stl',
+                'Complete Robot 1 v4 v2.glb.glb',
+                'HCSR04 Ultrasonic Sensor v1 v1.glb.glb',
+                'HCSR04.glb.glb',
+                'HTD-85H v3 v1.glb.glb',
+                'Main.glb',
+                'Off Road Tyre v3 v1.glb.glb',
+                'Planetary Motor.glb.glb',
+                'Plastic Wheel 130mm v1 v1.glb.glb',
+                'UAV 1.glb.glb',
+                'Untitled v8 v2.glb.glb'
             ];
 
             models.forEach(model => {
@@ -98,8 +101,8 @@
                 const modelViewer = document.createElement('model-viewer');
                 modelViewer.setAttribute('src', `assets/models/cad_page_models/${model}`);
                 modelViewer.setAttribute('alt', 'A 3D model');
-                modelViewer.setAttribute('auto-rotate', '');
                 modelViewer.setAttribute('camera-controls', '');
+                modelViewer.setAttribute('interaction-prompt', 'none');
                 modelViewer.style.width = '100%';
                 modelViewer.style.height = '300px';
 
