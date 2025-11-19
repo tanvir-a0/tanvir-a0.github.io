@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -2212,6 +2216,11 @@ body.project-page.light-mode .nav-links a:hover {
 }
 
 .project-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 88px;
+  min-height: 70vh;
   padding: clamp(7rem, 12vw, 11rem) 0 clamp(4rem, 9vw, 6rem);
   position: relative;
 }
@@ -3013,7 +3022,7 @@ body.project-page.light-mode .gallery-placeholder {
 .hand-icon {
     width: 32px;
     height: 32px;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6 6 6 0 0 0-6-6 6 6 0 0 0-6 6 6 6 0 0 0 6 6Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75h.008v.008H12v-.008Z" /></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 110-18 9 9 0 010 18z" /></svg>');
     background-size: contain;
     background-repeat: no-repeat;
     animation: bounce 2s infinite;
