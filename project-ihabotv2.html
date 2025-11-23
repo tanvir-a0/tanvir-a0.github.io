@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHABOTv2: Intelligent Hospital Assistant Robot - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </head>
+  <body class="project-page project-ihabotv2">
+    <div class="background">
+      <div class="gradient-layer gradient-one"></div>
+      <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#certifications">Certification</a></li>
+        <li><a href="index.html#contact">Contacts</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </nav>
+    <main class="project-detail">
+      <section class="project-hero" id="top">
+        <div class="project-frame hero-grid">
+          <div class="hero-copy">
+            <span class="hero-eyebrow">Flagship Robotics Concept</span>
+            <h1>IHABOTv2: Intelligent Hospital Assistant Robot</h1>
+            <p class="hero-lede">IHABOTv2 is Bangladesh’s first intelligent hospital assistant robot, featuring autonomous navigation, rehabilitation monitoring, medicine delivery via a robotic arm, EWS with LLM-based clinical interpretation, and interactive application for real-time monitoring by both medical professionals and patients.</p>
+            <p class="hero-subtitle">Designed for affordability and seamless integration, it helps reduce nurse workload while enhancing safety and care efficiency.</p>
+            <div class="hero-meta">
+              <div class="meta-card">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Research Assistant</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Control Surface</span>
+                <span class="meta-value">Interactive Application, Google Firebase</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Collaboration</span>
+                <span class="meta-value">Collaboration Project</span>
+              </div>
+            </div>
+            <div class="hero-cta">
+              <a href="#overview" class="project-btn primary">Read the case study</a>
+              <a href="#gallery" class="project-btn outline">View gallery</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="model-shell">
+              <model-viewer
+                  class="ihabot-model"
+                  src="assets/models/projects/ihabotv2/IHABOTv2.glb"
+                  alt="IHABOTv2 3D Model"
+                  auto-rotate
+                  camera-controls
+                  loading="eager"
+                  reveal="auto"
+                  shadow-intensity="0.35"
+                  environment-image="neutral"
+                  exposure="0.45"
+                  tone-mapping="neutral"
+                  shadow-softness="0.85"
+                  orientation="60deg -75deg 0deg"
+                  camera-orbit="0deg 75deg 105%"
+                  min-camera-orbit="auto auto 50%"
+                  max-camera-orbit="auto auto 200%">
+              </model-viewer>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-panels" id="capabilities">
+        <div class="project-frame panel-grid">
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/ihabotv2/ihabot_mockup_1.png" alt="IHABOTv2 robot in a hospital setting">
+            </figure>
+            <div class="panel-content">
+              <h2>Autonomous Navigation</h2>
+              <p>IHABOTv2 is equipped with advanced autonomous navigation capabilities, allowing it to traverse hospital floors safely and efficiently, delivering medications and supplies without human intervention.</p>
+            </div>
+          </article>
+
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/ihabotv2/ihabot_mockup_2.png" alt="IHABOTv2 robotic arm delivering medicine">
+            </figure>
+            <div class="panel-content">
+              <h2>Medicine Delivery & Rehabilitation</h2>
+              <p>The integrated robotic arm enables precise medicine delivery to patients. Additionally, IHABOTv2 assists in rehabilitation monitoring, ensuring patients receive consistent and effective care.</p>
+            </div>
+          </article>
+
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/ihabotv2/ihabot_mockup_3.png" alt="IHABOTv2 user interface for monitoring">
+            </figure>
+            <div class="panel-content">
+              <h2>Real-time Monitoring & EWS</h2>
+              <p>An interactive application, synchronized through Google Firebase, provides real-time monitoring for medical professionals and patients. It also features an Early Warning System (EWS) with LLM-based clinical interpretation.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-story" id="overview">
+        <div class="project-frame story-grid">
+          <article class="story-card">
+            <h2>Project Overview</h2>
+            <p>Contributed to developing IHABOTv2, a hospital robot capable of roaming hospital floors, delivering medicine to multiple patients automatically, recording vital signs, and assisting in exercise evaluation without the need for a nurse.</p>
+            <p>Led the hardware design, integrating navigation, robotic arm, BLE sensors, and the user interface, with all systems synchronized through Google Firebase for real-time monitoring and control.</p>
+            <p>Collaborated with a cross-functional team to seamlessly connect hardware and software, ensuring safety and efficiency of the robot.</p>
+            <p>Helped scale the system to deliver medicine to eight patients per cycle (currently in testing), reducing nurse workload and improving delivery accuracy.</p>
+          </article>
+          <article class="story-card note">
+            <h3>My Contributions</h3>
+            <p>IHABOTv2 Link to Details</p>
+            <p>Led the development of Intelligent Hospital Assistant Robot Version 2</p>
+            <ul>
+              <li>I Designed and developed the user interface to monitor and control robot operations efficiently.</li>
+              <li>Built and integrated the electronics system, ensuring reliable sensor and actuator communication.</li>
+              <li>Constructed the main body of the robot, including mechanical assembly and component placement.</li>
+              <li>I Collaborated with the autonomous navigation developer by assisting with sensor integration, testing, and debugging.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-subsystems" id="subsystems">
+        <div class="project-frame subsystem-layout">
+          <header class="subsystem-intro">
+            <h2>Key Subsystems</h2>
+            <p>Each critical subsystem was carefully designed and integrated to ensure optimal performance and seamless operation of IHABOTv2.</p>
+          </header>
+          <div class="subsystem-grid">
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/ihabotv2/subsystem_navigation.png" alt="IHABOTv2 navigation module">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>Autonomous Navigation Module</h3>
+                <p>The navigation system utilizes advanced sensors and algorithms to enable IHABOTv2 to autonomously navigate complex hospital environments, avoiding obstacles and reaching designated locations.</p>
+              </div>
+            </article>
+
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/ihabotv2/subsystem_robotic_arm.png" alt="IHABOTv2 robotic arm for delivery">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>Robotic Arm & Delivery System</h3>
+                <p>A precision robotic arm facilitates accurate medicine delivery and assists with rehabilitation tasks. The system is designed for safe and gentle interaction with patients.</p>
+              </div>
+            </article>
+
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/ihabotv2/subsystem_monitoring.png" alt="IHABOTv2 monitoring interface">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>EWS & LLM-based Interpretation</h3>
+                <p>The Early Warning System integrates with an LLM for intelligent clinical interpretation of patient vital signs, providing proactive alerts and insights to medical staff.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-features" id="features">
+        <div class="project-frame features-grid">
+          <article class="feature-card">
+            <h2>Key Features</h2>
+            <ul class="feature-list">
+              <li>Autonomous navigation for safe and efficient movement in hospital environments.</li>
+              <li>Robotic arm for precise medicine delivery and rehabilitation assistance.</li>
+              <li>Early Warning System (EWS) with LLM-based clinical interpretation.</li>
+              <li>Interactive application for real-time monitoring by medical professionals and patients.</li>
+              <li>Seamless integration with Google Firebase for synchronized data and control.</li>
+              <li>Designed for affordability and ease of integration into existing hospital infrastructure.</li>
+              <li>Reduces nurse workload and enhances safety and care efficiency.</li>
+            </ul>
+          </article>
+          <article class="feature-card tech" id="tech-stack">
+            <h2>Technology Stack</h2>
+            <div class="pill-cloud">
+              <span class="pill">Python</span>
+              <span class="pill">ROS (Robot Operating System)</span>
+              <span class="pill">BLE Sensors</span>
+              <span class="pill">Robotic Arm Control</span>
+              <span class="pill">Google Firebase</span>
+              <span class="pill">LLM (Large Language Model)</span>
+              <span class="pill">Embedded Systems</span>
+              <span class="pill">User Interface Design</span>
+              <span class="pill">Hardware Integration</span>
+              <span class="pill">Autonomous Navigation</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-gallery" id="gallery">
+        <div class="project-frame">
+          <div class="gallery-header">
+            <h2>Project Gallery</h2>
+            <p>Visual highlights from the development and testing of IHABOTv2.</p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/ihabot_gallery_1.png" alt="IHABOTv2 in action delivering medicine">
+              <figcaption>IHABOTv2 autonomously navigating a hospital corridor.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/ihabot_gallery_2.png" alt="Close-up of IHABOTv2's robotic arm">
+              <figcaption>The robotic arm precisely delivering medication to a patient.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/ihabot_gallery_3.png" alt="IHABOTv2 control interface screenshot">
+              <figcaption>Real-time monitoring and control through the interactive application.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/ihabot_gallery_4.png" alt="IHABOTv2 undergoing rehabilitation monitoring">
+              <figcaption>Assisting in patient rehabilitation exercises.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Back Button -->
+    <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+      <p class="last-updated">Last Updated: <span id="last-updated-date">November 23, 2025</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Debug model-viewer loading
+      const modelViewer = document.querySelector('model-viewer');
+      if (modelViewer) {
+        modelViewer.addEventListener('load', () => {
+          console.log('✅ 3D Model loaded successfully!');
+        });
+        
+        modelViewer.addEventListener('error', (e) => {
+          console.error('❌ Error loading 3D model:', e);
+        });
+        
+        modelViewer.addEventListener('progress', (e) => {
+          const progress = (e.detail.totalProgress * 100).toFixed(0);
+          console.log(`Loading model: ${progress}%`);
+        });
+      } else {
+        console.error('❌ model-viewer element not found!');
+      }
+    </script>
+  </body>
+</html>
