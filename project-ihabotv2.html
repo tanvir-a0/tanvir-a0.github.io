@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHABOTv2: Intelligent Hospital Assistant Robot - Tanvir's Robotics Lab</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      .ihabot-model {
+        min-height: 750px; /* 50% bigger than 500px */
+      }
+    </style>
     <!-- Loads <model-viewer> for modern browsers: -->
     <script type="module"
         src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -66,7 +70,7 @@
             <div class="model-shell">
               <model-viewer
                   class="ihabot-model"
-                  src="assets/models/projects/ihabotv2/IHABOTv2.glb"
+                  src="assets/models/projects/ihabotv2/IHABOT final v58.glb"
                   alt="IHABOTv2 3D Model"
                   auto-rotate
                   camera-controls
@@ -91,7 +95,7 @@
         <div class="project-frame panel-grid">
           <article class="panel-card">
             <figure class="panel-media">
-              <img src="assets/images/projects/ihabotv2/ihabot_mockup_1.png" alt="IHABOTv2 robot in a hospital setting">
+              <img src="assets/images/projects/ihabotv2/navigation_obstruction_avoidance.png" alt="IHABOTv2 robot in a hospital setting">
             </figure>
             <div class="panel-content">
               <h2>Autonomous Navigation</h2>
@@ -101,21 +105,51 @@
 
           <article class="panel-card">
             <figure class="panel-media">
-              <img src="assets/images/projects/ihabotv2/ihabot_mockup_2.png" alt="IHABOTv2 robotic arm delivering medicine">
+              <img src="assets/images/projects/ihabotv2/medicine_delivery.png" alt="IHABOTv2 robotic arm delivering medicine">
             </figure>
             <div class="panel-content">
-              <h2>Medicine Delivery & Rehabilitation</h2>
-              <p>The integrated robotic arm enables precise medicine delivery to patients. Additionally, IHABOTv2 assists in rehabilitation monitoring, ensuring patients receive consistent and effective care.</p>
+              <h2>Medicine Delivery</h2>
+              <p>The integrated robotic arm enables precise medicine delivery to patients, reducing nurse workload and improving delivery accuracy.</p>
             </div>
           </article>
 
           <article class="panel-card">
             <figure class="panel-media">
-              <img src="assets/images/projects/ihabotv2/ihabot_mockup_3.png" alt="IHABOTv2 user interface for monitoring">
+              <img src="assets/images/projects/ihabotv2/rahabilitation_exercise.png" alt="IHABOTv2 assisting with rehabilitation exercises">
             </figure>
             <div class="panel-content">
-              <h2>Real-time Monitoring & EWS</h2>
-              <p>An interactive application, synchronized through Google Firebase, provides real-time monitoring for medical professionals and patients. It also features an Early Warning System (EWS) with LLM-based clinical interpretation.</p>
+              <h2>Rehabilitation Monitoring</h2>
+              <p>IHABOTv2 assists in rehabilitation monitoring, ensuring patients receive consistent and effective care through interactive exercises and real-time feedback.</p>
+            </div>
+          </article>
+
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/ihabotv2/real_time_data_collection.png" alt="IHABOTv2 real-time monitoring interface">
+            </figure>
+            <div class="panel-content">
+              <h2>Real-time Monitoring</h2>
+              <p>An interactive application, synchronized through Google Firebase, provides real-time monitoring for medical professionals and patients, offering immediate insights into robot operations and patient status.</p>
+            </div>
+          </article>
+
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/ihabotv2/ews.png" alt="IHABOTv2 Early Warning System">
+            </figure>
+            <div class="panel-content">
+              <h2>Early Warning System (EWS)</h2>
+              <p>The Early Warning System integrates with an LLM for intelligent clinical interpretation of patient vital signs, providing proactive alerts and insights to medical staff.</p>
+            </div>
+          </article>
+          
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/ihabotv2/aluminum_profile_based_design_ensuring_expandability.png" alt="IHABOTv2 aluminum profile based design">
+            </figure>
+            <div class="panel-content">
+              <h2>Aluminum Profile Based Design</h2>
+              <p>The robot's chassis is constructed using aluminum profiles, ensuring a robust yet lightweight structure. This design choice facilitates easy expansion and modification, allowing for future upgrades and integration of new functionalities.</p>
             </div>
           </article>
         </div>
@@ -153,7 +187,7 @@
           <div class="subsystem-grid">
             <article class="subsystem-card">
               <figure class="subsystem-media">
-                <img src="assets/images/projects/ihabotv2/subsystem_navigation.png" alt="IHABOTv2 navigation module">
+                <img src="assets/images/projects/ihabotv2/rviz_map.png" alt="IHABOTv2 navigation module">
               </figure>
               <div class="subsystem-copy">
                 <h3>Autonomous Navigation Module</h3>
@@ -163,7 +197,7 @@
 
             <article class="subsystem-card">
               <figure class="subsystem-media">
-                <img src="assets/images/projects/ihabotv2/subsystem_robotic_arm.png" alt="IHABOTv2 robotic arm for delivery">
+                <img src="assets/images/projects/ihabotv2/cad_design_integrate.png" alt="IHABOTv2 robotic arm for delivery">
               </figure>
               <div class="subsystem-copy">
                 <h3>Robotic Arm & Delivery System</h3>
@@ -173,11 +207,31 @@
 
             <article class="subsystem-card">
               <figure class="subsystem-media">
-                <img src="assets/images/projects/ihabotv2/subsystem_monitoring.png" alt="IHABOTv2 monitoring interface">
+                <img src="assets/images/projects/ihabotv2/main_ui.png" alt="IHABOTv2 monitoring interface">
               </figure>
               <div class="subsystem-copy">
                 <h3>EWS & LLM-based Interpretation</h3>
                 <p>The Early Warning System integrates with an LLM for intelligent clinical interpretation of patient vital signs, providing proactive alerts and insights to medical staff.</p>
+              </div>
+            </article>
+
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/ihabotv2/rviz_map.png" alt="ROS Workstation for Navigation">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>ROS Workstation for Navigation</h3>
+                <p>The navigation system is powered by a ROS (Robot Operating System) workstation, dividing intensive computational tasks between an onboard NVIDIA Jetson for real-time sensor processing and a dedicated workstation PC for complex path planning and mapping, ensuring robust and efficient autonomous movement.</p>
+              </div>
+            </article>
+
+            <article class="subsystem-card">
+              <figure class="subsystem-media">
+                <img src="assets/images/projects/ihabotv2/main_ui.png" alt="UI and Robot Control Computer">
+              </figure>
+              <div class="subsystem-copy">
+                <h3>UI and Robot Control Computer</h3>
+                <p>A separate embedded computer is dedicated to managing all user interface tasks, displaying real-time data, and overseeing various other robot functionalities. This separation ensures optimal performance and responsiveness for both navigation and human-robot interaction.</p>
               </div>
             </article>
           </div>
@@ -203,6 +257,9 @@
             <div class="pill-cloud">
               <span class="pill">Python</span>
               <span class="pill">ROS (Robot Operating System)</span>
+              <span class="pill">ROS Navigation</span>
+              <span class="pill">NVIDIA Jetson</span>
+              <span class="pill">Workstation PC</span>
               <span class="pill">BLE Sensors</span>
               <span class="pill">Robotic Arm Control</span>
               <span class="pill">Google Firebase</span>
@@ -224,20 +281,72 @@
           </div>
           <div class="gallery-grid">
             <figure class="gallery-card">
-              <img src="assets/images/projects/ihabotv2/ihabot_gallery_1.png" alt="IHABOTv2 in action delivering medicine">
-              <figcaption>IHABOTv2 autonomously navigating a hospital corridor.</figcaption>
+              <img src="assets/images/projects/ihabotv2/final_design_from_front.png" alt="IHABOTv2 final design from front">
+              <figcaption>Final design of IHABOTv2 from the front perspective.</figcaption>
             </figure>
             <figure class="gallery-card">
-              <img src="assets/images/projects/ihabotv2/ihabot_gallery_2.png" alt="Close-up of IHABOTv2's robotic arm">
-              <figcaption>The robotic arm precisely delivering medication to a patient.</figcaption>
+              <img src="assets/images/projects/ihabotv2/final_design_from_front_far_away.png" alt="IHABOTv2 final design from front far away">
+              <figcaption>IHABOTv2 final design from a distant front view.</figcaption>
             </figure>
             <figure class="gallery-card">
-              <img src="assets/images/projects/ihabotv2/ihabot_gallery_3.png" alt="IHABOTv2 control interface screenshot">
-              <figcaption>Real-time monitoring and control through the interactive application.</figcaption>
+              <img src="assets/images/projects/ihabotv2/final_design_from_left_corner.png" alt="IHABOTv2 final design from left corner">
+              <figcaption>IHABOTv2 final design from the left corner.</figcaption>
             </figure>
             <figure class="gallery-card">
-              <img src="assets/images/projects/ihabotv2/ihabot_gallery_4.png" alt="IHABOTv2 undergoing rehabilitation monitoring">
-              <figcaption>Assisting in patient rehabilitation exercises.</figcaption>
+              <img src="assets/images/projects/ihabotv2/final_design_from_right_corner.png" alt="IHABOTv2 final design from right corner">
+              <figcaption>IHABOTv2 final design from the right corner.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/main_design.png" alt="IHABOTv2 main design">
+              <figcaption>The main structural design of IHABOTv2.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/cad1.png" alt="IHABOTv2 CAD design 1">
+              <figcaption>CAD rendering of IHABOTv2 components.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/cad2.png" alt="IHABOTv2 CAD design 2">
+              <figcaption>Another CAD perspective of IHABOTv2.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/cad3.png" alt="IHABOTv2 CAD design 3">
+              <figcaption>Detailed CAD view of IHABOTv2 sub-assemblies.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/cad_design_integrate.png" alt="IHABOTv2 CAD design integration">
+              <figcaption>Integration of CAD designs for IHABOTv2 systems.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/medicine_delivery.png" alt="IHABOTv2 medicine delivery">
+              <figcaption>IHABOTv2 demonstrating medicine delivery.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/navigation_obstruction_avoidance.png" alt="IHABOTv2 navigation and obstruction avoidance">
+              <figcaption>IHABOTv2 navigation and obstruction avoidance in action.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/rviz_map.png" alt="IHABOTv2 RVIZ map">
+              <figcaption>RVIZ map visualization of IHABOTv2's environment.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/exercise_assesment.png" alt="IHABOTv2 exercise assessment">
+              <figcaption>IHABOTv2 assisting with exercise assessment.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/exercise_selection.png" alt="IHABOTv2 exercise selection">
+              <figcaption>Interface for exercise selection on IHABOTv2.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/main_ui.png" alt="IHABOTv2 main user interface">
+              <figcaption>Main user interface for IHABOTv2 control.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/ews.png" alt="IHABOTv2 Early Warning System">
+              <figcaption>Early Warning System (EWS) interface.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/ihabotv2/ews.png" alt="IHABOTv2 news feature">
+              <figcaption>IHABOTv2 featured in a EWS segment.</figcaption>
             </figure>
           </div>
         </div>
