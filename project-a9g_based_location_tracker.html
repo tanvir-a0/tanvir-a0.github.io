@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time GPS Tracker - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="project-page project-a9g">
+    <div class="background">
+      <div class="gradient-layer gradient-one"></div>
+      <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#certifications">Certification</a></li>
+        <li><a href="index.html#contact">Contacts</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </nav>
+
+    <main class="project-detail">
+      <section class="project-hero" id="top">
+        <div class="project-frame hero-grid">
+          <div class="hero-copy">
+            <span class="hero-eyebrow">Embedded Systems &amp; IoT</span>
+            <h1>Real-time GPS Tracker</h1>
+            <p class="hero-lede">Engineered a compact, real-time GPS tracking solution from the ground up, integrating the A9G GSM/GPS module with an ESP microcontroller to deliver live location data.</p>
+            <p class="hero-subtitle">I led the hardware design, custom PCB fabrication, and firmware development for this collaborative project.</p>
+            <div class="hero-meta">
+              <div class="meta-card">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Hardware, Firmware, PCB Design</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Link</span>
+                <span class="meta-value"><a href="#overview">Link to Details</a></span>
+              </div>
+            </div>
+            <div class="hero-cta">
+              <a href="#development-process" class="project-btn primary">View Process</a>
+              <a href="#gallery" class="project-btn outline">View gallery</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="image-shell">
+              <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png" alt="A9G GPS Tracker">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-panels" id="development-process">
+        <div class="project-frame panel-grid">
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication.png" alt="Custom PCB for the GPS tracker">
+            </figure>
+            <div class="panel-content">
+              <h2>Custom PCB Design</h2>
+              <p>The foundation of the tracker is a custom-designed PCB. I designed the schematic and layout to accommodate the ESP microcontroller, A9G module, and supporting components, ensuring a compact and reliable form factor.</p>
+            </div>
+          </article>
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png" alt="PCB with components soldered">
+            </figure>
+            <div class="panel-content">
+              <h2>Hardware Integration</h2>
+              <p>After fabrication, I meticulously soldered all the surface-mount and through-hole components onto the PCB, bringing the hardware to life and preparing it for firmware flashing and testing.</p>
+            </div>
+          </article>
+          <article class="panel-card">
+            <figure class="panel-media">
+              <img src="assets/images/projects/a9g_based_location_tracker/pcb_wire_photot.png" alt="Wiring and connections for testing">
+            </figure>
+            <div class="panel-content">
+              <h2>Wiring &amp; Testing</h2>
+              <p>The final hardware stage involved wiring the integrated PCB to power and peripherals for testing. This phase was critical for debugging and validating the GPS positioning functionality over the cellular network.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-story" id="overview">
+        <div class="project-frame story-grid">
+          <article class="story-card" id="details">
+            <h2>Project Overview</h2>
+            <p>This project was a deep dive into embedded systems and IoT connectivity, undertaken with a senior colleague. The primary goal was to create a functional, real-time GPS tracker by interfacing an ESP microcontroller with the versatile A9G GSM/GPS module.</p>
+            <p>My core responsibility was to architect the physical device. This involved designing the schematic and a custom PCB, integrating all the necessary components, and developing the firmware to handle GPS data acquisition. While we successfully achieved stable GPS positioning and hardware integration, the project concluded before the final real-time data transmission stage was fully implemented. This page showcases my contributions and the key technical milestones reached.</p>
+          </article>
+          <article class="story-card note">
+            <h3>Scope &amp; Contributions</h3>
+            <p>The work documented here reflects my direct contributions to the project. I was responsible for the full hardware development lifecycle and the initial firmware for GPS functionality. The project is a testament to practical skills in PCB design, hardware integration, and embedded programming.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-features" id="features">
+        <div class="project-frame features-grid">
+          <article class="feature-card">
+            <h2>Core Contributions</h2>
+            <ul class="feature-list">
+              <li>End-to-end hardware design, from schematic to a custom PCB layout.</li>
+              <li>Firmware development for GPS data acquisition and processing.</li>
+              <li>Component sourcing, soldering, and final hardware integration.</li>
+              <li>System testing and validation of GPS positioning via cellular network.</li>
+            </ul>
+          </article>
+          <article class="feature-card tech" id="tech-stack">
+            <h2>Technology</h2>
+            <div class="pill-cloud">
+              <span class="pill">ESP (ESP32/ESP8266)</span>
+              <span class="pill">A9G (AI Thinker)</span>
+              <span class="pill">PCB Design</span>
+              <span class="pill">Firmware</span>
+              <span class="pill">GSM / GPS</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-gallery" id="gallery">
+        <div class="project-frame">
+          <div class="gallery-header">
+            <h2>Project Gallery</h2>
+            <p>Images from hardware integration, PCB layout, and testing.</p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-card">
+              <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png" alt="Tracker assembly and components">
+              <figcaption>Tracker assembly and components after PCB fabrication.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication.png" alt="Custom PCB after fabrication">
+              <figcaption>Custom PCB after fabrication.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/a9g_based_location_tracker/pcb_wire_photot.png" alt="PCB wiring photograph">
+              <figcaption>PCB wiring photo showing components and connections.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Back Button -->
+    <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
