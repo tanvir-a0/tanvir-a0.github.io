@@ -1053,7 +1053,7 @@ body.light-mode .animated-line {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -1080,7 +1080,7 @@ body.light-mode .animated-line {
 }
 
 .project-image {
-  height: 250px;
+  height: 350px;
   overflow: hidden;
   position: relative;
 }
