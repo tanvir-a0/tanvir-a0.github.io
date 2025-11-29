@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBinV1 - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="project-page">
+    <div class="background">
+      <div class="gradient-layer gradient-one"></div>
+      <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+      <div class="logo">Tanvir</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#certifications">Certification</a></li>
+        <li><a href="index.html#contact">Contacts</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </nav>
+
+    <main class="project-detail">
+      <section class="project-hero" id="top">
+        <div class="project-frame hero-grid">
+          <div class="hero-copy">
+            <span class="hero-eyebrow">Personal Project</span>
+            <h1>SmartBinV1</h1>
+            <p class="hero-lede">An IoT-based smart waste monitoring system that senses and analyzes gases from compostable waste.</p>
+            <p class="hero-subtitle">Collaboration with a Senior from UAP to promote smarter waste management through IoT.</p>
+            <div class="hero-meta">
+              <div class="meta-card">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Hardware, IoT, and Crusher Designer</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Toolchain</span>
+                <span class="meta-value">IoT, Gas Sensors, Cloud, App Development</span>
+              </div>
+            </div>
+            <div class="hero-cta">
+              <a href="#gallery" class="project-btn outline">View Gallery</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="model-shell">
+              <img src="assets/images/projects/smart_bin/main_bin_image.png" alt="SmartBinV1" class="project-hero-image">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-story" id="about-me">
+        <div class="project-frame story-grid">
+          <article class="story-card">
+            <h2>About The Project</h2>
+            <p>SmartBin – IoT-Based Smart Waste Monitoring System. Personal Project | Collaboration with a Senior from UAP. Developed a smart bin equipped with multiple MQ series gas sensors to detect and analyze the types of gases released from waste materials. Integrated the system with the cloud to enable real-time monitoring and data visualization through a custom-built smartphone application. Also can store data for further gas type analysis. Handled the sensor interfacing, data processing, and cloud communication, while collaborating on app development and hardware design. I also made a crusher for this project that crushes the trash before reaching the storage are. The project aimed to explore environmental monitoring and promote smarter waste management through IoT.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-gallery" id="app-interface">
+        <div class="project-frame">
+          <div class="gallery-header">
+            <h2>Application Interface</h2>
+            <p>A custom-built smartphone application for real-time monitoring and data visualization.</p>
+          </div>
+          <div class="app-screenshot-container">
+            <figure class="app-screenshot-card">
+              <img src="assets/images/projects/smart_bin/app_screenshots.png" alt="App Screenshots">
+              <figcaption>App Screenshots</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-gallery" id="gallery">
+        <div class="project-frame">
+          <div class="gallery-header">
+            <h2>Gallery</h2>
+            <p>A collection of images from the project.</p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-card gallery-card-tall">
+              <img src="assets/images/projects/smart_bin/app_screenshots.png" alt="App Screenshots">
+              <figcaption>App Screenshots</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="assets/images/projects/smart_bin/circuit_image.png" alt="Circuit Image">
+              <figcaption>Circuit Image</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a href="index.html#projects" class="back-button">← Back to Portfolio</a>
+
+    <footer class="footer">
+      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+      <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
