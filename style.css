@@ -988,13 +988,52 @@ body.light-mode .animated-line {
   justify-content: center;
   align-items: center;
   padding: 2rem 1.5rem;
-  background: var(--card-bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border: 1px solid var(--border-color);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.skill-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.about-card:hover .skill-overlay {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.skill-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 980px;
+  background-color: var(--primary-color);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 14px rgba(0, 122, 255, 0.4);
+}
+
+.about-card:hover .skill-title {
+  background-color: var(--primary-color);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
 }
 
 .project-hero-image {
@@ -1009,7 +1048,6 @@ body.light-mode .animated-line {
 }
 
 .card-face:hover {
-  background: var(--card-bg-hover);
   border-color: rgba(255, 255, 255, 0.15);
   box-shadow: var(--shadow-md);
 }
@@ -1019,34 +1057,6 @@ body.light-mode .animated-line {
   z-index: 1;
 }
 
-.icon {
-  font-size: 4.5rem;
-  margin-bottom: 1.5rem;
-  animation: float 3s ease-in-out infinite;
-  filter: none;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.card-face h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--text-light);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.card-face p {
-  color: var(--text-gray);
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  max-width: 90%;
-  font-weight: 400;
-}
 
 /* Projects Section */
 .projects {
