@@ -1,478 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanvir's Robotics Lab</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <!-- Animated Background -->
-    <div class="background">
-      <canvas id="particle-canvas"></canvas>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanvir's Robotics Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Animated Background -->
+  <div class="background">
+    <canvas id="particle-canvas"></canvas>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div>
+      <div class="logo">Tanvir Ahmed</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certification</a></li>
+        <li><a href="#contact">Contacts</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
     </div>
+  </nav>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div>
-        <div class="logo">Tanvir Ahmed</div>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certifications">Certification</a></li>
-          <li><a href="#contact">Contacts</a></li>
-        </ul>
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch" class="theme-checkbox">
-          <label for="theme-switch" class="theme-label">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-            <div class="theme-ball"></div>
-          </label>
-        </div>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background-image">
+      <img src="assets/profile.jpg" alt="Tanvir Ahmed" class="hero-profile-bg" loading="eager" decoding="async">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="glitch" data-text="I’m Tanvir Ahmed Prova">I’m Tanvir Ahmed Prova</h1>
+        <p class="subtitle">Feel free to explore my world.</p>
       </div>
-    </nav>
+      <a href="#projects" class="cta-button">Explore My Work</a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-background-image">
-        <img 
-          src="assets/profile.jpg" 
-          alt="Tanvir Ahmed" 
-          class="hero-profile-bg"
-          loading="eager"
-          decoding="async"
-        >
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="glitch" data-text="Welcome to My Robotics Lab">Welcome to My Robotics Lab</h1>
-          <p class="subtitle">Exploring the Future of Technology & Innovation</p>
-        </div>
-        <a href="#projects" class="cta-button">Explore My Work</a>
-      </div>
-      <div class="scroll-indicator">
-        <div class="mouse"></div>
-      </div>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="section-bg-effects">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+      <div class="floating-shape shape-4"></div>
+      <div class="floating-shape shape-5"></div>
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="floating-ring ring-1"></div>
+      <div class="floating-ring ring-2"></div>
+      <div class="animated-line line-1"></div>
+      <div class="animated-line line-2"></div>
+    </div>
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="section-bg-effects">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="floating-shape shape-4"></div>
-        <div class="floating-shape shape-5"></div>
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="floating-ring ring-1"></div>
-        <div class="floating-ring ring-2"></div>
-        <div class="animated-line line-1"></div>
-        <div class="animated-line line-2"></div>
+      <div class="about-intro">
+        <p>
+          Hi! I'm <strong>Tanvir</strong>, a passionate robotics engineer and software developer dedicated to creating
+          innovative solutions
+          that bridge the gap between the digital and physical worlds. With expertise in robotics, AI, and full-stack
+          development for IoT applications,
+          I specialize in building intelligent systems that make a real-world impact.
+        </p>
+        <p>
+          My journey in technology has led me to explore various domains including autonomous systems, IoT integration,
+          machine learning, and embedded systems. I believe in the power of technology to solve complex problems and
+          improve people's lives.
+        </p>
       </div>
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        
-        <div class="about-intro">
-          <p>
-            Hi! I'm <strong>Tanvir</strong>, a passionate robotics engineer and software developer dedicated to creating innovative solutions 
-            that bridge the gap between the digital and physical worlds. With expertise in robotics, AI, and full-stack development for IoT applications, 
-            I specialize in building intelligent systems that make a real-world impact.
-          </p>
-          <p>
-            My journey in technology has led me to explore various domains including autonomous systems, IoT integration, 
-            machine learning, and embedded systems. I believe in the power of technology to solve complex problems and 
-            improve people's lives.
-          </p>
-        </div>
 
-        <h2 class="section-title" id="skills">Skills</h2>
-        <p class="section-subtitle">CAD, 3D printing, Robotics, IoT, Development, CFD, Hardware</p>
+      <h2 class="section-title" id="skills">Skills</h2>
+      <p class="section-subtitle">CAD, 3D printing, Robotics, IoT, Development, CFD, Hardware</p>
 
-        <div class="about-content">
-          <div class="about-card">
-            <div class="card-3d">
-              <div class="card-face card-front" style="background-image: url('assets/images/home_page_skills_images/Robotics.jpeg');">
-                <div class="skill-overlay"></div>
-                <h3 class="skill-title">Robotics</h3>
-              </div>
+      <div class="about-content">
+        <div class="about-card">
+          <div class="card-3d">
+            <div class="card-face card-front"
+              style="background-image: url('assets/images/home_page_skills_images/Robotics.jpeg');">
+              <div class="skill-overlay"></div>
+              <h3 class="skill-title">Robotics</h3>
             </div>
           </div>
-          <div class="about-card">
-            <a href="cad.html" style="text-decoration: none; color: inherit;">
-              <div class="card-3d">
-                <div class="card-face card-front" style="background-image: url('assets/images/home_page_skills_images/CAD.png');">
+        </div>
+        <div class="about-card">
+          <a href="cad.html" style="text-decoration: none; color: inherit;">
+            <div class="card-3d">
+              <div class="card-face card-front"
+                style="background-image: url('assets/images/home_page_skills_images/CAD.png');">
                 <div class="skill-overlay"></div>
                 <h3 class="skill-title">CAD</h3>
               </div>
-              </div>
-            </a>
-          </div>
-          <div class="about-card">
-            <a href="project-3d-design-printing.html" style="text-decoration: none; color: inherit;">
-              <div class="card-3d">
-                <div class="card-face card-front" style="background-image: url('assets/images/home_page_skills_images/3D Printing.jpg');">
+            </div>
+          </a>
+        </div>
+        <div class="about-card">
+          <a href="project-3d-design-printing.html" style="text-decoration: none; color: inherit;">
+            <div class="card-3d">
+              <div class="card-face card-front"
+                style="background-image: url('assets/images/home_page_skills_images/3D Printing.jpg');">
                 <div class="skill-overlay"></div>
                 <h3 class="skill-title">3D Design & Printing</h3>
               </div>
-              </div>
-            </a>
-          </div>
-          <div class="about-card">
-            <div class="card-3d">
-              <div class="card-face card-front" style="background-image: url('assets/images/home_page_skills_images/IoT.png');">
-                <div class="skill-overlay"></div>
-                <h3 class="skill-title">IoT</h3>
-              </div>
-            </div>
-          </div>
-          <div class="about-card">
-            <div class="card-3d">
-              <div class="card-face card-front" style="background-image: url('assets/images/home_page_skills_images/Development.png');">
-                <div class="skill-overlay"></div>
-                <h3 class="skill-title">Development</h3>
-              </div>
-            </div>
-          </div>
-          <div class="about-card">
-            <div class="card-3d">
-              <div class="card-face card-front" style="background-image: url('assets/images/home_page_skills_images/CFD.png');">
-                <div class="skill-overlay"></div>
-                <h3 class="skill-title">CFD</h3>
-              </div>
-            </div>
-          </div>
-          <div class="about-card">
-            <div class="card-3d">
-              <div class="card-face card-front" style="background-image: url('assets/images/home_page_skills_images/Hardware.png');">
-                <div class="skill-overlay"></div>
-                <h3 class="skill-title">Hardware Dev</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="section-bg-effects">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="floating-shape shape-4"></div>
-        <div class="floating-shape shape-5"></div>
-        <div class="gradient-orb orb-3"></div>
-        <div class="gradient-orb orb-4"></div>
-        <div class="floating-ring ring-3"></div>
-        <div class="floating-ring ring-4"></div>
-        <div class="animated-line line-3"></div>
-        <div class="animated-line line-4"></div>
-      </div>
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <a href="project-agrover.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/agrover/agrover_whole_structure_of_the_robot.png" alt="Agrover" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>Agrover</h3>
-              <p>A semi-autonomous farming bot for precision agriculture.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-firefighting-robot.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>Intelligent Firefighting Robot</h3>
-              <p>Large scale fire fighting robot with remote control and CAD design.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-ihabotv2.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/ihabotv2/final_design_from_front.png" alt="IHABOTv2" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>IHABOTv2: Intelligent Hospital Assistant Robot</h3>
-              <p>Bangladesh’s first intelligent hospital assistant robot, featuring autonomous navigation, rehabilitation monitoring, medicine delivery, and EWS with LLM-based clinical interpretation.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-a9g_based_location_tracker.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png" alt="A9G GPS Tracker" style="width: 150%; height: 150%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>Real-time GPS Tracker</h3>
-              <p>Hardware, firmware, and PCB development for an ESP + A9G based real-time GPS tracker.</p>
-              <span class="btn-learn-more">Learn More</span>
             </div>
           </a>
         </div>
-      </div>
-    </section>
-
-    <!-- Minor Projects Section -->
-    <section id="minor-projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">Small Projects</h2>
-        <div class="projects-grid">
-          <a href="ee_gis_map_bangladesh_elevation.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/ee_gis_map_bangladesh_elevation/bangladesh.png" alt="GIS Map Project" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>GIS Topographic Map</h3>
-              <p>A topographic elevation map of Bangladesh using Geemap in Python.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-small-firefighting-robot.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg" alt="Small Firefighting Robot" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>Small Firefighting Robot</h3>
-              <p>A small, Bluetooth-controlled firefighting robot from our first semester.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-smartbin-v1.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/smart_bin/main_bin_image.png" alt="SmartBinV1" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>SmartBinV1</h3>
-              <p>An IoT-based smart waste monitoring system.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-network-protocol.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/network_protocol_data_transfer/network_protocol_data_transfer_app_icon.png" alt="Network Protocol Data Transfer" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>Network Protocol Data Transfer</h3>
-              <p>A simple app to communicate with a robot over the same Wi-Fi network.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-todo-app.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/to_do/to_do_list_ui.png" alt="To-Do Application" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>To-Do Application</h3>
-              <p>My first project, an attempt to recreate the popular To-Do application "Tick Tick".</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-tripcost.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/trip_cost/app_home_page.png" alt="TripCost" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>TripCost</h3>
-              <p>A money management application to keep track of spending.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-serialtest.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/serial_test/serial_test_homepage_when_device_connected.png" alt="SerialTest" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>SerialTest</h3>
-              <p>An application to test robots connected to a phone's USB port.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-led-brightness-control.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/led_brightness_control/led_brightness_control_home_view.png" alt="LED Brightness Control" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>LED Brightness Control</h3>
-              <p>An attempt to create a custom LED brightness control panel for Google Pixel phones.</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-          <a href="project-cms-class-management-system.html" class="project-card">
-            <div class="project-image">
-              <img src="assets/images/projects/cms_class_management_system/cms_routine.png" alt="CMS" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="project-info">
-              <h3>CMS – Class Management System</h3>
-              <p>A cloud-based class management system using Python (OOP principles).</p>
-              <span class="btn-learn-more">Learn More</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-      <div class="section-bg-effects">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="floating-shape shape-4"></div>
-        <div class="floating-shape shape-5"></div>
-  <div class="gradient-orb orb-7"></div>
-  <div class="gradient-orb orb-8"></div>
-  <div class="floating-ring ring-7"></div>
-  <div class="floating-ring ring-8"></div>
-  <div class="animated-line line-7"></div>
-  <div class="animated-line line-8"></div>
-      </div>
-      <div class="container">
-        <h2 class="section-title">Certifications</h2>
-        <p class="section-subtitle">Highlights from courses, memberships, and competitions that shaped my journey.</p>
-
-        <div class="cert-marquee" aria-live="polite">
-          <div class="cert-fade-left" aria-hidden="true"></div>
-          <div class="cert-fade-right" aria-hidden="true"></div>
-          <div class="cert-track" data-speed="80">
-            <button class="cert-card" type="button" data-title="Earth School" data-detail="This is one of my life's most influential courses and certificates. From this course I learned how I can help the environment on a day-to-day basis and why I should care for the environment.">
-              <img src="assets/images/certificates/earth school.png" alt="Earth School certificate">
-              <span class="cert-card-title">Earth School</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Firebase and ESP32" data-detail="Here I learned about Google Cloud Firebase Firestore. I learned how I can integrate Firebase into a project and monitor data from my phone and control the ESP32 from my phone.">
-              <img src="assets/images/certificates/firebase and esp 32.png" alt="Firebase and ESP32 certificate">
-              <span class="cert-card-title">Firebase and ESP32</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Google Digital Garage" data-detail="This is the first ever online course I have taken. Even though I didn't apply it in the real world, I learned how the overall advertising on the Internet works and companies like Facebook and Google make money from advertising and I can benefit too.">
-              <img src="assets/images/certificates/google digital garage digital marketting.png" alt="Google Digital Garage certificate">
-              <span class="cert-card-title">Google Digital Garage</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Grasshopper Coding Fundamentals 1" data-detail="Learned about Python.">
-              <img src="assets/images/certificates/grasshopper coding fundamental.png" alt="Grasshopper Coding Fundamentals 1 certificate">
-              <span class="cert-card-title">Grasshopper Coding Fundamentals 1</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Grasshopper Coding Fundamentals 2" data-detail="Learned more about coding.">
-              <img src="assets/images/certificates/grasshopper coding fundamental ii.png" alt="Grasshopper Coding Fundamentals 2 certificate">
-              <span class="cert-card-title">Grasshopper Coding Fundamentals 2</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="ICPC 2022" data-detail="First time participating in ICPC, a very new experience.">
-              <img src="assets/images/certificates/icpc 2022.png" alt="ICPC 2022 certificate">
-              <span class="cert-card-title">ICPC 2022</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="ICPC 2023 Honorable Mention" data-detail="I don't do competitive programming but I enjoy the energy of competitive programming. I tried to advance several times but didn't get any success as I was focusing on robotics.">
-              <img src="assets/images/certificates/icpc 2023 honerable mention.png" alt="ICPC 2023 Honorable Mention certificate">
-              <span class="cert-card-title">ICPC 2023 Honorable Mention</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="ICPC 2024 Honorable Mention" data-detail="I don't do competitive programming but I enjoy the energy of competitive programming. I tried to advance several times but didn't get any success as I was focusing on robotics.">
-              <img src="assets/images/certificates/icpc 2024 honerable mention.png" alt="ICPC 2024 Honorable Mention certificate">
-              <span class="cert-card-title">ICPC 2024 Honorable Mention</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="IEEE Membership" data-detail="I was an active IEEE member in 2022 and helped arrange various events.">
-              <img src="assets/images/certificates/ieee membership.png" alt="IEEE Membership certificate">
-              <span class="cert-card-title">IEEE Membership</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Introduction to Git and GitHub" data-detail="Here I learned about Git and GitHub and other version control systems and how to apply them in a project. This course was arranged by Google.">
-              <img src="assets/images/certificates/introduction to git and github.png" alt="Introduction to Git and GitHub certificate">
-              <span class="cert-card-title">Introduction to Git and GitHub</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Troubleshooting and Debugging Techniques" data-detail="Here I learned various troubleshooting and debugging techniques that I can apply in my code. This is also arranged by Google.">
-              <img src="assets/images/certificates/trobourshoot and debugging techniques.png" alt="Troubleshooting and Debugging Techniques certificate">
-              <span class="cert-card-title">Troubleshooting and Debugging Techniques</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Using Python to Interact with the Operating System" data-detail="Here I learned how I can use Python to interact with the operating system. This is also arranged by Google.">
-              <img src="assets/images/certificates/using python to interract with the operating system.png" alt="Using Python to Interact with the Operating System certificate">
-              <span class="cert-card-title">Using Python to Interact with the Operating System</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-            <button class="cert-card" type="button" data-title="Crash Course on Python" data-detail="Here I learned the fundamentals of Python. This is also arranged by Google.">
-              <img src="assets/images/certificates/crash course on python.png" alt="Crash Course on Python certificate">
-              <span class="cert-card-title">Crash Course on Python</span>
-              <span class="cert-card-hint">Click for detail</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="section-bg-effects">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="floating-shape shape-4"></div>
-        <div class="floating-shape shape-5"></div>
-        <div class="gradient-orb orb-5"></div>
-        <div class="gradient-orb orb-6"></div>
-        <div class="floating-ring ring-5"></div>
-        <div class="floating-ring ring-6"></div>
-        <div class="animated-line line-5"></div>
-        <div class="animated-line line-6"></div>
-      </div>
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="info-item">
-              <span class="info-icon">📧</span>
-              <p>email@example.com</p>
-            </div>
-            <div class="info-item">
-              <span class="info-icon">🌐</span>
-              <p>github.com/tanvir-a0</p>
-            </div>
-            <div class="info-item">
-              <span class="info-icon">📍</span>
-              <p>Earth, Solar System</p>
+        <div class="about-card">
+          <div class="card-3d">
+            <div class="card-face card-front"
+              style="background-image: url('assets/images/home_page_skills_images/IoT.png');">
+              <div class="skill-overlay"></div>
+              <h3 class="skill-title">IoT</h3>
             </div>
           </div>
-          <div class="social-links">
-            <a href="#" class="social-icon">GitHub</a>
-            <a href="#" class="social-icon">LinkedIn</a>
-            <a href="#" class="social-icon">Twitter</a>
+        </div>
+        <div class="about-card">
+          <div class="card-3d">
+            <div class="card-face card-front"
+              style="background-image: url('assets/images/home_page_skills_images/Development.png');">
+              <div class="skill-overlay"></div>
+              <h3 class="skill-title">Development</h3>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <div class="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title" hidden>
-      <div class="cert-modal-backdrop"></div>
-      <div class="cert-modal-dialog">
-        <button class="cert-modal-close" type="button" aria-label="Close certification details">&times;</button>
-        <figure class="cert-modal-media">
-          <img src="" alt="" class="cert-modal-image" loading="lazy">
-          <figcaption class="cert-modal-caption">
-            <h3 id="cert-modal-title" class="cert-modal-title"></h3>
-            <p class="cert-modal-body"></p>
-          </figcaption>
-        </figure>
+        <div class="about-card">
+          <div class="card-3d">
+            <div class="card-face card-front"
+              style="background-image: url('assets/images/home_page_skills_images/CFD.png');">
+              <div class="skill-overlay"></div>
+              <h3 class="skill-title">CFD</h3>
+            </div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="card-3d">
+            <div class="card-face card-front"
+              style="background-image: url('assets/images/home_page_skills_images/Hardware.png');">
+              <div class="skill-overlay"></div>
+              <h3 class="skill-title">Hardware Dev</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
-      <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
-    </footer>
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="section-bg-effects">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+      <div class="floating-shape shape-4"></div>
+      <div class="floating-shape shape-5"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="gradient-orb orb-4"></div>
+      <div class="floating-ring ring-3"></div>
+      <div class="floating-ring ring-4"></div>
+      <div class="animated-line line-3"></div>
+      <div class="animated-line line-4"></div>
+    </div>
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <a href="project-agrover.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/agrover/agrover_whole_structure_of_the_robot.png" alt="Agrover"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>Agrover</h3>
+            <p>A semi-autonomous farming bot for precision agriculture.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-firefighting-robot.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>Intelligent Firefighting Robot</h3>
+            <p>Large scale fire fighting robot with remote control and CAD design.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-ihabotv2.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/ihabotv2/final_design_from_front.png" alt="IHABOTv2"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>IHABOTv2: Intelligent Hospital Assistant Robot</h3>
+            <p>Bangladesh’s first intelligent hospital assistant robot, featuring autonomous navigation, rehabilitation
+              monitoring, medicine delivery, and EWS with LLM-based clinical interpretation.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-a9g_based_location_tracker.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png"
+              alt="A9G GPS Tracker" style="width: 150%; height: 150%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>Real-time GPS Tracker</h3>
+            <p>Hardware, firmware, and PCB development for an ESP + A9G based real-time GPS tracker.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- Minor Projects Section -->
+  <section id="minor-projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Small Projects</h2>
+      <div class="projects-grid">
+        <a href="ee_gis_map_bangladesh_elevation.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/ee_gis_map_bangladesh_elevation/bangladesh.png" alt="GIS Map Project"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>GIS Topographic Map</h3>
+            <p>A topographic elevation map of Bangladesh using Geemap in Python.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-small-firefighting-robot.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg"
+              alt="Small Firefighting Robot" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>Small Firefighting Robot</h3>
+            <p>A small, Bluetooth-controlled firefighting robot from our first semester.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-smartbin-v1.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/smart_bin/main_bin_image.png" alt="SmartBinV1"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>SmartBinV1</h3>
+            <p>An IoT-based smart waste monitoring system.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-network-protocol.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/network_protocol_data_transfer/network_protocol_data_transfer_app_icon.png"
+              alt="Network Protocol Data Transfer" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>Network Protocol Data Transfer</h3>
+            <p>A simple app to communicate with a robot over the same Wi-Fi network.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-todo-app.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/to_do/to_do_list_ui.png" alt="To-Do Application"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>To-Do Application</h3>
+            <p>My first project, an attempt to recreate the popular To-Do application "Tick Tick".</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-tripcost.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/trip_cost/app_home_page.png" alt="TripCost"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>TripCost</h3>
+            <p>A money management application to keep track of spending.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-serialtest.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/serial_test/serial_test_homepage_when_device_connected.png"
+              alt="SerialTest" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>SerialTest</h3>
+            <p>An application to test robots connected to a phone's USB port.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-led-brightness-control.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/led_brightness_control/led_brightness_control_home_view.png"
+              alt="LED Brightness Control" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>LED Brightness Control</h3>
+            <p>An attempt to create a custom LED brightness control panel for Google Pixel phones.</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+        <a href="project-cms-class-management-system.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/images/projects/cms_class_management_system/cms_routine.png" alt="CMS"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <div class="project-info">
+            <h3>CMS – Class Management System</h3>
+            <p>A cloud-based class management system using Python (OOP principles).</p>
+            <span class="btn-learn-more">Learn More</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications">
+    <div class="section-bg-effects">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+      <div class="floating-shape shape-4"></div>
+      <div class="floating-shape shape-5"></div>
+      <div class="gradient-orb orb-7"></div>
+      <div class="gradient-orb orb-8"></div>
+      <div class="floating-ring ring-7"></div>
+      <div class="floating-ring ring-8"></div>
+      <div class="animated-line line-7"></div>
+      <div class="animated-line line-8"></div>
+    </div>
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtitle">Highlights from courses, memberships, and competitions that shaped my journey.</p>
+
+      <div class="cert-marquee" aria-live="polite">
+        <div class="cert-fade-left" aria-hidden="true"></div>
+        <div class="cert-fade-right" aria-hidden="true"></div>
+        <div class="cert-track" data-speed="80">
+          <button class="cert-card" type="button" data-title="Earth School"
+            data-detail="This is one of my life's most influential courses and certificates. From this course I learned how I can help the environment on a day-to-day basis and why I should care for the environment.">
+            <img src="assets/images/certificates/earth school.png" alt="Earth School certificate">
+            <span class="cert-card-title">Earth School</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Firebase and ESP32"
+            data-detail="Here I learned about Google Cloud Firebase Firestore. I learned how I can integrate Firebase into a project and monitor data from my phone and control the ESP32 from my phone.">
+            <img src="assets/images/certificates/firebase and esp 32.png" alt="Firebase and ESP32 certificate">
+            <span class="cert-card-title">Firebase and ESP32</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Google Digital Garage"
+            data-detail="This is the first ever online course I have taken. Even though I didn't apply it in the real world, I learned how the overall advertising on the Internet works and companies like Facebook and Google make money from advertising and I can benefit too.">
+            <img src="assets/images/certificates/google digital garage digital marketting.png"
+              alt="Google Digital Garage certificate">
+            <span class="cert-card-title">Google Digital Garage</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Grasshopper Coding Fundamentals 1"
+            data-detail="Learned about Python.">
+            <img src="assets/images/certificates/grasshopper coding fundamental.png"
+              alt="Grasshopper Coding Fundamentals 1 certificate">
+            <span class="cert-card-title">Grasshopper Coding Fundamentals 1</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Grasshopper Coding Fundamentals 2"
+            data-detail="Learned more about coding.">
+            <img src="assets/images/certificates/grasshopper coding fundamental ii.png"
+              alt="Grasshopper Coding Fundamentals 2 certificate">
+            <span class="cert-card-title">Grasshopper Coding Fundamentals 2</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="ICPC 2022"
+            data-detail="First time participating in ICPC, a very new experience.">
+            <img src="assets/images/certificates/icpc 2022.png" alt="ICPC 2022 certificate">
+            <span class="cert-card-title">ICPC 2022</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="ICPC 2023 Honorable Mention"
+            data-detail="I don't do competitive programming but I enjoy the energy of competitive programming. I tried to advance several times but didn't get any success as I was focusing on robotics.">
+            <img src="assets/images/certificates/icpc 2023 honerable mention.png"
+              alt="ICPC 2023 Honorable Mention certificate">
+            <span class="cert-card-title">ICPC 2023 Honorable Mention</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="ICPC 2024 Honorable Mention"
+            data-detail="I don't do competitive programming but I enjoy the energy of competitive programming. I tried to advance several times but didn't get any success as I was focusing on robotics.">
+            <img src="assets/images/certificates/icpc 2024 honerable mention.png"
+              alt="ICPC 2024 Honorable Mention certificate">
+            <span class="cert-card-title">ICPC 2024 Honorable Mention</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="IEEE Membership"
+            data-detail="I was an active IEEE member in 2022 and helped arrange various events.">
+            <img src="assets/images/certificates/ieee membership.png" alt="IEEE Membership certificate">
+            <span class="cert-card-title">IEEE Membership</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Introduction to Git and GitHub"
+            data-detail="Here I learned about Git and GitHub and other version control systems and how to apply them in a project. This course was arranged by Google.">
+            <img src="assets/images/certificates/introduction to git and github.png"
+              alt="Introduction to Git and GitHub certificate">
+            <span class="cert-card-title">Introduction to Git and GitHub</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Troubleshooting and Debugging Techniques"
+            data-detail="Here I learned various troubleshooting and debugging techniques that I can apply in my code. This is also arranged by Google.">
+            <img src="assets/images/certificates/trobourshoot and debugging techniques.png"
+              alt="Troubleshooting and Debugging Techniques certificate">
+            <span class="cert-card-title">Troubleshooting and Debugging Techniques</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Using Python to Interact with the Operating System"
+            data-detail="Here I learned how I can use Python to interact with the operating system. This is also arranged by Google.">
+            <img src="assets/images/certificates/using python to interract with the operating system.png"
+              alt="Using Python to Interact with the Operating System certificate">
+            <span class="cert-card-title">Using Python to Interact with the Operating System</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+          <button class="cert-card" type="button" data-title="Crash Course on Python"
+            data-detail="Here I learned the fundamentals of Python. This is also arranged by Google.">
+            <img src="assets/images/certificates/crash course on python.png" alt="Crash Course on Python certificate">
+            <span class="cert-card-title">Crash Course on Python</span>
+            <span class="cert-card-hint">Click for detail</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="section-bg-effects">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+      <div class="floating-shape shape-4"></div>
+      <div class="floating-shape shape-5"></div>
+      <div class="gradient-orb orb-5"></div>
+      <div class="gradient-orb orb-6"></div>
+      <div class="floating-ring ring-5"></div>
+      <div class="floating-ring ring-6"></div>
+      <div class="animated-line line-5"></div>
+      <div class="animated-line line-6"></div>
+    </div>
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="info-item">
+            <span class="info-icon">📧</span>
+            <p>email@example.com</p>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">🌐</span>
+            <p>github.com/tanvir-a0</p>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <p>Earth, Solar System</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-icon">GitHub</a>
+          <a href="#" class="social-icon">LinkedIn</a>
+          <a href="#" class="social-icon">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title" hidden>
+    <div class="cert-modal-backdrop"></div>
+    <div class="cert-modal-dialog">
+      <button class="cert-modal-close" type="button" aria-label="Close certification details">&times;</button>
+      <figure class="cert-modal-media">
+        <img src="" alt="" class="cert-modal-image" loading="lazy">
+        <figcaption class="cert-modal-caption">
+          <h3 id="cert-modal-title" class="cert-modal-title"></h3>
+          <p class="cert-modal-body"></p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
