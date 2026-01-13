@@ -3829,3 +3829,29 @@ model-viewer:not([reveal]) {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   background: var(--card-bg-hover);
 }
+
+/* Map Project Gallery Fixes */
+#gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+#gallery .gallery-card {
+  aspect-ratio: 2 / 1;
+  width: 100%;
+  height: auto;
+  /* Allow height to be determined by aspect-ratio */
+  flex: none;
+  /* Override potential flex behavior */
+}
+
+#gallery .gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Prevent cropping */
+  background: rgba(0, 0, 0, 0.5);
+  /* Optional: dark background for letterboxing */
+}

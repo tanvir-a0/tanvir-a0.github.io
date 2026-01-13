@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Earth Engine Projects - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* Force Gallery Fixes */
+        #gallery .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        #gallery .gallery-card {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #gallery .gallery-card img {
+            width: 100%;
+            aspect-ratio: 2 / 1;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        #gallery .gallery-card figcaption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+    </style>
+</head>
+
+<body class="project-page project-gee">
+    <div class="background">
+        <div class="gradient-layer gradient-one"></div>
+        <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Tanvir</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#certifications">Certification</a></li>
+            <li><a href="index.html#contact">Contacts</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="theme-checkbox">
+            <label for="theme-switch" class="theme-label">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+                <div class="theme-ball"></div>
+            </label>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-hero" id="top">
+            <div class="project-frame hero-grid">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow">Geospatial Analysis & Remote Sensing</span>
+                    <h1>Google Earth Engine Projects with Python</h1>
+                    <p class="hero-lede">A comprehensive collection of geospatial analysis projects utilizing Google
+                        Earth Engine (GEE), Python, and Geopandas. Tracking environmental changes, disaster management,
+                        and climate analysis through satellite imagery.</p>
+                    <p class="hero-subtitle">Demonstrating advanced remote sensing techniques for environmental
+                        monitoring and data visualization.</p>
+                    <div class="hero-meta">
+                        <div class="meta-card">
+                            <span class="meta-label">Tools</span>
+                            <span class="meta-value">Google Earth Engine, Python, Geopandas</span>
+                        </div>
+                        <div class="meta-card">
+                            <span class="meta-label">Focus</span>
+                            <span class="meta-value">Environmental Monitoring, Disaster Management</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#timelapses" class="project-btn primary">Watch Timelapses</a>
+                        <a href="#gallery" class="project-btn outline">View Maps</a>
+                        <a href="https://github.com/tanvir-a0/GoogleEarthEngine-" class="project-btn outline"
+                            target="_blank" rel="noopener noreferrer"
+                            style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                            <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                                style="width: 1.2em; height: 1.2em;">
+                            GitHub Repo
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="image-shell"
+                        style="border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/32.png"
+                            alt="Upzilla Population Density Map" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; color: var(--text-gray); font-size: 0.9rem;">
+                        High-resolution Upzilla-level population density mapping.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery" id="timelapses">
+            <div class="project-frame">
+                <div class="gallery-header">
+                    <h2>Satellite Timelapses</h2>
+                    <p>Animated visualizations showing landscape changes over time.</p>
+                </div>
+                <div class="gallery-grid"
+                    style="display: grid; grid-template-columns: repeat(2, 400px); gap: 20px; justify-content: center;">
+                    <figure class="gallery-card" style="width: 400px; height: 400px;">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/hPRH54rE26c?autoplay=1&mute=1&loop=1&playlist=hPRH54rE26c&rel=0"
+                            title="Climate Timelapse" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption>Generating simulated timelapses showing landscape changes over time.</figcaption>
+                    </figure>
+                    <figure class="gallery-card" style="width: 400px; height: 400px;">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/WL24rQ6arD4?autoplay=1&mute=1&loop=1&playlist=WL24rQ6arD4&rel=0"
+                            title="Monthly Median Timelapse" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption>Monthly median composites timelapse to reduce noise and cloud interference.
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-card" style="width: 400px; height: 400px;">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/2oMC0imPB4U?autoplay=1&mute=1&loop=1&playlist=2oMC0imPB4U&rel=0"
+                            title="NDVI Analysis" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption>NDVI calculation and visualization to monitor vegetation health.</figcaption>
+                    </figure>
+                    <figure class="gallery-card" style="width: 400px; height: 400px;">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/VU9vX0exTpE?autoplay=1&mute=1&loop=1&playlist=VU9vX0exTpE&rel=0"
+                            title="Timelapse with Text" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption>Timelapse with date stamps and text overlays for better context.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section class="project-gallery" id="gallery">
+            <div class="project-frame">
+                <div class="gallery-header">
+                    <h2>Geospatial Visualizations</h2>
+                    <p>Selected outputs from various analysis notebooks.</p>
+                </div>
+                <div class="gallery-grid">
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/14.png" alt="Dynamic Legend">
+                        <figcaption>Adding dynamic legends for maps and visualizations.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/9_1.png" alt="SAR Analysis">
+                        <figcaption>Using SAR data for all-weather monitoring, useful for flood detection.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/10.png" alt="Water Detection">
+                        <figcaption>Automated detection and quantification of water bodies using spectral indices.
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/11.png" alt="Flood Detection">
+                        <figcaption>Detecting flood using multispectral and SAR imagery.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/15_2.png" alt="Crosshair Inspector">
+                        <figcaption>Tool for inspecting pixel values and metadata at specific locations.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/16.png" alt="Dynamic World">
+                        <figcaption>Using Google's Dynamic World dataset for land cover classification.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/17.png" alt="Crop Damage">
+                        <figcaption>Assessing agricultural damage from monsoon flooding using NDVI.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/18.png" alt="Risk Assessment">
+                        <figcaption>Simple risk assessment model for landslide and flood prone areas.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/19.png" alt="Slope Scanner">
+                        <figcaption>Slope analysis tool for terrain assessment and landslide risk mapping.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/20.png" alt="Hillshades">
+                        <figcaption>Generating hillshade visualizations from Digital Elevation Models (DEM).
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/21.png" alt="Surface Temperature">
+                        <figcaption>Land Surface Temperature (LST) analysis for climate studies.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/22.png" alt="Light Pollution">
+                        <figcaption>Mapping nighttime lights to analyze light pollution and urbanization.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/25.png" alt="River Change">
+                        <figcaption>Monitoring river course changes and bank erosion over time.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/25_1.png" alt="River Change 2">
+                        <figcaption>Detailed view of river morphology changes.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/29.png" alt="River Erosion">
+                        <figcaption>Analysis of river erosion patterns at Upzilla administrative level.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/30.png" alt="Water Richness">
+                        <figcaption>Ranking administrative units by their water resources.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/31.png" alt="Clustering">
+                        <figcaption>Unsupervised machine learning for land classification.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/33 2m.png" alt="Sea Level Rise 2m">
+                        <figcaption>Visualizing potential impact of 2m Sea Level Rise.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/33 5m rise.png" alt="Sea Level Rise 5m">
+                        <figcaption>Visualizing potential impact of 5m Sea Level Rise.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/projects_from_git/GoogleEarthEngine-/28 Using Google Earth Engine and Cloud Data.png"
+                            alt="External Shapefiles">
+                        <figcaption>Working with custom shapefiles for detailed boundary analysis.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-features" id="features">
+            <div class="project-frame features-grid">
+                <article class="feature-card">
+                    <h2>Key Analysis Areas</h2>
+                    <ul class="feature-list">
+                        <li><strong>Environmental Monitoring:</strong> SAR analysis, water detection, and river change
+                            tracking.</li>
+                        <li><strong>Disaster Management:</strong> Flood detection, crop damage assessment, and landslide
+                            risk mapping.</li>
+                        <li><strong>Urban Analysis:</strong> Light pollution mapping and population density
+                            visualization.</li>
+                        <li><strong>Climate Change:</strong> Sea level rise impact assessment and surface temperature
+                            analysis.</li>
+                    </ul>
+                </article>
+                <article class="feature-card tech">
+                    <h2>Technology Stack</h2>
+                    <div class="pill-cloud">
+                        <span class="pill">Google Earth Engine</span>
+                        <span class="pill">Python</span>
+                        <span class="pill">Geopandas</span>
+                        <span class="pill">Matplotlib</span>
+                        <span class="pill">Landsat Data</span>
+                        <span class="pill">Sentinel-1 (SAR)</span>
+                        <span class="pill">Sentinel-2</span>
+                        <span class="pill">MODIS</span>
+                        <span class="pill">Dynamic World</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Back Button -->
+    <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+    <footer class="footer">
+        <p>&copy; 2026 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
