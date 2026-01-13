@@ -172,7 +172,13 @@ body.light-mode .navbar {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 0.5rem;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px;
+  border-radius: 980px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-links li {
@@ -180,36 +186,54 @@ body.light-mode .navbar {
 }
 
 .nav-links a {
-  color: var(--text-light);
+  color: var(--text-gray);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   position: relative;
-  padding: 0.5rem 1.25rem;
+  padding: 6px 16px;
   display: flex;
   align-items: center;
-  height: 40px;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-  border-radius: 20px;
-  border: 1px solid transparent;
+  height: 32px;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  opacity: 1;
+  border-radius: 980px;
+  border: none;
 }
 
 .nav-links a:hover {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-links a.active {
-  opacity: 1;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: #000000;
+  font-weight: 500;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .nav-links a.active::after {
   display: none;
+}
+
+/* Light Mode Overrides for TabNav */
+body.light-mode .nav-links {
+  background: rgba(118, 118, 128, 0.12);
+  border-color: transparent;
+}
+
+body.light-mode .nav-links a {
+  color: #1d1d1f;
+}
+
+body.light-mode .nav-links a:hover {
+  background: rgba(118, 118, 128, 0.08);
+}
+
+body.light-mode .nav-links a.active {
+  background: #1d1d1f;
+  color: #ffffff;
 }
 
 /* Theme Toggle */
@@ -2657,6 +2681,7 @@ body.project-page.light-mode .metric-logo {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .panel-content {
@@ -3105,9 +3130,15 @@ body.project-page.light-mode .gallery-placeholder {
 .feature-card:hover,
 .subsystem-card:hover,
 .gallery-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px);
   box-shadow: 0 32px 72px rgba(0, 0, 0, 0.4);
   border-color: rgba(59, 130, 246, 0.35);
+}
+
+.panel-card:hover .panel-media img,
+.gallery-card:hover img,
+.story-card:hover .panel-media img {
+  transform: scale(1.05);
 }
 
 .panel-card:hover::after,
@@ -3723,6 +3754,7 @@ model-viewer:not([reveal]) {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-a9g .hero-grid {
@@ -3762,4 +3794,38 @@ model-viewer:not([reveal]) {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for better effect */
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Override Project Card Hover for Pop Effect */
+.project-card:hover {
+  transform: scale(1.02) translateY(-4px);
+  z-index: 10;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: var(--card-bg-hover);
 }
