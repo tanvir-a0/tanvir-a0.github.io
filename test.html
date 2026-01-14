@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .test-container {
+            padding-top: 100px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            /* changed from center to allow scrolling if needed */
+        }
+
+        .test-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Apple Card Style */
+        .apple-card {
+            background-color: var(--card-bg, #1d1d1f);
+            border-radius: 28px;
+            margin: 0;
+            flex: 1 1 300px;
+            /* Allow shrinking/growing with basis */
+            max-width: 380px;
+            /* Slightly reduced max width to fit 3 comfortably */
+            min-width: 280px;
+            /* Prevent too much squishing */
+            padding: 0;
+            /* Remove padding to allow full bleed */
+            padding-bottom: 40px;
+            /* Add bottom padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            /* width: 100%; removed to let flex basis take over */
+
+            /* Specific width like the example */
+            /* margin: 30px auto; removed as handled by flex gap/margin */
+            margin: 30px auto;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            /* Ensure image stays inside border radius */
+            position: relative;
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            will-change: transform;
+            /* Hint for compositor */
+        }
+
+        .apple-card:hover {
+            transform: scale(1.02) translateZ(0);
+            /* translateZ forces hardware accel */
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .ac-image-wrapper {
+            width: 100%;
+            height: 300px;
+            /* Fixed height for consistency */
+            background-color: #2c2c2e;
+            /* Optional: lighter background for image area if transparent */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ac-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Fill the area */
+            transition: none;
+            /* Remove hover transition */
+        }
+
+        /* Removed hover transform on image */
+
+        .ac-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            z-index: 2;
+            padding: 0 30px;
+            /* content padding */
+            flex: 1;
+            /* specific fix for button alignment */
+            width: 100%;
+            /* Ensure it takes full width */
+        }
+
+        .ac-title {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-light, #f5f5f7);
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        .ac-subtitle {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #f56300;
+            /* Semantic orange for highlighting features */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .ac-desc {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            line-height: 1.4;
+            color: var(--text-gray, #86868b);
+            max-width: 300px;
+            margin: 0 0 25px 0;
+        }
+
+        .ac-buttons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .ac-btn-primary {
+            background-color: #0071e3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 980px;
+            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+            text-decoration: none;
+            font-weight: 400;
+            transition: background-color 0.2s;
+            display: inline-block;
+            min-width: 28px;
+        }
+
+        .ac-btn-primary:hover {
+            background-color: #0077ed;
+        }
+
+        .ac-link-secondary {
+            color: #2997ff;
+            font-size: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .ac-link-secondary:hover {
+            text-decoration: underline;
+        }
+
+        .ac-link-secondary::after {
+            content: "›";
+            font-size: 18px;
+            line-height: 1;
+            margin-top: -2px;
+        }
+
+        .cards-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Reduced gap slightly */
+            width: 100%;
+            justify-content: center;
+            margin-top: 30px;
+            max-width: 1400px;
+            /* Increased max-width */
+            padding: 0 20px;
+            /* Add padding for smaller screens */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <!-- Particle canvas removed -->
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div>
+            <div class="logo">Tanvir Ahmed</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test.html" class="active">Test Page</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-checkbox">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="theme-icon moon">🌙</span>
+                    <div class="theme-ball"></div>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Test Content -->
+    <section class="test-container">
+        <div class="test-content">
+            <h1>Test Page</h1>
+            <p>Experimenting with Apple-Style Components</p>
+
+            <div class="cards-row">
+                <!-- Apple Style Card 1 -->
+                <div class="apple-card">
+                    <div class="ac-image-wrapper">
+                        <img src="assets/images/projects/fire_fighting_robot/Robot1.png"
+                            alt="Intelligent Firefighting Robot">
+                    </div>
+                    <div class="ac-content">
+                        <!--- <span class="ac-subtitle">Remote Control & CAD</span> --->
+                        <h3 class="ac-title">Firefighting Robot</h3>
+                        <p class="ac-desc">Large scale fire fighting robot with remote control and CAD design.</p>
+
+                        <div class="ac-buttons">
+                            <a href="project-firefighting-robot.html" class="ac-btn-primary">Learn more</a>
+                            <!--- ---> <a href="https://github.com/tanvir-a0" class="project-btn outline"
+                                target="_blank" rel="noopener noreferrer"
+                                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 980px; padding: 8px 16px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;">
+                                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                                    style="width: 1.2em; height: 1.2em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                                GitHub Repo
+                            </a> <!-- --->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IHABOTv2 Apple Style Card -->
+                <div class="apple-card">
+                    <div class="ac-image-wrapper">
+                        <img src="assets/images/projects/ihabotv2/final_design_from_front.png" alt="IHABOTv2">
+                    </div>
+                    <div class="ac-content">
+                        <!-- <span class="ac-subtitle">Healthcare Robotics</span> -->
+                        <h3 class="ac-title">IHABOTv2</h3>
+                        <p class="ac-desc">Bangladesh’s first intelligent hospital assistant robot, featuring autonomous
+                            navigation, rehabilitation monitoring, and medicine delivery.</p>
+
+                        <div class="ac-buttons">
+                            <a href="project-ihabotv2.html" class="ac-btn-primary">Learn more</a>
+                            <!--- ---> <a href="https://github.com/tanvir-a0" class="project-btn outline"
+                                target="_blank" rel="noopener noreferrer"
+                                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 980px; padding: 8px 16px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;">
+                                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                                    style="width: 1.2em; height: 1.2em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                                GitHub Repo
+                            </a> <!-- --->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="apple-card">
+                    <div class="ac-image-wrapper">
+                        <img src="assets/images/projects/fire_fighting_robot/Robot1.png"
+                            alt="Intelligent Firefighting Robot">
+                    </div>
+                    <div class="ac-content">
+                        <!--- <span class="ac-subtitle">Remote Control & CAD</span> --->
+                        <h3 class="ac-title">Firefighting Robot</h3>
+                        <p class="ac-desc">Large scale fire fighting robot with remote control and CAD design.</p>
+
+                        <div class="ac-buttons">
+                            <a href="project-firefighting-robot.html" class="ac-btn-primary">Learn more</a>
+                            <!--- ---> <a href="https://github.com/tanvir-a0" class="project-btn outline"
+                                target="_blank" rel="noopener noreferrer"
+                                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 980px; padding: 8px 16px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;">
+                                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                                    style="width: 1.2em; height: 1.2em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                                GitHub Repo
+                            </a> <!-- --->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js?v=3"></script>
+</body>
+
+</html>
