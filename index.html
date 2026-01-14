@@ -9,6 +9,159 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Apple Card Style */
+    .apple-card {
+      background-color: var(--card-bg, #1d1d1f);
+      border-radius: 22px;
+      margin: 0;
+      flex: 1 1 256px;
+      max-width: 288px;
+      min-width: 224px;
+      padding: 0;
+      padding-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      will-change: transform;
+      text-decoration: none;
+    }
+
+    .apple-card:hover {
+      transform: scale(1.02) translateZ(0);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .ac-image-wrapper {
+      width: 100%;
+      height: 240px;
+      background-color: #2c2c2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ac-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: none;
+    }
+
+    .ac-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      z-index: 2;
+      padding: 0 24px;
+      flex: 1;
+      width: 100%;
+    }
+
+    .ac-title {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-light, #f5f5f7);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .ac-subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: #f56300;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .ac-desc {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--text-gray, #86868b);
+      max-width: 240px;
+      margin: 0 0 20px 0;
+    }
+
+    .ac-buttons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .ac-btn-primary {
+      background-color: #0071e3;
+      color: white;
+      padding: 6px 13px;
+      border-radius: 980px;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      text-decoration: none;
+      font-weight: 400;
+      transition: background-color 0.2s;
+      display: inline-block;
+      min-width: 22px;
+    }
+
+    .ac-btn-primary:hover {
+      background-color: #0077ed;
+    }
+
+    .ac-link-secondary {
+      color: #2997ff;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .ac-link-secondary:hover {
+      text-decoration: underline;
+    }
+
+    .ac-link-secondary::after {
+      content: "›";
+      font-size: 18px;
+      line-height: 1;
+      margin-top: -2px;
+    }
+
+    .cards-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      justify-content: center;
+      margin-top: 30px;
+      max-width: 1600px;
+      padding: 0 20px;
+      row-gap: 30px;
+    }
+
+    /* Override container width for projects sections */
+    .projects .container {
+      max-width: 1600px;
+    }
+  </style>
 </head>
 
 <body>
@@ -28,7 +181,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certification</a></li>
         <li><a href="#contact">Contacts</a></li>
-        <li><a href="test.html">Test Page</a></li> <!-- Remove this line when done test page test_page -->
+        <!-- <li><a href="test.html">Test Page</a></li> Remove this line when done test page test_page -->
       </ul>
       <div class="theme-toggle">
         <input type="checkbox" id="theme-switch" class="theme-checkbox">
@@ -185,63 +338,97 @@
     </div>
     <div class="container">
       <h2 class="section-title reveal">Featured Projects</h2>
-      <div class="projects-grid">
-        <a href="project-agrover.html" class="project-card reveal reveal-delay-1">
-          <div class="project-image">
-            <img src="assets/images/projects/agrover/agrover_whole_structure_of_the_robot.png" alt="Agrover"
-              style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="cards-row">
+        <div class="apple-card reveal reveal-delay-1">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/agrover/agrover_whole_structure_of_the_robot.png" alt="Agrover">
           </div>
-          <div class="project-info">
-            <h3>Agrover</h3>
-            <p>A semi-autonomous farming bot for precision agriculture.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">Agrover</h3>
+            <p class="ac-desc">A semi-autonomous farming bot for precision agriculture.</p>
+            <div class="ac-buttons">
+              <a href="project-agrover.html" class="ac-btn-primary">Learn more</a>
+              <!-- <a href="https://github.com/tanvir-a0" class="project-btn outline" target="_blank" rel="noopener noreferrer"
+                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 980px; padding: 6px 13px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 11px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; white-space: nowrap;">
+                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                  style="width: 1em; height: 1em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                GitHub Repo
+              </a> -->
+            </div>
           </div>
-        </a>
-        <a href="project-firefighting-robot.html" class="project-card reveal reveal-delay-2">
-          <div class="project-image">
-            <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Firefighting Robot"
-              style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-2">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/fire_fighting_robot/Robot1.png" alt="Intelligent Firefighting Robot">
           </div>
-          <div class="project-info">
-            <h3>Intelligent Firefighting Robot</h3>
-            <p>Large scale fire fighting robot with remote control and CAD design.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">Firefighting Robot</h3>
+            <p class="ac-desc">Large scale fire fighting robot with remote control and CAD design.</p>
+            <div class="ac-buttons">
+              <a href="project-firefighting-robot.html" class="ac-btn-primary">Learn more</a>
+              <!-- <a href="https://github.com/tanvir-a0" class="project-btn outline" target="_blank" rel="noopener noreferrer"
+                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 980px; padding: 6px 13px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 11px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; white-space: nowrap;">
+                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                  style="width: 1em; height: 1em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                GitHub Repo
+              </a> -->
+            </div>
           </div>
-        </a>
-        <a href="project-ihabotv2.html" class="project-card reveal reveal-delay-3">
-          <div class="project-image">
-            <img src="assets/images/projects/ihabotv2/final_design_from_front.png" alt="IHABOTv2"
-              style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-3">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/ihabotv2/final_design_from_front.png" alt="IHABOTv2">
           </div>
-          <div class="project-info">
-            <h3>IHABOTv2: Intelligent Hospital Assistant Robot</h3>
-            <p>Bangladesh’s first intelligent hospital assistant robot, featuring autonomous navigation, rehabilitation
-              monitoring, medicine delivery, and EWS with LLM-based clinical interpretation.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">IHABOTv2</h3>
+            <p class="ac-desc">Bangladesh's first intelligent hospital assistant robot, featuring autonomous navigation, rehabilitation monitoring, and medicine delivery.</p>
+            <div class="ac-buttons">
+              <a href="project-ihabotv2.html" class="ac-btn-primary">Learn more</a>
+              <!-- <a href="https://github.com/tanvir-a0" class="project-btn outline" target="_blank" rel="noopener noreferrer"
+                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 980px; padding: 6px 13px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 11px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; white-space: nowrap;">
+                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                  style="width: 1em; height: 1em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                GitHub Repo
+              </a> -->
+            </div>
           </div>
-        </a>
-        <a href="project-a9g_based_location_tracker.html" class="project-card reveal reveal-delay-1">
-          <div class="project-image">
-            <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png"
-              alt="A9G GPS Tracker" style="width: 150%; height: 150%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-1">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png" alt="A9G GPS Tracker">
           </div>
-          <div class="project-info">
-            <h3>Real-time GPS Tracker</h3>
-            <p>Hardware, firmware, and PCB development for an ESP + A9G based real-time GPS tracker.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">Real-time GPS Tracker</h3>
+            <p class="ac-desc">Hardware, firmware, and PCB development for an ESP + A9G based real-time GPS tracker.</p>
+            <div class="ac-buttons">
+              <a href="project-a9g_based_location_tracker.html" class="ac-btn-primary">Learn more</a>
+              <!-- <a href="https://github.com/tanvir-a0" class="project-btn outline" target="_blank" rel="noopener noreferrer"
+                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 980px; padding: 6px 13px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 11px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; white-space: nowrap;">
+                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                  style="width: 1em; height: 1em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                GitHub Repo
+              </a> -->
+            </div>
           </div>
-        </a>
-        <a href="project-gis-earth-engine.html" class="project-card reveal reveal-delay-2">
-          <div class="project-image">
-            <img src="assets/projects_from_git/GoogleEarthEngine-/32.png" alt="Google Earth Engine Projects"
-              style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-2">
+          <div class="ac-image-wrapper">
+            <img src="assets/projects_from_git/GoogleEarthEngine-/32.png" alt="Google Earth Engine Projects">
           </div>
-          <div class="project-info">
-            <h3>Google Earth Engine Projects</h3>
-            <p>Geospatial analysis, satellite timelapses, and environmental monitoring using Python and GEE.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">Google Earth Engine</h3>
+            <p class="ac-desc">Geospatial analysis, satellite timelapses, and environmental monitoring using Python and GEE.</p>
+            <div class="ac-buttons">
+              <a href="project-gis-earth-engine.html" class="ac-btn-primary">Learn more</a>
+              <a href="https://github.com/tanvir-a0/GoogleEarthEngine-" class="project-btn outline" target="_blank" rel="noopener noreferrer"
+                style="display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 980px; padding: 6px 13px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 11px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; white-space: nowrap;">
+                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                  style="width: 1em; height: 1em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
+                GitHub Repo
+              </a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
@@ -250,106 +437,115 @@
   <section id="minor-projects" class="projects">
     <div class="container">
       <h2 class="section-title reveal">Small Projects</h2>
-      <div class="projects-grid">
-        <a href="ee_gis_map_bangladesh_elevation.html" class="project-card reveal reveal-delay-1">
-          <div class="project-image">
-            <img src="assets/images/projects/ee_gis_map_bangladesh_elevation/bangladesh.png" alt="GIS Map Project"
-              style="width: 100%; height: 100%; object-fit: cover;">
+      <div class="cards-row">
+        <div class="apple-card reveal reveal-delay-1">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/ee_gis_map_bangladesh_elevation/bangladesh.png" alt="GIS Map Project">
           </div>
-          <div class="project-info">
-            <h3>GIS Topographic Map</h3>
-            <p>A topographic elevation map of Bangladesh using Geemap in Python.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">GIS Topographic Map</h3>
+            <p class="ac-desc">A topographic elevation map of Bangladesh using Geemap in Python.</p>
+            <div class="ac-buttons">
+              <a href="ee_gis_map_bangladesh_elevation.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-small-firefighting-robot.html" class="project-card reveal reveal-delay-2">
-          <div class="project-image">
-            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg"
-              alt="Small Firefighting Robot" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-2">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg" alt="Small Firefighting Robot">
           </div>
-          <div class="project-info">
-            <h3>Small Firefighting Robot</h3>
-            <p>A small, Bluetooth-controlled firefighting robot from our first semester.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">Small Firefighting Robot</h3>
+            <p class="ac-desc">A small, Bluetooth-controlled firefighting robot from our first semester.</p>
+            <div class="ac-buttons">
+              <a href="project-small-firefighting-robot.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-smartbin-v1.html" class="project-card reveal reveal-delay-3">
-          <div class="project-image">
-            <img src="assets/images/projects/smart_bin/main_bin_image.png" alt="SmartBinV1"
-              style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-3">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/smart_bin/main_bin_image.png" alt="SmartBinV1">
           </div>
-          <div class="project-info">
-            <h3>SmartBinV1</h3>
-            <p>An IoT-based smart waste monitoring system.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">SmartBinV1</h3>
+            <p class="ac-desc">An IoT-based smart waste monitoring system.</p>
+            <div class="ac-buttons">
+              <a href="project-smartbin-v1.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-network-protocol.html" class="project-card reveal reveal-delay-1">
-          <div class="project-image">
-            <img src="assets/images/projects/network_protocol_data_transfer/network_protocol_data_transfer_app_icon.png"
-              alt="Network Protocol Data Transfer" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-1">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/network_protocol_data_transfer/network_protocol_data_transfer_app_icon.png" alt="Network Protocol Data Transfer">
           </div>
-          <div class="project-info">
-            <h3>Network Protocol Data Transfer</h3>
-            <p>A simple app to communicate with a robot over the same Wi-Fi network.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">Network Protocol</h3>
+            <p class="ac-desc">A simple app to communicate with a robot over the same Wi-Fi network.</p>
+            <div class="ac-buttons">
+              <a href="project-network-protocol.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-todo-app.html" class="project-card reveal reveal-delay-2">
-          <div class="project-image">
-            <img src="assets/images/projects/to_do/to_do_list_ui.png" alt="To-Do Application"
-              style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-2">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/to_do/to_do_list_ui.png" alt="To-Do Application">
           </div>
-          <div class="project-info">
-            <h3>To-Do Application</h3>
-            <p>My first project, an attempt to recreate the popular To-Do application "Tick Tick".</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">To-Do Application</h3>
+            <p class="ac-desc">My first project, an attempt to recreate the popular To-Do application "Tick Tick".</p>
+            <div class="ac-buttons">
+              <a href="project-todo-app.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-tripcost.html" class="project-card reveal reveal-delay-3">
-          <div class="project-image">
-            <img src="assets/images/projects/trip_cost/app_home_page.png" alt="TripCost"
-              style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-3">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/trip_cost/app_home_page.png" alt="TripCost">
           </div>
-          <div class="project-info">
-            <h3>TripCost</h3>
-            <p>A money management application to keep track of spending.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">TripCost</h3>
+            <p class="ac-desc">A money management application to keep track of spending.</p>
+            <div class="ac-buttons">
+              <a href="project-tripcost.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-serialtest.html" class="project-card reveal reveal-delay-1">
-          <div class="project-image">
-            <img src="assets/images/projects/serial_test/serial_test_homepage_when_device_connected.png"
-              alt="SerialTest" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-1">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/serial_test/serial_test_homepage_when_device_connected.png" alt="SerialTest">
           </div>
-          <div class="project-info">
-            <h3>SerialTest</h3>
-            <p>An application to test robots connected to a phone's USB port.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">SerialTest</h3>
+            <p class="ac-desc">An application to test robots connected to a phone's USB port.</p>
+            <div class="ac-buttons">
+              <a href="project-serialtest.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-led-brightness-control.html" class="project-card reveal reveal-delay-2">
-          <div class="project-image">
-            <img src="assets/images/projects/led_brightness_control/led_brightness_control_home_view.png"
-              alt="LED Brightness Control" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-2">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/led_brightness_control/led_brightness_control_home_view.png" alt="LED Brightness Control">
           </div>
-          <div class="project-info">
-            <h3>LED Brightness Control</h3>
-            <p>An attempt to create a custom LED brightness control panel for Google Pixel phones.</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">LED Brightness Control</h3>
+            <p class="ac-desc">An attempt to create a custom LED brightness control panel for Google Pixel phones.</p>
+            <div class="ac-buttons">
+              <a href="project-led-brightness-control.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
-        <a href="project-cms-class-management-system.html" class="project-card reveal reveal-delay-3">
-          <div class="project-image">
-            <img src="assets/images/projects/cms_class_management_system/cms_routine.png" alt="CMS"
-              style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="apple-card reveal reveal-delay-3">
+          <div class="ac-image-wrapper">
+            <img src="assets/images/projects/cms_class_management_system/cms_routine.png" alt="CMS">
           </div>
-          <div class="project-info">
-            <h3>CMS – Class Management System</h3>
-            <p>A cloud-based class management system using Python (OOP principles).</p>
-            <span class="btn-learn-more">Learn More</span>
+          <div class="ac-content">
+            <h3 class="ac-title">CMS – Class Management</h3>
+            <p class="ac-desc">A cloud-based class management system using Python (OOP principles).</p>
+            <div class="ac-buttons">
+              <a href="project-cms-class-management-system.html" class="ac-btn-primary">Learn more</a>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
