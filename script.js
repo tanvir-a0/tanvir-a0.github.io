@@ -102,9 +102,9 @@ document.querySelectorAll('section').forEach(section => {
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 50) {
-    navbar.style.background = 'var(--glass-bg)';
+    navbar.classList.add('scrolled');
   } else {
-    navbar.style.background = 'transparent';
+    navbar.classList.remove('scrolled');
   }
 });
 
