@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Grid Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 0 20px;
+            /* Add some internal padding */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #1d1d1f;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            /* Increased min-width slightly */
+            gap: 24px;
+        }
+
+        .logo-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            /* Rounded corners */
+            aspect-ratio: 1 / 1;
+            /* Square tiles for uniformity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            /* ~15% padding around the content */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            /* Subtle border */
+            transition: all 0.3s ease;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-item {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .logo-card:hover .logo-item {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #000000;
+                color: #f5f5f7;
+            }
+
+            h1 {
+                color: #f5f5f7;
+            }
+
+            .logo-card {
+                background-color: #1c1c1e;
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .logo-item {
+                filter: brightness(0.8) grayscale(100%);
+            }
+
+            .logo-card:hover .logo-item {
+                filter: brightness(1) grayscale(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Things I Have Worked With</h1>
+        <div class="logo-grid">
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/STMicroelectronics.png"
+                    alt="STMicroelectronics" class="logo-item" title="STMicroelectronics"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/altium designer.png"
+                    alt="Altium Designer" class="logo-item" title="Altium Designer"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/ansys.png" alt="Ansys"
+                    class="logo-item" title="Ansys"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/arduino.png" alt="Arduino"
+                    class="logo-item" title="Arduino"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/autodesk cfd.png"
+                    alt="Autodesk CFD" class="logo-item" title="Autodesk CFD"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/autodesk fusion 360.png"
+                    alt="Fusion 360" class="logo-item" title="Fusion 360"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/aws iot core.png"
+                    alt="AWS IoT Core" class="logo-item" title="AWS IoT Core"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/c++.png" alt="C++"
+                    class="logo-item" title="C++"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/creality printers.png"
+                    alt="Creality" class="logo-item" title="Creality"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/customtkinter.png"
+                    alt="CustomTkinter" class="logo-item" title="CustomTkinter"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/dart.png" alt="Dart"
+                    class="logo-item" title="Dart"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/easy eda.png" alt="EasyEDA"
+                    class="logo-item" title="EasyEDA"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/espressif.png" alt="Espressif"
+                    class="logo-item" title="Espressif"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/festo.png" alt="Festo"
+                    class="logo-item" title="Festo"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/firebase.png" alt="Firebase"
+                    class="logo-item" title="Firebase"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/flashforge.png" alt="Flashforge"
+                    class="logo-item" title="Flashforge"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/flet python.png" alt="Flet"
+                    class="logo-item" title="Flet"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/folium python.png" alt="Folium"
+                    class="logo-item" title="Folium"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/freecad.png" alt="FreeCAD"
+                    class="logo-item" title="FreeCAD"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/geemap.png" alt="Geemap"
+                    class="logo-item" title="Geemap"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/geopandas.png" alt="Geopandas"
+                    class="logo-item" title="Geopandas"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/git.png" alt="Git"
+                    class="logo-item" title="Git"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/github.png" alt="GitHub"
+                    class="logo-item" title="GitHub"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/google cloud.png"
+                    alt="Google Cloud" class="logo-item" title="Google Cloud"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/google earth engine.png"
+                    alt="Google Earth Engine" class="logo-item" title="Google Earth Engine"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/google earth pro desktop.png"
+                    alt="Google Earth Pro" class="logo-item" title="Google Earth Pro"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/mqtt protocol.png" alt="MQTT"
+                    class="logo-item" title="MQTT"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/niryo.png" alt="Niryo"
+                    class="logo-item" title="Niryo"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/numpy.png" alt="NumPy"
+                    class="logo-item" title="NumPy"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/nvidia jetson.png"
+                    alt="Nvidia Jetson" class="logo-item" title="Nvidia Jetson"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/orca slicer.png" alt="Orca Slicer"
+                    class="logo-item" title="Orca Slicer"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/platform io.png" alt="PlatformIO"
+                    class="logo-item" title="PlatformIO"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/python pandas.png" alt="Pandas"
+                    class="logo-item" title="Pandas"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/python.png" alt="Python"
+                    class="logo-item" title="Python"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/raspberry pi.png"
+                    alt="Raspberry Pi" class="logo-item" title="Raspberry Pi"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/scipy.png" alt="SciPy"
+                    class="logo-item" title="SciPy"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/simens plc.png" alt="Siemens PLC"
+                    class="logo-item" title="Siemens PLC"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/solidworks.png" alt="SolidWorks"
+                    class="logo-item" title="SolidWorks"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/star ccm +.png" alt="Star CCM+"
+                    class="logo-item" title="Star CCM+"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/tinkercad.png" alt="Tinkercad"
+                    class="logo-item" title="Tinkercad"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/uni-t components.png" alt="Uni-T"
+                    class="logo-item" title="Uni-T"></div>
+            <div class="logo-card"><img src="assets/images/things_i_have_worked_with/woosun plc.png" alt="Woosun PLC"
+                    class="logo-item" title="Woosun PLC"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

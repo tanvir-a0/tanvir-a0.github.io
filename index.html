@@ -161,6 +161,71 @@
     .projects .container {
       max-width: 1600px;
     }
+
+    /* Logo Grid Styles - Adapted for Theme System */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    /* Default (Dark Mode) */
+    .logo-card {
+      background-color: #1c1c1e;
+      border-radius: 16px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .logo-item {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0.8) grayscale(100%);
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .logo-card:hover .logo-item {
+      filter: brightness(1) grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* Light Mode Overrides */
+    body.light-mode .logo-card {
+      background-color: #ffffff;
+      border-color: rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    body.light-mode .logo-item {
+      filter: grayscale(100%);
+      opacity: 0.8;
+    }
+
+    body.light-mode .logo-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body.light-mode .logo-card:hover .logo-item {
+      filter: grayscale(0%);
+    }
   </style>
 </head>
 
@@ -181,7 +246,8 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certification</a></li>
         <li><a href="#contact">Contacts</a></li>
-        <!-- <li><a href="test.html">Test Page</a></li> Remove this line when done test page test_page -->
+        <!--   Remove this line when done test page test_page -->
+        <!-- <li><a href="test.html">Test Page</a></li> -->
       </ul>
       <div class="theme-toggle">
         <input type="checkbox" id="theme-switch" class="theme-checkbox">
@@ -381,7 +447,8 @@
           </div>
           <div class="ac-content">
             <h3 class="ac-title">IHABOTv2</h3>
-            <p class="ac-desc">Bangladesh's first intelligent hospital assistant robot, featuring autonomous navigation, rehabilitation monitoring, and medicine delivery.</p>
+            <p class="ac-desc">Bangladesh's first intelligent hospital assistant robot, featuring autonomous navigation,
+              rehabilitation monitoring, and medicine delivery.</p>
             <div class="ac-buttons">
               <a href="project-ihabotv2.html" class="ac-btn-primary">Learn more</a>
               <!-- <a href="https://github.com/tanvir-a0" class="project-btn outline" target="_blank" rel="noopener noreferrer"
@@ -395,7 +462,8 @@
         </div>
         <div class="apple-card reveal reveal-delay-1">
           <div class="ac-image-wrapper">
-            <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png" alt="A9G GPS Tracker">
+            <img src="assets/images/projects/a9g_based_location_tracker/pcb_after_fabrication_and_components.png"
+              alt="A9G GPS Tracker">
           </div>
           <div class="ac-content">
             <h3 class="ac-title">Real-time GPS Tracker</h3>
@@ -417,10 +485,12 @@
           </div>
           <div class="ac-content">
             <h3 class="ac-title">Google Earth Engine</h3>
-            <p class="ac-desc">Geospatial analysis, satellite timelapses, and environmental monitoring using Python and GEE.</p>
+            <p class="ac-desc">Geospatial analysis, satellite timelapses, and environmental monitoring using Python and
+              GEE.</p>
             <div class="ac-buttons">
               <a href="project-gis-earth-engine.html" class="ac-btn-primary">Learn more</a>
-              <a href="https://github.com/tanvir-a0/GoogleEarthEngine-" class="project-btn outline" target="_blank" rel="noopener noreferrer"
+              <a href="https://github.com/tanvir-a0/GoogleEarthEngine-" class="project-btn outline" target="_blank"
+                rel="noopener noreferrer"
                 style="display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 980px; padding: 6px 13px; border: 1px solid #0071e3; color: #0071e3; text-decoration: none; font-size: 11px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; white-space: nowrap;">
                 <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
                   style="width: 1em; height: 1em; filter: invert(36%) sepia(54%) saturate(3089%) hue-rotate(204deg) brightness(101%) contrast(100%);">
@@ -452,7 +522,8 @@
         </div>
         <div class="apple-card reveal reveal-delay-2">
           <div class="ac-image-wrapper">
-            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg" alt="Small Firefighting Robot">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg"
+              alt="Small Firefighting Robot">
           </div>
           <div class="ac-content">
             <h3 class="ac-title">Small Firefighting Robot</h3>
@@ -476,7 +547,8 @@
         </div>
         <div class="apple-card reveal reveal-delay-1">
           <div class="ac-image-wrapper">
-            <img src="assets/images/projects/network_protocol_data_transfer/network_protocol_data_transfer_app_icon.png" alt="Network Protocol Data Transfer">
+            <img src="assets/images/projects/network_protocol_data_transfer/network_protocol_data_transfer_app_icon.png"
+              alt="Network Protocol Data Transfer">
           </div>
           <div class="ac-content">
             <h3 class="ac-title">Network Protocol</h3>
@@ -512,7 +584,8 @@
         </div>
         <div class="apple-card reveal reveal-delay-1">
           <div class="ac-image-wrapper">
-            <img src="assets/images/projects/serial_test/serial_test_homepage_when_device_connected.png" alt="SerialTest">
+            <img src="assets/images/projects/serial_test/serial_test_homepage_when_device_connected.png"
+              alt="SerialTest">
           </div>
           <div class="ac-content">
             <h3 class="ac-title">SerialTest</h3>
@@ -524,7 +597,8 @@
         </div>
         <div class="apple-card reveal reveal-delay-2">
           <div class="ac-image-wrapper">
-            <img src="assets/images/projects/led_brightness_control/led_brightness_control_home_view.png" alt="LED Brightness Control">
+            <img src="assets/images/projects/led_brightness_control/led_brightness_control_home_view.png"
+              alt="LED Brightness Control">
           </div>
           <div class="ac-content">
             <h3 class="ac-title">LED Brightness Control</h3>
@@ -665,6 +739,8 @@
     </div>
   </section>
 
+
+
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="section-bg-effects">
@@ -719,6 +795,111 @@
       </figure>
     </div>
   </div>
+
+  <!-- Technologies Section -->
+  <section id="technologies" class="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Things I Have Worked With</h2>
+      <div class="logo-grid">
+        <div class="logo-card reveal reveal-delay-1"><img
+            src="assets/images/things_i_have_worked_with/STMicroelectronics.png" alt="STMicroelectronics"
+            class="logo-item" title="STMicroelectronics"></div>
+        <div class="logo-card reveal reveal-delay-2"><img
+            src="assets/images/things_i_have_worked_with/altium designer.png" alt="Altium Designer" class="logo-item"
+            title="Altium Designer"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/ansys.png"
+            alt="Ansys" class="logo-item" title="Ansys"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/arduino.png"
+            alt="Arduino" class="logo-item" title="Arduino"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/autodesk cfd.png"
+            alt="Autodesk CFD" class="logo-item" title="Autodesk CFD"></div>
+        <div class="logo-card reveal reveal-delay-3"><img
+            src="assets/images/things_i_have_worked_with/autodesk fusion 360.png" alt="Fusion 360" class="logo-item"
+            title="Fusion 360"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/aws iot core.png"
+            alt="AWS IoT Core" class="logo-item" title="AWS IoT Core"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/c++.png"
+            alt="C++" class="logo-item" title="C++"></div>
+        <div class="logo-card reveal reveal-delay-3"><img
+            src="assets/images/things_i_have_worked_with/creality printers.png" alt="Creality" class="logo-item"
+            title="Creality"></div>
+        <div class="logo-card reveal reveal-delay-1"><img
+            src="assets/images/things_i_have_worked_with/customtkinter.png" alt="CustomTkinter" class="logo-item"
+            title="CustomTkinter"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/dart.png"
+            alt="Dart" class="logo-item" title="Dart"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/easy eda.png"
+            alt="EasyEDA" class="logo-item" title="EasyEDA"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/espressif.png"
+            alt="Espressif" class="logo-item" title="Espressif"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/festo.png"
+            alt="Festo" class="logo-item" title="Festo"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/firebase.png"
+            alt="Firebase" class="logo-item" title="Firebase"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/flashforge.png"
+            alt="Flashforge" class="logo-item" title="Flashforge"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/flet python.png"
+            alt="Flet" class="logo-item" title="Flet"></div>
+        <div class="logo-card reveal reveal-delay-3"><img
+            src="assets/images/things_i_have_worked_with/folium python.png" alt="Folium" class="logo-item"
+            title="Folium"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/freecad.png"
+            alt="FreeCAD" class="logo-item" title="FreeCAD"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/geemap.png"
+            alt="Geemap" class="logo-item" title="Geemap"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/geopandas.png"
+            alt="Geopandas" class="logo-item" title="Geopandas"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/git.png"
+            alt="Git" class="logo-item" title="Git"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/github.png"
+            alt="GitHub" class="logo-item" title="GitHub"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/google cloud.png"
+            alt="Google Cloud" class="logo-item" title="Google Cloud"></div>
+        <div class="logo-card reveal reveal-delay-1"><img
+            src="assets/images/things_i_have_worked_with/google earth engine.png" alt="Google Earth Engine"
+            class="logo-item" title="Google Earth Engine"></div>
+        <div class="logo-card reveal reveal-delay-2"><img
+            src="assets/images/things_i_have_worked_with/google earth pro desktop.png" alt="Google Earth Pro"
+            class="logo-item" title="Google Earth Pro"></div>
+        <div class="logo-card reveal reveal-delay-3"><img
+            src="assets/images/things_i_have_worked_with/mqtt protocol.png" alt="MQTT" class="logo-item" title="MQTT">
+        </div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/niryo.png"
+            alt="Niryo" class="logo-item" title="Niryo"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/numpy.png"
+            alt="NumPy" class="logo-item" title="NumPy"></div>
+        <div class="logo-card reveal reveal-delay-3"><img
+            src="assets/images/things_i_have_worked_with/nvidia jetson.png" alt="Nvidia Jetson" class="logo-item"
+            title="Nvidia Jetson"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/orca slicer.png"
+            alt="Orca Slicer" class="logo-item" title="Orca Slicer"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/platform io.png"
+            alt="PlatformIO" class="logo-item" title="PlatformIO"></div>
+        <div class="logo-card reveal reveal-delay-3"><img
+            src="assets/images/things_i_have_worked_with/python pandas.png" alt="Pandas" class="logo-item"
+            title="Pandas"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/python.png"
+            alt="Python" class="logo-item" title="Python"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/raspberry pi.png"
+            alt="Raspberry Pi" class="logo-item" title="Raspberry Pi"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/scipy.png"
+            alt="SciPy" class="logo-item" title="SciPy"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/simens plc.png"
+            alt="Siemens PLC" class="logo-item" title="Siemens PLC"></div>
+        <div class="logo-card reveal reveal-delay-2"><img src="assets/images/things_i_have_worked_with/solidworks.png"
+            alt="SolidWorks" class="logo-item" title="SolidWorks"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/star ccm +.png"
+            alt="Star CCM+" class="logo-item" title="Star CCM+"></div>
+        <div class="logo-card reveal reveal-delay-1"><img src="assets/images/things_i_have_worked_with/tinkercad.png"
+            alt="Tinkercad" class="logo-item" title="Tinkercad"></div>
+        <div class="logo-card reveal reveal-delay-2"><img
+            src="assets/images/things_i_have_worked_with/uni-t components.png" alt="Uni-T" class="logo-item"
+            title="Uni-T"></div>
+        <div class="logo-card reveal reveal-delay-3"><img src="assets/images/things_i_have_worked_with/woosun plc.png"
+            alt="Woosun PLC" class="logo-item" title="Woosun PLC"></div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
