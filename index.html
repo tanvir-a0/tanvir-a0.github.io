@@ -741,7 +741,6 @@
 
 
 
-  <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="section-bg-effects">
       <div class="floating-shape shape-1"></div>
@@ -758,26 +757,79 @@
     </div>
     <div class="container">
       <h2 class="section-title reveal">Get In Touch</h2>
-      <div class="contact-content reveal reveal-delay-1">
-        <div class="contact-info">
-          <div class="info-item">
-            <span class="info-icon">📧</span>
-            <p>email@example.com</p>
+      <div class="contact-grid reveal reveal-delay-1">
+
+        <!-- Email -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <img src="assets/images/contact_logos/gmail.png" alt="Email" class="contact-icon">
           </div>
-          <div class="info-item">
-            <span class="info-icon">🌐</span>
-            <p>github.com/tanvir-a0</p>
-          </div>
-          <div class="info-item">
-            <span class="info-icon">📍</span>
-            <p>Earth, Solar System</p>
+          <h3 class="contact-title">Email</h3>
+          <p class="contact-detail" id="contact-email">t.a.prova@gmail.com</p>
+          <div class="contact-actions">
+            <a href="mailto:t.a.prova@gmail.com" class="action-btn open-btn">Open</a>
+            <button class="action-btn copy-btn" onclick="copyToClipboard('t.a.prova@gmail.com', this)">Copy</button>
           </div>
         </div>
-        <div class="social-links">
-          <a href="#" class="social-icon">GitHub</a>
-          <a href="#" class="social-icon">LinkedIn</a>
-          <a href="#" class="social-icon">Twitter</a>
+
+        <!-- LinkedIn -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <img src="assets/images/contact_logos/linkedin.png" alt="LinkedIn" class="contact-icon">
+          </div>
+          <h3 class="contact-title">LinkedIn</h3>
+          <p class="contact-detail">tanvir-ahmed-67b5a8199</p>
+          <div class="contact-actions">
+            <a href="https://www.linkedin.com/in/tanvir-ahmed-67b5a8199/" target="_blank"
+              class="action-btn open-btn">Open</a>
+            <button class="action-btn copy-btn"
+              onclick="copyToClipboard('https://www.linkedin.com/in/tanvir-ahmed-67b5a8199/', this)">Copy Link</button>
+          </div>
         </div>
+
+        <!-- GitHub -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <img src="assets/images/contact_logos/github.png" alt="GitHub" class="contact-icon">
+          </div>
+          <h3 class="contact-title">GitHub</h3>
+          <p class="contact-detail">tanvir-a0</p>
+          <div class="contact-actions">
+            <a href="https://github.com/tanvir-a0" target="_blank" class="action-btn open-btn">Open</a>
+            <button class="action-btn copy-btn" onclick="copyToClipboard('https://github.com/tanvir-a0', this)">Copy
+              Link</button>
+          </div>
+        </div>
+
+        <!-- GrabCad -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <img src="assets/images/contact_logos/grabcad_logo_472_by_82.png" alt="GrabCad"
+              class="contact-icon wide-icon">
+          </div>
+          <h3 class="contact-title">GrabCad</h3>
+          <p class="contact-detail">tanvir.ahmed-41</p>
+          <div class="contact-actions">
+            <a href="https://grabcad.com/tanvir.ahmed-41" target="_blank" class="action-btn open-btn">Open</a>
+            <button class="action-btn copy-btn"
+              onclick="copyToClipboard('https://grabcad.com/tanvir.ahmed-41', this)">Copy Link</button>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <img src="assets/images/contact_logos/location.png" alt="Location" class="contact-icon">
+          </div>
+          <h3 class="contact-title">Location</h3>
+          <p class="contact-detail">Dhaka, Bangladesh</p>
+          <div class="contact-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=Dhaka+Bangladesh" target="_blank"
+              class="action-btn open-btn">Open</a>
+            <button class="action-btn copy-btn" onclick="copyToClipboard('Dhaka, Bangladesh', this)">Copy</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

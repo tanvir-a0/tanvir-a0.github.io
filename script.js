@@ -398,3 +398,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// ============================================
+// CLIPBOARD COPY FUNCTIONALITY
+// ============================================
+async function copyToClipboard(text, buttonElement) {
+  try {
+    await navigator.clipboard.writeText(text);
+
+    // Visual Feedback
+    const originalText = buttonElement.textContent;
+    buttonElement.textContent = 'Copied!';
+    buttonElement.classList.add('copied');
+
+    // Reset after 2 seconds
+    setTimeout(() => {
+      buttonElement.textContent = originalText;
+      buttonElement.classList.remove('copied');
+    }, 2000);
+
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+
+    // Fallback for older browsers or non-secure contexts
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      const originalText = buttonElement.textContent;
+      buttonElement.textContent = 'Copied!';
+      buttonElement.classList.add('copied');
+      setTimeout(() => {
+        buttonElement.textContent = originalText;
+        buttonElement.classList.remove('copied');
+      }, 2000);
+    } catch (err) {
+      console.error('Fallback: Oops, unable to copy', err);
+      buttonElement.textContent = 'Error';
+    }
+    document.body.removeChild(textArea);
+  }
+}
