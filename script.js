@@ -109,44 +109,87 @@ window.addEventListener('scroll', () => {
 });
 
 // Active navigation indicator based on scroll position
-// Active navigation indicator using Intersection Observer (Performance Optimized)
+// 
+// NAVIGATION FIX (Jan 17, 2026):
+// Problem: Navigation buttons were getting "stuck" on the wrong section during smooth scrolling.
+// When clicking a nav link, the page would scroll correctly but the active button highlighting 
+// would not update properly - it would stay on the previously active button instead of 
+// highlighting the clicked/current section.
+//
+// Root Cause: The Intersection Observer was conflicting with manual navigation clicks.
+// During smooth scrolling, the observer would detect intermediate sections as "most visible"
+// and override the manually clicked button's active state.
+//
+// Solution: Replaced Intersection Observer with direct scroll position calculation.
+// This approach immediately highlights clicked buttons and uses a timeout to prevent 
+// automatic updates during smooth scrolling, ensuring consistent navigation behavior.
+//
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-const navObserverOptions = {
-  threshold: 0.2, // Trigger when 20% of the section is visible
-  rootMargin: "-20% 0px -60% 0px" // Adjusts the effective viewport for detection
-};
+// Flag to prevent automatic updates during manual navigation
+let isManualNavigation = false;
 
-const navObserver = new IntersectionObserver((entries) => {
-  // Find the section that is most visible (highest intersection ratio)
-  let mostVisible = null;
-  let maxRatio = 0;
+// Function to update active navigation link based on scroll position
+function updateActiveNavLink() {
+  if (isManualNavigation) return;
   
-  entries.forEach(entry => {
-    if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-      maxRatio = entry.intersectionRatio;
-      mostVisible = entry.target;
+  let currentSection = '';
+  const scrollPosition = window.scrollY + 100; // Add offset for navbar height
+  
+  // Find which section we're currently in
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute('id');
     }
   });
   
-  // If we have a most visible section, update the navigation
-  if (mostVisible) {
-    // Remove active class from all links
-    navLinks.forEach(link => link.classList.remove('active'));
-    
-    // Add active class to corresponding link
-    const id = mostVisible.getAttribute('id');
-    const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
-    if (activeLink) {
-      activeLink.classList.add('active');
-    }
+  // Special case for the very top of the page
+  if (window.scrollY < 100) {
+    currentSection = 'home';
   }
-}, navObserverOptions);
+  
+  // Update active states
+  if (currentSection) {
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+}
 
-sections.forEach(section => {
-  navObserver.observe(section);
+// Throttled scroll handler for performance
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout);
+  }
+  scrollTimeout = setTimeout(updateActiveNavLink, 10);
 });
+
+// Handle manual navigation clicks
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    // Immediately update active state for clicked link
+    navLinks.forEach(navLink => navLink.classList.remove('active'));
+    this.classList.add('active');
+    
+    // Prevent automatic updates during smooth scroll
+    isManualNavigation = true;
+    setTimeout(() => {
+      isManualNavigation = false;
+      updateActiveNavLink(); // Update again after scroll completes
+    }, 1500); // Give extra time for smooth scrolling
+  });
+});
+
+// Initial call to set correct active state on page load
+document.addEventListener('DOMContentLoaded', updateActiveNavLink);
 
 // Parallax effect for hero section (Optimized with requestAnimationFrame)
 let scrollY = 0;
