@@ -109,56 +109,64 @@ window.addEventListener('scroll', () => {
 });
 
 // Active navigation indicator based on scroll position
+// Active navigation indicator using Intersection Observer (Performance Optimized)
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-function updateActiveNav() {
-  const scrollY = window.pageYOffset;
+const navObserverOptions = {
+  threshold: 0.3, // Trigger when 30% of the section is visible
+  rootMargin: "-10% 0px -50% 0px" // Adjusts the effective viewport for detection
+};
 
-  sections.forEach(section => {
-    const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 150;
-    const sectionId = section.getAttribute('id');
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Remove active class from all links
+      navLinks.forEach(link => link.classList.remove('active'));
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${sectionId}`) {
-          link.classList.add('active');
-        }
-      });
+      // Add active class to corresponding link
+      const id = entry.target.getAttribute('id');
+      const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
     }
   });
+}, navObserverOptions);
 
-  // If at the very top, activate Home
-  if (scrollY < 300) {
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#home') {
-        link.classList.add('active');
-      }
-    });
-  }
-}
-
-window.addEventListener('scroll', updateActiveNav);
-window.addEventListener('load', updateActiveNav);
-
-// Parallax effect for hero section (subtle)
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const hero = document.querySelector('.hero-content');
-  const heroBg = document.querySelector('.hero-profile-bg');
-
-  if (hero && scrolled < window.innerHeight) {
-    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-    hero.style.opacity = 1 - scrolled / 800;
-  }
-
-  if (heroBg && scrolled < window.innerHeight) {
-    heroBg.style.transform = `translate(-50%, -50%) scale(${1 + scrolled * 0.0001})`;
-  }
+sections.forEach(section => {
+  navObserver.observe(section);
 });
+
+// Parallax effect for hero section (Optimized with requestAnimationFrame)
+let scrollY = 0;
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+  scrollY = window.pageYOffset;
+
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const hero = document.querySelector('.hero-content');
+      const heroBg = document.querySelector('.hero-profile-bg');
+
+      // Only animate if hero is somewhat visible to save resources
+      if (scrollY < window.innerHeight) {
+        if (hero) {
+          hero.style.transform = `translateY(${scrollY * 0.3}px)`;
+          hero.style.opacity = 1 - scrollY / 800;
+        }
+        if (heroBg) {
+          heroBg.style.transform = `translate(-50%, -50%) scale(${1 + scrollY * 0.0001})`;
+        }
+      }
+
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+}, { passive: true });
 
 // Interactive background image movement on mouse move
 const hero = document.querySelector('.hero');

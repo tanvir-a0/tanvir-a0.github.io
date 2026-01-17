@@ -692,6 +692,7 @@ body.light-mode .subtitle {
   opacity: 0.2;
   animation: float 25s ease-in-out infinite;
   box-shadow: 0 0 60px var(--primary-color);
+  will-change: transform;
 }
 
 .floating-shape.shape-1 {
