@@ -114,24 +114,34 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
 const navObserverOptions = {
-  threshold: 0.3, // Trigger when 30% of the section is visible
-  rootMargin: "-10% 0px -50% 0px" // Adjusts the effective viewport for detection
+  threshold: 0.2, // Trigger when 20% of the section is visible
+  rootMargin: "-20% 0px -60% 0px" // Adjusts the effective viewport for detection
 };
 
 const navObserver = new IntersectionObserver((entries) => {
+  // Find the section that is most visible (highest intersection ratio)
+  let mostVisible = null;
+  let maxRatio = 0;
+  
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Remove active class from all links
-      navLinks.forEach(link => link.classList.remove('active'));
-
-      // Add active class to corresponding link
-      const id = entry.target.getAttribute('id');
-      const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-      }
+    if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+      maxRatio = entry.intersectionRatio;
+      mostVisible = entry.target;
     }
   });
+  
+  // If we have a most visible section, update the navigation
+  if (mostVisible) {
+    // Remove active class from all links
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Add active class to corresponding link
+    const id = mostVisible.getAttribute('id');
+    const activeLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  }
 }, navObserverOptions);
 
 sections.forEach(section => {
