@@ -63,114 +63,140 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Intersection Observer for scroll animations
-// Intersection Observer for scroll animations
+// PERFORMANCE OPTIMIZED: Intersection Observer for scroll animations
 const observerOptions = {
-  threshold: 0.1,
+  threshold: [0.1], // Use array for better performance
   rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
+// Batch DOM updates to prevent layout thrashing
+let pendingUpdates = new Set();
+let updateScheduled = false;
 
-      // Legacy support for sections if they don't have .reveal
-      if (entry.target.tagName === 'SECTION') {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+function processBatchedUpdates() {
+  if (pendingUpdates.size > 0) {
+    // Process all updates in one frame to avoid layout thrashing
+    pendingUpdates.forEach(element => {
+      element.classList.add('active');
+      
+      // Only apply inline styles if absolutely necessary
+      if (element.tagName === 'SECTION' && !element.classList.contains('reveal')) {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
       }
+    });
+    
+    pendingUpdates.clear();
+  }
+  updateScheduled = false;
+}
+
+const observer = new IntersectionObserver((entries) => {
+  let hasChanges = false;
+  
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.classList.contains('active')) {
+      pendingUpdates.add(entry.target);
+      hasChanges = true;
     }
   });
+  
+  // Batch all DOM updates in next frame
+  if (hasChanges && !updateScheduled) {
+    updateScheduled = true;
+    requestAnimationFrame(processBatchedUpdates);
+  }
 }, observerOptions);
 
 // Observe elements with .reveal class
 const revealElements = document.querySelectorAll('.reveal');
 revealElements.forEach(el => observer.observe(el));
 
-// Keep existing section observation for sections (optional, but good for sections that don't have specific reveal items)
+// Optimized section observation - reduce DOM manipulation
 document.querySelectorAll('section').forEach(section => {
   if (!section.classList.contains('reveal')) {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(50px)';
-    section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    // Use CSS classes instead of inline styles for better performance
+    section.classList.add('section-reveal');
     observer.observe(section);
   }
 });
 
-// Navbar background on scroll
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-});
-
-// Active navigation indicator based on scroll position
-// 
-// NAVIGATION FIX (Jan 17, 2026):
-// Problem: Navigation buttons were getting "stuck" on the wrong section during smooth scrolling.
-// When clicking a nav link, the page would scroll correctly but the active button highlighting 
-// would not update properly - it would stay on the previously active button instead of 
-// highlighting the clicked/current section.
-//
-// Root Cause: The Intersection Observer was conflicting with manual navigation clicks.
-// During smooth scrolling, the observer would detect intermediate sections as "most visible"
-// and override the manually clicked button's active state.
-//
-// Solution: Replaced Intersection Observer with direct scroll position calculation.
-// This approach immediately highlights clicked buttons and uses a timeout to prevent 
-// automatic updates during smooth scrolling, ensuring consistent navigation behavior.
-//
+// PERFORMANCE OPTIMIZED SCROLL HANDLERS
+// Combined all scroll handlers into one for better performance
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const navbar = document.querySelector('.navbar');
 
-// Flag to prevent automatic updates during manual navigation
+// Cache DOM queries for performance
 let isManualNavigation = false;
+let scrollTicking = false;
 
-// Function to update active navigation link based on scroll position
-function updateActiveNavLink() {
+// Update the main scroll handler to include parallax effects
+// Combined scroll handler with throttling
+function handleScroll() {
+  const scrollY = window.scrollY;
+  
+  // Navbar background on scroll
+  if (scrollY > 50) {
+    navbar?.classList.add('scrolled');
+  } else {
+    navbar?.classList.remove('scrolled');
+  }
+  
+  // Active navigation indicator
+  if (!isManualNavigation) {
+    updateActiveNavLink(scrollY);
+  }
+  
+  // Parallax effects
+  updateParallax(scrollY);
+  
+  scrollTicking = false;
+}
+
+// Optimized navigation update function
+function updateActiveNavLink(scrollY = window.scrollY) {
   if (isManualNavigation) return;
   
   let currentSection = '';
-  const scrollPosition = window.scrollY + 100; // Add offset for navbar height
+  const scrollPosition = scrollY + 100;
   
-  // Find which section we're currently in
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    
-    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-      currentSection = section.getAttribute('id');
-    }
-  });
-  
-  // Special case for the very top of the page
-  if (window.scrollY < 100) {
+  // Special case for the very top
+  if (scrollY < 100) {
     currentSection = 'home';
+  } else {
+    // Find current section more efficiently
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i];
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
+        break;
+      }
+    }
   }
   
-  // Update active states
+  // Update active states only if section changed
   if (currentSection) {
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSection}`) {
-        link.classList.add('active');
-      }
-    });
+    const activeLink = document.querySelector(`.nav-links a.active`);
+    const newActiveLink = document.querySelector(`.nav-links a[href="#${currentSection}"]`);
+    
+    if (activeLink !== newActiveLink) {
+      activeLink?.classList.remove('active');
+      newActiveLink?.classList.add('active');
+    }
   }
 }
 
-// Throttled scroll handler for performance
-let scrollTimeout;
+// Single throttled scroll listener
 window.addEventListener('scroll', () => {
-  if (scrollTimeout) {
-    clearTimeout(scrollTimeout);
+  if (!scrollTicking) {
+    requestAnimationFrame(handleScroll);
+    scrollTicking = true;
   }
-  scrollTimeout = setTimeout(updateActiveNavLink, 10);
-});
+}, { passive: true });
 
 // Handle manual navigation clicks
 navLinks.forEach(link => {
@@ -191,54 +217,73 @@ navLinks.forEach(link => {
 // Initial call to set correct active state on page load
 document.addEventListener('DOMContentLoaded', updateActiveNavLink);
 
-// Parallax effect for hero section (Optimized with requestAnimationFrame)
-let scrollY = 0;
-let ticking = false;
+// PERFORMANCE OPTIMIZED: Parallax effect with reduced calculations
+const heroContent = document.querySelector('.hero-content');
+const heroProfileBg = document.querySelector('.hero-profile-bg');
+let lastParallaxUpdate = 0;
 
-window.addEventListener('scroll', () => {
-  scrollY = window.pageYOffset;
-
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      const hero = document.querySelector('.hero-content');
-      const heroBg = document.querySelector('.hero-profile-bg');
-
-      // Only animate if hero is somewhat visible to save resources
-      if (scrollY < window.innerHeight) {
-        if (hero) {
-          hero.style.transform = `translateY(${scrollY * 0.3}px)`;
-          hero.style.opacity = 1 - scrollY / 800;
-        }
-        if (heroBg) {
-          heroBg.style.transform = `translate(-50%, -50%) scale(${1 + scrollY * 0.0001})`;
-        }
-      }
-
-      ticking = false;
-    });
-
-    ticking = true;
+function updateParallax(scrollY) {
+  // Throttle parallax updates to every 16ms (60fps max)
+  const now = performance.now();
+  if (now - lastParallaxUpdate < 16) return;
+  
+  // Only animate if hero is visible (more efficient bounds check)
+  if (scrollY < window.innerHeight * 1.2) {
+    if (heroContent) {
+      // Use transform3d for hardware acceleration
+      heroContent.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
+      heroContent.style.opacity = Math.max(0, 1 - scrollY / 800);
+    }
+    if (heroProfileBg) {
+      const scale = 1 + scrollY * 0.0001;
+      heroProfileBg.style.transform = `translate3d(-50%, -50%, 0) scale(${scale})`;
+    }
   }
-}, { passive: true });
+  
+  lastParallaxUpdate = now;
+}
 
-// Interactive background image movement on mouse move
+// This function will be called from the main scroll handler
+
+// PERFORMANCE OPTIMIZED: Mouse move with better throttling
 const hero = document.querySelector('.hero');
-const heroBg = document.querySelector('.hero-profile-bg');
 
-if (hero && heroBg) {
+if (hero && heroProfileBg) {
+  let mouseMoveFrame = null;
+  let lastMouseMove = 0;
+  
   hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    const now = performance.now();
+    
+    // Throttle to 60fps max
+    if (now - lastMouseMove < 16) return;
+    
+    if (mouseMoveFrame) {
+      cancelAnimationFrame(mouseMoveFrame);
+    }
+    
+    mouseMoveFrame = requestAnimationFrame(() => {
+      const rect = hero.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-    const moveX = x * 20;
-    const moveY = y * 20;
+      const moveX = x * 20;
+      const moveY = y * 20;
 
-    heroBg.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
-  });
+      // Use translate3d for hardware acceleration
+      heroProfileBg.style.transform = `translate3d(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px), 0)`;
+      mouseMoveFrame = null;
+    });
+    
+    lastMouseMove = now;
+  }, { passive: true });
 
   hero.addEventListener('mouseleave', () => {
-    heroBg.style.transform = 'translate(-50%, -50%)';
+    if (mouseMoveFrame) {
+      cancelAnimationFrame(mouseMoveFrame);
+      mouseMoveFrame = null;
+    }
+    heroProfileBg.style.transform = 'translate3d(-50%, -50%, 0)';
   });
 }
 
