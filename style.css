@@ -1163,6 +1163,11 @@ body.light-mode .animated-line {
   height: 432px;
   flex: 0 0 240px;
   width: 240px;
+  border: 2px solid rgba(0, 122, 255, 0.33);
+  border-radius: 20px;
+  padding: 2px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .card-3d {
@@ -1175,6 +1180,10 @@ body.light-mode .animated-line {
 }
 
 /* PERFORMANCE OPTIMIZED: About card hover effects */
+.about-card:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
 .about-card:hover .card-3d {
   transform: translate3d(0, -8px, 0) scale(1.02); /* Hardware acceleration */
   will-change: transform;
