@@ -2508,42 +2508,14 @@ body.project-page.light-mode.project-3d-printing .gradient-layer.gradient-two {
   background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(56, 189, 248, 0) 72%);
 }
 
-body.project-page .navbar {
-  background: rgba(8, 13, 24, 0.45);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 40px rgba(2, 6, 14, 0.35);
-}
-
-body.project-page.light-mode .navbar {
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-}
+/* Project page navbar inherits the glassmorphism effect from main navbar styles */
 
 body.project-page .logo {
   text-shadow: none;
   letter-spacing: -0.01em;
 }
 
-body.project-page .nav-links a {
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
-  opacity: 0.85;
-}
-
-body.project-page .nav-links a:hover {
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-body.project-page.light-mode .nav-links a {
-  background: rgba(15, 23, 42, 0.04);
-  border-color: rgba(15, 23, 42, 0.08);
-}
-
-body.project-page.light-mode .nav-links a:hover {
-  background: rgba(15, 23, 42, 0.12);
-}
+/* Project page nav-links inherit the main navbar link styles */
 
 .project-frame {
   width: min(1180px, 92vw);
