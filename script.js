@@ -78,14 +78,14 @@ function processBatchedUpdates() {
     // Process all updates in one frame to avoid layout thrashing
     pendingUpdates.forEach(element => {
       element.classList.add('active');
-      
+
       // Only apply inline styles if absolutely necessary
       if (element.tagName === 'SECTION' && !element.classList.contains('reveal')) {
         element.style.opacity = '1';
         element.style.transform = 'translateY(0)';
       }
     });
-    
+
     pendingUpdates.clear();
   }
   updateScheduled = false;
@@ -93,14 +93,14 @@ function processBatchedUpdates() {
 
 const observer = new IntersectionObserver((entries) => {
   let hasChanges = false;
-  
+
   entries.forEach(entry => {
     if (entry.isIntersecting && !entry.target.classList.contains('active')) {
       pendingUpdates.add(entry.target);
       hasChanges = true;
     }
   });
-  
+
   // Batch all DOM updates in next frame
   if (hasChanges && !updateScheduled) {
     updateScheduled = true;
@@ -135,32 +135,32 @@ let scrollTicking = false;
 // Combined scroll handler with throttling
 function handleScroll() {
   const scrollY = window.scrollY;
-  
+
   // Navbar background on scroll
   if (scrollY > 50) {
     navbar?.classList.add('scrolled');
   } else {
     navbar?.classList.remove('scrolled');
   }
-  
+
   // Active navigation indicator
   if (!isManualNavigation) {
     updateActiveNavLink(scrollY);
   }
-  
+
   // Parallax effects
   updateParallax(scrollY);
-  
+
   scrollTicking = false;
 }
 
 // Optimized navigation update function
 function updateActiveNavLink(scrollY = window.scrollY) {
   if (isManualNavigation) return;
-  
+
   let currentSection = '';
   const scrollPosition = scrollY + 100;
-  
+
   // Special case for the very top
   if (scrollY < 100) {
     currentSection = 'home';
@@ -170,19 +170,19 @@ function updateActiveNavLink(scrollY = window.scrollY) {
       const section = sections[i];
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      
+
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         currentSection = section.getAttribute('id');
         break;
       }
     }
   }
-  
+
   // Update active states only if section changed
   if (currentSection) {
     const activeLink = document.querySelector(`.nav-links a.active`);
     const newActiveLink = document.querySelector(`.nav-links a[href="#${currentSection}"]`);
-    
+
     if (activeLink !== newActiveLink) {
       activeLink?.classList.remove('active');
       newActiveLink?.classList.add('active');
@@ -200,11 +200,11 @@ window.addEventListener('scroll', () => {
 
 // Handle manual navigation clicks
 navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', function (e) {
     // Immediately update active state for clicked link
     navLinks.forEach(navLink => navLink.classList.remove('active'));
     this.classList.add('active');
-    
+
     // Prevent automatic updates during smooth scroll
     isManualNavigation = true;
     setTimeout(() => {
@@ -226,7 +226,7 @@ function updateParallax(scrollY) {
   // Throttle parallax updates to every 16ms (60fps max)
   const now = performance.now();
   if (now - lastParallaxUpdate < 16) return;
-  
+
   // Only animate if hero is visible (more efficient bounds check)
   if (scrollY < window.innerHeight * 1.2) {
     if (heroContent) {
@@ -239,7 +239,7 @@ function updateParallax(scrollY) {
       heroProfileBg.style.transform = `translate3d(-50%, -50%, 0) scale(${scale})`;
     }
   }
-  
+
   lastParallaxUpdate = now;
 }
 
@@ -251,17 +251,17 @@ const hero = document.querySelector('.hero');
 if (hero && heroProfileBg) {
   let mouseMoveFrame = null;
   let lastMouseMove = 0;
-  
+
   hero.addEventListener('mousemove', (e) => {
     const now = performance.now();
-    
+
     // Throttle to 60fps max
     if (now - lastMouseMove < 16) return;
-    
+
     if (mouseMoveFrame) {
       cancelAnimationFrame(mouseMoveFrame);
     }
-    
+
     mouseMoveFrame = requestAnimationFrame(() => {
       const rect = hero.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -274,7 +274,7 @@ if (hero && heroProfileBg) {
       heroProfileBg.style.transform = `translate3d(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px), 0)`;
       mouseMoveFrame = null;
     });
-    
+
     lastMouseMove = now;
   }, { passive: true });
 
@@ -547,3 +547,41 @@ async function copyToClipboard(text, buttonElement) {
     document.body.removeChild(textArea);
   }
 }
+
+// ============================================
+// LIQUID NAVBAR RIPPLE EFFECT
+// ============================================
+function createRipple(e, element) {
+  let rect = element.getBoundingClientRect();
+  let x = e.clientX - rect.left;
+  let y = e.clientY - rect.top;
+
+  let ripples = document.createElement('span');
+  ripples.className = 'ripple';
+
+  let size = Math.random() * 50 + 50;
+  ripples.style.width = size + 'px';
+  ripples.style.height = size + 'px';
+
+  ripples.style.left = (x - size / 2) + 'px';
+  ripples.style.top = (y - size / 2) + 'px';
+
+  element.appendChild(ripples);
+
+  setTimeout(() => {
+    ripples.remove();
+  }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    navbar.addEventListener('click', function (e) {
+      // Don't trigger ripple if clicking on a link or interactive element
+      if (e.target.closest('a') || e.target.closest('button') || e.target.closest('input') || e.target.closest('label')) {
+        return;
+      }
+      createRipple(e, this);
+    });
+  }
+});

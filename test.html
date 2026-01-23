@@ -99,22 +99,9 @@
         }
 
         /* Liquid Ripple Effect */
-        .ripple {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.8s linear;
-            pointer-events: none;
-            z-index: 10;
-        }
+        /* Liquid Ripple Effect - Removed, now in global style.css */
 
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
+        /* Navbar Override for Test Page REMOVED - Promoted to global style.css */
     </style>
 </head>
 
@@ -162,31 +149,10 @@
 
     <script src="script.js?v=3"></script>
     <script>
+        /* Reuse the ripple logic for cleanup */
         const glass = document.querySelector('.glass');
         glass.addEventListener('click', function (e) {
-            // Use 'this' (the container) to get the rect, ensuring coordinates are relative to the container
-            // regardless of which child element was actually clicked.
-            let rect = this.getBoundingClientRect();
-            let x = e.clientX - rect.left;
-            let y = e.clientY - rect.top;
-
-            let ripples = document.createElement('span');
-            ripples.className = 'ripple';
-
-            // Randomize size slightly for more organic feel
-            let size = Math.random() * 50 + 50;
-            ripples.style.width = size + 'px';
-            ripples.style.height = size + 'px';
-
-            // Center the ripple on the click coordinates
-            ripples.style.left = (x - size / 2) + 'px';
-            ripples.style.top = (y - size / 2) + 'px';
-
-            this.appendChild(ripples);
-
-            setTimeout(() => {
-                ripples.remove();
-            }, 1000);
+            createRipple(e, this);
         });
     </script>
 </body>
