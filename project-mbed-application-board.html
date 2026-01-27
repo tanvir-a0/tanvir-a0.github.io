@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mbed Application Board Projects - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Gallery customization for mbed project */
+        #gallery .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        #gallery .gallery-card {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: visible !important;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #gallery .gallery-card img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px 12px 0 0;
+        }
+
+        #gallery .gallery-card figcaption {
+            padding: 1.25rem !important;
+            font-size: 0.95rem !important;
+            color: #ffffff !important;
+            background: rgba(233, 226, 226, 0.14) !important;
+            font-weight: 500 !important;
+            line-height: 1.6 !important;
+            border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
+            min-height: 80px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            border-radius: 0 0 12px 12px;
+        }
+
+        #gallery .gallery-card figcaption strong {
+            color: #60a5fa !important;
+            display: inline !important;
+        }
+
+        body.light-mode #gallery .gallery-card figcaption {
+            color: #000000 !important;
+        }
+
+        body.light-mode #gallery .gallery-card figcaption strong {
+            color: #007aff !important;
+        }
+
+        #gallery .gallery-card:hover {
+            transform: none !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        #gallery .gallery-card:hover img {
+            transform: none !important;
+        }
+
+        #gallery .gallery-card::after {
+            display: none !important;
+        }
+
+        #gallery .gallery-card:hover::after {
+            opacity: 0 !important;
+            display: none !important;
+        }
+
+        /* Video section */
+        #videos .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        #videos .gallery-card {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #videos .gallery-card iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        #videos .gallery-card figcaption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Remove tick marks from feature lists */
+        .feature-list li::before {
+            content: none !important;
+        }
+
+        .feature-list li {
+            list-style: none;
+            padding-left: 0;
+        }
+    </style>
+</head>
+
+<body class="project-page project-mbed">
+    <div class="background">
+        <div class="gradient-layer gradient-one"></div>
+        <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+        <div>
+            <div class="logo">Tanvir Ahmed</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#certifications">Certification</a></li>
+                <li><a href="index.html#contact">Contacts</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-checkbox">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="theme-icon moon">🌙</span>
+                    <div class="theme-ball"></div>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-hero" id="top">
+            <div class="project-frame hero-grid">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow">Embedded Systems Practice</span>
+                    <h1>mbed Application Board Experiments</h1>
+                    <p class="hero-lede">A comprehensive hands-on practice log with the mbed NXP LPC1768 Application
+                        Board, exploring embedded programming, peripherals, and real-time applications using PlatformIO.
+                    </p>
+                    <p class="hero-subtitle">From basic LED blinks to Snake games, HID devices, and accelerometer-based
+                        applications — a journey through ARM Cortex-M3 development.</p>
+                    <div class="hero-meta">
+                        <div class="meta-card">
+                            <span class="meta-label">Platform</span>
+                            <span class="meta-value">mbed NXP LPC1768 (ARM Cortex-M3)</span>
+                        </div>
+                        <div class="meta-card">
+                            <span class="meta-label">Development</span>
+                            <span class="meta-value">PlatformIO, C/C++, Mbed Studio</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#videos" class="project-btn primary">Watch Demos</a>
+                        <a href="#gallery" class="project-btn outline">View Gallery</a>
+                        <a href="https://github.com/tanvir-a0/Mbed-Application-Board-with-NXP-LPC1768-in-PlatformIO"
+                            class="project-btn outline" target="_blank" rel="noopener noreferrer"
+                            style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                            <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                                style="width: 1.2em; height: 1.2em;">
+                            GitHub Repo
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="image-shell"
+                        style="border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                        <img src="assets/images/projects/mbed_application_board/snake_game.png"
+                            alt="Snake Game on mbed Application Board"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; color: var(--text-gray); font-size: 0.9rem;">
+                        Snake game running on the C12832 LCD with joystick control.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery" id="videos">
+            <div class="project-frame">
+                <div class="gallery-header">
+                    <h2>Video Demonstrations</h2>
+                    <p>Watch the mbed Application Board in action across various applications.</p>
+                </div>
+                <div class="gallery-grid">
+                    <figure class="gallery-card">
+                        <iframe src="https://www.youtube.com/embed/UIzro-KtAe0" title="Snake Game Demo" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption><strong>Snake Game:</strong> Classic snake game developed using the C12832 LCD
+                            display and joystick control on the mbed Application Board.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <iframe src="https://www.youtube.com/embed/iCfgoiwhTu8" title="Bubble Level Demo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption><strong>Bubble Level:</strong> Real-time bubble level application using the MMA7660
+                            accelerometer with visual feedback on the LCD.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <iframe src="https://www.youtube.com/embed/fMo4JPLMg6s" title="Playing Sound Demo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption><strong>Sound Playback:</strong> Demonstrating the onboard speaker by playing tones
+                            and sound effects with synchronized LCD display.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <iframe src="https://www.youtube.com/embed/yGFc1OoId2w" title="Mouse Control Demo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <figcaption><strong>USB HID Control:</strong> Controlling the computer mouse cursor and clicks
+                            using the joystick — demonstrating HID (Human Interface Device) capabilities.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery" id="gallery">
+            <div class="project-frame">
+                <div class="gallery-header">
+                    <h2>Project Gallery</h2>
+                    <p>Visual documentation of various experiments and tasks completed with the mbed board.</p>
+                </div>
+                <div class="gallery-grid">
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/snake_game.png" alt="Snake Game">
+                        <figcaption><strong>Snake Game:</strong> Fully functional snake game with collision detection,
+                            score tracking, and smooth joystick control.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/MMA7660_and_lcd.jpg"
+                            alt="Accelerometer Display">
+                        <figcaption><strong>Accelerometer Visualization:</strong> MMA7660 accelerometer readings
+                            displayed in real-time with a bubble level indicator for tilt detection.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/playing_sound.png"
+                            alt="Speaker Testing">
+                        <figcaption><strong>Speaker & Audio:</strong> Testing the onboard speaker with various tones,
+                            frequencies, and sound effects alongside visual feedback.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/showing_time_and_counter_in_serial_blink.jpg"
+                            alt="Serial Blink">
+                        <figcaption><strong>Serial Debugging:</strong> LED blink with serial logging displaying time
+                            and counter values for debugging and timing verification.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/keyboard_initialization.jpg"
+                            alt="Keyboard Init">
+                        <figcaption><strong>HID Keyboard Setup:</strong> Initializing USB HID keyboard functionality to
+                            make the board act as a keyboard device.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/testing_keyboard_output_making_the_device_act_like_a_keyboard.jpg"
+                            alt="Keyboard Testing">
+                        <figcaption><strong>Keyboard Emulation:</strong> Successfully testing keyboard output by sending
+                            keystrokes to a connected computer.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/typing_as_a_keyboard.jpg"
+                            alt="Typing Demo">
+                        <figcaption><strong>Automated Typing:</strong> The board typing text autonomously as a USB HID
+                            keyboard device.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/display_showing_the_ip_note_this_experiment_failed.jpg"
+                            alt="Ethernet Attempt">
+                        <figcaption><strong>Ethernet Experiment:</strong> Attempted Ethernet connectivity with DHCP — but failed in connectivity was not achieved due to driver problem.</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/projects/mbed_application_board/keil studio view in my laptop with my table.jpg"
+                            alt="Development Setup">
+                        <figcaption><strong>Development Environment:</strong> My workspace with the mbed Application
+                            Board connected to laptop running Mbed Studio/PlatformIO.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-features" id="features">
+            <div class="project-frame features-grid">
+                <article class="feature-card">
+                    <h2>Experiments Completed</h2>
+                    <ul class="feature-list">
+                        <li><strong>Display & Graphics:</strong> C12832 LCD text rendering, custom fonts, and graphics
+                            primitives.</li>
+                        <li><strong>Input Devices:</strong> Joystick control with debouncing, potentiometer ADC reading,
+                            accelerometer (MMA7660).</li>
+                        <li><strong>Output Devices:</strong> RGB LED with PWM color mixing, speaker/buzzer tone
+                            generation.</li>
+                        <li><strong>Communication:</strong> Serial UART debugging, USB HID (keyboard/mouse emulation).
+                        </li>
+                        <li><strong>Applications:</strong> Snake game, bubble level, temperature monitoring, LED effects.
+                        </li>
+                        <li><strong>Attempted:</strong> Ethernet connectivity (DHCP), WebSocket communication, USB mass
+                            storage access.</li>
+                    </ul>
+                </article>
+                <article class="feature-card tech">
+                    <h2>Technology Stack</h2>
+                    <div class="pill-cloud">
+                        <span class="pill">NXP LPC1768</span>
+                        <span class="pill">ARM Cortex-M3</span>
+                        <span class="pill">PlatformIO</span>
+                        <span class="pill">mbed Framework</span>
+                        <span class="pill">C/C++</span>
+                        <span class="pill">C12832 LCD</span>
+                        <span class="pill">MMA7660 Accelerometer</span>
+                        <span class="pill">USB HID</span>
+                        <span class="pill">PWM</span>
+                        <span class="pill">I2C/SPI</span>
+                        <span class="pill">ADC</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- <section class="project-features">
+            <div class="project-frame">
+                <article class="feature-card">
+                    <h2>Development Notes</h2>
+                    <ul class="feature-list">
+                        <li><strong>Platform:</strong> All projects built using PlatformIO in VS Code, not Keil Studio
+                            Cloud or mbed Studio.</li>
+                        <li><strong>Board Config:</strong> Board: NXP mbed LPC1768, Framework: mbed in PlatformIO Project
+                            Wizard.</li>
+                        <li><strong>16 Tasks:</strong> Numbered folders from basic blink to complex multi-peripheral
+                            integration projects.</li>
+                        <li><strong>Known Issues:</strong> WebSocket communication over Ethernet and USB Mass Storage
+                            (MSCFileSystem) access remain unresolved.</li>
+                        <li><strong>Special Thanks:</strong> Board borrowed from my friend Samin Sadiq Orin for practice
+                            and testing.</li>
+                        <li><strong>Documentation:</strong> Complete task list, code structure, and build instructions
+                            available in GitHub repository.</li>
+                    </ul>
+                </article>
+            </div>
+        </section> -->
+
+    </main>
+
+    <!-- Floating Back Button -->
+    <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+    <footer class="footer">
+        <p>&copy; 2026 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
