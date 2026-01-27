@@ -23,7 +23,7 @@
             flex-direction: column;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            overflow: hidden;
+            overflow: visible !important;
             background: rgba(255, 255, 255, 0.05);
         }
 
@@ -32,12 +32,55 @@
             aspect-ratio: 2 / 1;
             object-fit: contain;
             background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px 12px 0 0;
         }
 
         #gallery .gallery-card figcaption {
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-gray);
+            padding: 1.25rem !important;
+            font-size: 0.95rem !important;
+            color: #ffffff !important;
+            background: rgba(233, 226, 226, 0.14) !important;
+            font-weight: 500 !important;
+            line-height: 1.6 !important;
+            border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
+            min-height: 100px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        #gallery .gallery-card figcaption strong {
+            color: #60a5fa !important;
+            display: inline !important;
+        }
+
+        /* Light mode adjustments */
+        body.light-mode #gallery .gallery-card figcaption {
+            color: #000000 !important;
+        }
+
+        body.light-mode #gallery .gallery-card figcaption strong {
+            color: #007aff !important;
+        }
+
+        /* Disable hover effects for gallery section */
+        #gallery .gallery-card:hover {
+            transform: none !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        #gallery .gallery-card:hover img {
+            transform: none !important;
+        }
+
+        #gallery .gallery-card::after {
+            display: none !important;
+        }
+
+        #gallery .gallery-card:hover::after {
+            opacity: 0 !important;
+            display: none !important;
         }
     </style>
 </head>
@@ -170,86 +213,86 @@
                 <div class="gallery-grid">
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/14.jpg" alt="Dynamic Legend">
-                        <figcaption>Adding dynamic legends for maps and visualizations.</figcaption>
+                        <figcaption><strong>Dynamic Map Legends:</strong> Automatically generated color-coded legends that adapt to data ranges for enhanced map readability.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/9_1.jpg" alt="SAR Analysis">
-                        <figcaption>Using SAR data for all-weather monitoring, useful for flood detection.</figcaption>
+                        <figcaption><strong>SAR Satellite Imagery:</strong> Sentinel-1 radar data enables monitoring through clouds and darkness - essential for real-time flood detection during monsoon season.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/10.jpg" alt="Water Detection">
-                        <figcaption>Automated detection and quantification of water bodies using spectral indices.
+                        <figcaption><strong>Water Body Detection:</strong> Using NDWI (Normalized Difference Water Index) to automatically identify and measure surface water extent across regions.
                         </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/11.jpg" alt="Flood Detection">
-                        <figcaption>Detecting flood using multispectral and SAR imagery.</figcaption>
+                        <figcaption><strong>Flood Mapping:</strong> Combining optical and radar satellite data to accurately map flooded areas and assess disaster impact in near real-time.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/15_2.jpg" alt="Crosshair Inspector">
-                        <figcaption>Tool for inspecting pixel values and metadata at specific locations.</figcaption>
+                        <figcaption><strong>Interactive Pixel Inspector:</strong> Click anywhere on the map to retrieve detailed spectral band values, coordinates, and metadata for precise analysis.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/16.jpg" alt="Dynamic World">
-                        <figcaption>Using Google's Dynamic World dataset for land cover classification.</figcaption>
+                        <figcaption><strong>AI-Powered Land Cover:</strong> Google's Dynamic World provides near real-time land classification (forests, water, crops, urban) updated every 2-5 days.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/17.jpg" alt="Crop Damage">
-                        <figcaption>Assessing agricultural damage from monsoon flooding using NDVI.</figcaption>
+                        <figcaption><strong>Agricultural Damage Assessment:</strong> Before/after NDVI analysis reveals vegetation health decline in flooded croplands, helping quantify economic losses.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/18.jpg" alt="Risk Assessment">
-                        <figcaption>Simple risk assessment model for landslide and flood prone areas.</figcaption>
+                        <figcaption><strong>Multi-Hazard Risk Zones:</strong> Composite risk map combining slope, elevation, rainfall, and land cover data to identify vulnerable communities.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/19.jpg" alt="Slope Scanner">
-                        <figcaption>Slope analysis tool for terrain assessment and landslide risk mapping.</figcaption>
+                        <figcaption><strong>Terrain Slope Analysis:</strong> DEM-derived slope gradients categorized by steepness - critical for landslide susceptibility and infrastructure planning.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/20.jpg" alt="Hillshades">
-                        <figcaption>Generating hillshade visualizations from Digital Elevation Models (DEM).
+                        <figcaption><strong>3D Terrain Visualization:</strong> Hillshade rendering simulates sunlight and shadows on topography, revealing subtle elevation features invisible in flat maps.
                         </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/21.jpg" alt="Surface Temperature">
-                        <figcaption>Land Surface Temperature (LST) analysis for climate studies.</figcaption>
+                        <figcaption><strong>Heat Island Mapping:</strong> Landsat thermal bands show urban heat islands - cities can be 5-10°C warmer than surrounding rural areas.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/22.jpg" alt="Light Pollution">
-                        <figcaption>Mapping nighttime lights to analyze light pollution and urbanization.</figcaption>
+                        <figcaption><strong>Nighttime Lights Analysis:</strong> VIIRS satellite data tracks urbanization patterns, economic activity, and light pollution's environmental impact.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/25.jpg" alt="River Change">
-                        <figcaption>Monitoring river course changes and bank erosion over time.</figcaption>
+                        <figcaption><strong>River Morphology Tracking:</strong> Multi-year satellite imagery reveals how river channels shift, eroding banks and creating new land formations.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/25_1.jpg" alt="River Change 2">
-                        <figcaption>Detailed view of river morphology changes.</figcaption>
+                        <figcaption><strong>Erosion Hotspot Detail:</strong> Close-up analysis showing dramatic riverbank retreat - some areas lose hundreds of meters of land annually.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/29.jpg" alt="River Erosion">
-                        <figcaption>Analysis of river erosion patterns at Upzilla administrative level.</figcaption>
+                        <figcaption><strong>Regional Erosion Statistics:</strong> Quantifying land loss by administrative district - identifying which communities face highest displacement risk.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/30.jpg" alt="Water Richness">
-                        <figcaption>Ranking administrative units by their water resources.</figcaption>
+                        <figcaption><strong>Water Resource Distribution:</strong> Choropleth map showing surface water coverage by region - useful for water management and drought planning.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/31.jpg" alt="Clustering">
-                        <figcaption>Unsupervised machine learning for land classification.</figcaption>
+                        <figcaption><strong>K-Means Land Classification:</strong> Automated clustering algorithm groups similar spectral signatures - distinguishing water, vegetation, urban, and bare land without training data.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/33 2m.jpg" alt="Sea Level Rise 2m">
-                        <figcaption>Visualizing potential impact of 2m Sea Level Rise.</figcaption>
+                        <figcaption><strong>2m Sea Level Rise Scenario:</strong> Climate projection showing coastal areas at risk of permanent inundation - affecting millions in low-lying regions.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/33 5m rise.jpg" alt="Sea Level Rise 5m">
-                        <figcaption>Visualizing potential impact of 5m Sea Level Rise.</figcaption>
+                        <figcaption><strong>5m Sea Level Rise Scenario:</strong> Extreme scenario analysis - demonstrates catastrophic impact on coastal cities and agricultural land in worst-case projections.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/28 Using Google Earth Engine and Cloud Data.jpg"
                             alt="External Shapefiles">
-                        <figcaption>Working with custom shapefiles for detailed boundary analysis.</figcaption>
+                        <figcaption><strong>Custom Boundary Integration:</strong> Importing local administrative shapefiles into GEE for analysis aligned with regional governance structures.</figcaption>
                     </figure>
                 </div>
             </div>
