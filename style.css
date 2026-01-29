@@ -27,6 +27,7 @@ html {
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.2);
+  --thank-you-bg: url('assets/dark_mode_thank_you_section_background.jpg');
 }
 
 /*testing*/
@@ -50,6 +51,7 @@ body.light-mode {
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.15);
+  --thank-you-bg: url('assets/white_mode_thank_you_section_background.jpg');
 }
 
 body {
@@ -517,6 +519,38 @@ body.light-mode .hero-profile-bg {
 
 body.light-mode .hero-overlay {
   background: transparent;
+}
+
+/* Space Selfie Section - Full Image Display */
+.hero-background-image-copy {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hero-background-image-copy .hero-profile-bg {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  animation: none;
+  transition: none;
+  display: block;
+}
+
+.hero-background-image-copy .hero-overlay {
+  display: none;
 }
 
 .hero-content {
@@ -4279,4 +4313,57 @@ body.light-mode .contact-card:hover {
   box-shadow: 0 0 35px rgba(0, 113, 227, 1), 0 0 15px rgba(0, 113, 227, 0.6);
   transform: scale(1.05);
   /* Slight zoom on hover */
+}
+
+/* Thank You Section Refinements */
+#thank-you.hero {
+  min-height: auto;
+  padding-bottom: 4rem;
+  /* Reduced from default hero padding/height */
+  background-image: var(--thank-you-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+}
+
+#thank-you .hero-content {
+  height: auto;
+  padding-bottom: 0px;
+  /* Removed large padding */
+  display: block;
+  /* Ensure it doesn't force full height flex centering if not needed */
+}
+
+#thank-you .hero-text {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  /* Add side spacing */
+}
+
+#thank-you .hero-background-image-copy {
+  margin: 3rem auto;
+  /* Add vertical spacing around the image */
+}
+
+
+#thank-you .hero-content h1 {
+  font-size: clamp(2.6rem, 6.5vw, 3.9rem);
+  /* Significantly reduced font size */
+  margin-bottom: 1.5rem;
+}
+
+#thank-you .subtitle {
+  font-size: 1.45rem;
+  /* Reduced font size */
+  line-height: 1.6;
+  color: var(--text-gray);
+  max-width: 100%;
+  margin: 0 auto 1.5rem;
+}
+
+body.light-mode #thank-you .subtitle {
+  color: #1d1d1f;
+  /* Darker text for light mode */
 }
