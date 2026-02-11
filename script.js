@@ -585,3 +585,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ============================================
+// EASTER EGG: CAT APPEARS ON SPACEBAR
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  const easterCat = document.getElementById('easter-cat');
+
+  if (easterCat) {
+    let isSpacePressed = false;
+
+    document.addEventListener('keydown', (e) => {
+      // Check if spacebar is pressed and not already pressed (to avoid key repeat)
+      if (e.code === 'Space' && !isSpacePressed) {
+        // Don't trigger if user is typing in an input/textarea
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+          return;
+        }
+
+        e.preventDefault(); // Prevent page scroll on spacebar
+        isSpacePressed = true;
+        easterCat.classList.add('show');
+
+        // Re-trigger the wiggle animation
+        const catEmoji = easterCat.querySelector('.cat-emoji');
+        if (catEmoji) {
+          catEmoji.style.animation = 'none';
+          setTimeout(() => {
+            catEmoji.style.animation = 'catWiggle 0.5s ease-in-out';
+          }, 10);
+        }
+      }
+    });
+
+    document.addEventListener('keyup', (e) => {
+      // Hide cat when spacebar is released
+      if (e.code === 'Space') {
+        isSpacePressed = false;
+        easterCat.classList.remove('show');
+      }
+    });
+  }
+});
