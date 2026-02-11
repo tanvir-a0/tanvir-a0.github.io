@@ -100,14 +100,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Liquid Glass Style - Subtle */
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px) saturate(150%);
-  -webkit-backdrop-filter: blur(8px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* Liquid Glass Style */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px) saturate(180%);
+  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 999px;
-  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.1),
-    inset 0 2px 10px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2),
+    inset 0 4px 20px rgba(255, 255, 255, 0.3);
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   animation: slideDown 0.5s ease;
@@ -116,9 +116,9 @@ body {
 }
 
 .navbar:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15),
-    inset 0 2px 10px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
 .navbar::after {
@@ -128,14 +128,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   backdrop-filter: blur(1px);
-  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 0.5),
-    inset 0px -9px 0px -8px rgba(255, 255, 255, 0.5);
-  opacity: 0.3;
+  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+    inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+  opacity: 0.6;
   z-index: -1;
-  filter: blur(1px) drop-shadow(10px 4px 6px rgba(0, 0, 0, 0.1)) brightness(105%);
+  filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
   pointer-events: none;
 }
 
@@ -177,7 +177,7 @@ body.light-mode .navbar {
   top: 12px;
   width: calc(100% - 48px);
   max-width: 1050px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled>* {
@@ -513,23 +513,23 @@ body.light-mode .theme-label:hover {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  /* White gradient with varying opacity for glass-like effect */
+  /* Enhanced gradient with more color stops for smoother transitions */
   background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.7) 12.5%,
-      rgba(255, 255, 255, 0.85) 25%,
-      rgba(255, 255, 255, 0.6) 37.5%,
-      rgba(255, 255, 255, 0.8) 50%,
-      rgba(255, 255, 255, 0.65) 62.5%,
-      rgba(255, 255, 255, 0.75) 75%,
-      rgba(255, 255, 255, 0.7) 87.5%,
-      rgba(255, 255, 255, 0.9) 100%);
+      #667eea 0%,
+      #764ba2 12.5%,
+      #f093fb 25%,
+      #4facfe 37.5%,
+      #00f2fe 50%,
+      #43e97b 62.5%,
+      #38f9d7 75%,
+      #fa709a 87.5%,
+      #fee140 100%);
   background-size: 300% 300%;
   z-index: 10000;
   opacity: 0;
   pointer-events: none;
-  /* Softer white glow */
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.3);
+  /* Softer glow */
+  box-shadow: 0 0 40px rgba(102, 126, 234, 0.4), 0 0 80px rgba(118, 75, 162, 0.3);
   /* Add blur for dreamy effect */
   filter: blur(2px);
 }
@@ -617,17 +617,17 @@ body.light-mode .theme-label:hover {
 @keyframes rgbFadeOut {
   0% {
     background: linear-gradient(135deg,
-        rgba(255, 255, 255, 0.9) 0%,
-        rgba(255, 255, 255, 0.7) 12.5%,
-        rgba(255, 255, 255, 0.85) 25%,
-        rgba(255, 255, 255, 0.6) 37.5%,
-        rgba(255, 255, 255, 0.8) 50%,
-        rgba(255, 255, 255, 0.65) 62.5%,
-        rgba(255, 255, 255, 0.75) 75%,
-        rgba(255, 255, 255, 0.7) 87.5%,
-        rgba(255, 255, 255, 0.9) 100%);
+        #667eea 0%,
+        #764ba2 12.5%,
+        #f093fb 25%,
+        #4facfe 37.5%,
+        #00f2fe 50%,
+        #43e97b 62.5%,
+        #38f9d7 75%,
+        #fa709a 87.5%,
+        #fee140 100%);
     background-size: 300% 300%;
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.4), 0 0 80px rgba(118, 75, 162, 0.3);
     filter: blur(2px);
     opacity: 0.85;
   }
@@ -684,12 +684,12 @@ body.light-mode .theme-label:hover {
   height: 20px;
   border-radius: 50%;
   background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.85),
-      rgba(255, 255, 255, 0.75));
+      #667eea,
+      #764ba2,
+      #f093fb,
+      #4facfe);
   background-size: 200% 200%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.4);
   filter: blur(1px);
   opacity: 0;
   pointer-events: none;
