@@ -9,6 +9,11 @@
 
 
     <style>
+        /* Make the main title match IHABOTv2 page style */
+        .project-hero h1 {
+            font-size: 2rem !important;
+        }
+
         /* Force Gallery Fixes */
         #gallery .gallery-grid {
             display: grid;
@@ -49,7 +54,7 @@
             opacity: 1 !important;
             border-radius: 0 0 12px 12px;
         }
-        
+
         #gallery .gallery-card figcaption strong {
             color: #60a5fa !important;
             display: inline !important;
@@ -92,27 +97,27 @@
     </div>
 
     <nav class="navbar">
-      <div>
-        <div class="logo">Tanvir Ahmed</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#certifications">Certification</a></li>
-          <li><a href="index.html#contact">Contacts</a></li>
-          <!--   Remove this line when done test page test_page -->
-          <!--- <li><a href="test.html">Test Page</a></li> --->
-        </ul>
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch" class="theme-checkbox">
-          <label for="theme-switch" class="theme-label">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-            <div class="theme-ball"></div>
-          </label>
+        <div>
+            <div class="logo">Tanvir Ahmed</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#certifications">Certification</a></li>
+                <li><a href="index.html#contact">Contacts</a></li>
+                <!--   Remove this line when done test page test_page -->
+                <!--- <li><a href="test.html">Test Page</a></li> --->
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-checkbox">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="theme-icon moon">🌙</span>
+                    <div class="theme-ball"></div>
+                </label>
+            </div>
         </div>
-      </div>
     </nav>
 
     <main class="project-detail">
@@ -213,86 +218,113 @@
                 <div class="gallery-grid">
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/14.jpg" alt="Dynamic Legend">
-                        <figcaption><strong>Dynamic Map Legends:</strong> Automatically generated color-coded legends that adapt to data ranges for enhanced map readability.</figcaption>
+                        <figcaption><strong>Dynamic Map Legends:</strong> Automatically generated color-coded legends
+                            that adapt to data ranges for enhanced map readability.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/9_1.jpg" alt="SAR Analysis">
-                        <figcaption><strong>SAR Satellite Imagery:</strong> Sentinel-1 radar data enables monitoring through clouds and darkness - essential for real-time flood detection during monsoon season.</figcaption>
+                        <figcaption><strong>SAR Satellite Imagery:</strong> Sentinel-1 radar data enables monitoring
+                            through clouds and darkness - essential for real-time flood detection during monsoon season.
+                        </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/10.jpg" alt="Water Detection">
-                        <figcaption><strong>Water Body Detection:</strong> Using NDWI (Normalized Difference Water Index) to automatically identify and measure surface water extent across regions.
+                        <figcaption><strong>Water Body Detection:</strong> Using NDWI (Normalized Difference Water
+                            Index) to automatically identify and measure surface water extent across regions.
                         </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/11.jpg" alt="Flood Detection">
-                        <figcaption><strong>Flood Mapping:</strong> Combining optical and radar satellite data to accurately map flooded areas and assess disaster impact in near real-time.</figcaption>
+                        <figcaption><strong>Flood Mapping:</strong> Combining optical and radar satellite data to
+                            accurately map flooded areas and assess disaster impact in near real-time.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/15_2.jpg" alt="Crosshair Inspector">
-                        <figcaption><strong>Interactive Pixel Inspector:</strong> Click anywhere on the map to retrieve detailed spectral band values, coordinates, and metadata for precise analysis.</figcaption>
+                        <figcaption><strong>Interactive Pixel Inspector:</strong> Click anywhere on the map to retrieve
+                            detailed spectral band values, coordinates, and metadata for precise analysis.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/16.jpg" alt="Dynamic World">
-                        <figcaption><strong>AI-Powered Land Cover:</strong> Google's Dynamic World provides near real-time land classification (forests, water, crops, urban) updated every 2-5 days.</figcaption>
+                        <figcaption><strong>AI-Powered Land Cover:</strong> Google's Dynamic World provides near
+                            real-time land classification (forests, water, crops, urban) updated every 2-5 days.
+                        </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/17.jpg" alt="Crop Damage">
-                        <figcaption><strong>Agricultural Damage Assessment:</strong> Before/after NDVI analysis reveals vegetation health decline in flooded croplands, helping quantify economic losses.</figcaption>
+                        <figcaption><strong>Agricultural Damage Assessment:</strong> Before/after NDVI analysis reveals
+                            vegetation health decline in flooded croplands, helping quantify economic losses.
+                        </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/18.jpg" alt="Risk Assessment">
-                        <figcaption><strong>Multi-Hazard Risk Zones:</strong> Composite risk map combining slope, elevation, rainfall, and land cover data to identify vulnerable communities.</figcaption>
+                        <figcaption><strong>Multi-Hazard Risk Zones:</strong> Composite risk map combining slope,
+                            elevation, rainfall, and land cover data to identify vulnerable communities.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/19.jpg" alt="Slope Scanner">
-                        <figcaption><strong>Terrain Slope Analysis:</strong> DEM-derived slope gradients categorized by steepness - critical for landslide susceptibility and infrastructure planning.</figcaption>
+                        <figcaption><strong>Terrain Slope Analysis:</strong> DEM-derived slope gradients categorized by
+                            steepness - critical for landslide susceptibility and infrastructure planning.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/20.jpg" alt="Hillshades">
-                        <figcaption><strong>3D Terrain Visualization:</strong> Hillshade rendering simulates sunlight and shadows on topography, revealing subtle elevation features invisible in flat maps.
+                        <figcaption><strong>3D Terrain Visualization:</strong> Hillshade rendering simulates sunlight
+                            and shadows on topography, revealing subtle elevation features invisible in flat maps.
                         </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/21.jpg" alt="Surface Temperature">
-                        <figcaption><strong>Heat Island Mapping:</strong> Landsat thermal bands show urban heat islands - cities can be 5-10°C warmer than surrounding rural areas.</figcaption>
+                        <figcaption><strong>Heat Island Mapping:</strong> Landsat thermal bands show urban heat islands
+                            - cities can be 5-10°C warmer than surrounding rural areas.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/22.jpg" alt="Light Pollution">
-                        <figcaption><strong>Nighttime Lights Analysis:</strong> VIIRS satellite data tracks urbanization patterns, economic activity, and light pollution's environmental impact.</figcaption>
+                        <figcaption><strong>Nighttime Lights Analysis:</strong> VIIRS satellite data tracks urbanization
+                            patterns, economic activity, and light pollution's environmental impact.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/25.jpg" alt="River Change">
-                        <figcaption><strong>River Morphology Tracking:</strong> Multi-year satellite imagery reveals how river channels shift, eroding banks and creating new land formations.</figcaption>
+                        <figcaption><strong>River Morphology Tracking:</strong> Multi-year satellite imagery reveals how
+                            river channels shift, eroding banks and creating new land formations.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/25_1.jpg" alt="River Change 2">
-                        <figcaption><strong>Erosion Hotspot Detail:</strong> Close-up analysis showing dramatic riverbank retreat - some areas lose hundreds of meters of land annually.</figcaption>
+                        <figcaption><strong>Erosion Hotspot Detail:</strong> Close-up analysis showing dramatic
+                            riverbank retreat - some areas lose hundreds of meters of land annually.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/29.jpg" alt="River Erosion">
-                        <figcaption><strong>Regional Erosion Statistics:</strong> Quantifying land loss by administrative district - identifying which communities face highest displacement risk.</figcaption>
+                        <figcaption><strong>Regional Erosion Statistics:</strong> Quantifying land loss by
+                            administrative district - identifying which communities face highest displacement risk.
+                        </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/30.jpg" alt="Water Richness">
-                        <figcaption><strong>Water Resource Distribution:</strong> Choropleth map showing surface water coverage by region - useful for water management and drought planning.</figcaption>
+                        <figcaption><strong>Water Resource Distribution:</strong> Choropleth map showing surface water
+                            coverage by region - useful for water management and drought planning.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/31.jpg" alt="Clustering">
-                        <figcaption><strong>K-Means Land Classification:</strong> Automated clustering algorithm groups similar spectral signatures - distinguishing water, vegetation, urban, and bare land without training data.</figcaption>
+                        <figcaption><strong>K-Means Land Classification:</strong> Automated clustering algorithm groups
+                            similar spectral signatures - distinguishing water, vegetation, urban, and bare land without
+                            training data.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/33 2m.jpg" alt="Sea Level Rise 2m">
-                        <figcaption><strong>2m Sea Level Rise Scenario:</strong> Climate projection showing coastal areas at risk of permanent inundation - affecting millions in low-lying regions.</figcaption>
+                        <figcaption><strong>2m Sea Level Rise Scenario:</strong> Climate projection showing coastal
+                            areas at risk of permanent inundation - affecting millions in low-lying regions.
+                        </figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/33 5m rise.jpg" alt="Sea Level Rise 5m">
-                        <figcaption><strong>5m Sea Level Rise Scenario:</strong> Extreme scenario analysis - demonstrates catastrophic impact on coastal cities and agricultural land in worst-case projections.</figcaption>
+                        <figcaption><strong>5m Sea Level Rise Scenario:</strong> Extreme scenario analysis -
+                            demonstrates catastrophic impact on coastal cities and agricultural land in worst-case
+                            projections.</figcaption>
                     </figure>
                     <figure class="gallery-card">
                         <img src="assets/projects_from_git/GoogleEarthEngine-/28 Using Google Earth Engine and Cloud Data.jpg"
                             alt="External Shapefiles">
-                        <figcaption><strong>Custom Boundary Integration:</strong> Importing local administrative shapefiles into GEE for analysis aligned with regional governance structures.</figcaption>
+                        <figcaption><strong>Custom Boundary Integration:</strong> Importing local administrative
+                            shapefiles into GEE for analysis aligned with regional governance structures.</figcaption>
                     </figure>
                 </div>
             </div>
