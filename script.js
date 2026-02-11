@@ -39,12 +39,7 @@
       navbar.classList.remove('navbar-animating');
     }, 1700);
 
-    // Create bubble burst effect before removing main bubble
-    setTimeout(() => {
-      createBubbleBurst(bubble);
-    }, 1900);
-
-    // Remove bubble and clean up after burst animation completes
+    // After bar expands and fades, remove bubble and show navbar
     setTimeout(() => {
       bubble.remove();
       navbar.classList.remove('navbar-ready');
@@ -53,7 +48,7 @@
 
       // Mark animation as seen (uncomment to enable once-only behavior)
       // localStorage.setItem('navbarAnimationShown', 'true');
-    }, 2800);
+    }, 2000); // Show navbar after all animations complete
   });
 
   // Function to create bubble burst effect
