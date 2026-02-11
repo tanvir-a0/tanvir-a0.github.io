@@ -471,12 +471,16 @@ body.light-mode .theme-label:hover {
 }
 
 @keyframes catWiggle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(-5deg);
   }
+
   75% {
     transform: rotate(5deg);
   }
@@ -494,6 +498,291 @@ body.light-mode .theme-label:hover {
     font-size: 2.5rem;
   }
 }
+
+
+/* ============================================ */
+/* RGB BUBBLE TO NAVBAR ANIMATION */
+/* ============================================ */
+
+/* RGB Bubble Element */
+.rgb-bubble {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* Enhanced gradient with more color stops for smoother transitions */
+  background: linear-gradient(135deg,
+      #667eea 0%,
+      #764ba2 12.5%,
+      #f093fb 25%,
+      #4facfe 37.5%,
+      #00f2fe 50%,
+      #43e97b 62.5%,
+      #38f9d7 75%,
+      #fa709a 87.5%,
+      #fee140 100%);
+  background-size: 300% 300%;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  /* Softer glow */
+  box-shadow: 0 0 40px rgba(102, 126, 234, 0.4), 0 0 80px rgba(118, 75, 162, 0.3);
+  /* Add blur for dreamy effect */
+  filter: blur(2px);
+}
+
+/* Animation: RGB Gradient Shift - Smoother movement */
+@keyframes rgbShift {
+  0% {
+    background-position: 0% 50%;
+    filter: blur(2px) saturate(120%);
+  }
+
+  25% {
+    background-position: 50% 100%;
+    filter: blur(3px) saturate(140%);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    filter: blur(2px) saturate(120%);
+  }
+
+  75% {
+    background-position: 50% 0%;
+    filter: blur(3px) saturate(140%);
+  }
+
+  100% {
+    background-position: 0% 50%;
+    filter: blur(2px) saturate(120%);
+  }
+}
+
+/* Animation: Bubble Appears and Descends from Top */
+@keyframes bubbleRise {
+  0% {
+    opacity: 0;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+  }
+
+  20% {
+    opacity: 0.7;
+    top: 16px;
+    transform: translateX(-50%) scale(0.7);
+  }
+
+  60% {
+    opacity: 0.9;
+    top: 16px;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  100% {
+    opacity: 0.85;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Animation: Bubble Expands to Navbar Shape */
+@keyframes bubbleExpand {
+  0% {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50vh + 32px));
+  }
+
+  100% {
+    width: calc(100% - 32px);
+    max-width: 1100px;
+    height: 48px;
+    border-radius: 999px;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Animation: RGB Fade to Glassmorphism */
+@keyframes rgbFadeOut {
+  0% {
+    background: linear-gradient(135deg,
+        #667eea 0%,
+        #764ba2 12.5%,
+        #f093fb 25%,
+        #4facfe 37.5%,
+        #00f2fe 50%,
+        #43e97b 62.5%,
+        #38f9d7 75%,
+        #fa709a 87.5%,
+        #fee140 100%);
+    background-size: 300% 300%;
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.4), 0 0 80px rgba(118, 75, 162, 0.3);
+    filter: blur(2px);
+    opacity: 0.85;
+  }
+
+  100% {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px) saturate(180%);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.3);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/* Trigger animation classes */
+.rgb-bubble.animate {
+  animation:
+    bubbleRise 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    rgbShift 2s ease-in-out infinite,
+    bubbleExpand 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards,
+    rgbFadeOut 0.5s ease-in-out 1.4s forwards;
+}
+
+/* Hide navbar content during animation */
+.navbar.navbar-animating {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar.navbar-animating>* {
+  opacity: 0;
+}
+
+/* Show navbar content after animation */
+.navbar.navbar-ready>* {
+  animation: contentFadeIn 0.4s ease-in-out 1.7s forwards;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bubble Burst Effect - Small bubbles that pop */
+.burst-bubble {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+      #667eea,
+      #764ba2,
+      #f093fb,
+      #4facfe);
+  background-size: 200% 200%;
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.4);
+  filter: blur(1px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10001;
+}
+
+@keyframes bubblePop {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(1px);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.2);
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    filter: blur(3px);
+  }
+}
+
+.burst-bubble.pop {
+  animation: bubblePop 0.4s ease-out forwards;
+}
+
+
+/* Light mode adjustments for bubble */
+body.light-mode .rgb-bubble {
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.3), 0 0 60px rgba(0, 255, 255, 0.3);
+}
+
+/* Responsive bubble size */
+@media (max-width: 768px) {
+  .rgb-bubble {
+    width: 50px;
+    height: 50px;
+  }
+
+  @keyframes bubbleExpand {
+    0% {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-50vh + 28px));
+    }
+
+    100% {
+      width: calc(100% - 24px);
+      max-width: 1100px;
+      height: 44px;
+      border-radius: 999px;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .rgb-bubble {
+    width: 40px;
+    height: 40px;
+  }
+
+  @keyframes bubbleExpand {
+    0% {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-50vh + 24px));
+    }
+
+    100% {
+      width: calc(100% - 16px);
+      max-width: 1100px;
+      height: 40px;
+      border-radius: 999px;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
 
 
 /* Hero Section */
@@ -712,7 +1001,7 @@ body.light-mode .subtitle {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid #007aff;
   border-radius: 980px;
   color: white;
   font-weight: 500;

@@ -1,3 +1,91 @@
+// ============================================
+// RGB BUBBLE TO NAVBAR ANIMATION
+// ============================================
+(function () {
+  // Check if user prefers reduced motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Check if animation has been shown before (comment out to test repeatedly)
+  // const hasSeenAnimation = localStorage.getItem('navbarAnimationShown') === 'true';
+  const hasSeenAnimation = false; // Set to false to always show animation for testing
+
+  // Get elements
+  const bubble = document.getElementById('rgb-bubble');
+  const navbar = document.getElementById('main-navbar');
+
+  if (!bubble || !navbar) return;
+
+  // If reduced motion or animation already seen, show navbar immediately
+  if (prefersReducedMotion || hasSeenAnimation) {
+    navbar.style.opacity = '1';
+    bubble.style.display = 'none';
+    return;
+  }
+
+  // Start animation on page load
+  window.addEventListener('load', function () {
+    // Completely hide navbar during animation
+    navbar.style.visibility = 'hidden';
+    navbar.classList.add('navbar-animating');
+
+    // Start bubble animation
+    setTimeout(() => {
+      bubble.classList.add('animate');
+    }, 100);
+
+    // Prepare navbar content fade-in
+    setTimeout(() => {
+      navbar.classList.add('navbar-ready');
+      navbar.classList.remove('navbar-animating');
+    }, 1700);
+
+    // Create bubble burst effect before removing main bubble
+    setTimeout(() => {
+      createBubbleBurst(bubble);
+    }, 1900);
+
+    // Remove bubble and clean up after burst animation completes
+    setTimeout(() => {
+      bubble.remove();
+      navbar.classList.remove('navbar-ready');
+      navbar.style.visibility = 'visible';
+      navbar.style.opacity = '1';
+
+      // Mark animation as seen (uncomment to enable once-only behavior)
+      // localStorage.setItem('navbarAnimationShown', 'true');
+    }, 2800);
+  });
+
+  // Function to create bubble burst effect
+  function createBubbleBurst(mainBubble) {
+    const bubbleRect = mainBubble.getBoundingClientRect();
+    const numBubbles = 12; // Number of small bubbles
+
+    for (let i = 0; i < numBubbles; i++) {
+      const smallBubble = document.createElement('div');
+      smallBubble.className = 'burst-bubble';
+
+      // Position along the navbar
+      const leftPercent = (i / (numBubbles - 1)) * 100;
+      smallBubble.style.left = `calc(${leftPercent}% * (${bubbleRect.width}px / 100vw) + ${bubbleRect.left}px)`;
+      smallBubble.style.top = `${bubbleRect.top + bubbleRect.height / 2}px`;
+
+      document.body.appendChild(smallBubble);
+
+      // Trigger pop animation with delay
+      setTimeout(() => {
+        smallBubble.classList.add('pop');
+
+        // Remove bubble after animation
+        setTimeout(() => {
+          smallBubble.remove();
+        }, 400);
+      }, i * 60); // Stagger the pops
+    }
+  }
+
+})();
+
 // Theme Toggle Functionality
 const themeSwitch = document.getElementById('theme-switch');
 const body = document.body;
