@@ -6,6 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mbed Application Board Projects - Tanvir's Robotics Lab</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      /* Make the main title match other project pages */
+      .project-hero h1 {
+        font-size: 2rem !important;
+      }
+
+      /* Force Gallery Caption Visibility */
+      #gallery .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 2rem;
+      }
+
+      #gallery .gallery-card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: visible !important;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      #gallery .gallery-card img {
+        width: 100%;
+        height: 250px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+      }
+
+      #gallery .gallery-card figcaption {
+        padding: 1.25rem !important;
+        font-size: 0.95rem !important;
+        color: #ffffff !important;
+        background: rgba(233, 226, 226, 0.14) !important;
+        font-weight: 500 !important;
+        line-height: 1.6 !important;
+        border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
+        min-height: 80px !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        border-radius: 0 0 12px 12px;
+      }
+
+      body.light-mode #gallery .gallery-card figcaption {
+        color: #000000 !important;
+      }
+
+      #gallery .gallery-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      #gallery .gallery-card:hover img {
+        transform: none !important;
+      }
+
+      #gallery .gallery-card::after {
+        display: none !important;
+      }
+
+      #gallery .gallery-card:hover::after {
+        opacity: 0 !important;
+        display: none !important;
+      }
+    </style>
+
 
     <style>
         /* Gallery customization for mbed project */
