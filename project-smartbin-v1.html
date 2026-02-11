@@ -1,192 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartBinV1 - Tanvir's Robotics Lab</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      /* Make the main title match other project pages */
-      .project-hero h1 {
-        font-size: 2rem !important;
-      }
 
-      /* Force Gallery Caption Visibility */
-      #gallery .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin-top: 2rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartBinV1 - Tanvir's Robotics Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Make the main title match other project pages */
+    .project-hero h1 {
+      font-size: 2rem !important;
+    }
 
-      #gallery .gallery-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        overflow: visible !important;
-        background: rgba(255, 255, 255, 0.05);
-      }
+    /* Force Gallery Caption Visibility */
+    #gallery .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 2rem;
+    }
 
-      #gallery .gallery-card img {
-        width: 100%;
-        height: 250px;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 12px 12px 0 0;
-      }
+    #gallery .gallery-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: visible !important;
+      background: rgba(255, 255, 255, 0.05);
+    }
 
-      #gallery .gallery-card figcaption {
-        padding: 1.25rem !important;
-        font-size: 0.95rem !important;
-        color: #ffffff !important;
-        background: rgba(233, 226, 226, 0.14) !important;
-        font-weight: 500 !important;
-        line-height: 1.6 !important;
-        border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
-        min-height: 80px !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        border-radius: 0 0 12px 12px;
-      }
+    #gallery .gallery-card img {
+      width: 100%;
+      height: 250px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
 
-      body.light-mode #gallery .gallery-card figcaption {
-        color: #000000 !important;
-      }
+    #gallery .gallery-card figcaption {
+      padding: 1.25rem !important;
+      font-size: 0.95rem !important;
+      color: #ffffff !important;
+      background: rgba(233, 226, 226, 0.14) !important;
+      font-weight: 500 !important;
+      line-height: 1.6 !important;
+      border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
+      min-height: 80px !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      border-radius: 0 0 12px 12px;
+    }
 
-      #gallery .gallery-card:hover {
-        transform: none !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-      }
+    body.light-mode #gallery .gallery-card figcaption {
+      color: #000000 !important;
+    }
 
-      #gallery .gallery-card:hover img {
-        transform: none !important;
-      }
+    #gallery .gallery-card:hover {
+      transform: none !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
 
-      #gallery .gallery-card::after {
-        display: none !important;
-      }
+    #gallery .gallery-card:hover img {
+      transform: none !important;
+    }
 
-      #gallery .gallery-card:hover::after {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    </style>
+    #gallery .gallery-card::after {
+      display: none !important;
+    }
 
-  </head>
-  <body class="project-page">
-    <div class="background">
-      <div class="gradient-layer gradient-one"></div>
-      <div class="gradient-layer gradient-two"></div>
+    #gallery .gallery-card:hover::after {
+      opacity: 0 !important;
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body class="project-page">
+  <div class="background">
+    <div class="gradient-layer gradient-one"></div>
+    <div class="gradient-layer gradient-two"></div>
+  </div>
+
+  <nav class="navbar">
+    <div>
+      <div class="logo">Tanvir Ahmed</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#certifications">Certification</a></li>
+        <li><a href="index.html#contact">Contacts</a></li>
+        <!--   Remove this line when done test page test_page -->
+        <!--- <li><a href="test.html">Test Page</a></li> --->
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
     </div>
+  </nav>
 
-    <nav class="navbar">
-      <div>
-        <div class="logo">Tanvir Ahmed</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#certifications">Certification</a></li>
-          <li><a href="index.html#contact">Contacts</a></li>
-          <!--   Remove this line when done test page test_page -->
-          <!--- <li><a href="test.html">Test Page</a></li> --->
-        </ul>
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch" class="theme-checkbox">
-          <label for="theme-switch" class="theme-label">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-            <div class="theme-ball"></div>
-          </label>
+  <main class="project-detail">
+    <section class="project-hero" id="top">
+      <div class="project-frame hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">Personal Project</span>
+          <h1>SmartBinV1</h1>
+          <p class="hero-lede">An IoT-based smart waste monitoring system that senses and analyzes gases from
+            compostable waste.</p>
+          <p class="hero-subtitle">Collaboration with a Senior from UAP to promote smarter waste management through IoT.
+          </p>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Hardware, IoT, and Crusher Designer</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Toolchain</span>
+              <span class="meta-value">IoT, Gas Sensors, Cloud, Dart, Flutter</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">April 2024 – December 2024</span>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a href="#gallery" class="project-btn outline">View Gallery</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="model-shell">
+            <img src="assets/images/projects/smart_bin/main_bin_image.jpg" alt="SmartBinV1" class="project-hero-image">
+          </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <main class="project-detail">
-      <section class="project-hero" id="top">
-        <div class="project-frame hero-grid">
-          <div class="hero-copy">
-            <span class="hero-eyebrow">Personal Project</span>
-            <h1>SmartBinV1</h1>
-            <p class="hero-lede">An IoT-based smart waste monitoring system that senses and analyzes gases from compostable waste.</p>
-            <p class="hero-subtitle">Collaboration with a Senior from UAP to promote smarter waste management through IoT.</p>
-            <div class="hero-meta">
-              <div class="meta-card">
-                <span class="meta-label">Role</span>
-                <span class="meta-value">Hardware, IoT, and Crusher Designer</span>
-              </div>
-              <div class="meta-card">
-                <span class="meta-label">Toolchain</span>
-                <span class="meta-value">IoT, Gas Sensors, Cloud, Dart, Flutter</span>
-              </div>
-            </div>
-            <div class="hero-cta">
-              <a href="#gallery" class="project-btn outline">View Gallery</a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="model-shell">
-              <img src="assets/images/projects/smart_bin/main_bin_image.jpg" alt="SmartBinV1" class="project-hero-image">
-            </div>
-          </div>
+    <section class="project-story" id="about-me">
+      <div class="project-frame story-grid">
+        <article class="story-card">
+          <h2>About The Project</h2>
+          <p>SmartBin – IoT-Based Smart Waste Monitoring System. Personal Project | Collaboration with a Senior from
+            UAP. Developed a smart bin equipped with multiple MQ series gas sensors to detect and analyze the types of
+            gases released from waste materials. Integrated the system with the cloud to enable real-time monitoring and
+            data visualization through a custom-built smartphone application. Also can store data for further gas type
+            analysis. Handled the sensor interfacing, data processing, and cloud communication, while collaborating on
+            app development and hardware design. I also made a crusher for this project that crushes the trash before
+            reaching the storage are. The project aimed to explore environmental monitoring and promote smarter waste
+            management through IoT.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-gallery" id="app-interface">
+      <div class="project-frame">
+        <div class="gallery-header">
+          <h2>Application Interface</h2>
+          <p>A custom-built smartphone application for real-time monitoring and data visualization.</p>
         </div>
-      </section>
-
-      <section class="project-story" id="about-me">
-        <div class="project-frame story-grid">
-          <article class="story-card">
-            <h2>About The Project</h2>
-            <p>SmartBin – IoT-Based Smart Waste Monitoring System. Personal Project | Collaboration with a Senior from UAP. Developed a smart bin equipped with multiple MQ series gas sensors to detect and analyze the types of gases released from waste materials. Integrated the system with the cloud to enable real-time monitoring and data visualization through a custom-built smartphone application. Also can store data for further gas type analysis. Handled the sensor interfacing, data processing, and cloud communication, while collaborating on app development and hardware design. I also made a crusher for this project that crushes the trash before reaching the storage are. The project aimed to explore environmental monitoring and promote smarter waste management through IoT.</p>
-          </article>
+        <div class="app-screenshot-container">
+          <figure class="app-screenshot-card">
+            <img src="assets/images/projects/smart_bin/app_screenshots.jpg" alt="App Screenshots">
+            <figcaption>App Screenshots</figcaption>
+          </figure>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="project-gallery" id="app-interface">
-        <div class="project-frame">
-          <div class="gallery-header">
-            <h2>Application Interface</h2>
-            <p>A custom-built smartphone application for real-time monitoring and data visualization.</p>
-          </div>
-          <div class="app-screenshot-container">
-            <figure class="app-screenshot-card">
-              <img src="assets/images/projects/smart_bin/app_screenshots.jpg" alt="App Screenshots">
-              <figcaption>App Screenshots</figcaption>
-            </figure>
-          </div>
+    <section class="project-gallery" id="gallery">
+      <div class="project-frame">
+        <div class="gallery-header">
+          <h2>Gallery</h2>
+          <p>A collection of images from the project.</p>
         </div>
-      </section>
-
-      <section class="project-gallery" id="gallery">
-        <div class="project-frame">
-          <div class="gallery-header">
-            <h2>Gallery</h2>
-            <p>A collection of images from the project.</p>
-          </div>
-          <div class="gallery-grid">
-            <figure class="gallery-card gallery-card-tall">
-              <img src="assets/images/projects/smart_bin/app_screenshots.jpg" alt="App Screenshots">
-              <figcaption>App Screenshots</figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img src="assets/images/projects/smart_bin/circuit_image.jpg" alt="Circuit Image">
-              <figcaption>Circuit Image</figcaption>
-            </figure>
-          </div>
+        <div class="gallery-grid">
+          <figure class="gallery-card gallery-card-tall">
+            <img src="assets/images/projects/smart_bin/app_screenshots.jpg" alt="App Screenshots">
+            <figcaption>App Screenshots</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/projects/smart_bin/circuit_image.jpg" alt="Circuit Image">
+            <figcaption>Circuit Image</figcaption>
+          </figure>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <a href="index.html#projects" class="back-button">← Back to Portfolio</a>
+  <a href="index.html#projects" class="back-button">← Back to Portfolio</a>
 
-    <footer class="footer">
-      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
-      <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
-    </footer>
+  <footer class="footer">
+    <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

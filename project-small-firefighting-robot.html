@@ -1,198 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Firefighting Robot - Tanvir's Robotics Lab</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      /* Make the main title match other project pages */
-      .project-hero h1 {
-        font-size: 2rem !important;
-      }
 
-      /* Force Gallery Caption Visibility */
-      #gallery .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin-top: 2rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Small Firefighting Robot - Tanvir's Robotics Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Make the main title match other project pages */
+    .project-hero h1 {
+      font-size: 2rem !important;
+    }
 
-      #gallery .gallery-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        overflow: visible !important;
-        background: rgba(255, 255, 255, 0.05);
-      }
+    /* Force Gallery Caption Visibility */
+    #gallery .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 2rem;
+    }
 
-      #gallery .gallery-card img {
-        width: 100%;
-        height: 250px;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 12px 12px 0 0;
-      }
+    #gallery .gallery-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: visible !important;
+      background: rgba(255, 255, 255, 0.05);
+    }
 
-      #gallery .gallery-card figcaption {
-        padding: 1.25rem !important;
-        font-size: 0.95rem !important;
-        color: #ffffff !important;
-        background: rgba(233, 226, 226, 0.14) !important;
-        font-weight: 500 !important;
-        line-height: 1.6 !important;
-        border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
-        min-height: 80px !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        border-radius: 0 0 12px 12px;
-      }
+    #gallery .gallery-card img {
+      width: 100%;
+      height: 250px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
 
-      body.light-mode #gallery .gallery-card figcaption {
-        color: #000000 !important;
-      }
+    #gallery .gallery-card figcaption {
+      padding: 1.25rem !important;
+      font-size: 0.95rem !important;
+      color: #ffffff !important;
+      background: rgba(233, 226, 226, 0.14) !important;
+      font-weight: 500 !important;
+      line-height: 1.6 !important;
+      border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
+      min-height: 80px !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      border-radius: 0 0 12px 12px;
+    }
 
-      #gallery .gallery-card:hover {
-        transform: none !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-      }
+    body.light-mode #gallery .gallery-card figcaption {
+      color: #000000 !important;
+    }
 
-      #gallery .gallery-card:hover img {
-        transform: none !important;
-      }
+    #gallery .gallery-card:hover {
+      transform: none !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
 
-      #gallery .gallery-card::after {
-        display: none !important;
-      }
+    #gallery .gallery-card:hover img {
+      transform: none !important;
+    }
 
-      #gallery .gallery-card:hover::after {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    </style>
+    #gallery .gallery-card::after {
+      display: none !important;
+    }
 
-  </head>
-  <body class="project-page">
-    <div class="background">
-      <div class="gradient-layer gradient-one"></div>
-      <div class="gradient-layer gradient-two"></div>
+    #gallery .gallery-card:hover::after {
+      opacity: 0 !important;
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body class="project-page">
+  <div class="background">
+    <div class="gradient-layer gradient-one"></div>
+    <div class="gradient-layer gradient-two"></div>
+  </div>
+
+  <nav class="navbar">
+    <div>
+      <div class="logo">Tanvir Ahmed</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#certifications">Certification</a></li>
+        <li><a href="index.html#contact">Contacts</a></li>
+        <!--   Remove this line when done test page test_page -->
+        <!--- <li><a href="test.html">Test Page</a></li> --->
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
     </div>
+  </nav>
 
-    <nav class="navbar">
-      <div>
-        <div class="logo">Tanvir Ahmed</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#certifications">Certification</a></li>
-          <li><a href="index.html#contact">Contacts</a></li>
-          <!--   Remove this line when done test page test_page -->
-          <!--- <li><a href="test.html">Test Page</a></li> --->
-        </ul>
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch" class="theme-checkbox">
-          <label for="theme-switch" class="theme-label">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-            <div class="theme-ball"></div>
-          </label>
+  <main class="project-detail">
+    <section class="project-hero" id="top">
+      <div class="project-frame hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">1st Year University Project</span>
+          <h1>Small Firefighting Robot</h1>
+          <p class="hero-lede">A small, Bluetooth-controlled firefighting robot created as a 1st year, 1st semester
+            final project.</p>
+          <p class="hero-subtitle">This project was an outcome of our "Machine shop and Workshop Practices Lab", where
+            we applied CNC milling and lathe techniques.</p>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <span class="meta-label">Role</span>
+              <span class="meta-value">Team Member, Fabricator</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Toolchain</span>
+              <span class="meta-value">CNC Milling, CNC Lathe, Soldering, Arduino</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Timeline</span>
+              <span class="meta-value">April 2022</span>
+            </div>
+          </div>
+          <div class="hero-cta">
+            <a href="#gallery" class="project-btn outline">View Gallery</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="model-shell">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg"
+              alt="Small Firefighting Robot" class="project-hero-image">
+          </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <main class="project-detail">
-      <section class="project-hero" id="top">
-        <div class="project-frame hero-grid">
-          <div class="hero-copy">
-            <span class="hero-eyebrow">1st Year University Project</span>
-            <h1>Small Firefighting Robot</h1>
-            <p class="hero-lede">A small, Bluetooth-controlled firefighting robot created as a 1st year, 1st semester final project.</p>
-            <p class="hero-subtitle">This project was an outcome of our "Machine shop and Workshop Practices Lab", where we applied CNC milling and lathe techniques.</p>
-            <div class="hero-meta">
-              <div class="meta-card">
-                <span class="meta-label">Role</span>
-                <span class="meta-value">Team Member, Fabricator</span>
-              </div>
-              <div class="meta-card">
-                <span class="meta-label">Toolchain</span>
-                <span class="meta-value">CNC Milling, CNC Lathe, Soldering, Arduino</span>
-              </div>
-            </div>
-            <div class="hero-cta">
-              <a href="#gallery" class="project-btn outline">View Gallery</a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="model-shell">
-              <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_home_view.jpg" alt="Small Firefighting Robot" class="project-hero-image">
-            </div>
-          </div>
+    <section class="project-story" id="about-me">
+      <div class="project-frame story-grid">
+        <article class="story-card">
+          <h2>About The Project</h2>
+          <p>We are building a fire fighting robot which includes soldering operations, CNC turning and CNC milling
+            operations which were previously performed in our course machine workshop and practices lab. The main
+            purpose of this robot is to extinguish fire by launching water with a pump located on top of it.</p>
+          <p>In this project, we tried our best to avoid using any type of ready made products . From structure to
+            different joints, most of the components of the robot were made using the operations which were performed by
+            us in our respective lab course. The bottom slab containing the motors in pockets were designed by CNC
+            milling. The motors are connected to the wheels. Soldering was done while designing the Arduino circuit. The
+            upper plate is connected with the lower one using four round pillars which were designed using a CNC turning
+            machine. Two servo motors were used for the rotation of the launcher in different axes. One of them can
+            rotate 180 degrees about the x axis and the other about the z axis. A pump is placed on top of the robot to
+            launch water.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-gallery" id="gallery">
+      <div class="project-frame">
+        <div class="gallery-header">
+          <h2>Gallery</h2>
+          <p>A collection of images from the project.</p>
         </div>
-      </section>
-
-      <section class="project-story" id="about-me">
-        <div class="project-frame story-grid">
-          <article class="story-card">
-            <h2>About The Project</h2>
-            <p>We are building a fire fighting robot which includes soldering operations, CNC turning and CNC milling operations which were previously performed in our course machine workshop and practices lab. The main purpose of this robot is to extinguish fire by launching water with a pump located on top of it.</p>
-            <p>In this project, we tried our best to avoid using any type of ready made products . From structure to different joints, most of the components of the robot were made using the operations which were performed by us in our respective lab course. The bottom slab containing the motors in pockets were designed by CNC milling. The motors are connected to the wheels. Soldering was done while designing the Arduino circuit. The upper plate is connected with the lower one using four round pillars which were designed using a CNC turning machine. Two servo motors were used for the rotation of the launcher in different axes. One of them can rotate 180 degrees about the x axis and the other about the z axis. A pump is placed on top of the robot to launch water.</p>
-          </article>
+        <div class="gallery-grid">
+          <figure class="gallery-card">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_front_left_view.jpg"
+              alt="Front left view">
+            <figcaption>Front left view</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_front_right_view.jpg"
+              alt="Front right view">
+            <figcaption>Front right view</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_front_top_view.jpg"
+              alt="Front top view">
+            <figcaption>Front top view</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_cnc_cut_chassis.jpg"
+              alt="CNC cut chassis">
+            <figcaption>CNC cut chassis</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img
+              src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_robot_chassis_made_using_woods.jpg"
+              alt="Wooden chassis">
+            <figcaption>Wooden chassis</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/projects/small_fire_fighting_robot/cnc_lathe.jpg" alt="CNC Lathe">
+            <figcaption>CNC Lathe</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="assets/images/projects/small_fire_fighting_robot/cnc_milling.jpg" alt="CNC Milling">
+            <figcaption>CNC Milling</figcaption>
+          </figure>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="project-gallery" id="gallery">
-        <div class="project-frame">
-          <div class="gallery-header">
-            <h2>Gallery</h2>
-            <p>A collection of images from the project.</p>
-          </div>
-          <div class="gallery-grid">
-            <figure class="gallery-card">
-              <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_front_left_view.jpg" alt="Front left view">
-              <figcaption>Front left view</figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_front_right_view.jpg" alt="Front right view">
-              <figcaption>Front right view</figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_front_top_view.jpg" alt="Front top view">
-              <figcaption>Front top view</figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_cnc_cut_chassis.jpg" alt="CNC cut chassis">
-              <figcaption>CNC cut chassis</figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_robot_chassis_made_using_woods.jpg" alt="Wooden chassis">
-              <figcaption>Wooden chassis</figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img src="assets/images/projects/small_fire_fighting_robot/cnc_lathe.jpg" alt="CNC Lathe">
-              <figcaption>CNC Lathe</figcaption>
-            </figure>
-            <figure class="gallery-card">
-              <img src="assets/images/projects/small_fire_fighting_robot/cnc_milling.jpg" alt="CNC Milling">
-              <figcaption>CNC Milling</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-    </main>
+  <a href="index.html#projects" class="back-button">← Back to Portfolio</a>
 
-    <a href="index.html#projects" class="back-button">← Back to Portfolio</a>
+  <footer class="footer">
+    <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
+  </footer>
 
-    <footer class="footer">
-      <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
-      <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
-    </footer>
+  <script src="script.js"></script>
+</body>
 
-    <script src="script.js"></script>
-  </body>
 </html>

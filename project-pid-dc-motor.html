@@ -7,73 +7,73 @@
     <title>PID in Brushed DC Motor - Tanvir's Robotics Lab</title>
     <link rel="stylesheet" href="style.css">
     <style>
-      /* Make the main title match other project pages */
-      .project-hero h1 {
-        font-size: 2rem !important;
-      }
+        /* Make the main title match other project pages */
+        .project-hero h1 {
+            font-size: 2rem !important;
+        }
 
-      /* Force Gallery Caption Visibility */
-      #gallery .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin-top: 2rem;
-      }
+        /* Force Gallery Caption Visibility */
+        #gallery .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
 
-      #gallery .gallery-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        overflow: visible !important;
-        background: rgba(255, 255, 255, 0.05);
-      }
+        #gallery .gallery-card {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: visible !important;
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-      #gallery .gallery-card img {
-        width: 100%;
-        height: 250px;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 12px 12px 0 0;
-      }
+        #gallery .gallery-card img {
+            width: 100%;
+            height: 250px;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
 
-      #gallery .gallery-card figcaption {
-        padding: 1.25rem !important;
-        font-size: 0.95rem !important;
-        color: #ffffff !important;
-        background: rgba(233, 226, 226, 0.14) !important;
-        font-weight: 500 !important;
-        line-height: 1.6 !important;
-        border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
-        min-height: 80px !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        border-radius: 0 0 12px 12px;
-      }
+        #gallery .gallery-card figcaption {
+            padding: 1.25rem !important;
+            font-size: 0.95rem !important;
+            color: #ffffff !important;
+            background: rgba(233, 226, 226, 0.14) !important;
+            font-weight: 500 !important;
+            line-height: 1.6 !important;
+            border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
+            min-height: 80px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            border-radius: 0 0 12px 12px;
+        }
 
-      body.light-mode #gallery .gallery-card figcaption {
-        color: #000000 !important;
-      }
+        body.light-mode #gallery .gallery-card figcaption {
+            color: #000000 !important;
+        }
 
-      #gallery .gallery-card:hover {
-        transform: none !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-      }
+        #gallery .gallery-card:hover {
+            transform: none !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+        }
 
-      #gallery .gallery-card:hover img {
-        transform: none !important;
-      }
+        #gallery .gallery-card:hover img {
+            transform: none !important;
+        }
 
-      #gallery .gallery-card::after {
-        display: none !important;
-      }
+        #gallery .gallery-card::after {
+            display: none !important;
+        }
 
-      #gallery .gallery-card:hover::after {
-        opacity: 0 !important;
-        display: none !important;
-      }
+        #gallery .gallery-card:hover::after {
+            opacity: 0 !important;
+            display: none !important;
+        }
     </style>
 
 
@@ -118,27 +118,27 @@
     </div>
 
     <nav class="navbar">
-      <div>
-        <div class="logo">Tanvir Ahmed</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#certifications">Certification</a></li>
-          <li><a href="index.html#contact">Contacts</a></li>
-          <!--   Remove this line when done test page test_page -->
-          <!--- <li><a href="test.html">Test Page</a></li> --->
-        </ul>
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch" class="theme-checkbox">
-          <label for="theme-switch" class="theme-label">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-            <div class="theme-ball"></div>
-          </label>
+        <div>
+            <div class="logo">Tanvir Ahmed</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#certifications">Certification</a></li>
+                <li><a href="index.html#contact">Contacts</a></li>
+                <!--   Remove this line when done test page test_page -->
+                <!--- <li><a href="test.html">Test Page</a></li> --->
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-checkbox">
+                <label for="theme-switch" class="theme-label">
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="theme-icon moon">🌙</span>
+                    <div class="theme-ball"></div>
+                </label>
+            </div>
         </div>
-      </div>
     </nav>
 
     <main class="project-detail">
@@ -147,8 +147,12 @@
                 <div class="hero-copy">
                     <span class="hero-eyebrow">Control Systems & Robotics</span>
                     <h1>PID in Brushed DC Motor using Rotary Encoder</h1>
-                    <p class="hero-lede">Implementation of a PID (Proportional-Integral-Derivative) controller to control the position of the shaft in a Brushed DC motor using a rotary encoder. The goal is to give input for the desired position of the shaft, and then the motor shaft will rotate until it reaches that position.</p>
-                    <p class="hero-subtitle">Demonstrating precise position control with feedback systems and speed limitations for reliable encoder tracking.</p>
+                    <p class="hero-lede">Implementation of a PID (Proportional-Integral-Derivative) controller to
+                        control the position of the shaft in a Brushed DC motor using a rotary encoder. The goal is to
+                        give input for the desired position of the shaft, and then the motor shaft will rotate until it
+                        reaches that position.</p>
+                    <p class="hero-subtitle">Demonstrating precise position control with feedback systems and speed
+                        limitations for reliable encoder tracking.</p>
                     <div class="hero-meta">
                         <div class="meta-card">
                             <span class="meta-label">Components</span>
@@ -157,6 +161,10 @@
                         <div class="meta-card">
                             <span class="meta-label">Focus</span>
                             <span class="meta-value">PID Control, Position Feedback, Motor Control</span>
+                        </div>
+                        <div class="meta-card">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">April 2024</span>
                         </div>
                     </div>
                     <div class="hero-cta">
@@ -192,12 +200,12 @@
                 <div class="gallery-grid"
                     style="display: grid; grid-template-columns: 1fr; gap: 20px; justify-content: center; max-width: 800px; margin: 0 auto;">
                     <figure class="gallery-card" style="width: 100%; height: 450px;">
-                        <iframe width="100%" height="100%"
-                            src="https://www.youtube.com/embed/woZFJwybc6Q"
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/woZFJwybc6Q"
                             title="PID DC Motor Control Demo" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                        <figcaption>Live demonstration of PID controller achieving precise shaft position control using rotary encoder feedback.</figcaption>
+                        <figcaption>Live demonstration of PID controller achieving precise shaft position control using
+                            rotary encoder feedback.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -211,12 +219,16 @@
                 </div>
                 <div class="gallery-grid">
                     <figure class="gallery-card">
-                        <img src="assets/images/projects/pid_in_dc_motor_to_control_the_rotation/circuit_diagram.jpg" alt="Circuit Diagram">
-                        <figcaption>Complete circuit diagram showing connections between Arduino, motor driver, rotary encoder, and DC motor.</figcaption>
+                        <img src="assets/images/projects/pid_in_dc_motor_to_control_the_rotation/circuit_diagram.jpg"
+                            alt="Circuit Diagram">
+                        <figcaption>Complete circuit diagram showing connections between Arduino, motor driver, rotary
+                            encoder, and DC motor.</figcaption>
                     </figure>
                     <figure class="gallery-card">
-                        <img src="assets/images/projects/pid_in_dc_motor_to_control_the_rotation/overall_setup.jpg" alt="Physical Setup">
-                        <figcaption>Physical implementation of the PID DC motor control system with all components mounted and wired.</figcaption>
+                        <img src="assets/images/projects/pid_in_dc_motor_to_control_the_rotation/overall_setup.jpg"
+                            alt="Physical Setup">
+                        <figcaption>Physical implementation of the PID DC motor control system with all components
+                            mounted and wired.</figcaption>
                     </figure>
                 </div>
             </div>
@@ -230,7 +242,8 @@
                         <li><strong>Arduino Uno:</strong> Main microcontroller for PID algorithm execution</li>
                         <li><strong>Rotary Encoder:</strong> Position feedback sensor (mechanical type)</li>
                         <li><strong>BTS Motor Driver:</strong> High-current motor driver for DC motor control</li>
-                        <li><strong>DC Motor (300RPM, 12V):</strong> Brushed motor with <400RPM rating for encoder compatibility</li>
+                        <li><strong>DC Motor (300RPM, 12V):</strong> Brushed motor with <400RPM rating for encoder
+                                compatibility</li>
                         <li><strong>12V Power Supply:</strong> External power source for motor operation</li>
                         <li><strong>Breadboard & Wires:</strong> Prototyping platform and connections</li>
                         <li><strong>PVC Housing:</strong> Physical enclosure for component protection</li>
@@ -247,8 +260,10 @@
                         <span class="pill">Real-time Processing</span>
                     </div>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-gray);">
-                        The main challenge was discovering that inexpensive rotary encoders fail to track accurately at speeds above 170/255. 
-                        This required implementing speed limiting to 150/255 and careful motor selection to work within encoder capabilities.
+                        The main challenge was discovering that inexpensive rotary encoders fail to track accurately at
+                        speeds above 170/255.
+                        This required implementing speed limiting to 150/255 and careful motor selection to work within
+                        encoder capabilities.
                     </p>
                 </article>
             </div>
