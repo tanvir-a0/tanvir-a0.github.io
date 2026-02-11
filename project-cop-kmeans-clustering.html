@@ -1,273 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COP-KMeans Clustering with Constraints - Tanvir's Robotics Lab</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-      /* Make the main title match other project pages */
-      .project-hero h1 {
-        font-size: 2rem !important;
-      }
 
-      /* Force Gallery Caption Visibility */
-      #gallery .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin-top: 2rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COP-KMeans Clustering with Constraints - Tanvir's Robotics Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Make the main title match other project pages */
+    .project-hero h1 {
+      font-size: 2rem !important;
+    }
 
-      #gallery .gallery-card {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        overflow: visible !important;
-        background: rgba(255, 255, 255, 0.05);
-      }
+    /* Force Gallery Caption Visibility */
+    #gallery .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 2rem;
+    }
 
-      #gallery .gallery-card img {
-        width: 100%;
-        height: 250px;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        border-radius: 12px 12px 0 0;
-      }
+    #gallery .gallery-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: visible !important;
+      background: rgba(255, 255, 255, 0.05);
+    }
 
-      #gallery .gallery-card figcaption {
-        padding: 1.25rem !important;
-        font-size: 0.95rem !important;
-        color: #ffffff !important;
-        background: rgba(233, 226, 226, 0.14) !important;
-        font-weight: 500 !important;
-        line-height: 1.6 !important;
-        border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
-        min-height: 80px !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        border-radius: 0 0 12px 12px;
-      }
+    #gallery .gallery-card img {
+      width: 100%;
+      height: 250px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+    }
 
-      body.light-mode #gallery .gallery-card figcaption {
-        color: #000000 !important;
-      }
+    #gallery .gallery-card figcaption {
+      padding: 1.25rem !important;
+      font-size: 0.95rem !important;
+      color: #ffffff !important;
+      background: rgba(233, 226, 226, 0.14) !important;
+      font-weight: 500 !important;
+      line-height: 1.6 !important;
+      border-top: 2px solid rgba(100, 160, 250, 0.5) !important;
+      min-height: 80px !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      border-radius: 0 0 12px 12px;
+    }
 
-      #gallery .gallery-card:hover {
-        transform: none !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-      }
+    body.light-mode #gallery .gallery-card figcaption {
+      color: #000000 !important;
+    }
 
-      #gallery .gallery-card:hover img {
-        transform: none !important;
-      }
+    #gallery .gallery-card:hover {
+      transform: none !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
 
-      #gallery .gallery-card::after {
-        display: none !important;
-      }
+    #gallery .gallery-card:hover img {
+      transform: none !important;
+    }
 
-      #gallery .gallery-card:hover::after {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    </style>
+    #gallery .gallery-card::after {
+      display: none !important;
+    }
 
-  </head>
-  <body class="project-page project-cop-kmeans">
-    <div class="background">
-      <div class="gradient-layer gradient-one"></div>
-      <div class="gradient-layer gradient-two"></div>
+    #gallery .gallery-card:hover::after {
+      opacity: 0 !important;
+      display: none !important;
+    }
+  </style>
+
+</head>
+
+<body class="project-page project-cop-kmeans">
+  <div class="background">
+    <div class="gradient-layer gradient-one"></div>
+    <div class="gradient-layer gradient-two"></div>
+  </div>
+
+  <nav class="navbar">
+    <div>
+      <div class="logo">Tanvir Ahmed</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#certifications">Certification</a></li>
+        <li><a href="index.html#contact">Contacts</a></li>
+        <!--   Remove this line when done test page test_page -->
+        <!--- <li><a href="test.html">Test Page</a></li> --->
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
     </div>
-
-    <nav class="navbar">
-      <div>
-        <div class="logo">Tanvir Ahmed</div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#certifications">Certification</a></li>
-          <li><a href="index.html#contact">Contacts</a></li>
-          <!--   Remove this line when done test page test_page -->
-          <!--- <li><a href="test.html">Test Page</a></li> --->
-        </ul>
-        <div class="theme-toggle">
-          <input type="checkbox" id="theme-switch" class="theme-checkbox">
-          <label for="theme-switch" class="theme-label">
-            <span class="theme-icon sun">☀️</span>
-            <span class="theme-icon moon">🌙</span>
-            <div class="theme-ball"></div>
-          </label>
-        </div>
-      </div>
-    </nav>
-    <main class="project-detail">
-      <section class="project-hero" id="top">
-        <div class="project-frame hero-grid">
-          <div class="hero-copy">
-            <span class="hero-eyebrow">Intelligent Systems Course</span>
-            <h1>COP-KMeans Clustering with Constraints</h1>
-            <p class="hero-lede">Implementation of Constrained K-Means clustering algorithm with must-link and cannot-link constraints for improved clustering quality.</p>
-            <p class="hero-subtitle">Course project developed in collaboration with Mahin to demonstrate the COP-KMeans algorithm and help others understand its functionality.</p>
-            <div class="hero-meta">
-              <div class="meta-card">
-                <span class="meta-label">Course</span>
-                <span class="meta-value">Intelligent System and Robotics</span>
-              </div>
-              <div class="meta-card">
-                <span class="meta-label">Technology</span>
-                <span class="meta-value">Python, NumPy, Matplotlib, Scikit-learn</span>
-              </div>
-              <div class="meta-card">
-                <span class="meta-label">Collaboration</span>
-                <span class="meta-value">Team Project with Mahin</span>
-              </div>
+  </nav>
+  <main class="project-detail">
+    <section class="project-hero" id="top">
+      <div class="project-frame hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">Intelligent Systems Course</span>
+          <h1>COP-KMeans Clustering with Constraints</h1>
+          <p class="hero-lede">Implementation of Constrained K-Means clustering algorithm with must-link and cannot-link
+            constraints for improved clustering quality.</p>
+          <p class="hero-subtitle">Course project developed in collaboration with Mahin to demonstrate the COP-KMeans
+            algorithm and help others understand its functionality.</p>
+          <div class="hero-meta">
+            <div class="meta-card">
+              <span class="meta-label">Course</span>
+              <span class="meta-value">Intelligent System and Robotics</span>
             </div>
-            <div class="hero-cta">
-              <a href="#overview" class="project-btn primary">Read the case study</a>
-              <a href="https://github.com/tanvir-a0/cop-k-means-presentation" class="project-btn outline" target="_blank" rel="noopener noreferrer">View Repository</a>
+            <div class="meta-card">
+              <span class="meta-label">Technology</span>
+              <span class="meta-value">Python, NumPy, Matplotlib, Scikit-learn</span>
+            </div>
+            <div class="meta-card">
+              <span class="meta-label">Collaboration</span>
+              <span class="meta-value">Team Project with Mahin</span>
             </div>
           </div>
-          <div class="hero-visual">
-            <div class="media-shell">
-              <img src="assets/images/projects/cop_k_means_clustering/COP-KMeans Employee Team Assignment with Constraints.jpg" alt="COP-KMeans clustering visualization" style="width: 150%; height: auto;">
-            </div>
+          <div class="hero-cta">
+            <a href="#overview" class="project-btn primary">Read the case study</a>
+            <a href="https://github.com/tanvir-a0/cop-k-means-presentation" class="project-btn outline" target="_blank"
+              rel="noopener noreferrer">View Repository</a>
           </div>
         </div>
-      </section>
-
-      <section class="project-panels" id="overview">
-        <div class="project-frame panel-grid">
-          <article class="panel-card">
-            <figure class="panel-media">
-              <img src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations.jpg" alt="Standard K-means clustering results">
-            </figure>
-            <div class="panel-content">
-              <h2>Algorithm Overview</h2>
-              <p>COP-KMeans (Constrained K-Means) is an extension of the traditional K-means clustering algorithm that incorporates user-defined constraints to improve clustering quality. Unlike standard K-means, it considers must-link and cannot-link constraints between data points.</p>
-              <p>The algorithm ensures that points with must-link constraints are assigned to the same cluster, while points with cannot-link constraints are assigned to different clusters. This makes it particularly useful for scenarios where domain knowledge can guide the clustering process.</p>
-            </div>
-          </article>
-
-          <article class="panel-card reverse">
-            <figure class="panel-media">
-              <img src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations_with_must_link_clustering.jpg" alt="COP-K-means with constraints">
-            </figure>
-            <div class="panel-content">
-              <h2>Constraint Implementation</h2>
-              <p>Our implementation includes both must-link and cannot-link constraints. Must-link constraints ensure that certain data points are grouped together, while cannot-link constraints prevent specific points from being in the same cluster.</p>
-              <p>The algorithm iteratively refines cluster assignments while respecting these constraints, leading to more meaningful and domain-appropriate clustering results compared to standard K-means.</p>
-            </div>
-          </article>
-
-          <article class="panel-card">
-            <div class="panel-content full-width">
-              <h2>Project Components</h2>
-              <p>The project includes multiple implementations demonstrating different aspects of the COP-KMeans algorithm:</p>
-              <ul class="feature-list">
-                <li><strong>Small Dataset Implementation:</strong> COP-KMeans clustering with a small dataset of employees and constraints</li>
-                <li><strong>Complex Environment:</strong> K-means clustering with a more complex dataset of employees</li>
-                <li><strong>Random Cluster Generation:</strong> Basic K-means clustering algorithm with random clusters</li>
-                <li><strong>Constrained Random Clustering:</strong> COP-KMeans clustering with random clusters and constraints</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="panel-card">
-            <div class="panel-content full-width">
-              <h2>Technical Details</h2>
-              <div class="tech-specs">
-                <div class="spec-group">
-                  <h3>Dependencies</h3>
-                  <ul>
-                    <li>NumPy for numerical computations</li>
-                    <li>Matplotlib for visualization</li>
-                    <li>Scikit-learn for machine learning utilities</li>
-                    <li>SciPy for scientific computing</li>
-                  </ul>
-                </div>
-                <div class="spec-group">
-                  <h3>Key Features</h3>
-                  <ul>
-                    <li>Must-link constraint enforcement</li>
-                    <li>Cannot-link constraint handling</li>
-                    <li>Visualization of clustering results</li>
-                    <li>Comparison with standard K-means</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="project-gallery" id="gallery">
-        <div class="project-frame">
-          <h3 class="section-title" style="font-size: 1.5em;">Implementation Gallery</h3>
-          <div class="gallery-grid">
-            <div class="gallery-item" style="grid-column: span 2; max-width: none;">
-              <img src="assets/images/projects/cop_k_means_clustering/COP-KMeans Employee Team Assignment with Constraints.jpg" alt="Employee team assignment visualization" loading="lazy" style="width: 800px; height: auto; max-width: none;">
-              <div class="gallery-caption">
-                <h3>Employee Team Assignment</h3>
-                <p>Practical application showing how COP-KMeans can be used for team formation with constraints</p>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations.jpg" alt="Standard clustering results" loading="lazy">
-              <div class="gallery-caption">
-                <h3>Standard K-means Results</h3>
-                <p>Traditional K-means clustering without constraints for comparison</p>
-              </div>
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations_with_must_link_clustering.jpg" alt="Constrained clustering results" loading="lazy">
-              <div class="gallery-caption">
-                <h3>COP-KMeans with Constraints</h3>
-                <p>Improved clustering results when must-link constraints are applied</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="project-conclusion">
-        <div class="project-frame">
-          <div class="conclusion-content">
-            <h2>Project Outcomes</h2>
-            <p>This educational project successfully demonstrated the effectiveness of constrained clustering algorithms in real-world scenarios. By implementing COP-KMeans from scratch, we gained deep insights into how constraints can significantly improve clustering quality when domain knowledge is available.</p>
-            <p>The project showcases the importance of incorporating human knowledge and business rules into machine learning algorithms, making them more practical and applicable to real-world problems.</p>
-            <div class="conclusion-cta" style="margin-top: 2em;">
-              <a href="https://github.com/tanvir-a0/cop-k-means-presentation" class="project-btn primary" target="_blank" rel="noopener noreferrer">
-                <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub" style="width: 1em; height: 1em; margin-right: 0.5em;">
-                Explore the Code
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Floating Back Button -->
-    <a href="index.html#minor-projects" class="back-button">← Back to Projects</a>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p>&copy; 2024 Tanvir Ahmed. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="index.html#contact">Contact</a>
+        <div class="hero-visual">
+          <div class="media-shell">
+            <img
+              src="assets/images/projects/cop_k_means_clustering/COP-KMeans Employee Team Assignment with Constraints.jpg"
+              alt="COP-KMeans clustering visualization" style="width: 150%; height: auto;">
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <section class="project-panels" id="overview">
+      <div class="project-frame panel-grid">
+        <article class="panel-card">
+          <figure class="panel-media">
+            <img src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations.jpg"
+              alt="Standard K-means clustering results">
+          </figure>
+          <div class="panel-content">
+            <h2>Algorithm Overview</h2>
+            <p>COP-KMeans (Constrained K-Means) is an extension of the traditional K-means clustering algorithm that
+              incorporates user-defined constraints to improve clustering quality. Unlike standard K-means, it considers
+              must-link and cannot-link constraints between data points.</p>
+            <p>The algorithm ensures that points with must-link constraints are assigned to the same cluster, while
+              points with cannot-link constraints are assigned to different clusters. This makes it particularly useful
+              for scenarios where domain knowledge can guide the clustering process.</p>
+          </div>
+        </article>
+
+        <article class="panel-card reverse">
+          <figure class="panel-media">
+            <img
+              src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations_with_must_link_clustering.jpg"
+              alt="COP-K-means with constraints">
+          </figure>
+          <div class="panel-content">
+            <h2>Constraint Implementation</h2>
+            <p>Our implementation includes both must-link and cannot-link constraints. Must-link constraints ensure that
+              certain data points are grouped together, while cannot-link constraints prevent specific points from being
+              in the same cluster.</p>
+            <p>The algorithm iteratively refines cluster assignments while respecting these constraints, leading to more
+              meaningful and domain-appropriate clustering results compared to standard K-means.</p>
+          </div>
+        </article>
+
+        <article class="panel-card">
+          <div class="panel-content full-width">
+            <h2>Project Components</h2>
+            <p>The project includes multiple implementations demonstrating different aspects of the COP-KMeans
+              algorithm:</p>
+            <ul class="feature-list">
+              <li><strong>Small Dataset Implementation:</strong> COP-KMeans clustering with a small dataset of employees
+                and constraints</li>
+              <li><strong>Complex Environment:</strong> K-means clustering with a more complex dataset of employees</li>
+              <li><strong>Random Cluster Generation:</strong> Basic K-means clustering algorithm with random clusters
+              </li>
+              <li><strong>Constrained Random Clustering:</strong> COP-KMeans clustering with random clusters and
+                constraints</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel-card">
+          <div class="panel-content full-width">
+            <h2>Technical Details</h2>
+            <div class="tech-specs">
+              <div class="spec-group">
+                <h3>Dependencies</h3>
+                <ul>
+                  <li>NumPy for numerical computations</li>
+                  <li>Matplotlib for visualization</li>
+                  <li>Scikit-learn for machine learning utilities</li>
+                  <li>SciPy for scientific computing</li>
+                </ul>
+              </div>
+              <div class="spec-group">
+                <h3>Key Features</h3>
+                <ul>
+                  <li>Must-link constraint enforcement</li>
+                  <li>Cannot-link constraint handling</li>
+                  <li>Visualization of clustering results</li>
+                  <li>Comparison with standard K-means</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-gallery" id="gallery">
+      <div class="project-frame">
+        <h3 class="section-title" style="font-size: 1.5em;">Implementation Gallery</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item" style="grid-column: span 2; max-width: none;">
+            <img
+              src="assets/images/projects/cop_k_means_clustering/COP-KMeans Employee Team Assignment with Constraints.jpg"
+              alt="Employee team assignment visualization" loading="lazy"
+              style="width: 800px; height: auto; max-width: none;">
+            <div class="gallery-caption">
+              <h3>Employee Team Assignment</h3>
+              <p>Practical application showing how COP-KMeans can be used for team formation with constraints</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations.jpg"
+              alt="Standard clustering results" loading="lazy">
+            <div class="gallery-caption">
+              <h3>Standard K-means Results</h3>
+              <p>Traditional K-means clustering without constraints for comparison</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/projects/cop_k_means_clustering/cop_k_means_clustering_5_iterations_with_must_link_clustering.jpg"
+              alt="Constrained clustering results" loading="lazy">
+            <div class="gallery-caption">
+              <h3>COP-KMeans with Constraints</h3>
+              <p>Improved clustering results when must-link constraints are applied</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-conclusion">
+      <div class="project-frame">
+        <div class="conclusion-content">
+          <h2>Project Outcomes</h2>
+          <p>This educational project successfully demonstrated the effectiveness of constrained clustering algorithms
+            in real-world scenarios. By implementing COP-KMeans from scratch, we gained deep insights into how
+            constraints can significantly improve clustering quality when domain knowledge is available.</p>
+          <p>The project showcases the importance of incorporating human knowledge and business rules into machine
+            learning algorithms, making them more practical and applicable to real-world problems.</p>
+          <div class="conclusion-cta" style="margin-top: 2em;">
+            <a href="https://github.com/tanvir-a0/cop-k-means-presentation" class="project-btn primary" target="_blank"
+              rel="noopener noreferrer">
+              <img src="assets/images/github__mark/github-mark-white.svg" alt="GitHub"
+                style="width: 1em; height: 1em; margin-right: 0.5em;">
+              Explore the Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Back Button -->
+  <a href="index.html#minor-projects" class="back-button">← Back to Projects</a>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Tanvir Ahmed. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
