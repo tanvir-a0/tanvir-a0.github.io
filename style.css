@@ -926,6 +926,31 @@ body.light-mode .hero-content h1 {
   color: var(--text-light);
 }
 
+/* Interactive Text - Spotlight Effect */
+.hero-text .interactive-text {
+  color: transparent !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image:
+    radial-gradient(circle 300px at var(--x, 50%) var(--y, 50%),
+      var(--primary-color) 0%,
+      var(--secondary-color) 50%,
+      transparent 100%),
+    linear-gradient(to right, var(--text-light), var(--text-light));
+  /* Ensure backgrounds don't repeat so the radial gradient stays local */
+  background-repeat: no-repeat;
+  /* Make sure the text is visible even if JS fails */
+  text-shadow: none !important;
+  /* Smooth transition for the gradient movement can be lagging, so strict follows are better without transition usually */
+  /* But let's add a tiny one for smoothness if the mouse moves fast? No, usually raw update is better for "cursor tracking". */
+}
+
+/* Enhancing the effect on hover */
+.hero-text .interactive-text:hover {
+  cursor: default;
+  /* Optional: slightly increase the spotlight size? */
+}
+
 .glitch::before,
 .glitch::after {
   display: none;

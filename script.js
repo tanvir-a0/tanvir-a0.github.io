@@ -710,3 +710,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Interactive Text Effect (Spotlight)
+document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.querySelector('.hero');
+  const interactiveTexts = document.querySelectorAll('.interactive-text');
+
+  if (hero && interactiveTexts.length > 0) {
+    hero.addEventListener('mousemove', (e) => {
+      interactiveTexts.forEach(text => {
+        const rect = text.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        text.style.setProperty('--x', `${x}px`);
+        text.style.setProperty('--y', `${y}px`);
+      });
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      interactiveTexts.forEach(text => {
+        text.style.setProperty('--x', '-1000px');
+        text.style.setProperty('--y', '-1000px');
+      });
+    });
+  }
+});
+
