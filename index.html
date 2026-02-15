@@ -123,6 +123,16 @@
       background-color: #0077ed;
     }
 
+    .ac-btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
     .ac-link-secondary {
       color: #2997ff;
       font-size: 12px;
@@ -131,6 +141,13 @@
       display: flex;
       align-items: center;
       gap: 3px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-btn {
+      position: relative;
+      z-index: 2;
     }
 
     .ac-link-secondary:hover {
@@ -566,7 +583,7 @@
             <img src="assets/images/projects/amphibot/waterbot_captured_from_front_left_top.jpg" alt="AmphiBot">
           </div>
           <div class="ac-content">
-            <h3 class="ac-title">AmphiBot</h3>
+            <h3 class="ac-title">AmphiBot (Under Development)</h3>
             <p class="ac-desc">Amphibious trash collection robot with unified drive system for seamless land and water
               operation.</p>
             <div class="ac-buttons">
