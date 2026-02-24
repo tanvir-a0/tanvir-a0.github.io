@@ -400,6 +400,8 @@ body.light-mode .theme-label:hover {
   border-radius: 24px;
   padding: 40px;
   border: 1px solid var(--border-color);
+  /* Permanent visible left-accent stripe as a timeline indicator */
+  border-left: 4px solid var(--primary-color);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-lg);
@@ -415,7 +417,7 @@ body.light-mode .theme-label:hover {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--text-light);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -423,7 +425,8 @@ body.light-mode .theme-label:hover {
 .education-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--primary-color);
+  border-left-color: var(--secondary-color);
 }
 
 .education-card:hover::before {
@@ -504,12 +507,13 @@ body.light-mode .education-logo-item:hover {
 .education-period {
   font-size: 14px;
   color: var(--text-gray);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 122, 255, 0.08);
   padding: 8px 16px;
   border-radius: 20px;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  color: var(--primary-color);
 }
 
 .education-details {
@@ -542,16 +546,18 @@ body.light-mode .education-logo-item:hover {
 /* Light Mode Overrides */
 body.light-mode .education-card {
   background: var(--card-bg);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
 }
 
 body.light-mode .education-card:hover {
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.14);
 }
 
 body.light-mode .education-period {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 122, 255, 0.08);
+  border-color: rgba(0, 122, 255, 0.25);
+  color: #007aff;
 }
 
 
@@ -1080,13 +1086,23 @@ body.light-mode .hero-profile-bg {
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent;
+  /* Subtle gradient scrim: fades in at top & bottom, darkest at very top behind text */
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.15) 30%,
+      rgba(0, 0, 0, 0.05) 55%,
+      rgba(0, 0, 0, 0.25) 100%);
   z-index: 1;
   pointer-events: none;
 }
 
 body.light-mode .hero-overlay {
-  background: transparent;
+  /* Keep same scrim in light mode — background image needs it too */
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.1) 35%,
+      rgba(0, 0, 0, 0.0) 60%,
+      rgba(0, 0, 0, 0.2) 100%);
 }
 
 /* Space Selfie Section - Full Image Display */
@@ -1098,6 +1114,9 @@ body.light-mode .hero-overlay {
   overflow: hidden;
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  /* Ensure container has height even before image loads */
+  min-height: 380px;
+  background: var(--bg-dark-2);
 }
 
 .hero-background-image-copy .hero-profile-bg {
@@ -1382,8 +1401,8 @@ body.light-mode .subtitle {
 
 /* About Section */
 .about {
-  min-height: 100vh;
-  padding: 6rem 0;
+  /* Removed min-height: 100vh — section was too short to justify full viewport height */
+  padding: 7rem 0 5rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -1764,6 +1783,33 @@ body.light-mode .animated-line {
   opacity: 0.18;
 }
 
+/* Light mode: make skill cards visible with border + shadow */
+body.light-mode .about-card {
+  border-color: rgba(0, 122, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .about-card:hover {
+  border-color: rgba(0, 122, 255, 0.7);
+  box-shadow: 0 12px 32px rgba(0, 122, 255, 0.12);
+}
+
+/* Light mode: apple-card (project cards) need stronger border + shadow */
+body.light-mode .apple-card {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .apple-card:hover {
+  border-color: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.14);
+}
+
+/* Contact section: keep decorative rings strictly behind card content */
+.contact .section-bg-effects {
+  z-index: 0;
+}
+
 .about .container {
   max-width: calc(100vw - 1rem);
   width: 100%;
@@ -1883,7 +1929,7 @@ body.light-mode .animated-line {
   border: 2px solid rgba(0, 122, 255, 0.33);
   border-radius: 20px;
   padding: 2px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
 }
 
@@ -1994,12 +2040,11 @@ body.light-mode .animated-line {
 
 /* Projects Section */
 .projects {
-  min-height: 100vh;
+  /* Removed min-height: 100vh to avoid excessive blank space when content is short */
   padding: 6rem 0;
   background: transparent;
   position: relative;
   overflow: hidden;
-
 }
 
 .projects-grid {
