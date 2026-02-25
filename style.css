@@ -400,8 +400,6 @@ body.light-mode .theme-label:hover {
   border-radius: 24px;
   padding: 40px;
   border: 1px solid var(--border-color);
-  /* Permanent visible left-accent stripe as a timeline indicator */
-  border-left: 4px solid var(--primary-color);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow-lg);
@@ -410,28 +408,14 @@ body.light-mode .theme-label:hover {
   overflow: hidden;
 }
 
-.education-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
+
 
 .education-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  border-color: var(--primary-color);
-  border-left-color: var(--secondary-color);
 }
 
-.education-card:hover::before {
-  opacity: 1;
-}
+
 
 .education-logos {
   display: flex;
@@ -458,6 +442,15 @@ body.light-mode .theme-label:hover {
 .education-logo-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.education-logo-item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
 }
 
 .education-logo-item img {
@@ -547,7 +540,6 @@ body.light-mode .education-logo-item:hover {
 body.light-mode .education-card {
   background: var(--card-bg);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  border-left-color: var(--primary-color);
 }
 
 body.light-mode .education-card:hover {
