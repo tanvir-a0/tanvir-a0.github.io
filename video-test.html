@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Hosting Test - GitHub Pages</title>
+    <link rel="stylesheet" href="style-video-test.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Hosting Methods for GitHub Pages</h1>
+        
+        <!-- Method 1: Direct Repository Hosting -->
+        <section class="video-section">
+            <h2>Method 1: Direct Repository Hosting</h2>
+            <div class="info-box">
+                <h3>Pros:</h3>
+                <ul>
+                    <li>Simple - just commit video files to repo</li>
+                    <li>Works immediately with GitHub Pages</li>
+                    <li>Full control over video files</li>
+                </ul>
+                <h3>Cons:</h3>
+                <ul>
+                    <li>File size limit: ~100MB per file (GitHub recommendation)</li>
+                    <li>Repository size limit: 5GB recommended, 100GB hard limit</li>
+                    <li>Slower load times for large videos</li>
+                    <li>Uses repository storage quota</li>
+                </ul>
+                <h3>Best For:</h3>
+                <p>Small videos (&lt;50MB), demos, short clips, GIF alternatives</p>
+            </div>
+            <div class="video-wrapper">
+                <video controls preload="metadata">
+                    <source src="assets/videos/testing_animation/test1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="code-snippet">
+                    <code>&lt;video controls&gt;<br>
+                    &nbsp;&nbsp;&lt;source src="assets/images/test1.mp4" type="video/mp4"&gt;<br>
+                    &lt;/video&gt;</code>
+                </p>
+            </div>
+        </section>
+
+        <!-- Method 2: GitHub Releases -->
+        <section class="video-section">
+            <h2>Method 2: GitHub Releases</h2>
+            <div class="info-box">
+                <h3>Pros:</h3>
+                <ul>
+                    <li>Files up to 2GB supported</li>
+                    <li>Doesn't count toward repository size</li>
+                    <li>Permanent CDN-backed URLs</li>
+                    <li>Version control for video files</li>
+                </ul>
+                <h3>Cons:</h3>
+                <ul>
+                    <li>Requires creating a release</li>
+                    <li>Extra steps to update videos</li>
+                    <li>Not as straightforward as direct hosting</li>
+                </ul>
+                <h3>Best For:</h3>
+                <p>Larger videos (50MB-2GB), production videos, downloadable content</p>
+                <h3>How to Use:</h3>
+                <ol>
+                    <li>Go to your GitHub repo → Releases → Create new release</li>
+                    <li>Upload video as release asset</li>
+                    <li>Copy the asset URL (right-click on the file link)</li>
+                    <li>Use that URL in your video src</li>
+                </ol>
+            </div>
+            <div class="video-wrapper">
+                <video controls preload="metadata">
+                    <!-- Replace with actual release URL -->
+                    <source src="https://github.com/username/repo-name/releases/download/v1.0/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="code-snippet">
+                    <code>&lt;video controls&gt;<br>
+                    &nbsp;&nbsp;&lt;source src="https://github.com/username/repo/releases/download/v1.0/video.mp4"&gt;<br>
+                    &lt;/video&gt;</code>
+                </p>
+            </div>
+        </section>
+
+        <!-- Method 3: Git LFS -->
+        <section class="video-section">
+            <h2>Method 3: Git Large File Storage (LFS)</h2>
+            <div class="info-box">
+                <h3>Pros:</h3>
+                <ul>
+                    <li>Handles large files efficiently</li>
+                    <li>Version control for large files</li>
+                    <li>1GB free storage, 1GB free bandwidth/month</li>
+                    <li>Keeps repository clone fast</li>
+                </ul>
+                <h3>Cons:</h3>
+                <ul>
+                    <li>Requires Git LFS setup</li>
+                    <li>Limited free bandwidth (1GB/month)</li>
+                    <li>Additional costs beyond free tier ($5/50GB)</li>
+                    <li>Collaborators need Git LFS installed</li>
+                </ul>
+                <h3>Best For:</h3>
+                <p>Teams with large media files, projects with many video versions</p>
+                <h3>Setup:</h3>
+                <ol>
+                    <li>Install Git LFS: <code>git lfs install</code></li>
+                    <li>Track video files: <code>git lfs track "*.mp4"</code></li>
+                    <li>Commit .gitattributes file</li>
+                    <li>Add and commit videos normally</li>
+                </ol>
+            </div>
+            <div class="video-wrapper">
+                <video controls preload="metadata">
+                    <source src="assets/videos/testing_animation/test1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="note">Files tracked by Git LFS work the same way in HTML</p>
+            </div>
+        </section>
+
+        <!-- Method 4: External Hosting (YouTube/Vimeo) -->
+        <section class="video-section">
+            <h2>Method 4: External Hosting (YouTube, Vimeo, etc.)</h2>
+            <div class="info-box">
+                <h3>Pros:</h3>
+                <ul>
+                    <li>Unlimited storage and bandwidth</li>
+                    <li>Professional video player with features</li>
+                    <li>Automatic transcoding and quality options</li>
+                    <li>SEO benefits and discoverability</li>
+                    <li>Analytics and view tracking</li>
+                </ul>
+                <h3>Cons:</h3>
+                <ul>
+                    <li>Requires external account</li>
+                    <li>Videos may be public (or need paid Vimeo)</li>
+                    <li>Branding from hosting service</li>
+                    <li>Less control over player appearance</li>
+                </ul>
+                <h3>Best For:</h3>
+                <p>Large videos, public content, tutorials, marketing videos</p>
+            </div>
+            <div class="video-wrapper">
+                <!-- YouTube Embed Example -->
+                <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="code-snippet">
+                    <code>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"<br>
+                    &nbsp;&nbsp;allowfullscreen&gt;&lt;/iframe&gt;</code>
+                </p>
+            </div>
+        </section>
+
+        <!-- Method 5: Optimized HTML5 Video -->
+        <section class="video-section">
+            <h2>Method 5: Optimized HTML5 Video (Best Practice)</h2>
+            <div class="info-box">
+                <h3>Optimization Tips:</h3>
+                <ul>
+                    <li>Compress videos (H.264 codec, MP4 container)</li>
+                    <li>Provide multiple formats (MP4, WebM) for browser compatibility</li>
+                    <li>Use <code>preload="metadata"</code> for faster page load</li>
+                    <li>Add poster image for better UX</li>
+                    <li>Implement lazy loading for multiple videos</li>
+                    <li>Consider adaptive streaming for long videos</li>
+                </ul>
+                <h3>Recommended Tools:</h3>
+                <ul>
+                    <li><strong>HandBrake:</strong> Free video compression</li>
+                    <li><strong>FFmpeg:</strong> Command-line video processing</li>
+                    <li><strong>CloudConvert:</strong> Online video conversion</li>
+                </ul>
+            </div>
+            <div class="video-wrapper">
+                <video controls preload="metadata">
+                    <source src="assets/videos/testing_animation/test1.mp4" type="video/mp4">
+                    <source src="assets/videos/testing_animation/test1.webm" type="video/webm">
+                    <p>Your browser doesn't support HTML5 video. 
+                       <a href="assets/videos/testing_animation/test1.mp4">Download the video</a> instead.</p>
+                </video>
+                <p class="code-snippet">
+                    <code>&lt;video controls preload="metadata" poster="poster.jpg"&gt;<br>
+                    &nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
+                    &nbsp;&nbsp;&lt;source src="video.webm" type="video/webm"&gt;<br>
+                    &lt;/video&gt;</code>
+                </p>
+            </div>
+        </section>
+
+        <!-- Recommendations Summary -->
+        <section class="recommendations">
+            <h2>📋 Quick Recommendations</h2>
+            <div class="recommendation-grid">
+                <div class="rec-card">
+                    <h3>Small Videos (&lt;25MB)</h3>
+                    <p>Use <strong>Method 1</strong>: Direct repository hosting</p>
+                    <p class="detail">Simple, works out of the box</p>
+                </div>
+                <div class="rec-card">
+                    <h3>Medium Videos (25-100MB)</h3>
+                    <p>Use <strong>Method 2</strong>: GitHub Releases</p>
+                    <p class="detail">Better performance, doesn't bloat repo</p>
+                </div>
+                <div class="rec-card">
+                    <h3>Large Videos (&gt;100MB)</h3>
+                    <p>Use <strong>Method 4</strong>: External hosting (YouTube/Vimeo)</p>
+                    <p class="detail">Free, unlimited bandwidth, professional features</p>
+                </div>
+                <div class="rec-card">
+                    <h3>Professional Projects</h3>
+                    <p>Use <strong>Method 4</strong> or <strong>Method 3</strong> with optimization</p>
+                    <p class="detail">Best quality and user experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FFmpeg Compression Examples -->
+        <section class="compression-guide">
+            <h2>🎬 Video Compression Commands (FFmpeg)</h2>
+            <div class="command-box">
+                <h3>Basic Compression (Recommended):</h3>
+                <code>ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k output.mp4</code>
+            </div>
+            <div class="command-box">
+                <h3>High Compression (Smaller file):</h3>
+                <code>ffmpeg -i input.mp4 -c:v libx264 -crf 28 -preset slow -c:a aac -b:a 96k output.mp4</code>
+            </div>
+            <div class="command-box">
+                <h3>WebM Format (Modern browsers):</h3>
+                <code>ffmpeg -i input.mp4 -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus output.webm</code>
+            </div>
+            <div class="command-box">
+                <h3>Create Poster Image:</h3>
+                <code>ffmpeg -i input.mp4 -ss 00:00:05 -vframes 1 poster.jpg</code>
+            </div>
+        </section>
+
+        <footer>
+            <p><a href="index.html">← Back to Main Page</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Optional: Lazy loading for videos
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('video[data-src]');
+            
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const video = entry.target;
+                        video.src = video.dataset.src;
+                        video.load();
+                        videoObserver.unobserve(video);
+                    }
+                });
+            });
+
+            videos.forEach(video => videoObserver.observe(video));
+        });
+    </script>
+</body>
+</html>
