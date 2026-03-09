@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="project-page">
+    <div class="background">
+        <div class="gradient-layer gradient-one"></div>
+        <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Tanvir</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="iot.html" class="active">IoT</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="theme-checkbox">
+            <label for="theme-switch" class="theme-label">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+                <div class="theme-ball"></div>
+            </label>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-hero" id="top">
+            <div class="project-frame">
+                <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <span class="hero-eyebrow">Internet of Things</span>
+                        <h1>IoT Projects</h1>
+                    </div>
+                    <div style="flex: 2;">
+                        <p class="hero-lede">The Internet of Things represents the future of connected devices, enabling seamless communication between the physical and digital worlds. My IoT projects focus on creating smart, connected systems that leverage cloud platforms, real-time data processing, and wireless communication protocols.</p>
+                        <p class="hero-lede">From GPS tracking systems to smart waste management, these projects demonstrate the power of IoT in solving real-world problems through connectivity and automation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="container">
+                <h2 class="section-title">Featured IoT Projects</h2>
+                <div class="cards-row">
+                    <!-- Real-time GPS Tracker -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/projects/a9g_based_location_tracker/a9g_combined.jpg" alt="A9G GPS Tracker">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">Real-time GPS Tracker</h3>
+                            <p class="ac-desc">Hardware, firmware, and PCB development for an ESP + A9G based real-time GPS tracker.</p>
+                            <div class="ac-buttons">
+                                <a href="project-a9g_based_location_tracker.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SmartBinV1 -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/projects/smart_bin/smartbin_combined.jpg" alt="SmartBinV1">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">SmartBinV1</h3>
+                            <p class="ac-desc">An IoT-based smart waste monitoring system.</p>
+                            <div class="ac-buttons">
+                                <a href="project-smartbin-v1.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smart Home -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/home_page_skills_images/IoT1.jpg" alt="Smart Home">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">Smart Home</h3>
+                            <p class="ac-desc">IoT-enabled home automation and monitoring system.</p>
+                            <div class="ac-buttons">
+                                <a href="project-smart-home.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 4rem;">Technologies & Platforms</h2>
+                <div class="tech-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="tech-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h3 style="color: var(--text-light); margin-bottom: 0.5rem;">ESP32/ESP8266</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Microcontroller platforms for IoT applications</p>
+                    </div>
+                    <div class="tech-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h3 style="color: var(--text-light); margin-bottom: 0.5rem;">MQTT Protocol</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Lightweight messaging for IoT devices</p>
+                    </div>
+                    <div class="tech-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h3 style="color: var(--text-light); margin-bottom: 0.5rem;">AWS IoT Core</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Cloud platform for IoT device management</p>
+                    </div>
+                    <div class="tech-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h3 style="color: var(--text-light); margin-bottom: 0.5rem;">Firebase</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Real-time database and cloud services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tanvir's Robotics Lab. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

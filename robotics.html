@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="project-page">
+    <div class="background">
+        <div class="gradient-layer gradient-one"></div>
+        <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Tanvir</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="robotics.html" class="active">Robotics</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="theme-checkbox">
+            <label for="theme-switch" class="theme-label">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+                <div class="theme-ball"></div>
+            </label>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-hero" id="top">
+            <div class="project-frame">
+                <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <span class="hero-eyebrow">Robotics Engineering</span>
+                        <h1>Robotics Projects</h1>
+                    </div>
+                    <div style="flex: 2;">
+                        <p class="hero-lede">As a robotics engineer, I've had the privilege of working on diverse projects ranging from autonomous navigation systems to medical assistance robots. My passion lies in creating intelligent systems that can interact with and adapt to their environment, bridging the gap between digital intelligence and physical action.</p>
+                        <p class="hero-lede">From designing mechanical systems to programming complex control algorithms, each project represents a step forward in my journey to build robots that can make a meaningful impact on people's lives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="container">
+                <h2 class="section-title">Featured Robotics Projects</h2>
+                <div class="cards-row">
+                    <!-- IHABOTv2 -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/projects/ihabotv2/ihabot_combined.jpg" alt="IHABOTv2">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">IHABOTv2</h3>
+                            <p class="ac-desc">Bangladesh's first intelligent hospital assistant robot, featuring autonomous navigation, rehabilitation monitoring, and medicine delivery.</p>
+                            <div class="ac-buttons">
+                                <a href="project-ihabotv2.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AgRover -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/projects/agrover/agrober_combined.jpg" alt="Agrover">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">AgRover</h3>
+                            <p class="ac-desc">A semi-autonomous farming bot for precision agriculture.</p>
+                            <div class="ac-buttons">
+                                <a href="project-agrover.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FireFighting Robot -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/projects/fire_fighting_robot/fire_fighting_robot_combined.jpg" alt="Intelligent Firefighting Robot">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">FireFightingRobot</h3>
+                            <p class="ac-desc">Large scale fire fighting robot with remote control and CAD design.</p>
+                            <div class="ac-buttons">
+                                <a href="project-firefighting-robot.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AmphiBot -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/projects/amphibot/waterbot_captured_from_front_left_top.jpg" alt="AmphiBot">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">AmphiBot</h3>
+                            <p class="ac-desc">Amphibious trash collection robot with unified drive system for seamless land and water operation.</p>
+                            <div class="ac-buttons">
+                                <a href="project-amphibot.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Small Firefighting Robot -->
+                    <div class="apple-card">
+                        <div class="ac-image-wrapper">
+                            <img src="assets/images/projects/small_fire_fighting_robot/small_fire_fighting_robot_combined.jpg" alt="Small Firefighting Robot">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">Small Firefighting Robot</h3>
+                            <p class="ac-desc">A small, Bluetooth-controlled firefighting robot from our first semester.</p>
+                            <div class="ac-buttons">
+                                <a href="project-small-firefighting-robot.html" class="ac-btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tanvir's Robotics Lab. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
