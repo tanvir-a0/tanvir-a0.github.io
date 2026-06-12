@@ -1935,7 +1935,7 @@ body.light-mode .apple-card:hover {
 }
 
 /* Make anchor tags in about-card clickable */
-.about-card > a {
+.about-card>a {
   display: block;
   width: 100%;
   height: 100%;
