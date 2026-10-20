@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFD - Tanvir's Robotics Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="project-page">
+    <div class="background">
+        <div class="gradient-layer gradient-one"></div>
+        <div class="gradient-layer gradient-two"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Tanvir</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="cfd.html" class="active">CFD</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="theme-checkbox">
+            <label for="theme-switch" class="theme-label">
+                <span class="theme-icon sun">☀️</span>
+                <span class="theme-icon moon">🌙</span>
+                <div class="theme-ball"></div>
+            </label>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <section class="project-hero" id="top">
+            <div class="project-frame">
+                <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <span class="hero-eyebrow">Computational Fluid Dynamics</span>
+                        <h1>CFD Projects</h1>
+                    </div>
+                    <div style="flex: 2;">
+                        <p class="hero-lede">Computational Fluid Dynamics (CFD) is a powerful tool for analyzing and optimizing fluid flow, heat transfer, and thermal management in engineering designs. My CFD work focuses on simulating real-world scenarios to improve performance and efficiency of robotic systems and mechanical designs.</p>
+                        <p class="hero-lede">Using industry-standard software like Autodesk CFD and ANSYS, I've conducted simulations for various applications including aerodynamics, thermal analysis, and flow optimization in robotics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="container">
+                <h2 class="section-title">CFD Analysis & Simulations</h2>
+                <p style="text-align: center; color: var(--text-gray); max-width: 800px; margin: 2rem auto;">
+                    My CFD projects involve detailed analysis of fluid behavior, thermal characteristics, and optimization of designs for better performance. Each simulation helps inform design decisions and validate theoretical concepts.
+                </p>
+
+                <h2 class="section-title" style="margin-top: 4rem;">CFD Software & Tools</h2>
+                <div class="tech-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="tech-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h3 style="color: var(--text-light); margin-bottom: 0.5rem;">Autodesk CFD</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Comprehensive CFD software for thermal and fluid flow simulation</p>
+                    </div>
+                    <div class="tech-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h3 style="color: var(--text-light); margin-bottom: 0.5rem;">ANSYS</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Advanced engineering simulation platform for complex fluid dynamics</p>
+                    </div>
+                    <div class="tech-item" style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                        <h3 style="color: var(--text-light); margin-bottom: 0.5rem;">Fusion 360 CFD</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Integrated CAD and CFD for design optimization</p>
+                    </div>
+                </div>
+
+                <h2 class="section-title" style="margin-top: 4rem;">Application Areas</h2>
+                <div class="cards-row" style="margin-top: 2rem;">
+                    <div class="apple-card" style="cursor: default;">
+                        <div class="ac-image-wrapper" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">Thermal Analysis</h3>
+                            <p class="ac-desc">Heat distribution and thermal management in electronic systems and robotic components.</p>
+                        </div>
+                    </div>
+
+                    <div class="apple-card" style="cursor: default;">
+                        <div class="ac-image-wrapper" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">Flow Optimization</h3>
+                            <p class="ac-desc">Aerodynamic analysis and optimization of fluid flow in mechanical systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="apple-card" style="cursor: default;">
+                        <div class="ac-image-wrapper" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        </div>
+                        <div class="ac-content">
+                            <h3 class="ac-title">Cooling Systems</h3>
+                            <p class="ac-desc">Design and analysis of cooling mechanisms for high-performance systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tanvir's Robotics Lab. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

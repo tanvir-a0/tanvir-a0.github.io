@@ -327,6 +327,24 @@ projectCards.forEach((card, index) => {
   });
 });
 
+// Skill cards navigation - Make about-cards clickable
+document.addEventListener('DOMContentLoaded', () => {
+  const skillCards = document.querySelectorAll('.about-card');
+  skillCards.forEach((card) => {
+    const link = card.querySelector('a');
+    if (link) {
+      // Make the entire card clickable
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        // Only navigate if not clicking on the link directly
+        if (e.target.tagName !== 'A') {
+          window.location.href = link.getAttribute('href');
+        }
+      });
+    }
+  });
+});
+
 // Interactive Particle Network Background - REMOVED
 
 // ============================================
