@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tanvir's Robotics Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Tanvir Ahmed</title>
+  <link rel="stylesheet" href="style.css?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -266,9 +266,9 @@
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
         <li><a href="#certifications">Certification</a></li>
         <li><a href="#contact">Contacts</a></li>
         <!--   Remove this line when done test page test_page -->
@@ -304,14 +304,12 @@
     <a href="CV3.pdf" class="cv-button" target="_blank">View CV</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
+  <!-- About & Education Merged Section -->
+  <section id="about" class="about about-merged-section">
     <div class="section-bg-effects">
       <div class="floating-shape shape-1"></div>
       <div class="floating-shape shape-2"></div>
       <div class="floating-shape shape-3"></div>
-      <div class="floating-shape shape-4"></div>
-      <div class="floating-shape shape-5"></div>
       <div class="gradient-orb orb-1"></div>
       <div class="gradient-orb orb-2"></div>
       <div class="floating-ring ring-1"></div>
@@ -319,83 +317,65 @@
       <div class="animated-line line-1"></div>
       <div class="animated-line line-2"></div>
     </div>
-    <div class="container">
+    <div class="container about-merged-container">
       <h2 class="section-title reveal">About Me</h2>
 
-      <div class="about-intro">
-        <p class="reveal reveal-delay-1">
-          Hi! I'm <strong>Tanvir</strong>, a passionate robotics engineer and software developer dedicated to creating
-          innovative solutions
-          that bridge the gap between the digital and physical worlds. With expertise in robotics, AI, and full-stack
-          development for IoT applications,
-          I specialize in building intelligent systems that make a real-world impact.
-        </p>
-        <p class="reveal reveal-delay-2">
-          My journey in technology has led me to explore various domains including autonomous systems, GIS (Geographic
-          Information Systems), IoT integration,
-          machine learning, and embedded systems. I believe in the power of technology to solve complex problems and
-          improve people's lives.
-        </p>
-      </div>
-    </div>
-  </section>
+      <div class="about-education-layout">
+        <!-- Left: Bio Text -->
+        <div class="about-intro reveal reveal-delay-1">
+          <p>
+            Hi! I'm <strong>Tanvir</strong>, a passionate robotics engineer and software developer dedicated to creating
+            innovative solutions that bridge the gap between the digital and physical worlds. With expertise in robotics, AI, and full-stack
+            development for IoT applications, I specialize in building intelligent systems that make a real-world impact.
+          </p>
+          <p>
+            My journey in technology has led me to explore various domains including autonomous systems, GIS (Geographic
+            Information Systems), IoT integration, machine learning, and embedded systems. I believe in the power of technology to solve complex problems and
+            improve people's lives.
+          </p>
+        </div>
 
-  <!-- Education Section -->
-  <section id="education" class="education">
-    <div class="section-bg-effects">
-      <div class="floating-shape shape-1"></div>
-      <div class="floating-shape shape-2"></div>
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-      <div class="floating-ring ring-1"></div>
-      <div class="floating-ring ring-2"></div>
-      <div class="animated-line line-1"></div>
-      <div class="animated-line line-2"></div>
-    </div>
-    <div class="container">
-      <h2 class="section-title reveal">Education</h2>
-      
-      <div class="education-timeline reveal reveal-delay-1">
-        <div class="education-card">
-          <div class="education-logos">
-            <div class="education-logo-item">
-              <a href="https://www.du.ac.bd/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/images/university_and_department/university_white_background.jpg" alt="University of Dhaka">
-              </a>
-            </div>
-            <div class="education-logo-item">
-              <a href="https://www.du.ac.bd/body/RME" target="_blank" rel="noopener noreferrer">
-                <img src="assets/images/university_and_department/department_of_robotics_and_mechatronics_engineering_white_background.jpg" alt="Department of Robotics and Mechatronics Engineering">
-              </a>
-            </div>
-          </div>
-          <div class="education-content">
-            <div class="education-header">
-              <div>
-                <h3 class="education-degree">Bachelor of Science (B.Sc.)</h3>
-                <p class="education-major">Major: Robotics and Mechatronics Engineering</p>
+        <!-- Right: Original Education Card -->
+        <div id="education" class="education-timeline reveal reveal-delay-2">
+          <div class="education-card">
+            <div class="education-logos">
+              <div class="education-logo-item">
+                <a href="https://www.du.ac.bd/" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/images/university_and_department/university_white_background.jpg" alt="University of Dhaka">
+                </a>
               </div>
-              <span class="education-period">Jan 2022 – Present</span>
-            </div>
-            <div class="education-details">
-              <div class="education-institution">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                <span>University of Dhaka, Dhaka, Bangladesh</span>
+              <div class="education-logo-item">
+                <a href="https://www.du.ac.bd/body/RME" target="_blank" rel="noopener noreferrer">
+                  <img src="assets/images/university_and_department/department_of_robotics_and_mechatronics_engineering_white_background.jpg" alt="Department of Robotics and Mechatronics Engineering">
+                </a>
               </div>
-              <div class="education-gpa">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                </svg>
-                <span>CGPA: 3.81 out of 4.00 (7th semester completed)</span>
+            </div>
+            <div class="education-content">
+              <div class="education-header">
+                <div>
+                  <h3 class="education-degree">Bachelor of Science (B.Sc.)</h3>
+                  <p class="education-major">Major: Robotics and Mechatronics Engineering</p>
+                </div>
+                <span class="education-period">Jan 2022 to June 2026</span>
+              </div>
+              <div class="education-details">
+                <div class="education-institution">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  <span>University of Dhaka, Dhaka, Bangladesh</span>
+                </div>
+                <div class="education-gpa">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                  <span>CGPA: 3.81</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    
-    
     </div>
   </section>
 
@@ -661,6 +641,46 @@
             <div class="ac-buttons">
               <a href="project-amphibot.html" class="ac-btn-primary">Learn more</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="education publications-section">
+    <div class="section-bg-effects">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="floating-ring ring-1"></div>
+      <div class="floating-ring ring-2"></div>
+      <div class="animated-line line-1"></div>
+      <div class="animated-line line-2"></div>
+    </div>
+    <div class="container">
+      <h2 class="section-title reveal">Publications</h2>
+
+      <div class="education-timeline publications-list reveal reveal-delay-1">
+        <div class="education-card publication-card">
+          <div class="publication-top-meta">
+            <span class="publication-journal-badge">Discover Applied Sciences &bull; Springer Nature (Vol. 8, Issue 10)</span>
+            <span class="education-period">Oct 2026</span>
+          </div>
+          <h3 class="publication-title">
+            <a href="https://link.springer.com/article/10.1007/s42452-026-09473-5" target="_blank" rel="noopener noreferrer">
+              A comprehensive review of marine and coastal waste collection robots covering mobility and waste collection mechanisms
+            </a>
+          </h3>
+          <p class="publication-authors">
+            Mirza Afnan Islam, <strong class="author-highlight">Tanvir Ahmed</strong>, Md. Mehidi Hasan Rakib, Md. Ariful Islam
+          </p>
+          <div class="publication-footer">
+            <span class="publication-doi">DOI: 10.1007/s42452-026-09473-5</span>
+            <a href="https://link.springer.com/article/10.1007/s42452-026-09473-5" target="_blank" rel="noopener noreferrer" class="ac-btn-primary publication-btn">
+              View Publication &nearr;
+            </a>
           </div>
         </div>
       </div>
@@ -1060,6 +1080,21 @@
           </div>
         </div>
 
+        <!-- Google Scholar -->
+        <div class="contact-card">
+          <div class="contact-icon-wrapper">
+            <img src="assets/images/contact_logos/google_scholar.svg" alt="Google Scholar" class="contact-icon">
+          </div>
+          <h3 class="contact-title">Google Scholar</h3>
+          <p class="contact-detail">Tanvir Ahmed</p>
+          <div class="contact-actions">
+            <a href="https://scholar.google.com/citations?user=ZQQtjsEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"
+              class="action-btn open-btn">Open</a>
+            <button class="action-btn copy-btn"
+              onclick="copyToClipboard('https://scholar.google.com/citations?user=ZQQtjsEAAAAJ&hl=en', this)">Copy Link</button>
+          </div>
+        </div>
+
         <!-- GrabCad -->
         <div class="contact-card">
           <div class="contact-icon-wrapper">
@@ -1275,7 +1310,7 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    <p>&copy; 2026 Tanvir Ahmed. Powered by GitHub Pages.</p>
     <p class="last-updated">Last Updated: <span id="last-updated-date">Loading...</span></p>
   </footer>
 
