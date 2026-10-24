@@ -1,0 +1,869 @@
+{
+ "printed": {
+  "Lower Board Support 1": {
+   "name": "Lower Board Support 1",
+   "slug": "lower-board-support-1",
+   "dims": [
+    241.0,
+    3.0,
+    241.0
+   ],
+   "faces": 3232
+  },
+  "Lower Board Support 2": {
+   "name": "Lower Board Support 2",
+   "slug": "lower-board-support-2",
+   "dims": [
+    241.0,
+    3.0,
+    241.0
+   ],
+   "faces": 3232
+  },
+  "Aluminium Profile Spacing Measurement Helper 1": {
+   "name": "Spacing Helper 1",
+   "slug": "aluminium-profile-spacing-measurement-helper-1",
+   "dims": [
+    124.9,
+    22.0,
+    142.5
+   ],
+   "faces": 44
+  },
+  "Aluminium Profile Spacing Measurement Helper 2": {
+   "name": "Spacing Helper 2",
+   "slug": "aluminium-profile-spacing-measurement-helper-2",
+   "dims": [
+    124.9,
+    22.0,
+    142.5
+   ],
+   "faces": 44
+  },
+  "Power Supply Holder That Connects with Aluminium Profile": {
+   "name": "PSU Holder",
+   "slug": "power-supply-holder-that-connects-with-aluminium-profile",
+   "dims": [
+    179.1,
+    109.8,
+    148.8
+   ],
+   "faces": 4314
+  },
+  "PSU Exhust Air Guide": {
+   "name": "PSU Exhaust Air Guide",
+   "slug": "psu-exhust-air-guide",
+   "dims": [
+    87.6,
+    76.3,
+    17.3
+   ],
+   "faces": 730
+  },
+  "Motherboard Base": {
+   "name": "Motherboard Base",
+   "slug": "motherboard-base",
+   "dims": [
+    175.0,
+    31.0,
+    198.1
+   ],
+   "faces": 7258
+  },
+  "Motherboard Support Left": {
+   "name": "Motherboard Support Left",
+   "slug": "motherboard-support-left",
+   "dims": [
+    37.0,
+    136.2,
+    150.0
+   ],
+   "faces": 936
+  },
+  "Motherboard Support Right": {
+   "name": "Motherboard Support Right",
+   "slug": "motherboard-support-right",
+   "dims": [
+    25.6,
+    137.0,
+    101.5
+   ],
+   "faces": 17964
+  },
+  "120mm Cooling Fan Gurd Mainly for CPU Cooler Fans": {
+   "name": "CPU Fan Guard (120 mm)",
+   "slug": "120mm-cooling-fan-gurd-mainly-for-cpu-cooler-fans",
+   "dims": [
+    124.2,
+    13.5,
+    124.2
+   ],
+   "faces": 2084
+  },
+  "GPU Holder Main": {
+   "name": "GPU Holder Main",
+   "slug": "gpu-holder-main",
+   "dims": [
+    91.5,
+    82.0,
+    179.7
+   ],
+   "faces": 3752
+  },
+  "GPU Holder Mounting Parts": {
+   "name": "GPU Holder Mounting Parts",
+   "slug": "gpu-holder-mounting-parts",
+   "dims": [
+    71.2,
+    7.1,
+    20.8
+   ],
+   "faces": 930
+  },
+  "GPU Holder Additional Support": {
+   "name": "GPU Holder Additional Support",
+   "slug": "gpu-holder-additional-support",
+   "dims": [
+    57.0,
+    79.0,
+    88.8
+   ],
+   "faces": 890
+  },
+  "Fan Mount With Aluminium Profile": {
+   "name": "Fan Mount",
+   "slug": "fan-mount-with-aluminium-profile",
+   "dims": [
+    142.5,
+    134.5,
+    21.6
+   ],
+   "faces": 50446
+  },
+  "120mm Fan Inlet Air Guide": {
+   "name": "Fan Inlet Air Guide (120 mm)",
+   "slug": "120mm-fan-inlet-air-guide",
+   "dims": [
+    119.8,
+    104.4,
+    20.1
+   ],
+   "faces": 700
+  },
+  "Power Menu Connector Top Part": {
+   "name": "Power Menu Connector Top",
+   "slug": "power-menu-connector-top-part",
+   "dims": [
+    155.6,
+    41.3,
+    24.0
+   ],
+   "faces": 1560
+  },
+  "Power Menu Connector Lower Part": {
+   "name": "Power Menu Connector Lower",
+   "slug": "power-menu-connector-lower-part",
+   "dims": [
+    115.2,
+    4.0,
+    14.0
+   ],
+   "faces": 528
+  },
+  "Motherboard Backplate": {
+   "name": "Motherboard Backplate",
+   "slug": "motherboard-backplate",
+   "dims": [
+    160.7,
+    109.7,
+    21.2
+   ],
+   "faces": 7096
+  },
+  "GX 16 Holder": {
+   "name": "GX16 Holder",
+   "slug": "gx-16-holder",
+   "dims": [
+    53.1,
+    6.0,
+    25.9
+   ],
+   "faces": 1068
+  },
+  "Screw Support for Board Small": {
+   "name": "Board Screw Support (Small)",
+   "slug": "screw-support-for-board-small",
+   "dims": [
+    269.3,
+    14.7,
+    5.0
+   ],
+   "faces": 2014
+  },
+  "Screw Support for Board Large": {
+   "name": "Board Screw Support (Large)",
+   "slug": "screw-support-for-board-large",
+   "dims": [
+    5.0,
+    14.7,
+    299.4
+   ],
+   "faces": 1976
+  },
+  "Updated GPU Backplate v1": {
+   "name": "GPU Backplate",
+   "slug": "updated-gpu-backplate-v1",
+   "dims": [
+    70.0,
+    80.0,
+    44.4
+   ],
+   "faces": 3184
+  },
+  "AC Power Enter Hole": {
+   "name": "AC Power Inlet Grommet",
+   "slug": "ac-power-enter-hole",
+   "dims": [
+    56.4,
+    60.1,
+    23.1
+   ],
+   "faces": 2416
+  },
+  "Protector for PC Components": {
+   "name": "PC Components Protector",
+   "slug": "protector-for-pc-components",
+   "dims": [
+    217.6,
+    217.6,
+    29.9
+   ],
+   "faces": 6266
+  },
+  "Top Board Screw Support": {
+   "name": "Top Board Screw Support",
+   "slug": "top-board-screw-support",
+   "dims": [
+    40.0,
+    3.0,
+    40.0
+   ],
+   "faces": 3428
+  },
+  "Emergency Switch Holder": {
+   "name": "Emergency Switch Holder",
+   "slug": "emergency-switch-holder",
+   "dims": [
+    46.1,
+    5.0,
+    97.2
+   ],
+   "faces": 1484
+  },
+  "Updated Main Body Lifter Support": {
+   "name": "Main Body Lifter",
+   "slug": "updated-main-body-lifter-support",
+   "dims": [
+    88.8,
+    23.1,
+    88.8
+   ],
+   "faces": 832
+  },
+  "Lazy Susan Bearing Holder with Servo Motor": {
+   "name": "Bearing Holder (with Servo)",
+   "slug": "lazy-susan-bearing-holder-with-servo-motor",
+   "dims": [
+    179.0,
+    179.0,
+    67.2
+   ],
+   "faces": 4714
+  },
+  "Lazy Susan Bearing Holder Without Motor": {
+   "name": "Bearing Holder (without Servo)",
+   "slug": "lazy-susan-bearing-holder-without-motor",
+   "dims": [
+    179.0,
+    179.0,
+    38.1
+   ],
+   "faces": 1506
+  },
+  "Inner Driven Gear of Hip": {
+   "name": "Inner Hip Gear",
+   "slug": "inner-driven-gear-of-hip",
+   "dims": [
+    222.4,
+    12.0,
+    222.4
+   ],
+   "faces": 12860
+  },
+  "Core Support": {
+   "name": "Core Support",
+   "slug": "core-support",
+   "dims": [
+    222.4,
+    222.4,
+    108.0
+   ],
+   "faces": 103832
+  },
+  "Robot Temporary Base During Transportation": {
+   "name": "Transport Base",
+   "slug": "robot-temporary-base-during-transportation",
+   "dims": [
+    268.0,
+    268.0,
+    68.2
+   ],
+   "faces": 3728
+  },
+  "12V SMPS Holder Lower Part": {
+   "name": "SMPS Holder Lower",
+   "slug": "12v-smps-holder-lower-part",
+   "dims": [
+    86.0,
+    82.2,
+    141.3
+   ],
+   "faces": 25154
+  },
+  "12V SMPS Holder Upper Part": {
+   "name": "SMPS Holder Upper",
+   "slug": "12v-smps-holder-upper-part",
+   "dims": [
+    36.0,
+    82.2,
+    139.7
+   ],
+   "faces": 31950
+  },
+  "Left Lower Generated Connector": {
+   "name": "Left Lower Connector",
+   "slug": "left-lower-generated-connector",
+   "dims": [
+    70.8,
+    121.5,
+    195.8
+   ],
+   "faces": 70134
+  },
+  "Right Lower Generated Connector": {
+   "name": "Right Lower Connector",
+   "slug": "right-lower-generated-connector",
+   "dims": [
+    70.8,
+    121.5,
+    195.8
+   ],
+   "faces": 70138
+  },
+  "Left Upper Generated Connector": {
+   "name": "Left Upper Connector",
+   "slug": "left-upper-generated-connector",
+   "dims": [
+    134.5,
+    157.1,
+    202.6
+   ],
+   "faces": 135298
+  },
+  "Right Upper Generated Connector": {
+   "name": "Right Upper Connector",
+   "slug": "right-upper-generated-connector",
+   "dims": [
+    134.5,
+    157.1,
+    202.6
+   ],
+   "faces": 135272
+  },
+  "Display Connector with Core Profiles - Lower": {
+   "name": "Display Connector Lower",
+   "slug": "display-connector-with-core-profiles-lower",
+   "dims": [
+    146.4,
+    57.8,
+    97.0
+   ],
+   "faces": 26834
+  },
+  "Display Connector with Core Profiles - Upper": {
+   "name": "Display Connector Upper",
+   "slug": "display-connector-with-core-profiles-upper",
+   "dims": [
+    147.2,
+    184.5,
+    53.8
+   ],
+   "faces": 66496
+  },
+  "ViewSonic TD1655 Display Holder": {
+   "name": "TD1655 Display Holder",
+   "slug": "viewsonic-td1655-display-holder",
+   "dims": [
+    365.7,
+    97.5,
+    123.8
+   ],
+   "faces": 76990
+  },
+  "Monitor Magnetic Mount For Microphone And Additional Small Camera": {
+   "name": "Magnetic Mic Mount",
+   "slug": "monitor-magnetic-mount-for-microphone-and-additional-small-camera",
+   "dims": [
+    111.0,
+    21.2,
+    50.4
+   ],
+   "faces": 91456
+  },
+  "Wire Guide - Small Version": {
+   "name": "Wire Guide",
+   "slug": "wire-guide-small-version",
+   "dims": [
+    110.9,
+    6.0,
+    21.8
+   ],
+   "faces": 2340
+  },
+  "Entire Head Support and Neck Pan Motor Holder": {
+   "name": "Neck Base & Pan Motor Holder",
+   "slug": "entire-head-support-and-neck-pan-motor-holder",
+   "dims": [
+    174.7,
+    144.9,
+    57.9
+   ],
+   "faces": 98656
+  },
+  "Neck Pan Gear Driver": {
+   "name": "Neck Pan Gear Driver",
+   "slug": "neck-pan-gear-driver",
+   "dims": [
+    32.9,
+    32.9,
+    9.0
+   ],
+   "faces": 274946
+  },
+  "Neck Pan Gear Driven": {
+   "name": "Neck Pan Gear Driven",
+   "slug": "neck-pan-gear-driven",
+   "dims": [
+    86.4,
+    86.4,
+    9.0
+   ],
+   "faces": 201912
+  },
+  "Support for Neck Pan Gear Driven": {
+   "name": "Pan Gear Bearing Support",
+   "slug": "support-for-neck-pan-gear-driven",
+   "dims": [
+    78.8,
+    78.8,
+    11.2
+   ],
+   "faces": 2288
+  },
+  "Neck Pan and Tilt Part Connection": {
+   "name": "Pan–Tilt Connector",
+   "slug": "neck-pan-and-tilt-part-connection",
+   "dims": [
+    125.8,
+    81.6,
+    105.7
+   ],
+   "faces": 53240
+  },
+  "Neck Tilt Gear Driven": {
+   "name": "Neck Tilt Gear Driven",
+   "slug": "neck-tilt-gear-driven",
+   "dims": [
+    7.0,
+    62.4,
+    62.4
+   ],
+   "faces": 92488
+  },
+  "Neck Tilt Left Head Joint": {
+   "name": "Left Head Joint",
+   "slug": "neck-tilt-left-head-joint",
+   "dims": [
+    30.1,
+    58.6,
+    80.7
+   ],
+   "faces": 91160
+  },
+  "Neck Tilt Right Head Joint": {
+   "name": "Right Head Joint",
+   "slug": "neck-tilt-right-head-joint",
+   "dims": [
+    30.0,
+    49.4,
+    76.2
+   ],
+   "faces": 55500
+  },
+  "Left Right Head Joint Connector": {
+   "name": "Head Joint Bridge",
+   "slug": "left-right-head-joint-connector",
+   "dims": [
+    88.9,
+    48.4,
+    35.7
+   ],
+   "faces": 4190
+  },
+  "Head Front Connector": {
+   "name": "Head Front Pivot",
+   "slug": "head-front-connector",
+   "dims": [
+    147.5,
+    102.1,
+    158.2
+   ],
+   "faces": 138884
+  },
+  "Head Back Connector": {
+   "name": "Head Back Pivot",
+   "slug": "head-back-connector",
+   "dims": [
+    125.4,
+    42.4,
+    153.2
+   ],
+   "faces": 115226
+  },
+  "Eye Glass or Visor": {
+   "name": "Visor Mould",
+   "slug": "eye-glass-or-visor",
+   "dims": [
+    192.3,
+    80.6,
+    65.3
+   ],
+   "faces": 6888
+  },
+  "Visor Holder": {
+   "name": "Visor Holder",
+   "slug": "visor-holder",
+   "dims": [
+    192.3,
+    80.6,
+    93.2
+   ],
+   "faces": 13708
+  },
+  "Left Speaker Holder": {
+   "name": "Left Speaker Holder",
+   "slug": "left-speaker-holder",
+   "dims": [
+    92.0,
+    23.7,
+    76.6
+   ],
+   "faces": 4772
+  },
+  "Right Speaker Holder": {
+   "name": "Right Speaker Holder",
+   "slug": "right-speaker-holder",
+   "dims": [
+    92.0,
+    23.7,
+    76.6
+   ],
+   "faces": 4772
+  },
+  "Left Display Holder": {
+   "name": "Left Eye Display Holder",
+   "slug": "left-display-holder",
+   "dims": [
+    37.1,
+    129.8,
+    92.0
+   ],
+   "faces": 2914
+  },
+  "Right Display Holder": {
+   "name": "Right Eye Display Holder",
+   "slug": "right-display-holder",
+   "dims": [
+    127.9,
+    34.2,
+    91.6
+   ],
+   "faces": 1660
+  },
+  "Head Back": {
+   "name": "Head Back",
+   "slug": "head-back",
+   "dims": [
+    224.1,
+    209.8,
+    211.8
+   ],
+   "faces": 81806
+  },
+  "Head Top Camera Holder": {
+   "name": "Head Top Camera Cover",
+   "slug": "head-top-camera-holder",
+   "dims": [
+    49.2,
+    75.1,
+    24.0
+   ],
+   "faces": 24992
+  },
+  "Lower Midsection": {
+   "name": "Lower Abdomen Panel",
+   "slug": "lower-midsection",
+   "dims": [
+    249.3,
+    125.3,
+    112.6
+   ],
+   "faces": 8892
+  },
+  "Midsection": {
+   "name": "Abdomen Panel",
+   "slug": "midsection",
+   "dims": [
+    264.1,
+    98.9,
+    208.2
+   ],
+   "faces": 11314
+  },
+  "Upper Midsection": {
+   "name": "Chest Panel",
+   "slug": "upper-midsection",
+   "dims": [
+    270.4,
+    140.0,
+    170.2
+   ],
+   "faces": 27358
+  },
+  "Rear Section with Umbilical Cord Hole": {
+   "name": "Back Panel",
+   "slug": "rear-section-with-umbilical-cord-hole",
+   "dims": [
+    275.9,
+    159.2,
+    275.1
+   ],
+   "faces": 32858
+  },
+  "Upper Rear Section": {
+   "name": "Back Top Panel",
+   "slug": "upper-rear-section",
+   "dims": [
+    272.0,
+    114.0,
+    171.7
+   ],
+   "faces": 16970
+  },
+  "Left Sholder Back": {
+   "name": "Left Shoulder Back",
+   "slug": "left-sholder-back",
+   "dims": [
+    117.7,
+    139.2,
+    255.3
+   ],
+   "faces": 15886
+  },
+  "Right Sholder Back": {
+   "name": "Right Shoulder Back",
+   "slug": "right-sholder-back",
+   "dims": [
+    117.7,
+    139.2,
+    255.3
+   ],
+   "faces": 16380
+  },
+  "Right Sholder Front": {
+   "name": "Right Shoulder Front",
+   "slug": "right-sholder-front",
+   "dims": [
+    117.8,
+    124.3,
+    241.4
+   ],
+   "faces": 14422
+  },
+  "Left Hole Filler With LEDs": {
+   "name": "Left Hole Filler (LEDs)",
+   "slug": "left-hole-filler-with-leds",
+   "dims": [
+    41.2,
+    61.9,
+    75.3
+   ],
+   "faces": 5768
+  },
+  "Right Umbilical Cord Hole": {
+   "name": "Umbilical Cord Port",
+   "slug": "right-umbilical-cord-hole",
+   "dims": [
+    41.2,
+    61.9,
+    75.3
+   ],
+   "faces": 5060
+  },
+  "Astra Camera Holder": {
+   "name": "Chest Camera Holder",
+   "slug": "astra-camera-holder",
+   "dims": [
+    74.4,
+    73.6,
+    20.9
+   ],
+   "faces": 3012
+  },
+  "Feet": {
+   "name": "Feet",
+   "slug": "feet",
+   "dims": [
+    86.5,
+    86.5,
+    8.2
+   ],
+   "faces": 1504
+  },
+  "PSU Shield": {
+   "name": "PSU Shield",
+   "slug": "psu-shield",
+   "dims": [
+    120.0,
+    1.0,
+    120.0
+   ],
+   "faces": 11564
+  },
+  "Mesh Protecting Part": {
+   "name": "Mesh Protecting Part",
+   "slug": "mesh-protecting-part",
+   "dims": [
+    222.4,
+    222.4,
+    1.9
+   ],
+   "faces": 8092
+  },
+  "Hip Driver Gear": {
+   "name": "Hip Driver Gear",
+   "slug": "hip-driver-gear",
+   "dims": [
+    55.5,
+    10.0,
+    55.5
+   ],
+   "faces": 82380
+  },
+  "Neck Tilt Gear Driver": {
+   "name": "Neck Tilt Gear Driver",
+   "slug": "neck-tilt-gear-driver",
+   "dims": [
+    9.0,
+    32.9,
+    32.9
+   ],
+   "faces": 276606
+  },
+  "Head Front with Ribs": {
+   "name": "Head Front",
+   "slug": "head-front-with-ribs",
+   "dims": [
+    224.3,
+    182.8,
+    180.5
+   ],
+   "faces": 174514
+  },
+  "Left Sholder Front": {
+   "name": "Left Shoulder Front",
+   "slug": "left-sholder-front",
+   "dims": [
+    117.8,
+    124.3,
+    241.4
+   ],
+   "faces": 11974
+  }
+ },
+ "cuts": {
+  "Lower Board": {
+   "name": "Lower Board",
+   "slug": "lower-board",
+   "dims": [
+    348.0,
+    348.0
+   ],
+   "paths": 9
+  },
+  "Right Board (Motherboard IO Side)": {
+   "name": "Right Board (I/O side)",
+   "slug": "right-board-motherboard-io-side",
+   "dims": [
+    350.0,
+    169.2
+   ],
+   "paths": 84
+  },
+  "Back Board": {
+   "name": "Back Board",
+   "slug": "back-board",
+   "dims": [
+    169.3,
+    356.0
+   ],
+   "paths": 5
+  },
+  "Front Board": {
+   "name": "Front Board",
+   "slug": "front-board",
+   "dims": [
+    169.3,
+    356.0
+   ],
+   "paths": 5
+  },
+  "Left Board": {
+   "name": "Left Board",
+   "slug": "left-board",
+   "dims": [
+    350.0,
+    169.2
+   ],
+   "paths": 193
+  },
+  "Top Board": {
+   "name": "Top Board",
+   "slug": "top-board",
+   "dims": [
+    350.0,
+    350.0
+   ],
+   "paths": 73
+  },
+  "Top Plate Extra": {
+   "name": "Top Plate Extra",
+   "slug": "top-plate-extra",
+   "dims": [
+    268.0,
+    268.0
+   ],
+   "paths": 18
+  }
+ }
+}

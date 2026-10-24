@@ -1,0 +1,10 @@
+# CogniCare guide tooling: the raw Fusion export (79 MB) only lives locally;
+# the site uses the compressed copy in assets/guides/robot-assembly/assembly.mp4
+_cognicare-tools/assembly.mp4
+_cognicare-tools/__pycache__/
+_cognicare-tools/*.bak
+_cognicare-tools/guide.backup.json
+_cognicare-tools/guide.json.tmp
+
+# Creality slicer projects embed local Windows paths (user folder); kept locally only
+_cognicare-tools/source/*.3mf

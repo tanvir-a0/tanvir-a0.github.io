@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build CogniCare - Tanvir Ahmed</title>
+  <meta name="description" content="Step-by-step, video-synced assembly guide for the CogniCare robot, with 3D previews of every printed part.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/guides/assembly-guide.css">
+</head>
+
+<body class="project-page assembly-guide">
+  <div class="background">
+    <div class="gradient-layer gradient-one"></div>
+    <div class="gradient-layer gradient-two"></div>
+  </div>
+
+  <nav class="navbar">
+    <div>
+      <div class="logo">Tanvir Ahmed</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#certifications">Certification</a></li>
+        <li><a href="index.html#contact">Contacts</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-checkbox">
+        <label for="theme-switch" class="theme-label">
+          <span class="theme-icon sun">☀️</span>
+          <span class="theme-icon moon">🌙</span>
+          <div class="theme-ball"></div>
+        </label>
+      </div>
+    </div>
+  </nav>
+
+  <!-- All content is loaded from assets/guides/robot-assembly/guide.json -->
+  <main class="project-detail" data-guide="assets/guides/robot-assembly/">
+    <div class="ag-wires" id="agWires" aria-hidden="true"></div>
+
+    <section class="ag-hero" id="top">
+      <div class="project-frame ag-hero-grid">
+        <div>
+          <h1 id="agTitle">Assembly Guide</h1>
+          <p class="ag-lede" id="agSubtitle"></p>
+          <div class="ag-cta">
+            <a href="#guide" class="project-btn primary">Start building</a>
+            <a href="#prints" class="project-btn outline">Print queue</a>
+          </div>
+        </div>
+        <div class="ag-photo-wrap">
+          <figure class="ag-photo"><img id="agCover" alt="The finished CogniCare robot"><figcaption>The real robot</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="ag-section" id="chapters">
+      <div class="project-frame">
+        <div class="ag-head">
+          <span class="ag-kicker">The build at a glance</span>
+          <h2 class="ag-h2">Nine chapters</h2>
+        </div>
+        <div class="ag-chapters" id="agChapters"></div>
+      </div>
+    </section>
+
+    <section class="ag-section" id="overview">
+      <div class="project-frame ag-two">
+        <article class="ag-panel" id="agIntroCard">
+          <span class="ag-kicker">Overview</span>
+          <div class="ag-prose" id="agIntroText"></div>
+        </article>
+        <article class="ag-panel" id="agNotesCard">
+          <span class="ag-kicker">Before you start</span>
+          <div class="ag-prose" id="agNotesText"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ag-section" id="kit">
+      <div class="project-frame">
+        <div class="ag-head">
+          <span class="ag-kicker">What you need</span>
+          <h2 class="ag-h2">The kit</h2>
+        </div>
+        <div class="ag-tabs" id="agKitTabs" role="tablist"></div>
+        <div id="agKitBody"></div>
+      </div>
+    </section>
+
+    <section class="ag-section" id="cutlist">
+      <div class="project-frame">
+        <article class="ag-panel">
+          <div class="ag-head">
+            <span class="ag-kicker">2020 aluminium profile</span>
+            <h2 class="ag-h2">Cut list</h2>
+            <p class="ag-lede">Every length you'll cut, drawn to scale.</p>
+          </div>
+          <div class="ag-cuts" id="agCuts"></div>
+          <div class="ag-cut-total" id="agCutTotal"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ag-section" id="prints">
+      <div class="project-frame">
+        <div class="ag-head">
+          <h2 class="ag-h2">Print queue</h2>
+          <p class="ag-lede" id="agPrintLede">Every printed part in the robot. Click one to spin it in 3D, and tick it off once it's printed (saved in this browser).</p>
+        </div>
+        <div class="ag-pq-head">
+          <div class="ag-tabs" id="agPartTabs" style="margin:0"></div>
+          <div class="ag-progress-line"><span id="agPrintedCount">0 / 0 printed</span><span class="track"><i id="agPrintedBar"></i></span></div>
+        </div>
+        <div class="ag-parts" id="agParts"></div>
+      </div>
+    </section>
+
+    <section class="ag-section" id="laser">
+      <div class="project-frame">
+        <div class="ag-head">
+          <span class="ag-kicker">Laser cutting · 3 mm acrylic</span>
+          <h2 class="ag-h2">Base panels</h2>
+        </div>
+        <div class="ag-boards" id="agBoards"></div>
+      </div>
+    </section>
+
+    <section class="ag-section ag-guide" id="guide">
+      <div class="project-frame">
+        <div class="ag-head">
+          <span class="ag-kicker">Step by step</span>
+          <h2 class="ag-h2">Build it</h2>
+          <p class="ag-lede">Scroll through the steps and the animation plays each one on a loop. Use ← → to move between steps, K to pause.</p>
+        </div>
+        <div class="ag-layout" id="agGuide">
+          <div class="ag-stage-wrap">
+            <div class="ag-stage">
+              <video id="agVideo" muted playsinline preload="metadata" aria-label="Assembly animation"></video>
+              <div class="ag-hud" aria-live="polite">
+                <span class="ag-hud-num" id="agHudNum"></span>
+                <span class="ag-hud-title" id="agHudTitle">Scroll to begin</span>
+              </div>
+              <div class="ag-progress" id="agScrub" role="slider" tabindex="0" aria-label="Seek within this step" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="agProgress"></i><b class="knob"></b></div>
+            </div>
+            <div class="ag-controls">
+              <button class="ag-btn" id="agPrev" title="Previous step (←)" aria-label="Previous step"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg></button>
+              <button class="ag-btn" id="agPlay" aria-label="Play or pause"></button>
+              <button class="ag-btn" id="agNext" title="Next step (→)" aria-label="Next step"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
+              <button class="ag-btn" id="agReplay" title="Replay this step">↺ <span class="txt">Replay</span></button>
+              <span class="ag-counter" id="agCounter"></span>
+              <span class="grow"></span>
+              <button class="ag-btn ag-speed" id="agSpeed" title="Playback speed"><span class="txt">1×</span></button>
+              <button class="ag-btn on" id="agRepeat" title="Repeat: loop the current step (click to play it once)" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg><span class="txt">Repeat</span></button>
+              <button class="ag-btn" id="agAuto" title="Keep playing into the next step" aria-pressed="false">⏵⏵ <span class="txt">Auto</span></button>
+              <button class="ag-btn ag-fs" id="agFs" title="Fullscreen" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7zm-2-4h2V7h3V5H5zm12 7h-3v2h5v-5h-2zM14 5v2h3v3h2V5z"/></svg></button>
+            </div>
+            <div class="ag-rail" id="agRail" aria-label="All steps"></div>
+            <div class="ag-railtip" id="agRailTip" aria-hidden="true"></div>
+            <div class="ag-spot" id="agSpot"></div>
+          </div>
+          <div class="ag-steps" id="agSteps"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ag-section ag-finish">
+      <div class="project-frame">
+        <span class="ag-kicker">Done</span>
+        <h2 class="ag-h2">That's CogniCare 🎉</h2>
+        <p class="ag-lede" style="margin:0 auto">Questions or improvements? Reach out through the <a href="index.html#contact" style="color:var(--ag-accent-2)">contact section</a>.</p>
+        <figure class="ag-photo"><img id="agFinal" alt="CogniCare, fully assembled" loading="lazy"><figcaption>Finished build</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <a href="index.html#projects" class="back-button">← Back to Projects</a>
+
+  <footer class="footer">
+    <p>&copy; 2025 Tanvir's Robotics Lab. Powered by GitHub Pages.</p>
+    <p class="last-updated">Last Updated: <span id="last-updated-date">October 24, 2026</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script type="module" src="assets/guides/assembly-guide.js"></script>
+</body>
+
+</html>

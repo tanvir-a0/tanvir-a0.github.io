@@ -1,0 +1,1 @@
+-an -vf scale=1600:-2,format=yuv420p -c:v libx264 -preset slow -crf 33 -tune animation -g 48 -movflags +faststart

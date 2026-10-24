@@ -1,0 +1,906 @@
+{
+  "version": 1,
+  "title": "",
+  "subtitle": "",
+  "intro": "",
+  "notes": "",
+  "buildTime": "",
+  "difficulty": "",
+  "video": "assembly.mp4",
+  "fps": 24,
+  "duration": 589,
+  "steps": [
+    {
+      "id": "s02z10q0",
+      "phase": "Robot Base",
+      "title": "Cut the 2020 Profiles To ",
+      "start": 0.125,
+      "end": 2.3333333333333335,
+      "text": "Cut four 340 mm 2020 alumunium profiles. Currently we need two but rest two will be needed in future\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Base%20Aluminium%20Profile%20340%20mm.f3d",
+      "parts": [
+        {
+          "name": "2020 Alumunium Profile Bar"
+        }
+      ],
+      "tools": [
+        {
+          "name": "mitre saw is better but Hack saw will be fine too."
+        }
+      ]
+    },
+    {
+      "id": "sdtltgb1",
+      "phase": "Robot Base",
+      "title": "Connect Three Way Corner Bracket",
+      "start": 2.4166666666666665,
+      "end": 7.166666666666667,
+      "text": "Connect The Three Way Corner Bracket in the both end of the two 340 mm alumunium profile. Use the screws given with the corner bracket for this application. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Three%20Way%20Corner%20Bracket.f3d",
+      "parts": [
+        {
+          "name": "4 Three Way Corner Bracket"
+        }
+      ],
+      "tools": [
+        {
+          "name": "L Key Set"
+        }
+      ]
+    },
+    {
+      "id": "sr4b2p85",
+      "phase": "Robot Base",
+      "title": "Cut Two ",
+      "start": 7.375,
+      "end": 10.791666666666666,
+      "text": "Cut four 310 mm 2020 profiles, and join two with the rest of already cut and attached corner bracket to create a rectangle\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Base%20Aluminium%20Profile%20310%20mm.f3d",
+      "parts": [
+        {
+          "name": "2020 Alumunium Profile Ba"
+        }
+      ],
+      "tools": [
+        {
+          "name": "L Key Set"
+        }
+      ]
+    },
+    {
+      "id": "sxndhsn0",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 10.791666666666666,
+      "end": 12.166666666666666,
+      "text": "Now the Lower part of robot base is complete"
+    },
+    {
+      "id": "saosgqzy",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 12.166666666666666,
+      "end": 17,
+      "text": "Cut the 3mm Acreylic sheet using laser cutter. the dxf file can be found here. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Lower%20Board.dxf",
+      "parts": [
+        {
+          "name": "3mm Acreylic Sheet"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Laser Cutter"
+        }
+      ]
+    },
+    {
+      "id": "strsbc7z",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 17,
+      "end": 23.25,
+      "text": "3D Print the part Lower Board Support 1 and Lower Board Support 2 and then place them on top of acreylic. These board supper as additional support for the lower acrylic board so that it doesn't get scrached or damaged during heavy movement. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Lower%20Board%20Support%201.stl\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Lower%20Board%20Support%202.stl",
+      "parts": [
+        {
+          "name": "M5 Counter Sunk Screws"
+        },
+        {
+          "name": "3D Printed Parts"
+        }
+      ],
+      "tools": [
+        {
+          "name": "L Key Set"
+        }
+      ]
+    },
+    {
+      "id": "szdd06pt",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 23.25,
+      "end": 28.583333333333332,
+      "text": "Now 3d print the four feet for the base, they are saved as feet.stl  and then allign them and connect using M5 Countersunk Screws\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Feet.stl",
+      "parts": [
+        {
+          "name": "M5 Counter Sunk Screws"
+        },
+        {
+          "name": "Drop In T Nuts"
+        },
+        {
+          "name": "3D Printed Parts"
+        }
+      ],
+      "tools": [
+        {
+          "name": "L Key Set"
+        }
+      ]
+    },
+    {
+      "id": "ssk70qv2",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 28.583333333333332,
+      "end": 30.291666666666668
+    },
+    {
+      "id": "sp7nf8sz",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 30.291666666666668,
+      "end": 36.25,
+      "text": "Now cut four 118 mm 2020 alumunium profiles and then join them on the extruded part of the three way corner bracket and use hex key to join them\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Base%20Aluminium%20Profile%20118%20mm.f3d",
+      "parts": [
+        {
+          "name": "Three Way Corner Bracket"
+        }
+      ],
+      "tools": [
+        {
+          "name": "L Key Set"
+        }
+      ]
+    },
+    {
+      "id": "svm391e5",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 36.25,
+      "end": 45.541666666666664,
+      "text": "now we will build the computing part that will be inside the base of the robot. so here we are using a full itx computer that is why we are following these steps, but your thing may vary if you use different compute like nvidia jetson or intel nuc. \n\nso for the itx pc inside robot base we first 3d print the power supply holder and then join it to one corner as shown. make sure that the power inlet of the psu faces the 340 mm alumunium profiles\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Power%20Supply%20Holder%20That%20Connects%20with%20Aluminium%20Profile.f3d",
+      "parts": [
+        {
+          "name": "3D Printed Parts"
+        },
+        {
+          "name": "Countersunk Screws"
+        }
+      ],
+      "tools": [
+        {
+          "name": "L Key Set"
+        }
+      ]
+    },
+    {
+      "id": "sn7f9gk0",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 45.541666666666664,
+      "end": 52.541666666666664,
+      "text": "Now Place the PSU inside the 3d Printed Power Supply Holder, In this version we used CORSAIR CX Series CX650 650W 80 Plus Bronze but you can use any as long as they have the same dimension and uses non moduler connections. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/EL90045--STD--ATX%20Power%20Supply%20v1.f3d",
+      "parts": [
+        {
+          "name": "Power Supply Unit - CORSAIR CX Series CX650 650W 80 Plus Bronze"
+        }
+      ],
+      "tools": [
+        {
+          "name": "Screw Driver Set"
+        },
+        {
+          "name": "Sccessories came With the Poewr Supply Unit Box"
+        }
+      ]
+    },
+    {
+      "id": "sk7ay56t",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 52.541666666666664,
+      "end": 57.708333333333336,
+      "text": "Now Print  PSU Exhust Air Guide and connect it with the the psu exhust holes side, this will make sure that the exhust of the psu doesn't come back or recirculate inside the robot base. Use single countersunk screws and drop in t nut to set it up with the alumunium profiles. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/PSU%20Exhust%20Air%20Guide.f3d"
+    },
+    {
+      "id": "sk2lavt8",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 57.708333333333336,
+      "end": 62.166666666666664,
+      "text": "now 3d print the Mesh Protecting Part and use tape or small amount of glue to place it on top of Power Supply Inlet as it will prevent small stuff from entering the PSU During develpment of the robot. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Mesh%20Protecting%20Part.f3d",
+      "parts": [
+        {
+          "name": "Electrical Tape"
+        },
+        {
+          "name": "Glue"
+        },
+        {
+          "name": "3D Printed Parts"
+        }
+      ]
+    },
+    {
+      "id": "s0s30ihn",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 62.166666666666664,
+      "end": 66.25,
+      "text": "Next We Will Setup the Motherboard"
+    },
+    {
+      "id": "s7tmt5zj",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 66.25,
+      "end": 70.75,
+      "text": "3D Print theMotherboardd Base and then isnert m3 inserts in the four mouting holes for the motherboard. and then connect it to 340 mm profile. also keep the spacing as showin in the image (adding screenshots for this)\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Motherboard%20Base.f3d",
+      "parts": [
+        {
+          "name": "m5 countersunk"
+        },
+        {
+          "name": "m3 inserts M3*5.7-OD4.6"
+        }
+      ]
+    },
+    {
+      "id": "svvbxgb5",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 70.75,
+      "end": 75,
+      "text": "Now 3d print the motherboard support left and motherboard support right. just join them with the motherboard base using m5 countersunk screws and nut (or you can just use m5 inserts, all of these will work) keep the top of them free as they will be connected later. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Motherboard%20Support%20Left.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Motherboard%20Support%20Right.f3d"
+    },
+    {
+      "id": "s7klozs2",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 75,
+      "end": 78.20833333333333,
+      "text": "now place the itx motherboard which already have cpu cooler and cooling fan. make sure to use a low profile cooling fan so that it fits inside the base",
+      "parts": [
+        {
+          "name": "MAXSUN B850ITX ICE (Wi-Fi 6)"
+        },
+        {
+          "name": "DeepCool AN600 Low-Profile 120mm"
+        }
+      ]
+    },
+    {
+      "id": "slq0f13r",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 78.20833333333333,
+      "end": 82.5,
+      "text": "now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/120mm%20Cooling%20Fan%20Gurd%20Mainly%20for%20CPU%20Cooler%20Fans.f3d so and it should just snap fit on the cooler fan of the motherboard. "
+    },
+    {
+      "id": "s1g5yrcr",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 82.5,
+      "end": 87.875,
+      "text": "now our motherboard is complete it is time for the cpu"
+    },
+    {
+      "id": "soe05vw3",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 87.875,
+      "end": 92.5,
+      "text": "3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/GPU%20Holder%20Main.f3d and fill two small holes with m3 inserts and larger holes with m5 inserts, in the lower part place the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Cooler%20Master%20PCIe%204.0%20x16%20300mm%20Riser%20Cable.f3d and screww that in. "
+    },
+    {
+      "id": "sfe5hik4",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 92.5,
+      "end": 99.875,
+      "text": "now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/GPU%20Holder%20Mounting%20Parts.f3d and there will be four hole total, so in the center two holes conenct them with the gpu mounting bracket. the wedge on the ed printed parts should match with the gput bracket. \n\nBut make sure to actually use a lowe profile gpu with the small form factor gpu bracket. "
+    },
+    {
+      "id": "s5otmdsi",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 99.875,
+      "end": 105.04166666666667,
+      "text": "Once the GPU Holder Additional Support and the gpu mounting bracket is connected, insert the gput into the pcie slot and make sure it connects peroperly. the outer side of the GPU Holder Additional Support.f3d should match properly with the GPU Holder Main.f3d werhere we already put m5 inserts, now use m5 screws to actually connect them rigidly after "
+    },
+    {
+      "id": "s71q9n5y",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 105.04166666666667,
+      "end": 110.83333333333333,
+      "text": "now 3d print the gpu holder additional suppert to make sure the gput doesn't get loose while transporting, it makes the gpu in the place. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/GPU%20Holder%20Additional%20Support.f3d"
+    },
+    {
+      "id": "s3nqzszc",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 110.83333333333333,
+      "end": 114.95833333333333,
+      "text": "Now place the entire set up we just created for gpu mounting side and place it in the robot bas e and using the counte sunk m5 screws connect it with the 310 mm alumunium profiles. (need to add image showing the dimentions and tolerance)\n"
+    },
+    {
+      "id": "s2qo9ezg",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 114.95833333333333,
+      "end": 125.25,
+      "text": "now let's create the cooling fan setup. here we usind a single 120mm cooling fan https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/120mm_fan_asm%20v1.f3d and a custom 3d printed mount https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Fan%20Mount%20With%20Aluminium%20Profile.f3d to connect it with the alumunium profile. right now it uses m5 countersunk screws to connect with the 310 mm profiles. just screw the lower one as we still didn't set up the top 310 mm profiels yet. "
+    },
+    {
+      "id": "s31beqpw",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 125.25,
+      "end": 129.41666666666666,
+      "text": "now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/120mm%20Fan%20Inlet%20Air%20Guide.f3d and place it in front of the fan so that fan doesn't scuk the same air from inside the robot base. the fan is set as pull in cool air setup. use 2 m5 countersunk screws and drop in nut to connect it with alumunium profiles. "
+    },
+    {
+      "id": "sevcvyw1",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 129.41666666666666,
+      "end": 141.29166666666666,
+      "text": "now connect the other two 310mm profile and two 340 mm profile and theree way corner connector to form a rectangle again and place it on to p of the existing setup to complete the box of the lower part. \n\nmake sure to connect the 2 screws that we left in the motherboard support arm with this newly added profiles. do the same for that one screw holes that left out earlier in the cooling fan 3d printed support. "
+    },
+    {
+      "id": "s2qglda7",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 141.29166666666666,
+      "end": 148.83333333333334,
+      "text": "now 3d print the power menu connector top part and there insert a m5 inserts and also 3d print the pwoer menu connector bottom part. \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Power%20Menu%20Connector%20Top%20Part.f3d\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Power%20Menu%20Connector%20Lower%20Part.f3d\n\nnow insert the device that holds the power button for p along with audio in out and couple of use connector. here we aure using the one pulled from DeepCool CH170 Digital Mini Tower, but you can any but you have to make the cusstom part for that. \n\nnow place the thing from DeepCool CH170 Digital Mini Tower into the top part you just printed and then use the bottom part to secure it. "
+    },
+    {
+      "id": "six3wcj6",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 148.83333333333334,
+      "end": 153.83333333333334,
+      "text": "then connect the entire assembly with the top 340 mm alumunium profile (adding images for tolerance) using m5 countersunck screws and drop in nuts"
+    },
+    {
+      "id": "s7k746bh",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 153.83333333333334,
+      "end": 158.125,
+      "text": "now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Motherboard%20Backplate.f3d which sits on top of the motherboard backplate and keeps proper air outlet so that eat can get out of that. \n\nsecure it with two m5 countersunk and drop in t nut. "
+    },
+    {
+      "id": "scub52mj",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 158.125,
+      "end": 159.04166666666666,
+      "text": "now wire up everything inside the robot base connect the gpu cpu and psue as from next on we will be continuein gto put the outside pannels of the robot base. "
+    },
+    {
+      "id": "smmrvxbn",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 159.04166666666666,
+      "end": 163.66666666666666,
+      "text": "laser cut the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Board%20(Motherboard%20IO%20Side).dxf and then there you will see a cutout for the gx 16 connector. "
+    },
+    {
+      "id": "sr4ywn2f",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 163.66666666666666,
+      "end": 170.08333333333334,
+      "text": "now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/GX%2016%20Holder.f3d which will hold the male side of the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/GX%2016-3%20Male.f3d gx 16 connector. secure it using nuts. then using m5 any screws and m5 nuts connect it with the acrylic pannel. "
+    },
+    {
+      "id": "sw5cj0kd",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 170.08333333333334,
+      "end": 177.54166666666666,
+      "text": "now its time to connect the firsst pannel. so now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Screw%20Support%20for%20Board%20Small.f3d and print two of them and place it on top of borad and using foru countersunk screws and four drop in t nut secure the board withe alumunium profile skeleton. \n\nafter that put the 3d printed gpu backplate https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Updated%20GPU%20Backplate%20v1.f3d there using the same m5 countersunk screws and m5 nuts\n\nanother thing is not that make sure to connect the wires between the gx16 connector because there will be a power line here thorugh an emergancy switch we will put later. \n\nwhen the gx 16 and gput mount si set then  like before use the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Screw%20Support%20for%20Board%20Small.f3d to connect it with the alumunium profiles using drop in t nut and m5 countersunk screws. "
+    },
+    {
+      "id": "sz2u6c2r",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 177.54166666666666,
+      "end": 188.125,
+      "text": "then laser cut the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Back%20Board.dxf and https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Front%20Board.dxf and then use the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Screw%20Support%20for%20Board%20Large.f3d to connect"
+    },
+    {
+      "id": "srpvj6u6",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 188.125,
+      "end": 197.41666666666666,
+      "text": "now laser cut the left board https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Board.dxf and ed print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/AC%20Power%20Enter%20Hole.f3d and press fit with the acreylic board. so here two cables will enter, one that will provide power to pc and the other one that will go through th eemergancy stop switch (which we will be installing later) to the female connector, so keep proper cable as need them in future. "
+    },
+    {
+      "id": "suecz30f",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 197.41666666666666,
+      "end": 206.66666666666666,
+      "text": "now connect the last side which is front board https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Front%20Board.dxf and use the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Screw%20Support%20for%20Board%20Small.f3d and  four m5 countersunk screw and drop in t nut to attach this with ethe alumunium profiles. "
+    },
+    {
+      "id": "soj0qoug",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 206.66666666666666,
+      "end": 214.375,
+      "text": "now cut two more 310mm 2020 proofiles (https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Base%20Aluminium%20Profile%20310%20mm.f3d) and place them as shown in the animation/video and connect them using the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Corner%20Bracket.f3d and m5 screws and drop in t nut. \n\n(need to add tolerance image here)"
+    },
+    {
+      "id": "sktziz6a",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 214.375,
+      "end": 220.875,
+      "text": "now cut two more 218mm 2020 proofiles (https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Base%20Aluminium%20Profile%20218%20mm.f3d) and place them as shown in the animation/video and connect them using the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Corner%20Bracket.f3d and m5 screws and drop in t nut. \n\n(need to add tolerance image here)"
+    },
+    {
+      "id": "sz36w9ck",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 220.875,
+      "end": 227.5,
+      "text": "3d print and place the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Protector%20for%20PC%20Components.f3d using the m5 screw and drop in nut. it have a lot of hoes so that it is easier for wire management. "
+    },
+    {
+      "id": "s7g7fe62",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 227.5,
+      "end": 231.29166666666666,
+      "text": "laser cut the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Top%20Board.dxf and place it. make sure the square hole close to the gpu and cooling fan side as in that squre there will be cable mounting for emergancy shutoff switch where the cable needs re routing. "
+    },
+    {
+      "id": "s4m19an7",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 231.29166666666666,
+      "end": 236.45833333333334,
+      "text": "now 3d print https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Top%20Board%20Screw%20Support.f3d and put them on top of the top board and using drop in t nut and m5 counter sunk screws they will be connected with the alumunium profiles. \n\nalso 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Emergency%20Switch%20Holder.f3d and put the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/AB6-A%20Emergency%20Switch.f3d there. solder the wires. the wire should be look like this, 220v ac cable one will enter in the power supply unit. create another 220v ac cable and socket that will enter throgh the power supply unit (ac power enter hole) and then go to the gx 16 connector through this emergancy switch. do not forget to use shrinking tube after soldering. "
+    },
+    {
+      "id": "soxcb9rt",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 236.45833333333334,
+      "end": 246,
+      "text": "noe 3d print four https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Updated%20Main%20Body%20Lifter%20Support.f3d and place them in each corner of the shown (inside the top plate) and use countersunk screws and drop in nut to attach them securely. "
+    },
+    {
+      "id": "skqo2ugp",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 246,
+      "end": 252.16666666666666,
+      "text": "now 3d print a single piece of the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Lazy%20Susan%20Bearing%20Holder%20with%20Servo%20Motor.f3d "
+    },
+    {
+      "id": "swl9vzdg",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 252.16666666666666,
+      "end": 256.6666666666667,
+      "text": "in the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Lazy%20Susan%20Bearing%20Holder%20with%20Servo%20Motor.f3d you can fit a hiwonder htd 85h (with the circular shaft) and fit it in the bearing holder and at the bottom of the servo you will find six screws to secure the servo motor with the 3d printed parts. "
+    },
+    {
+      "id": "sjibjztr",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 256.6666666666667,
+      "end": 261.2916666666667,
+      "text": "then 3d print the hip driver gear https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Hip%20Driver%20Gear.f3d at around 60 percent infill and use screws given with htd 85 motor to connect it with the servo shaft. "
+    },
+    {
+      "id": "sr5x51bv",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 261.2916666666667,
+      "end": 263.25,
+      "text": "then 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Lazy%20Susan%20Bearing%20Holder%20Without%20Motor.f3d "
+    },
+    {
+      "id": "s906k1ek",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 263.25,
+      "end": 267.75,
+      "text": "now put the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/25MM%20Nearly10%20Inch%20Rotating%20Table%20Bearing%20Lazy%20Suzan%20Bearing.f3d and you can clearly see the two parts we just 3d printed ligning up properly with the outer end of the bearing. now use a long screw to connect them. at the end of those two 3d printed parts you will see the slot for drop in t nut which allows you to screw the top part of the robot (from hip to head) individually. so any time you can just remove the top part of the robot and put it in the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Robot%20Temporary%20Base%20During%20Transportation.f3d and you are good to go. \n\nif wanna connect the robot permanently with the base you have to place this in the alumunium profile alongside those main body lifter and then you use tnut and m5 screws to permanently connect the robot with the base. "
+    },
+    {
+      "id": "skybezim",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 267.75,
+      "end": 273.0833333333333,
+      "text": "now put the entire setup we build including the bearing and the holder and servo motor setup in the slot in the alumunium profile (not permanent just as a temperary solution as we have to put a lot of screws there)"
+    },
+    {
+      "id": "sga4cz73",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 273.0833333333333,
+      "end": 281.4583333333333,
+      "text": "next place these things in order and make sure to align their forur holes currectly \n\nfirst goes 3d printed at more than 60 percent infill https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Inner%20Driven%20Gear%20of%20Hip.f3d\n\nthen goes 3d printed https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Mesh%20Protecting%20Part.f3d\n\nthen goes 3d printed https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Core%20Support.f3d\n\nand when all these are put together use m5 screws from top and m5 hex nuts to bottom to connect all four of these layers securely. "
+    },
+    {
+      "id": "srpoiwwn",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 281.4583333333333,
+      "end": 287.4166666666667,
+      "text": "now comes main four core profiles of the robot that will support the entire robot. \n\n343 mm profiles will be in the front side of the robot, https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Croe%20Profile%20Front%20Right.f3d and https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Croe%20Profile%20Front%20Left.f3d\n\nthen comes 393 mm 2020 alumunium profiles that will go at the back side, \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Croe%20Profile%20Back%20Left.f3d\nand\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Croe%20Profile%20Back%20Right.f3d\n\nthen use necessary screws and drop in nuts to hold these peorpfiles in place. notice there are are redundancy holes there, you do not need to use the inner four screws, you can just use m5 countersunk screws four that are on the outside to hold these profiles in place. "
+    },
+    {
+      "id": "sof0g6br",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 287.4166666666667,
+      "end": 297.2916666666667,
+      "text": "after the core propleis are set here comes the power supply unit. \n\nhere we aure using a 12v 10a smps standard size for our application, this power suppply will mainly power the servo motors of the robot. \n\nso first connect the input and output cables of the smps, make a relatively long cable for the smps as the ac input cable will be connected to a gx 16 female cable that will go outside of the cable to connect to that female gx 16 cable in the robot base. and a short wire for the smps output as the motor driver will sit just on top of the power supply assembly. \n\nso first connect the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/12V%20SMPS%20Holder%20Lower%20Part.f3d at the lower side of smps (from where the cable is going out), the psu have mounting holes and use them. but they are m3 screws so keep that in the mind. also sometimes instead of screw holes they have mouting slots where you can use m3 screws and m3 hex nut to mount them. \n\nthen mount the top part https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/12V%20SMPS%20Holder%20Upper%20Part.f3d with the sps too. \n\nnow move the whole assembly at the back side of the robot (i need to include the tolerances image here), and use m5 countersunk and drop in nuts to attach the screws with the alumunium profiles. note that back side means the larger alumunium profiles and top front side means the smaller alon umunium profiles. \n\n\nput the Hiwonder BusLinker V3.0 Servo Debugging Board on top of the upper mouting part (there you will see holes ) suing double sided tape. "
+    },
+    {
+      "id": "s18cgjek",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 297.2916666666667,
+      "end": 303.7083333333333,
+      "text": "now 3d print these components at atleast 40 percent infill. https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Lower%20Generated%20Connector.f3d\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Lower%20Generated%20Connector.f3d\n\nafter printing them you will see some hex slots there where you have to put m5 hex nut there so that screws can hold in there. we suggest after placing the hex nut  use some super glue so that they remain fix in their position. \n\nnow attach these to components to the coreprofiles one in the left and one in the right and connect them using m5screws and drop in t nut. \n\n(i need to include the tolerance image here)\n"
+    },
+    {
+      "id": "sv28llpx",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 303.7083333333333,
+      "end": 313.8333333333333,
+      "text": "now its time to connect the display. this mount was made for the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/ViewSonic%20TD1655%20Simplified%20Model.f3d. \n\nthe mount is made in a way so that it is easily replacable by small amount of twik. \n\nso you have to 3d print https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Display%20Connector%20with%20Core%20Profiles%20-%20Lower.f3d and https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Display%20Connector%20with%20Core%20Profiles%20-%20Upper.f3d\n\nthen attach the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/ViewSonic%20TD1655%20Display%20Holder.f3d with this. so if want to change display or use other type of display you have to create https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/ViewSonic%20TD1655%20Display%20Holder.f3d part from the scrats and then connect with other two using m5 countersunbnk screws. "
+    },
+    {
+      "id": "sebkgm54",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 313.8333333333333,
+      "end": 318.2083333333333,
+      "text": "finally once all is insert this entire display holder assembly into core profiles from the top (not that you have remove the power supply and its assembly for thsi part)\n\nthen use necessary screws to connect the foure side to the main core profiles using necessary screws. here we used regular flat head m5 screws with drop in t nut. "
+    },
+    {
+      "id": "ss1n02d1",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 318.2083333333333,
+      "end": 324.375,
+      "text": "next there is a small part called have to be 3d printed and placed in the back two profiles https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Wire%20Guide%20-%20Small%20Version.f3d\n\nthis is just asmall part with a lot of holes so that it makes cable management easy and we cna just use couple of zip ties for easy cable routing. "
+    },
+    {
+      "id": "sco3fmus",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 324.375,
+      "end": 330.2083333333333,
+      "text": "next 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Entire%20Head%20Support%20and%20Neck%20Pan%20Motor%20Holder.f3d and again place it from the top of core profiles and use any m5 flat head screws and drp in t nut to keep this in place. \n\nwhile placing make sure the servo mtor mount faces the left side fo the robot (as shown in the animation/video)\n\n(i will need to upload the tolerance image for this)"
+    },
+    {
+      "id": "s9scaio1",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 330.2083333333333,
+      "end": 336.9166666666667,
+      "text": "now 3d print these components at atleast 40 percent infill. \nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Upper%20Generated%20Connector.f3d\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Upper%20Generated%20Connector.f3d\n\nafter printing them you will see some hex slots there where you have to put m5 hex nut there so that screws can hold in there. we suggest after placing the hex nut  use some super glue so that they remain fix in their position. \n\nnow attach these to components to the coreprofiles one in the left and one in the right and connect them using m5screws and drop in t nut. \n\n(i need to include the tolerance image here)\n"
+    },
+    {
+      "id": "s5mi5hmk",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 336.9166666666667,
+      "end": 343.1666666666667,
+      "text": "next setup the hiwonder hx 35hm with its circular horn and 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Tilt%20Gear%20Driver.f3d\n\nand use screws to mount it with the horn of the servos. "
+    },
+    {
+      "id": "say60ah2",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 343.1666666666667,
+      "end": 346.3333333333333,
+      "text": "once the driver gear is set with the servo, put the servo in the slots. \n\nand there are screw holes at the bottom so use those screws to mount the servos securely."
+    },
+    {
+      "id": "shx3mt4l",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 346.3333333333333,
+      "end": 350.4583333333333,
+      "text": "next we have to pu the bearing which is 6007 sealed bearing and then we have to print 60 percent infill https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Support%20for%20Neck%20Pan%20Gear%20Driven.f3d, and 60 percent infill https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Pan%20Gear%20Driven.f3d and finally printing the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Pan%20and%20Tilt%20Part%20Connection.f3d at 40 percent infill. \n\nonce they are put properly and make sure the connection is perop then four very long scres will be mounted from top of https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Pan%20and%20Tilt%20Part%20Connection.f3d and cnnect all these 3d printed parts together. here no drp in nut needed, only the screw thread holds them together. \n\nhere the snugfit between the bearing 6007 and other is importatn ans the entire head will be supported using this friction fit. \n\nalso at the center of the bearing kyou will find a hole that will be used to transfer a single servo cable (we will see that in future)"
+    },
+    {
+      "id": "skkxf87t",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 350.4583333333333,
+      "end": 355.25,
+      "text": "next take another https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Hiwonder%20HX-35HM.f3d along with the circular horn https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/HX-35HM%20Horn%20Connector.f3d and connect it with the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Tilt%20Gear%20Driver.f3d using proper screws. "
+    },
+    {
+      "id": "stur781f",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 355.25,
+      "end": 358,
+      "text": "next put the motor and gear we just assembled inside the motor slot of the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Pan%20and%20Tilt%20Part%20Connection.f3d and use screws to secure it ptoperly. \n\nnow connect all these servos with the buslinker using cables. "
+    },
+    {
+      "id": "syixa370",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 358,
+      "end": 366.7083333333333,
+      "text": "now put two https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Bearing%206804-2RS%20(20x32x7).f3d  at two ends of the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Pan%20and%20Tilt%20Part%20Connection.f3d"
+    },
+    {
+      "id": "s7hwrw3j",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 366.7083333333333,
+      "end": 376.875,
+      "text": "Then put the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Tilt%20Left%20Head%20Joint.f3d  in the left side bearing (left on robot persperctive). \nand attach the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Tilt%20Gear%20Driven.f3d with the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Bearing%206804-2RS%20(20x32x7).f3d using m5 flat head screws long and m5 hex (you will see there are slots for hex screws to go in)\n\n\n"
+    },
+    {
+      "id": "sklb2jpb",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 376.875,
+      "end": 380.125,
+      "text": "in th eother side put the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Neck%20Tilt%20Right%20Head%20Joint.f3d with the bearing (right from the robots perspective). "
+    },
+    {
+      "id": "smucn8xp",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 380.125,
+      "end": 387.75,
+      "text": "Tehn use flat head m5 screws and m5 hex nut to connect two end using 3d printed 60 percent infill https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Right%20Head%20Joint%20Connector.f3d and notice that there are spots for 6 screws, but connecting 4 will be enought. the left side screw and nuts may be treacky as there is spaces ary very tight. "
+    },
+    {
+      "id": "sc7oqiif",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 387.75,
+      "end": 394.8333333333333,
+      "text": "3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Back%20Connector.f3d and the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Back%20Connector.f3d using m5 screws and m5 hex nuts. "
+    },
+    {
+      "id": "soiasdq6",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 394.8333333333333,
+      "end": 397.625,
+      "text": "now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Front%20with%20Ribs.f3d at 40 percent infill. here the print orientaiton is very important and don't forget to use a lot of supports while firintg this. we suggest that that front side of the head should face the printing plate. after printing is complete then use sanding papers or alternative method to smooth the things up. "
+    },
+    {
+      "id": "s9qmn7ze",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 397.625,
+      "end": 401.9166666666667,
+      "text": "now in https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Front%20with%20Ribs.f3d you will see a lot of the of holes, they are m5 inserts. so in all of the hole place m5 inserts because there will be a lot of parts connecting to the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2"
+    },
+    {
+      "id": "s3fxuj27",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 401.9166666666667,
+      "end": 412.9166666666667,
+      "text": "here comes the first object. the robot will have an unified glass at front or visor https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Eye%20Glass%20or%20Visor.f3d  (which is a curved acreylic sheet and then heat treated to follow the shape of the that will be connecte to https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Visor%20Holder.f3d using glue.\n\nto actually curve the acrylic sheet, you can first print the visor and then use it as a mold for the acrelyic and you can then heat treat this and create the visor you are trying to do. "
+    },
+    {
+      "id": "scgktdo9",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 412.9166666666667,
+      "end": 420.4583333333333,
+      "text": "after that use the proper screws to mount the visor in the place. "
+    },
+    {
+      "id": "sfrc9iym",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 420.4583333333333,
+      "end": 429.375,
+      "text": "now comes the speaker, print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Speaker%20Holder.f3d\n\nand the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Speaker%20Holder.f3d\n\nthen put the speaker/driver of the speaker there using m4 screw. here we aure using two sterio  3W drivr extracted from havit sk717, but you can use your own als long as it fiits inside the case. \n\n"
+    },
+    {
+      "id": "souue1kv",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 429.375,
+      "end": 436.5,
+      "text": "now put the speaker setup in the mouting holes inside the  https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Front%20with%20Ribs.f3d as you have already inserted proper insertss there. "
+    },
+    {
+      "id": "s3zk3r0p",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 436.5,
+      "end": 448.5416666666667,
+      "text": "now do the same for other side too. "
+    },
+    {
+      "id": "sjkj7d1t",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 448.5416666666667,
+      "end": 467.3333333333333,
+      "text": "now it is time to set up the display. \n\nso here we are using 4 inch full size hdmi display. so we built a custom holder for the display. \n\nit is better if you can print them in darak also tint the visor in dark, it clearly pops up that robotics look. \n\nnow print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Display%20Holder.f3d\n\nand https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Display%20Holder.f3d\n\n\nattach the 4 inch hdmi display there, here to attach we used glue and double sided tapes. \n\nthen push the display along with their holder into the place one by one and the screw hoole should align. \n\none thing is that one of the screw holes for display hole actually sits under the same screw holes (m5 inserts of the speaker) so you may have to remove the speaker holder you've already set to first place the eye displays. \n\nalso make sure that you use soft hdmi cables and soft usb cables for poweruing the displays as tight cable may be a problem when the head is rotating. \n\n\n"
+    },
+    {
+      "id": "sqez8bh0",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 467.3333333333333,
+      "end": 474.625,
+      "text": "now connect this entire head assembly we just created with the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Front%20Connector.f3d\n\n"
+    },
+    {
+      "id": "sl2upe62",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 474.625,
+      "end": 485.2083333333333,
+      "text": "now 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Back.f3d and https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Top%20Camera%20Holder.f3d. \n\nconnect them as shown in the video/animation using hex nut and countersunk screws m5"
+    },
+    {
+      "id": "s0q84dw9",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 485.2083333333333,
+      "end": 494.2083333333333,
+      "text": "now join the head back along with that camera mount (which is there in case we need a camera on top that is why) with its couter part and holes in the in the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Back%20Connector.f3d and https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Head%20Front%20Connector.f3d"
+    },
+    {
+      "id": "snqok94o",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 494.2083333333333,
+      "end": 498.5,
+      "text": "now rout all the cables from the head to the body through the holes behind the neck"
+    },
+    {
+      "id": "sef0qid9",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 498.5,
+      "end": 499.5,
+      "text": "now 3d print all the 9 pannesl \n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Upper%20Rear%20Section.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Sholder%20Back.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Sholder%20Front.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Sholder%20Back.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Sholder%20Front.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Upper%20Midsection.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Upper%20Rear%20Section.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Lower%20Midsection.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Midsection.f3d\n\nhttps://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Display%20Connector%20with%20Core%20Profiles%20-%20Lower.f3d"
+    },
+    {
+      "id": "sfxg95zg",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 499.5,
+      "end": 503.375,
+      "text": "first joins the lower mid section"
+    },
+    {
+      "id": "s75nxpje",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 503.375,
+      "end": 509.375,
+      "text": "then upper mid section"
+    },
+    {
+      "id": "sfr883nv",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 509.375,
+      "end": 522.9583333333334,
+      "text": "also 3d print the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Left%20Hole%20Filler%20With%20LEDs.f3d \n\nwhich will fill the left side of the hole that was present in the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Rear%20Section%20with%20Umbilical%20Cord%20Hole.f3d\n\n\nconnecte them using m5 hex bnut an d m5 counter sunk screw"
+    },
+    {
+      "id": "smesixxd",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 522.9583333333334,
+      "end": 529.2083333333334,
+      "text": "and the right side with https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Right%20Umbilical%20Cord%20Hole.f3d\n\nso thorugh this right hoels all the necessary cables from the robot top will go out from the robot to the robot base. \n\nconnecte them using m5 hex bnut an d m5 counter sunk screw"
+    },
+    {
+      "id": "slo57p1p",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 529.2083333333334,
+      "end": 540.1666666666666,
+      "text": "now join the assembed https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Rear%20Section%20with%20Umbilical%20Cord%20Hole.f3d to the robot. using m5 countersunk screws. "
+    },
+    {
+      "id": "s4x8gxgt",
+      "phase": "Robot Base",
+      "title": " ",
+      "start": 540.1666666666666,
+      "end": 544.8333333333334,
+      "text": "joining the rith solder back with the exising robot"
+    },
+    {
+      "id": "s385orab",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 544.8333333333334,
+      "end": 549.0833333333334,
+      "text": "joining left sholder back"
+    },
+    {
+      "id": "ss234fhn",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 549.0833333333334,
+      "end": 556.75,
+      "text": "joining the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Upper%20Rear%20Section.f3d\n"
+    },
+    {
+      "id": "sf3jl7ze",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 556.75,
+      "end": 566.7916666666666,
+      "text": "joining the https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Upper%20Midsection.f3d"
+    },
+    {
+      "id": "swvsdts6",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 566.7916666666666,
+      "end": 572.4583333333334,
+      "text": "joining left sholder fornt"
+    },
+    {
+      "id": "s16x25am",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 572.4583333333334,
+      "end": 577.625,
+      "text": "joning rightr sholder fornt "
+    },
+    {
+      "id": "svabqn0f",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 577.625,
+      "end": 584,
+      "text": "joining the chest mounted camera holder, this is designed for astra camera https://github.com/tanvir-a0/CogniCare-Assembly-Documentation-2/blob/main/Astra%20Camera%20Holder.f3d\n\n"
+    },
+    {
+      "id": "s0herziz",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 584,
+      "end": 587.5,
+      "text": "mounting the display"
+    },
+    {
+      "id": "sxc32rb6",
+      "phase": "Robot Base",
+      "title": "",
+      "start": 587.5,
+      "end": 589,
+      "text": "now the robot is coimplete"
+    }
+  ],
+  "updatedAt": 1792794869474
+}

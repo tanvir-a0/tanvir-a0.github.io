@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Builder</title>
+<style>
+  :root {
+    --bg: #0e0f12; --panel: #16181d; --panel2: #1d2027; --line: #2a2e37;
+    --text: #e8eaf0; --muted: #8b91a0; --accent: #ff4b4b; --accent2: #5ab0ff;
+    --ok: #3ddc97; --warn: #ffb547;
+    --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+    font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  button, input, textarea, select { font: inherit; color: inherit; }
+  button { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px;
+    padding: 6px 10px; cursor: pointer; white-space: nowrap; }
+  button:hover { border-color: #444a57; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  button.ghost { background: transparent; }
+  button.small { padding: 3px 8px; font-size: 12px; }
+  kbd { font: 11px var(--mono); background: #262a33; border: 1px solid #353a46; border-bottom-width: 2px;
+    border-radius: 4px; padding: 0 5px; color: #cfd3dc; }
+  input[type=text], input[type=number], textarea, select {
+    width: 100%; background: #0f1115; border: 1px solid var(--line); border-radius: 8px; padding: 7px 9px; outline: none; }
+  input:focus, textarea:focus, select:focus { border-color: var(--accent2); }
+  textarea { resize: vertical; min-height: 60px; }
+  label { display: block; font-size: 12px; color: var(--muted); margin: 10px 0 4px; text-transform: uppercase; letter-spacing: .06em; }
+  label .hint { text-transform: none; letter-spacing: 0; color: #6b7180; margin-left: 6px; }
+
+  .app { display: grid; grid-template-columns: minmax(0, 1fr) 430px; grid-template-rows: auto minmax(0, 1fr); height: 100vh; }
+  header { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 10px 16px;
+    border-bottom: 1px solid var(--line); background: var(--panel); }
+  header h1 { font-size: 15px; margin: 0; font-weight: 700; letter-spacing: .02em; }
+  header h1 span { color: var(--accent); }
+  header .grow { flex: 1; }
+  #saveState { font: 12px var(--mono); color: var(--muted); }
+  #saveState.ok { color: var(--ok); } #saveState.err { color: var(--accent); } #saveState.busy { color: var(--warn); }
+
+  .left { display: flex; flex-direction: column; min-height: 0; overflow: auto; padding: 14px 16px; gap: 10px; }
+  .stage { position: relative; background: #fff; border-radius: 12px; overflow: hidden; }
+  .stage video { display: block; width: 100%; max-height: 52vh; object-fit: contain; background: #fff; }
+  .stage .badge { position: absolute; left: 12px; top: 12px; background: rgba(14,15,18,.82); color: #fff;
+    border-radius: 8px; padding: 4px 10px; font: 12px var(--mono); pointer-events: none; }
+  .stage .badge b { color: var(--accent); }
+
+  .transport { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .transport .time { font: 13px var(--mono); padding: 0 8px; min-width: 190px; }
+  .transport select { width: auto; padding: 5px 8px; }
+  .transport .sep { width: 1px; height: 24px; background: var(--line); margin: 0 4px; }
+
+  .tl { position: relative; height: 34px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+    cursor: pointer; user-select: none; overflow: hidden; }
+  .tl.detail { height: 52px; }
+  .tl .seg { position: absolute; top: 4px; bottom: 4px; border-radius: 5px; background: var(--c, #3a4050);
+    opacity: .55; border: 1px solid transparent; overflow: hidden; font: 10px var(--mono); color: #0b0c0f;
+    padding: 2px 4px; white-space: nowrap; }
+  .tl .seg.sel { opacity: 1; border-color: #fff; }
+  .tl .tick { position: absolute; top: 0; bottom: 0; width: 1px; background: #2b303a; }
+  .tl .tick span { position: absolute; bottom: 2px; left: 3px; font: 9px var(--mono); color: #6b7180; }
+  .tl .head { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--accent); pointer-events: none; }
+  .tl .head::after { content: ""; position: absolute; top: -1px; left: -5px; border: 6px solid transparent; border-top-color: var(--accent); }
+  .tl .hover { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,.35); pointer-events: none; display: none; }
+  .tl .hoverlbl { position: absolute; top: 2px; font: 10px var(--mono); background: #000; padding: 0 4px; border-radius: 3px; pointer-events: none; display: none; }
+  .tl-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: -4px; }
+
+  .help { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; color: var(--muted); font-size: 13px; }
+  .help b { color: var(--text); }
+  .help .keys { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 4px 16px; margin-top: 6px; }
+
+  .right { border-left: 1px solid var(--line); background: var(--panel); display: flex; flex-direction: column; min-height: 0; }
+  .tabs { display: flex; border-bottom: 1px solid var(--line); }
+  .tabs button { flex: 1; border: 0; border-radius: 0; background: transparent; padding: 10px; color: var(--muted); border-bottom: 2px solid transparent; }
+  .tabs button.on { color: var(--text); border-bottom-color: var(--accent); }
+  .pane { flex: 1; overflow: auto; padding: 4px 16px 16px; display: none; }
+  .pane.on { display: block; }
+
+  .steplist { list-style: none; margin: 8px 0 0; padding: 0; }
+  .steplist li { display: grid; grid-template-columns: 30px 1fr auto; gap: 8px; align-items: center; padding: 7px 8px;
+    border-radius: 8px; cursor: pointer; border: 1px solid transparent; }
+  .steplist li:hover { background: var(--panel2); }
+  .steplist li.sel { background: var(--panel2); border-color: #3a4050; }
+  .steplist .num { font: 600 12px var(--mono); color: #0b0c0f; background: var(--c); border-radius: 6px; text-align: center; padding: 2px 0; }
+  .steplist .t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .steplist .t small { display: block; color: var(--muted); font: 11px var(--mono); }
+  .steplist .phase-h { display: block; grid-template-columns: none; cursor: default; padding: 12px 8px 2px; font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; color: var(--accent2); }
+  .steplist .phase-h:hover { background: none; }
+  .issue { color: var(--warn); font-size: 11px; }
+  .empty { color: var(--muted); padding: 20px 4px; text-align: center; }
+
+  .editor .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .editor .timefield { display: flex; gap: 6px; }
+  .editor .timefield input { font-family: var(--mono); }
+  .preview { background: #0f1115; border: 1px dashed var(--line); border-radius: 8px; padding: 8px 12px; margin-top: 6px; font-size: 13px; }
+  .preview:empty { display: none; }
+  .preview p { margin: .4em 0; } .preview ul, .preview ol { margin: .4em 0; padding-left: 1.3em; }
+  .preview a { color: var(--accent2); }
+  .preview code { font-family: var(--mono); background: #20242c; padding: 0 4px; border-radius: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .chip { font-size: 12px; background: #20242c; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+  .chip.link { border-color: var(--accent2); color: var(--accent2); }
+  .chip b { color: var(--accent); margin-right: 4px; }
+  .actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .danger { color: #ff8080; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: #262a33; border: 1px solid #3a4050;
+    padding: 8px 16px; border-radius: 10px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 10; }
+  .toast.on { opacity: 1; }
+  @media (max-width: 1000px) { .app { grid-template-columns: 1fr; grid-template-rows: auto auto auto; height: auto; }
+    .right { border-left: 0; border-top: 1px solid var(--line); } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Guide <span>Builder</span></h1>
+    <span id="guideTitleEcho" style="color:var(--muted)"></span>
+    <div class="grow"></div>
+    <span id="saveState">loading…</span>
+    <button id="btnPreview" title="Open the real website page using this guide.json">Preview site page ↗</button>
+    <button id="btnDownload" title="Download guide.json (backup)">Download JSON</button>
+    <label class="small" style="margin:0"><input type="file" id="fileImport" accept=".json,application/json" hidden>
+      <span class="small" style="cursor:pointer;color:var(--muted);text-transform:none;letter-spacing:0">Import…</span></label>
+  </header>
+
+  <section class="left">
+    <div class="stage">
+      <video id="vid" src="/site/assets/guides/robot-assembly/assembly.mp4" preload="auto" playsinline muted></video>
+      <div class="badge" id="badge">no step</div>
+    </div>
+
+    <div class="transport">
+      <button id="bPlay" class="primary" title="Space">▶ Play</button>
+      <button id="bBack5" title="Shift+←">−5s</button>
+      <button id="bBack1" title="←">−1s</button>
+      <button id="bFrameB" title=",">−1f</button>
+      <button id="bFrameF" title=".">+1f</button>
+      <button id="bFwd1" title="→">+1s</button>
+      <button id="bFwd5" title="Shift+→">+5s</button>
+      <span class="time" id="time">0:00.00 / 0:00.00</span>
+      <select id="speed" title="Playback speed">
+        <option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option>
+        <option value="1.5">1.5×</option><option value="2">2×</option><option value="4">4×</option>
+      </select>
+      <span class="sep"></span>
+      <button id="bNew" class="primary" title="N — start a new step at the current time">＋ New step here <kbd>N</kbd></button>
+      <button id="bStart" title="[ — set selected step's start to now">Set start <kbd>[</kbd></button>
+      <button id="bEnd" title="] — set selected step's end to now">Set end <kbd>]</kbd></button>
+      <button id="bPlayStep" title="P — play the selected step">Play step <kbd>P</kbd></button>
+      <label style="margin:0;text-transform:none;letter-spacing:0;color:var(--text);display:flex;gap:6px;align-items:center">
+        <input type="checkbox" id="loop"> Loop step <kbd>L</kbd></label>
+    </div>
+
+    <div>
+      <div class="tl-label"><span>Whole video</span><span>click to seek</span></div>
+      <div class="tl" id="tlAll"></div>
+    </div>
+    <div>
+      <div class="tl-label"><span>Zoom (60 s around playhead)</span><span id="zoomRange"></span></div>
+      <div class="tl detail" id="tlZoom"></div>
+    </div>
+
+    <div class="help">
+      <b>How to use:</b> play the video. Whenever a new assembly step begins, press <kbd>N</kbd> (the previous step
+      automatically ends there). Type the instructions on the right. Everything autosaves to
+      <code>guide.json</code> in this folder; Claude builds the final website from that file.
+      <div class="keys">
+        <span><kbd>Space</kbd> play / pause</span>
+        <span><kbd>←</kbd>/<kbd>→</kbd> ±1 s &nbsp;<kbd>Shift</kbd> ±5 s</span>
+        <span><kbd>,</kbd>/<kbd>.</kbd> one frame back / forward</span>
+        <span><kbd>N</kbd> new step at playhead</span>
+        <span><kbd>[</kbd> / <kbd>]</kbd> set start / end</span>
+        <span><kbd>P</kbd> play step &nbsp;<kbd>L</kbd> loop</span>
+        <span><kbd>↑</kbd>/<kbd>↓</kbd> previous / next step</span>
+        <span><kbd>Enter</kbd> edit title &nbsp;<kbd>Esc</kbd> leave field</span>
+        <span><kbd>Ctrl</kbd>+<kbd>Z</kbd> undo &nbsp;<kbd>Ctrl</kbd>+<kbd>S</kbd> save</span>
+      </div>
+    </div>
+  </section>
+
+  <aside class="right">
+    <div class="tabs">
+      <button data-tab="steps" class="on">Steps <span id="stepCount"></span></button>
+      <button data-tab="edit">Edit step</button>
+      <button data-tab="guide">Guide info</button>
+    </div>
+
+    <div class="pane on" id="pane-steps">
+      <ul class="steplist" id="steplist"></ul>
+    </div>
+
+    <div class="pane editor" id="pane-edit"></div>
+
+    <div class="pane" id="pane-guide">
+      <label>Guide title</label>
+      <input type="text" id="gTitle" placeholder="e.g. Building the XYZ Humanoid Robot">
+      <label>Subtitle <span class="hint">one line under the title</span></label>
+      <input type="text" id="gSubtitle" placeholder="A step-by-step assembly guide">
+      <label>Introduction <span class="hint">markdown-lite, see Edit step</span></label>
+      <textarea id="gIntro" rows="6" placeholder="What this robot is, what you need before starting…"></textarea>
+      <div class="preview" id="gIntroPrev"></div>
+      <label>Before you start / general notes <span class="hint">optional</span></label>
+      <textarea id="gNotes" rows="4" placeholder="- All screws are M3 unless noted&#10;- Print parts in PETG at 30% infill"></textarea>
+      <div class="preview" id="gNotesPrev"></div>
+      <label>Estimated build time <span class="hint">optional, e.g. "6–8 hours"</span></label>
+      <input type="text" id="gTime">
+      <label>Difficulty <span class="hint">optional</span></label>
+      <select id="gDiff"><option value="">—</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>
+      <p class="note">Video: <code id="gVideo"></code> · <span id="gDur"></span> · <span id="gFps"></span> fps</p>
+    </div>
+  </aside>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const vid = $('#vid');
+  const PALETTE = ['#ff6b6b', '#ffb547', '#3ddc97', '#5ab0ff', '#b48cff', '#ff7ac6', '#4fd1c5', '#f6e05e'];
+  const LS_KEY = 'guide-builder-draft';
+
+  // ---------- state ----------
+  let guide = newGuide();
+  let selId = null;
+  let history = [];
+  let saveTimer = null;
+  let serverOK = true;
+  let loopStep = false;
+  let playUntil = null;
+
+  function newGuide() {
+    return { version: 1, title: '', subtitle: '', intro: '', notes: '', buildTime: '', difficulty: '',
+      video: 'assembly.mp4', fps: 24, duration: 0, steps: [], updatedAt: 0 };
+  }
+  const uid = () => 's' + Math.random().toString(36).slice(2, 9);
+  const FPS = () => guide.fps || 24;
+  const dur = () => vid.duration || guide.duration || 0;
+  const sorted = () => guide.steps.slice().sort((a, b) => a.start - b.start);
+  const sel = () => guide.steps.find(s => s.id === selId) || null;
+  const idx = (s) => sorted().indexOf(s);
+  const colorOf = (s) => PALETTE[idx(s) % PALETTE.length];
+
+  // ---------- time formatting ----------
+  function fmt(t, short) {
+    if (!isFinite(t)) t = 0;
+    const m = Math.floor(t / 60), s = t - m * 60;
+    return short ? `${m}:${String(Math.floor(s)).padStart(2, '0')}` : `${m}:${s.toFixed(2).padStart(5, '0')}`;
+  }
+  function parseTime(str) {
+    str = String(str).trim();
+    if (!str) return NaN;
+    const parts = str.split(':').map(Number);
+    if (parts.some(isNaN)) return NaN;
+    return parts.reduce((acc, p) => acc * 60 + p, 0);
+  }
+  const snap = (t) => Math.round(t * FPS()) / FPS();
+
+  // ---------- markdown-lite (same rules as the website) ----------
+  function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+  function safeUrl(u) { u = u.trim(); return /^(https?:\/\/|\/|\.{0,2}\/|#|mailto:)/i.test(u) || /^[\w\-.\/ %]+$/.test(u) ? u : null; }
+  function inline(s) {
+    s = esc(s);
+    s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, txt, url) => {
+      const u = safeUrl(url.replace(/&amp;/g, '&'));
+      if (!u) return txt;
+      const ext = /^https?:/i.test(u);
+      return `<a href="${esc(u)}"${ext ? ' target="_blank" rel="noopener"' : ''}>${txt}</a>`;
+    });
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/(^|[^*\w])\*([^*\n]+)\*(?!\w)/g, '$1<em>$2</em>');
+    return s;
+  }
+  function md(src) {
+    if (!src || !src.trim()) return '';
+    const blocks = src.replace(/\r/g, '').split(/\n\s*\n/);
+    return blocks.map(b => {
+      const lines = b.split('\n').filter(l => l.trim());
+      if (lines.length && lines.every(l => /^\s*[-*•]\s+/.test(l)))
+        return '<ul>' + lines.map(l => `<li>${inline(l.replace(/^\s*[-*•]\s+/, ''))}</li>`).join('') + '</ul>';
+      if (lines.length && lines.every(l => /^\s*\d+[.)]\s+/.test(l)))
+        return '<ol>' + lines.map(l => `<li>${inline(l.replace(/^\s*\d+[.)]\s+/, ''))}</li>`).join('') + '</ol>';
+      return '<p>' + lines.map(inline).join('<br>') + '</p>';
+    }).join('');
+  }
+
+  // "2x 440 mm 2020 aluminium profile | https://link"  ->  {qty:2, name, link}
+  function parseItems(text) {
+    return text.split('\n').map(l => l.trim()).filter(Boolean).map(line => {
+      let link = '';
+      const bar = line.lastIndexOf('|');
+      if (bar !== -1) { link = line.slice(bar + 1).trim(); line = line.slice(0, bar).trim(); }
+      let qty = null;
+      const m = line.match(/^(\d+(?:\.\d+)?)\s*[x×]\s*(.+)$/i);
+      if (m) { qty = Number(m[1]); line = m[2].trim(); }
+      const item = { name: line };
+      if (qty !== null) item.qty = qty;
+      if (link) item.link = link;
+      return item;
+    });
+  }
+  const itemsToText = (items) => (items || []).map(i => `${i.qty != null ? i.qty + 'x ' : ''}${i.name}${i.link ? ' | ' + i.link : ''}`).join('\n');
+  function chipsHTML(items) {
+    return (items || []).map(i => {
+      const q = i.qty != null ? `<b>${i.qty}×</b>` : '';
+      return i.link && safeUrl(i.link)
+        ? `<a class="chip link" href="${esc(i.link)}" target="_blank" rel="noopener">${q}${esc(i.name)} ↗</a>`
+        : `<span class="chip">${q}${esc(i.name)}</span>`;
+    }).join('');
+  }
+
+  // ---------- persistence ----------
+  function pushHistory() {
+    history.push(JSON.stringify(guide));
+    if (history.length > 80) history.shift();
+  }
+  function undo() {
+    if (!history.length) return toast('Nothing to undo');
+    guide = JSON.parse(history.pop());
+    if (!sel()) selId = null;
+    renderAll(); save();
+    toast('Undone');
+  }
+  function save(immediate) {
+    guide.updatedAt = Date.now();
+    if (vid.duration) guide.duration = Math.round(vid.duration * 1000) / 1000;
+    try { localStorage.setItem(LS_KEY, JSON.stringify(guide)); } catch (e) {}
+    setState('busy', 'saving…');
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(writeFile, immediate ? 0 : 600);
+  }
+  async function writeFile() {
+    const out = exportData();
+    try {
+      const r = await fetch('guide.json', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(out) });
+      if (!r.ok) throw new Error(r.status);
+      serverOK = true;
+      setState('ok', 'saved to guide.json ✓ ' + new Date().toLocaleTimeString());
+    } catch (e) {
+      serverOK = false;
+      setState('err', 'not saved to file (run serve.py) — kept in browser, use Download JSON');
+    }
+  }
+  function exportData() {
+    const g = JSON.parse(JSON.stringify(guide));
+    g.steps = sorted().map(s => {
+      const o = { ...s };
+      ['phase', 'text', 'tip', 'warning'].forEach(k => { if (!o[k]) delete o[k]; });
+      ['parts', 'tools'].forEach(k => { if (!o[k] || !o[k].length) delete o[k]; });
+      return o;
+    });
+    return g;
+  }
+  function setState(cls, txt) { const el = $('#saveState'); el.className = cls; el.textContent = txt; }
+  async function load() {
+    let fileData = null, draft = null;
+    try {
+      const r = await fetch('guide.json', { cache: 'no-store' });
+      if (r.ok) fileData = await r.json();
+    } catch (e) { serverOK = false; }
+    try { draft = JSON.parse(localStorage.getItem(LS_KEY) || 'null'); } catch (e) {}
+    const pick = (draft && (!fileData || (draft.updatedAt || 0) > (fileData.updatedAt || 0))) ? draft : fileData;
+    if (pick) guide = Object.assign(newGuide(), pick);
+    guide.steps.forEach(s => { s.id = s.id || uid(); s.parts = s.parts || []; s.tools = s.tools || []; });
+    if (pick === draft && draft && fileData) toast('Restored newer unsaved draft from this browser');
+    selId = sorted()[0]?.id || null;
+    renderAll();
+    if (serverOK) setState('ok', fileData ? 'loaded guide.json' : 'new guide — will save to guide.json');
+    else setState('err', 'serve.py not running — saving only in this browser');
+  }
+
+  // ---------- step operations ----------
+  function stepAt(t) { return sorted().find(s => t >= s.start && t < (s.end ?? Infinity)) || null; }
+
+  function newStepHere() {
+    const t = snap(vid.currentTime);
+    if (guide.steps.some(s => Math.abs(s.start - t) < 0.05)) return toast('A step already starts here');
+    pushHistory();
+    const list = sorted();
+    const prev = [...list].reverse().find(s => s.start < t);
+    const next = list.find(s => s.start > t);
+    let end = next ? next.start : snap(dur());
+    if (prev && prev.end > t) { end = Math.min(prev.end, end); prev.end = t; }
+    const step = { id: uid(), phase: prev?.phase || '', title: '', start: t, end, text: '', parts: [], tools: [], tip: '', warning: '' };
+    guide.steps.push(step);
+    selId = step.id;
+    renderAll(); save();
+    switchTab('edit');
+    setTimeout(() => $('#eTitle')?.focus(), 30);
+  }
+  const setStart = () => setStartAt(vid.currentTime);
+  const setEnd = () => setEndAt(vid.currentTime);
+  function setStartAt(t) {
+    const s = sel(); if (!s) return toast('Select a step first');
+    t = snap(t);
+    if (t >= s.end) return toast('Start must be before end');
+    const prev = sorted()[idx(s) - 1];
+    if (prev && t <= prev.start + 0.1) return toast(`Can't start before step ${idx(s)} starts (${fmt(prev.start)})`);
+    pushHistory();
+    if (prev && (Math.abs(prev.end - s.start) < 0.05 || prev.end > t)) prev.end = t;   // keep neighbours touching
+    s.start = t; renderAll(); save();
+  }
+  function setEndAt(t) {
+    const s = sel(); if (!s) return toast('Select a step first');
+    t = snap(t);
+    if (t <= s.start) return toast('End must be after start');
+    const next = sorted()[idx(s) + 1];
+    if (next && t >= next.end - 0.1) return toast(`Can't end after step ${idx(s) + 2} ends (${fmt(next.end)})`);
+    pushHistory();
+    if (next && (Math.abs(next.start - s.end) < 0.05 || next.start < t)) next.start = t;
+    s.end = Math.min(t, snap(dur()) || t); renderAll(); save();
+  }
+  function deleteStep(id) {
+    const s = guide.steps.find(x => x.id === id); if (!s) return;
+    pushHistory();
+    const list = sorted(), i = list.indexOf(s);
+    const prev = list[i - 1];
+    if (prev && Math.abs(prev.end - s.start) < 0.05) prev.end = s.end;   // absorb the gap
+    guide.steps = guide.steps.filter(x => x.id !== id);
+    selId = (list[i + 1] || prev)?.id || null;
+    renderAll(); save();
+    toast('Step deleted — Ctrl+Z to undo');
+  }
+  function select(id, seek = true) {
+    selId = id;
+    const s = sel();
+    if (s && seek) { vid.currentTime = s.start + 0.001; }
+    renderList(); renderEditor(); renderTimelines();
+  }
+  function selectRel(d) {
+    const list = sorted(); if (!list.length) return;
+    let i = list.findIndex(s => s.id === selId);
+    i = Math.max(0, Math.min(list.length - 1, (i < 0 ? 0 : i + d)));
+    select(list[i].id);
+  }
+  function playStep() {
+    const s = sel(); if (!s) return;
+    vid.currentTime = s.start + 0.001; playUntil = s.end; vid.play();
+  }
+
+  // ---------- rendering ----------
+  function renderAll() { renderList(); renderEditor(); renderTimelines(); renderGuideInfo(); }
+
+  function issuesOf(s, i, list) {
+    const out = [];
+    if (!s.title) out.push('no title');
+    if (!s.text && !(s.parts || []).length) out.push('no instructions');
+    const prev = list[i - 1];
+    if (prev && s.start < prev.end - 0.05) out.push('overlaps previous');
+    if (prev && s.start - prev.end > 0.5) out.push(`gap ${(s.start - prev.end).toFixed(1)}s before`);
+    return out;
+  }
+  function renderList() {
+    const ul = $('#steplist'); const list = sorted();
+    $('#stepCount').textContent = list.length ? `(${list.length})` : '';
+    if (!list.length) {
+      ul.innerHTML = `<li class="empty" style="display:block">No steps yet.<br>Play the video and press <kbd>N</kbd> when the first step begins.</li>`;
+      return;
+    }
+    let html = '', lastPhase = null;
+    list.forEach((s, i) => {
+      if ((s.phase || '') !== lastPhase && s.phase) html += `<li class="phase-h">${esc(s.phase)}</li>`;
+      lastPhase = s.phase || '';
+      const iss = issuesOf(s, i, list);
+      html += `<li data-id="${s.id}" class="${s.id === selId ? 'sel' : ''}" style="--c:${PALETTE[i % PALETTE.length]}">
+        <span class="num">${i + 1}</span>
+        <span class="t">${esc(s.title || 'Untitled step')}<small>${fmt(s.start)} → ${fmt(s.end)} · ${(s.end - s.start).toFixed(1)}s</small>
+          ${iss.length ? `<span class="issue">⚠ ${iss.join(', ')}</span>` : ''}</span>
+        <button class="small ghost" data-edit="${s.id}">Edit</button></li>`;
+    });
+    ul.innerHTML = html;
+  }
+
+  function renderEditor() {
+    const pane = $('#pane-edit'); const s = sel();
+    if (!s) { pane.innerHTML = `<p class="empty">Select a step, or press <kbd>N</kbd> to create one.</p>`; return; }
+    const n = idx(s) + 1, phases = [...new Set(guide.steps.map(x => x.phase).filter(Boolean))];
+    pane.innerHTML = `
+      <label>Step ${n} title</label>
+      <input type="text" id="eTitle" value="${esc(s.title)}" placeholder="e.g. Cut the 2020 aluminium profiles">
+      <div class="row">
+        <div><label>Start</label><div class="timefield"><input type="text" id="eStart" value="${fmt(s.start)}"><button class="small" id="eStartNow" title="Use current time">now</button></div></div>
+        <div><label>End</label><div class="timefield"><input type="text" id="eEnd" value="${fmt(s.end)}"><button class="small" id="eEndNow" title="Use current time">now</button></div></div>
+      </div>
+      <label>Section / phase <span class="hint">groups steps, e.g. "Base frame"</span></label>
+      <input type="text" id="ePhase" list="phaseList" value="${esc(s.phase || '')}" placeholder="e.g. Base frame">
+      <datalist id="phaseList">${phases.map(p => `<option value="${esc(p)}">`).join('')}</datalist>
+      <label>Instructions <span class="hint">**bold** · *italic* · [text](link) · lines starting with "- " = bullets</span></label>
+      <textarea id="eText" rows="7" placeholder="Cut two 440 mm lengths of 2020 aluminium profile.&#10;&#10;- Deburr both ends&#10;- Tap the ends with an M5 tap">${esc(s.text || '')}</textarea>
+      <div class="preview" id="eTextPrev"></div>
+      <label>Parts used <span class="hint">one per line: 2x name | link (link optional)</span></label>
+      <textarea id="eParts" rows="4" placeholder="2x 440 mm 2020 aluminium profile&#10;1x Motor bracket (3D printed) | https://www.printables.com/model/...&#10;8x M5×10 screw">${esc(itemsToText(s.parts))}</textarea>
+      <div class="chips" id="ePartsPrev"></div>
+      <label>Tools <span class="hint">one per line, link optional</span></label>
+      <textarea id="eTools" rows="2" placeholder="Hacksaw&#10;M5 tap">${esc(itemsToText(s.tools))}</textarea>
+      <div class="chips" id="eToolsPrev"></div>
+      <label>Tip <span class="hint">optional, shown as a 💡 box</span></label>
+      <input type="text" id="eTip" value="${esc(s.tip || '')}">
+      <label>Warning <span class="hint">optional, shown as a ⚠ box</span></label>
+      <input type="text" id="eWarn" value="${esc(s.warning || '')}">
+      <div class="actions">
+        <button id="ePlay">▶ Play this step</button>
+        <button id="ePrev">← Prev</button><button id="eNext">Next →</button>
+        <span style="flex:1"></span>
+        <button class="danger" id="eDel">Delete step</button>
+      </div>`;
+    const upd = () => { $('#eTextPrev').innerHTML = md(s.text); $('#ePartsPrev').innerHTML = chipsHTML(s.parts); $('#eToolsPrev').innerHTML = chipsHTML(s.tools); };
+    upd();
+    const bind = (id, fn) => $(id).addEventListener('input', e => { fn(e.target.value); upd(); renderList(); save(); });
+    bind('#eTitle', v => s.title = v);
+    bind('#ePhase', v => s.phase = v.trim());
+    bind('#eText', v => s.text = v);
+    bind('#eParts', v => s.parts = parseItems(v));
+    bind('#eTools', v => s.tools = parseItems(v));
+    bind('#eTip', v => s.tip = v);
+    bind('#eWarn', v => s.warning = v);
+    const timeField = (id, key, apply) => $(id).addEventListener('change', e => {
+      const t = parseTime(e.target.value);
+      if (isNaN(t)) { e.target.value = fmt(s[key]); return toast('Use m:ss.xx'); }
+      apply(t); e.target.value = fmt(s[key]);
+    });
+    timeField('#eStart', 'start', setStartAt); timeField('#eEnd', 'end', setEndAt);
+    $('#eStartNow').onclick = setStart; $('#eEndNow').onclick = setEnd;
+    $('#ePlay').onclick = playStep;
+    $('#ePrev').onclick = () => selectRel(-1); $('#eNext').onclick = () => selectRel(1);
+    $('#eDel').onclick = () => { if (confirm('Delete this step?')) deleteStep(s.id); };
+  }
+
+  function renderGuideInfo() {
+    const map = { '#gTitle': 'title', '#gSubtitle': 'subtitle', '#gIntro': 'intro', '#gNotes': 'notes', '#gTime': 'buildTime', '#gDiff': 'difficulty' };
+    Object.entries(map).forEach(([id, k]) => { if (document.activeElement !== $(id)) $(id).value = guide[k] || ''; });
+    $('#gIntroPrev').innerHTML = md(guide.intro); $('#gNotesPrev').innerHTML = md(guide.notes);
+    $('#gVideo').textContent = guide.video; $('#gDur').textContent = fmt(dur()); $('#gFps').textContent = FPS();
+    $('#guideTitleEcho').textContent = guide.title ? '— ' + guide.title : '';
+  }
+  [['#gTitle', 'title'], ['#gSubtitle', 'subtitle'], ['#gIntro', 'intro'], ['#gNotes', 'notes'], ['#gTime', 'buildTime'], ['#gDiff', 'difficulty']]
+    .forEach(([id, k]) => $(id).addEventListener('input', e => { guide[k] = e.target.value; renderGuideInfo(); save(); }));
+
+  // timelines
+  function renderTL(el, from, to, labels) {
+    const span = to - from || 1, pct = t => ((t - from) / span) * 100;
+    let html = '';
+    const step = span > 300 ? 60 : span > 120 ? 30 : span > 30 ? 5 : 1;
+    for (let t = Math.ceil(from / step) * step; t <= to; t += step)
+      html += `<div class="tick" style="left:${pct(t)}%">${labels ? `<span>${fmt(t, true)}</span>` : ''}</div>`;
+    sorted().forEach((s, i) => {
+      if (s.end < from || s.start > to) return;
+      const l = Math.max(0, pct(s.start)), r = Math.min(100, pct(s.end));
+      html += `<div class="seg ${s.id === selId ? 'sel' : ''}" data-id="${s.id}" style="left:${l}%;width:${Math.max(0.3, r - l)}%;--c:${PALETTE[i % PALETTE.length]}">${labels ? (i + 1) + ' ' + esc(s.title || '') : ''}</div>`;
+    });
+    html += `<div class="head" style="left:${pct(vid.currentTime)}%"></div><div class="hover"></div><div class="hoverlbl"></div>`;
+    el.innerHTML = html;
+    el.dataset.from = from; el.dataset.to = to;
+  }
+  function zoomWindow() {
+    const d = dur(), w = Math.min(60, d || 60);
+    let from = Math.max(0, vid.currentTime - w / 2);
+    if (from + w > d) from = Math.max(0, d - w);
+    return [from, from + w];
+  }
+  function renderTimelines() {
+    renderTL($('#tlAll'), 0, dur() || 1, false);
+    const [a, b] = zoomWindow();
+    renderTL($('#tlZoom'), a, b, true);
+    $('#zoomRange').textContent = `${fmt(a, true)} – ${fmt(b, true)}`;
+  }
+  function moveHeads() {
+    // cheap update during playback: only move playheads, re-render zoom when window shifts
+    const all = $('#tlAll .head'); if (all) all.style.left = (vid.currentTime / (dur() || 1)) * 100 + '%';
+    const z = $('#tlZoom'), [a, b] = zoomWindow();
+    if (Math.abs(a - Number(z.dataset.from)) > 0.5) renderTimelines();
+    else { const h = $('#tlZoom .head'); if (h) h.style.left = ((vid.currentTime - a) / (b - a)) * 100 + '%'; }
+  }
+  function tlEvents(el) {
+    const tAt = (e) => { const r = el.getBoundingClientRect(); const from = +el.dataset.from, to = +el.dataset.to;
+      return from + Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * (to - from); };
+    let dragging = false;
+    el.addEventListener('pointerdown', e => { dragging = true; el.setPointerCapture(e.pointerId);
+      const seg = e.target.closest('.seg'); if (seg && seg.dataset.id !== selId) { selId = seg.dataset.id; renderList(); renderEditor(); }
+      vid.currentTime = tAt(e); });
+    el.addEventListener('pointermove', e => {
+      const hv = el.querySelector('.hover'), lb = el.querySelector('.hoverlbl'), t = tAt(e);
+      const x = e.clientX - el.getBoundingClientRect().left;
+      if (hv) { hv.style.display = lb.style.display = 'block'; hv.style.left = x + 'px'; lb.style.left = (x + 4) + 'px'; lb.textContent = fmt(t); }
+      if (dragging) vid.currentTime = t;
+    });
+    el.addEventListener('pointerup', () => dragging = false);
+    el.addEventListener('pointerleave', () => { el.querySelectorAll('.hover,.hoverlbl').forEach(n => n.style.display = 'none'); });
+  }
+  tlEvents($('#tlAll')); tlEvents($('#tlZoom'));
+
+  // ---------- video ----------
+  function updTime() {
+    $('#time').textContent = `${fmt(vid.currentTime)} / ${fmt(dur())}  f${Math.round(vid.currentTime * FPS())}`;
+    const s = stepAt(vid.currentTime), list = sorted();
+    $('#badge').innerHTML = s ? `<b>${list.indexOf(s) + 1}</b> / ${list.length} · ${esc(s.title || 'Untitled')}` : 'no step here';
+  }
+  vid.addEventListener('timeupdate', () => {
+    const s = sel();
+    if (loopStep && s && vid.currentTime >= s.end - 0.02) vid.currentTime = s.start + 0.001;
+    if (playUntil != null && vid.currentTime >= playUntil - 0.02) { vid.pause(); playUntil = null; }
+  });
+  vid.addEventListener('play', () => $('#bPlay').textContent = '❚❚ Pause');
+  vid.addEventListener('pause', () => $('#bPlay').textContent = '▶ Play');
+  vid.addEventListener('loadedmetadata', () => { renderAll(); updTime(); });
+  vid.addEventListener('seeked', () => { updTime(); moveHeads(); });
+  vid.addEventListener('error', () => toast('Could not load the guide video (assets/guides/robot-assembly/assembly.mp4)'));
+  (function tick() { if (!vid.paused) { updTime(); moveHeads(); } requestAnimationFrame(tick); })();
+
+  const seekBy = (d) => { vid.currentTime = Math.max(0, Math.min(dur(), vid.currentTime + d)); };
+  const frame = (d) => { vid.pause(); vid.currentTime = Math.max(0, snap(vid.currentTime) + d / FPS()); };
+  const toggle = () => { playUntil = null; vid.paused ? vid.play() : vid.pause(); };
+  $('#bPlay').onclick = toggle;
+  $('#bBack5').onclick = () => seekBy(-5); $('#bBack1').onclick = () => seekBy(-1);
+  $('#bFwd5').onclick = () => seekBy(5); $('#bFwd1').onclick = () => seekBy(1);
+  $('#bFrameB').onclick = () => frame(-1); $('#bFrameF').onclick = () => frame(1);
+  $('#speed').onchange = e => vid.playbackRate = +e.target.value;
+  $('#bNew').onclick = newStepHere; $('#bStart').onclick = setStart; $('#bEnd').onclick = setEnd;
+  $('#bPlayStep').onclick = playStep;
+  $('#loop').onchange = e => loopStep = e.target.checked;
+
+  // ---------- list / tabs ----------
+  $('#steplist').addEventListener('click', e => {
+    const ed = e.target.closest('[data-edit]');
+    const li = e.target.closest('li[data-id]'); if (!li) return;
+    select(li.dataset.id);
+    if (ed) switchTab('edit');
+  });
+  $('#steplist').addEventListener('dblclick', e => { if (e.target.closest('li[data-id]')) switchTab('edit'); });
+  function switchTab(name) {
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === name));
+    document.querySelectorAll('.pane').forEach(p => p.classList.toggle('on', p.id === 'pane-' + name));
+  }
+  document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => switchTab(b.dataset.tab));
+
+  // ---------- keyboard ----------
+  document.addEventListener('keydown', e => {
+    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && document.activeElement.type !== 'checkbox';
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); save(true); return; }
+    if (typing) { if (e.key === 'Escape') document.activeElement.blur(); return; }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); undo(); return; }
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    const k = e.key;
+    const map = {
+      ' ': toggle, 'ArrowLeft': () => seekBy(e.shiftKey ? -5 : -1), 'ArrowRight': () => seekBy(e.shiftKey ? 5 : 1),
+      ',': () => frame(-1), '.': () => frame(1), '<': () => frame(-1), '>': () => frame(1),
+      'n': newStepHere, 'N': newStepHere, '[': setStart, ']': setEnd, 'p': playStep, 'P': playStep,
+      'l': () => { loopStep = !loopStep; $('#loop').checked = loopStep; toast('Loop ' + (loopStep ? 'on' : 'off')); },
+      'ArrowUp': () => selectRel(-1), 'ArrowDown': () => selectRel(1),
+      'Enter': () => { switchTab('edit'); $('#eTitle')?.focus(); },
+      'Delete': () => { const s = sel(); if (s && confirm('Delete this step?')) deleteStep(s.id); },
+    };
+    if (map[k]) { e.preventDefault(); map[k](); }
+  });
+
+  // ---------- header buttons ----------
+  $('#btnDownload').onclick = () => {
+    const blob = new Blob([JSON.stringify(exportData(), null, 2)], { type: 'application/json' });
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: 'guide.json' });
+    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  };
+  $('#fileImport').onchange = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try {
+      const data = JSON.parse(await f.text());
+      if (!Array.isArray(data.steps)) throw new Error('no steps');
+      pushHistory(); guide = Object.assign(newGuide(), data);
+      guide.steps.forEach(s => { s.id = s.id || uid(); s.parts = s.parts || []; s.tools = s.tools || []; });
+      selId = sorted()[0]?.id || null; renderAll(); save(true); toast('Imported ' + f.name);
+    } catch (err) { toast('Not a valid guide.json'); }
+    e.target.value = '';
+  };
+  $('#btnPreview').onclick = async () => {
+    await writeFile();
+    window.open('/site/project-robot-assembly.html', '_blank');
+  };
+  window.addEventListener('beforeunload', () => { try { localStorage.setItem(LS_KEY, JSON.stringify(guide)); } catch (e) {} });
+
+  let toastT;
+  function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 1800); }
+
+  load();
+})();
+</script>
+</body>
+</html>
