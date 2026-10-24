@@ -148,14 +148,14 @@
               <div class="ag-progress" id="agScrub" role="slider" tabindex="0" aria-label="Seek within this step" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="agProgress"></i><b class="knob"></b></div>
             </div>
             <div class="ag-controls">
-              <button class="ag-btn" id="agPrev" title="Previous step (←)" aria-label="Previous step"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg></button>
+              <button class="ag-btn ag-step-btn" id="agPrev" title="Previous step (←)" aria-label="Previous step"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg><span class="txt">Previous</span></button>
               <button class="ag-btn" id="agPlay" aria-label="Play or pause"></button>
-              <button class="ag-btn" id="agNext" title="Next step (→)" aria-label="Next step"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
+              <button class="ag-btn ag-step-btn" id="agNext" title="Next step (→)" aria-label="Next step"><span class="txt">Next</span><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
               <button class="ag-btn" id="agReplay" title="Replay this step">↺ <span class="txt">Replay</span></button>
               <span class="ag-counter" id="agCounter"></span>
               <span class="grow"></span>
               <button class="ag-btn ag-speed" id="agSpeed" title="Playback speed"><span class="txt">1×</span></button>
-              <button class="ag-btn on" id="agRepeat" title="Repeat: loop the current step (click to play it once)" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg><span class="txt">Repeat</span></button>
+              <button class="ag-btn" id="agRepeat" title="Repeat off: the step plays once (click to loop it)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg><span class="txt">Repeat</span></button>
               <button class="ag-btn" id="agAuto" title="Keep playing into the next step" aria-pressed="false">⏵⏵ <span class="txt">Auto</span></button>
               <button class="ag-btn ag-fs" id="agFs" title="Fullscreen" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7zm-2-4h2V7h3V5H5zm12 7h-3v2h5v-5h-2zM14 5v2h3v3h2V5z"/></svg></button>
             </div>

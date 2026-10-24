@@ -3,7 +3,7 @@
  "title": "Build CogniCare",
  "subtitle": "The complete assembly guide, from bare aluminium to a working robot.",
  "intro": "CogniCare is a desktop-sized humanoid robot: a pan-and-tilt head with two display eyes, speakers and a visor, a 16-inch touchscreen, and a full **ITX PC** inside a rotating base.\n\nThis guide follows the assembly animation step by step. Scroll and the video plays each step; every printed part has a 3D preview you can spin.",
- "notes": "- **Test every servo first** and give it its ID: **1** = hip, **4** = tilt, **5** = pan. Then put them in servo mode at position **500** so nothing moves unexpectedly.\n- Print every part in the **same brand** of PLA so the colour matches.\n- Drive screws at about **1 Nm** with the drill's clutch, then finish by hand so you don't crack printed parts.\n- Nearly every fastener is **M5**, going into drop-in T-nuts in the 2020 profiles. All outer panels (the base's acrylic boards and the nine body panels) fix with **M5 countersunk screws**.\n- Every printed part is **white Creality Hyper PLA**.\n- **Plan your cables early.** Everything from the upper body leaves through the umbilical cord port on the back and plugs into the I/O panel on the base. Leave slack so the hip can rotate without yanking cables.",
+ "notes": "- **Test every servo first** and give it its ID: **1** = hip, **4** = tilt, **5** = pan. Then put them in servo mode at position **500** so nothing moves unexpectedly.\n- Print every part in the **same brand** of PLA so the colour matches.\n- Drive screws at about **1 Nm** with the drill's clutch, then finish by hand so you don't crack printed parts.\n- Nearly every fastener is **M5**, going into drop-in T-nuts in the 2020 profiles. All outer panels (the base's acrylic boards and the nine body panels) fix with **M5 countersunk screws**.\n- Every printed part is **white Creality Hyper PLA**. Print every **gear** at **70 % infill**.\n- **Plan your cables early.** Everything from the upper body leaves through the umbilical cord port on the back and plugs into the I/O panel on the base. Leave slack so the hip can rotate without yanking cables.",
  "printMaterial": "White Creality Hyper PLA",
  "buildTime": "",
  "difficulty": "Advanced",
@@ -2132,12 +2132,6 @@
      "id": "tnut"
     }
    ],
-   "images": [
-    {
-     "src": "img/dims/distance-between-motherboard-base-and-the-118mm-profile.webp",
-     "caption": "Distance Between Motherboard Base and the 118mm Profile"
-    }
-   ],
    "warning": "The holder fits ATX supplies up to 125 × 150 × 86 mm (made for the Corsair CX650).",
    "tools": [
     "printer",
@@ -2257,8 +2251,8 @@
    ],
    "images": [
     {
-     "src": "img/dim-motherboard.jpg",
-     "caption": "Motherboard holder and backplate support spacing"
+     "src": "img/dims/distance-between-motherboard-base-and-the-118mm-profile.webp",
+     "caption": "Distance Between Motherboard Base and the 118mm Profile"
     }
    ],
    "tools": [
@@ -3153,12 +3147,12 @@
    "phase": "Hip Rotation",
    "action": "print",
    "title": "Add the hip driver gear",
-   "text": "Print the **Hip Driver Gear** at about **60 % infill** and fix it to the servo shaft with the screws supplied with the HTD-85H.",
+   "text": "Print the **Hip Driver Gear** at **70 % infill** and fix it to the servo shaft with the screws supplied with the HTD-85H.",
    "prints": [
     {
      "part": "Hip Driver Gear",
      "qty": 1,
-     "infill": "60%"
+     "infill": "70%"
     }
    ],
    "tools": [
@@ -3229,12 +3223,12 @@
    "phase": "Hip Rotation",
    "action": "print",
    "title": "Stack the hip layers",
-   "text": "Stack these over the bearing, lining up the four holes:\n\n1. **Inner Driven Gear of Hip**: print at more than 60 % infill\n2. **Mesh Protecting Part**\n3. **Core Support**\n\nBolt all the layers together with M5 screws from the top and M5 hex nuts underneath.",
+   "text": "Stack these over the bearing, lining up the four holes:\n\n1. **Inner Driven Gear of Hip**: print at 70 % infill\n2. **Mesh Protecting Part**\n3. **Core Support**\n\nBolt all the layers together with M5 screws from the top and M5 hex nuts underneath.",
    "prints": [
     {
      "part": "Inner Driven Gear of Hip",
      "qty": 1,
-     "infill": "60%+"
+     "infill": "70%"
     },
     {
      "part": "Mesh Protecting Part",
@@ -3372,10 +3366,6 @@
     {
      "src": "img/dims/distance-between-smps-holder-lower-and-core-support.webp",
      "caption": "Distance between SMPS Holder Lower and Core Support"
-    },
-    {
-     "src": "img/dim-smps.jpg",
-     "caption": "1 mm clearance for tolerance"
     }
    ],
    "tools": [
@@ -3501,6 +3491,7 @@
      "caption": "Distance between Display Connector Lower, Upper and the Core Support"
     }
    ],
+   "warning": "The SMPS assembly has to be removed first: the display mount can't slot in past it. Refit the SMPS once the mount is fixed.",
    "tools": [
     "hexkeys"
    ]
@@ -3614,11 +3605,12 @@
    "phase": "Neck",
    "action": "print",
    "title": "Build the pan drive",
-   "text": "Fit an **HX-35HM** servo with its round horn and screw the printed **Neck Pan Gear Driver** onto it.",
+   "text": "Fit an **HX-35HM** servo with its round horn and screw the printed **Neck Pan Gear Driver** (70 % infill) onto it.",
    "prints": [
     {
      "part": "Neck Pan Gear Driver",
-     "qty": 1
+     "qty": 1,
+     "infill": "70%"
     }
    ],
    "components": [
@@ -3663,7 +3655,7 @@
    "phase": "Neck",
    "action": "print",
    "title": "Stack the pan bearing",
-   "text": "Press the **6007 bearing** into place, then stack:\n\n1. **Support for Neck Pan Gear Driven** (60 % infill)\n2. **Neck Pan Gear Driven** (60 % infill)\n3. **Neck Pan and Tilt Part Connection** (40 % infill)\n\nFour long screws from the top of the connector hold the stack. They thread straight into the plastic, so no nuts are needed. The hole through the bearing centre carries one servo cable.",
+   "text": "Press the **6007 bearing** into place, then stack:\n\n1. **Support for Neck Pan Gear Driven** (60 % infill)\n2. **Neck Pan Gear Driven** (70 % infill)\n3. **Neck Pan and Tilt Part Connection** (40 % infill)\n\nFour long screws from the top of the connector hold the stack. They thread straight into the plastic, so no nuts are needed. The hole through the bearing centre carries one servo cable.",
    "prints": [
     {
      "part": "Support for Neck Pan Gear Driven",
@@ -3673,7 +3665,7 @@
     {
      "part": "Neck Pan Gear Driven",
      "qty": 1,
-     "infill": "60%"
+     "infill": "70%"
     },
     {
      "part": "Neck Pan and Tilt Part Connection",
@@ -3705,11 +3697,12 @@
    "phase": "Neck",
    "action": "print",
    "title": "Build the tilt drive",
-   "text": "Fit a second **HX-35HM** with its round horn and screw on the printed **Neck Tilt Gear Driver**.",
+   "text": "Fit a second **HX-35HM** with its round horn and screw on the printed **Neck Tilt Gear Driver** (70 % infill).",
    "prints": [
     {
      "part": "Neck Tilt Gear Driver",
-     "qty": 1
+     "qty": 1,
+     "infill": "70%"
     }
    ],
    "components": [
@@ -3776,7 +3769,7 @@
    "phase": "Neck",
    "action": "print",
    "title": "Left head joint & tilt gear",
-   "text": "Fit the **Neck Tilt Left Head Joint** into the left bearing (left from the robot's point of view). Bolt the **Neck Tilt Gear Driven** to it with long M5 flat-head screws and M5 nuts in the hex slots.",
+   "text": "Fit the **Neck Tilt Left Head Joint** into the left bearing (left from the robot's point of view). Bolt the **Neck Tilt Gear Driven** (70 % infill) to it with long M5 flat-head screws and M5 nuts in the hex slots.",
    "prints": [
     {
      "part": "Neck Tilt Left Head Joint",
@@ -3784,7 +3777,8 @@
     },
     {
      "part": "Neck Tilt Gear Driven",
-     "qty": 1
+     "qty": 1,
+     "infill": "70%"
     }
    ],
    "hardware": [
@@ -4571,5 +4565,5 @@
    "text": "Connect everything and test it: the servos, the eye animation and the camera. Then enjoy your robot."
   }
  ],
- "updatedAt": 1792837522304
+ "updatedAt": 1792839477426
 }

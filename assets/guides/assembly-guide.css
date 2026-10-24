@@ -248,6 +248,8 @@ body.assembly-guide:not(.light-mode) .ag-wires img { filter: invert(1); }
 .ag-controls { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.7rem; flex-wrap: nowrap; }
 .ag-controls .grow { flex: 1; }
 .ag-controls #agReplay .txt { display: none; }
+.ag-step-btn { gap: 0.25rem; padding: 0 0.7rem 0 0.45rem; }
+#agNext.ag-step-btn { padding: 0 0.45rem 0 0.7rem; }
 .ag-counter { font: 500 0.78rem var(--ag-mono); color: var(--ag-muted); padding: 0 0.4rem; white-space: nowrap; }
 /* step rail: hover magnifies the segments near the cursor (heights set by JS), drag to scrub */
 .ag-rail { position: relative; z-index: 6; display: flex; align-items: flex-start; gap: 2px; margin-top: 0.7rem; height: 8px; touch-action: none; cursor: pointer; }

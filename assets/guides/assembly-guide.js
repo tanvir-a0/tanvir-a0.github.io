@@ -21,7 +21,7 @@ let guide, steps = [], chapters = [], chIndex = {};
 let partUse = {};            // part key -> {qty, infill, steps:[i], chapter}
 let current = -1;
 let autoAdvance = false;
-let repeat = (() => { try { return localStorage.getItem('assembly-guide:repeat') !== 'off'; } catch (e) { return true; } })();
+let repeat = (() => { try { return localStorage.getItem('assembly-guide:repeat') === 'on'; } catch (e) { return false; } })();   // off unless the visitor turned it on
 let atEnd = false;           // repeat off: the step played once and is resting on its last frame
 let userPaused = false;
 let seekTimer = null;
