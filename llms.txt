@@ -1,0 +1,101 @@
+# Tanvir Ahmed Prova — Robotics Engineer, IoT Developer & Software Engineer
+
+> Official portfolio of Tanvir Ahmed Prova (https://tanvir-a0.github.io/), a Robotics and Mechatronics Engineer (B.Sc., University of Dhaka) and IoT Developer at ACI PLC. Specializes in autonomous and socially assistive robotics, embedded systems & custom PCB design, full-stack IoT/cloud applications, CAD & 3D printing, CFD simulation, and geospatial analysis (GIS / Google Earth Engine).
+
+## Profile & Contact
+
+- **Full Name:** Tanvir Ahmed (Tanvir Ahmed Prova)
+- **Location:** Dhaka, Bangladesh
+- **Current Role:** IoT Developer at ACI PLC (May 2026 – Present)
+- **Education:** B.Sc. in Robotics and Mechatronics Engineering, University of Dhaka (Jan 2022 – June 2026), CGPA: 3.81 / 4.00
+- **Undergraduate Thesis:** *Design and Implementation of Cogni-Care: A Socially Assistive Robot for Patients with Mild Cognitive Impairment* (Advisors: Md. Jubair Ahmed Sourov & Dr. Sejuti Rahman)
+- **Email:** t.a.prova@gmail.com
+- **Portfolio Website:** https://tanvir-a0.github.io/
+- **Curriculum Vitae (PDF):** [CV3.pdf](https://tanvir-a0.github.io/CV3.pdf)
+- **GitHub:** https://github.com/tanvir-a0
+- **LinkedIn:** https://www.linkedin.com/in/tanvir-ahmed-67b5a8199/
+- **Google Scholar:** https://scholar.google.com/citations?user=ZQQtjsEAAAAJ&hl=en
+- **GrabCAD:** https://grabcad.com/tanvir.ahmed-41
+- **3D Printing Profiles:**
+  - [Printables](https://www.printables.com/@TanvirAhmed_2872942)
+  - [Cults3D](https://cults3d.com/en/users/Tanvir_A/3d-models)
+  - [MakerWorld](https://makerworld.com/en/@tanvir_ahmed/upload)
+  - [CGTrader](https://www.cgtrader.com/designers/t-a-prova)
+  - [Thingiverse](https://www.thingiverse.com/Tanvir_Ahmed/designs)
+
+## Publications
+
+- [A comprehensive review of marine and coastal waste collection robots covering mobility and waste collection mechanisms](https://link.springer.com/article/10.1007/s42452-026-09473-5): Published in *Discover Applied Sciences*, Springer Nature (Vol. 8, Issue 10, Oct 2026). Authors: Mirza Afnan Islam, **Tanvir Ahmed**, Md. Mehidi Hasan Rakib, Md. Ariful Islam. DOI: `10.1007/s42452-026-09473-5`.
+
+## Experience & Leadership
+
+- **IoT Developer — ACI PLC (May 2026 – Present):** Designing and developing connected IoT devices, embedded systems, and scalable cloud analytics solutions across agricultural machinery and automotive vehicles.
+- **Undergraduate Research Assistant — CogniCare SAR Project (Aug 2025 – April 2026):** Designed hardware and electronics for a funded tabletop Socially Assistive Robot (SAR) supporting patients with Mild Cognitive Impairment (MCI) via smartwatch sensor telemetry and cloud-synchronized rehabilitation exercises.
+- **Intern — Bangladesh Satellite Company Limited (BSCL) (Dec 2025 – Jan 2026):** Conducted satellite research on BS-1R and BS-2 (Ku-band and C-band transponder capacity), prepared Starlink user terminal technical documentation and Bengali installation guidelines, and performed field visits to BS-1 Ground Stations.
+- **Undergraduate Research Assistant — IHABOTv2 (Dec 2023 – Aug 2025):** Led hardware design, electronics integration, user interface, and Firebase real-time synchronization for Bangladesh's first intelligent hospital assistant robot.
+- **Vice President — RMEDU Student Club (Sep 2024 – Sep 2025):** Co-led Robotronics Fest 2025 (900+ participants from 50+ institutions), directed technical competitions (SoccerBot, Line Follower, Micromouse, DU AI Challenge), and organized workshops on ROS, Git/GitHub, and IoT.
+- **Organizer & Mentor — Bangladesh Robot Olympiad (BdRO) (Sep 2022 – Apr 2024):** Helped organize national rounds (2022, 2023) and trained students for international robotics competitions.
+
+## Featured Projects
+
+- [IHABOTv2: Intelligent Hospital Assistant Robot](https://tanvir-a0.github.io/project-ihabotv2.html): Bangladesh's first intelligent hospital assistant robot featuring ROS-based autonomous navigation, robotic-arm medicine delivery (up to 8 patients per cycle), rehabilitation exercise monitoring, BLE vital-sign sensors, Early Warning System (EWS) with LLM-based clinical interpretation, and real-time Google Firebase synchronization.
+- [Build CogniCare: Robot Assembly Guide](https://tanvir-a0.github.io/project-robot-assembly.html): Interactive 9-chapter, 95-step video-synced assembly guide for the CogniCare desktop humanoid socially assistive robot (pan-and-tilt head with dual display eyes, 16-inch touchscreen, bus-servo hip rotation, and embedded ITX PC in a 2020 aluminum profile base) with interactive 3D previews of all 80 printed parts ([JSON specification](https://tanvir-a0.github.io/assets/guides/robot-assembly/guide.json)).
+- [AmphiBot: Amphibious Trash Collection Robot](https://tanvir-a0.github.io/project-amphibot.html): Solar-powered amphibious waste-collection robot developed at the University of Dhaka featuring a novel unified wheel-propeller drive system with NACA0012 airfoil blades validated in Siemens STAR-CCM+ CFD, 2040 aluminum profile modular frame, waterproofed electronics, and GPS/IMU autonomous navigation.
+- [Google Earth Engine Projects with Python](https://tanvir-a0.github.io/project-gis-earth-engine.html): Geospatial analysis, Sentinel-1 SAR flood mapping, NDWI water detection, NDVI vegetation health analysis, Upazila-level population density mapping, and automated satellite timelapses using Python, Google Earth Engine (GEE), Geemap, and GeoPandas ([GitHub Repo](https://github.com/tanvir-a0/GoogleEarthEngine-)).
+- [TripCost: Group Expense Tracker](https://tanvir-a0.github.io/project-tripcost.html): Cross-platform mobile expense management app (Flutter, Dart, Firebase Firestore) for group trips with real-time synchronization, contribution tracking, and automated debt settlement calculations.
+- [AgRover: Semi-Autonomous Farming Bot](https://tanvir-a0.github.io/project-agrover.html): Precision agriculture robot with a PVC-truss chassis, 1-DOF reconfigurable manipulator for seed planting and weed removal, drip-irrigation sprayer, environmental sensors, and a CustomTkinter + PySerial desktop control GUI.
+- [Real-time GPS Tracker](https://tanvir-a0.github.io/project-a9g_based_location_tracker.html): End-to-end custom PCB design, SMD soldering, and embedded firmware integrating an ESP microcontroller with an AI-Thinker A9G GSM/GPS module for cellular location tracking.
+- [Intelligent Firefighting Robot](https://tanvir-a0.github.io/project-firefighting-robot.html): Large-scale teleoperated firefighting robot designed in Fusion 360 with a 10-liter suppression tank, high-torque drive motors, pump module, and a CustomTkinter mission-control desktop interface.
+
+## Small & Academic Projects
+
+- [SerialTest](https://tanvir-a0.github.io/project-serialtest.html): Flutter Android application utilizing the USB Host API to test and debug microcontrollers and robots over USB serial ([GitHub Repo](https://github.com/tanvir-a0/Flutter_android_usb_esp)).
+- [SmartBinV1](https://tanvir-a0.github.io/project-smartbin-v1.html): IoT smart waste monitoring bin with compostable waste gas sensing, mechanical trash crusher, ultrasonic fill-level sensors, and cloud smartphone dashboard.
+- [Mbed Application Board (NXP LPC1768)](https://tanvir-a0.github.io/project-mbed-application-board.html): ARM Cortex-M3 embedded development in PlatformIO integrating LCD games, accelerometer/temperature sensors, PWM audio, and USB HID mouse/keyboard emulation ([GitHub Repo](https://github.com/tanvir-a0/Mbed-Application-Board-with-NXP-LPC1768-in-PlatformIO)).
+- [Small Firefighting Robot](https://tanvir-a0.github.io/project-small-firefighting-robot.html): Compact freshman-semester Bluetooth-controlled (HC-05) firefighting robot built with a CNC-milled chassis and Arduino.
+- [Network Protocol Data Transfer](https://tanvir-a0.github.io/project-network-protocol.html): Low-latency Wi-Fi socket communication app for sending raw control commands and telemetry between a mobile/desktop client and a robot.
+- [PID DC Motor Control](https://tanvir-a0.github.io/project-pid-dc-motor.html): Closed-loop shaft position control of a DC gear motor using a tuned PID controller and quadrature rotary encoder feedback via hardware interrupts ([GitHub Repo](https://github.com/tanvir-a0/PID_and_DC_Motor)).
+- [To-Do Application](https://tanvir-a0.github.io/project-todo-app.html): Task management application inspired by TickTick featuring CRUD operations, categorization, and priority tracking.
+- [CMS – Class Management System](https://tanvir-a0.github.io/project-cms-class-management-system.html): Cloud-synchronized academic schedule and class routine generator built in Python using Object-Oriented Programming (OOP) principles.
+- [Flashlight / LED Brightness Control](https://tanvir-a0.github.io/project-led-brightness-control.html): Experimental Flutter app for Google Pixel phones exploring custom flashlight intensity and taptic feedback ([GitHub Repo](https://github.com/tanvir-a0/LED1)).
+- [MDP Value Iteration GUI](https://tanvir-a0.github.io/project-mdp-value-iteration.html): Interactive Python and CustomTkinter visualization tool for the Markov Decision Process (MDP) Value Iteration reinforcement learning algorithm ([GitHub Repo](https://github.com/tanvir-a0/MDP-Value-Iteration-.git)).
+- [COP-KMeans Clustering](https://tanvir-a0.github.io/project-cop-kmeans-clustering.html): Python implementation and visualization of Constrained K-Means clustering with must-link and cannot-link constraints ([GitHub Repo](https://github.com/tanvir-a0/cop-k-means-presentation)).
+- [Topographic Elevation Map of Bangladesh](https://tanvir-a0.github.io/ee_gis_map_bangladesh_elevation.html): High-resolution topographic elevation map of Bangladesh (-20m to 1020m) generated with Google Earth Engine and Geemap in Python ([GitHub Repo](https://github.com/tanvir-a0/geemap)).
+
+## Domain & Skill Pages
+
+- [All Projects & Robotics Showcase](https://tanvir-a0.github.io/robotics.html): Comprehensive catalog of all 15+ robotics, IoT, GIS, and software engineering projects with technical breakdowns.
+- [CAD Model Gallery](https://tanvir-a0.github.io/cad.html): Interactive 3D WebGL (`<model-viewer>`) gallery featuring custom CAD assemblies (UAVs, soccer robots, firefighting robots, gear motors, sensors, and pumps).
+- [3D Design & Printing Lab](https://tanvir-a0.github.io/project-3d-design-printing.html): Additive manufacturing workflow and open-source 3D printable designs (6,900+ total downloads across GrabCAD, Cults3D, Printables, and MakerWorld).
+- [IoT Projects](https://tanvir-a0.github.io/iot.html): Connected devices, AWS IoT Core, Firebase, MQTT, and wireless sensor networks.
+- [Software Development](https://tanvir-a0.github.io/development.html): Cross-platform mobile (Flutter/Dart) and desktop (Python/CustomTkinter/Flet) applications.
+- [Computational Fluid Dynamics (CFD)](https://tanvir-a0.github.io/cfd.html): Hydrodynamic, aerodynamic, and thermal simulations using Siemens STAR-CCM+, ANSYS, and Autodesk CFD.
+- [Hardware Development](https://tanvir-a0.github.io/hardware-dev.html): Schematic capture, custom PCB layout (Altium Designer, EasyEDA), and embedded firmware (ESP32, STM32, Arduino, NXP LPC1768, Raspberry Pi, NVIDIA Jetson).
+- [Geographic Information Systems (GIS)](https://tanvir-a0.github.io/gis.html): Planetary-scale remote sensing and spatial analysis with Google Earth Engine, Geemap, GeoPandas, and Folium.
+
+## Technical Skills Summary
+
+- **Programming Languages:** Python, C, C++, Dart, C#
+- **Frameworks & Libraries:** ROS (Robot Operating System), Flutter, Flet, Tkinter, CustomTkinter, NumPy, Pandas, SciPy, scikit-learn, GeoPandas, Folium, Geemap
+- **Hardware & Embedded Systems:** ESP32 / ESP8266 (Espressif), STM32 (STMicroelectronics), Arduino, Raspberry Pi, NVIDIA Jetson, NXP LPC1768 (ARM Cortex-M3), AI-Thinker A9G (GSM/GPS), Siemens PLC, Woosun PLC, Festo, Niryo Robotic Arm
+- **CAD, PCB & Simulation:** Autodesk Fusion 360, SolidWorks, FreeCAD, Tinkercad, Altium Designer, EasyEDA, Siemens Simcenter STAR-CCM+, ANSYS, Autodesk CFD
+- **3D Printing & Fabrication:** Bambu Lab, Creality, FlashForge, OrcaSlicer, CNC Milling
+- **Cloud, IoT & Tools:** Google Firebase (Firestore, Realtime DB), Google Cloud, AWS IoT Core, Google Earth Engine, MQTT, PlatformIO, Git, GitHub, Linux (Ubuntu), Windows
+
+## Awards, Certifications & Activities
+
+- **Awards:**
+  - Runner-up, Robotronics Fest 2025 (Project Showcase Section)
+  - 4th Place in National Round, 4th Kibo Robot Programming Challenge (Kibo-RPC / JAXA)
+  - Honorable Mention & Participant, ICPC Asia Dhaka Regional (2022, 2023, 2024)
+- **Certifications:**
+  - Google / Coursera: *Using Python to Interact with the Operating System*, *Crash Course on Python*, *Introduction to Git and GitHub*, *Troubleshooting and Debugging Techniques*
+  - IEEE EDS SBC DU: *Workshop on IoT with Firebase and ESP32*
+  - UN Environment Programme & TED-Ed: *Earth School*
+  - Google Digital Garage: *Fundamentals of Digital Marketing*
+  - Grasshopper: *Coding Fundamentals I & II*
+- **Fun Fact:** Tanvir's space selfie was captured in Low Earth Orbit (~375 miles altitude) by the SATGUS CubeSat (NORAD ID: 62713, launched Jan 14, 2025 on SpaceX Falcon 9 Transporter-12) via CrunchLabs / Mark Rober's mission.
+
+## Optional
+
+- [Full Portfolio Context for LLMs](https://tanvir-a0.github.io/llms-full.txt): Detailed plain-text technical breakdown of Tanvir Ahmed's biography, CV, research publications, and every project on the website.

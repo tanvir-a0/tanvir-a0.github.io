@@ -1,0 +1,255 @@
+# Tanvir Ahmed Prova — Complete Portfolio & Technical Documentation (llms-full.txt)
+
+> This document contains the full plain-text context of Tanvir Ahmed Prova's engineering portfolio (https://tanvir-a0.github.io/), including his biography, education, professional experience, peer-reviewed publications, comprehensive project case studies, technical skills, and achievements. It is designed for Large Language Models (LLMs), AI agents, and search crawlers to answer detailed questions about Tanvir Ahmed's work without needing to parse multiple HTML pages.
+
+---
+
+## 1. Identity & Contact Information
+
+- **Full Name:** Tanvir Ahmed (also known as Tanvir Ahmed Prova)
+- **Headline:** Robotics & Mechatronics Engineer | IoT Developer | Embedded Systems & Full-Stack Developer
+- **Location:** Dhaka, Bangladesh
+- **Email:** t.a.prova@gmail.com
+- **Website:** https://tanvir-a0.github.io/
+- **CV / Resume:** https://tanvir-a0.github.io/CV3.pdf
+- **GitHub:** https://github.com/tanvir-a0
+- **LinkedIn:** https://www.linkedin.com/in/tanvir-ahmed-67b5a8199/
+- **Google Scholar:** https://scholar.google.com/citations?user=ZQQtjsEAAAAJ&hl=en
+- **GrabCAD:** https://grabcad.com/tanvir.ahmed-41
+- **Printables:** https://www.printables.com/@TanvirAhmed_2872942
+- **Cults3D:** https://cults3d.com/en/users/Tanvir_A/3d-models
+- **MakerWorld:** https://makerworld.com/en/@tanvir_ahmed/upload
+- **CGTrader:** https://www.cgtrader.com/designers/t-a-prova
+- **Thingiverse:** https://www.thingiverse.com/Tanvir_Ahmed/designs
+
+### Biography
+Tanvir Ahmed is a robotics engineer and software developer dedicated to creating solutions that bridge the digital and physical worlds. With practical expertise in hardware-software integration, custom PCB design, autonomous and socially assistive robotics, full-stack IoT systems, CAD/CFD simulation, and geospatial analysis (GIS), he builds intelligent systems for healthcare, precision agriculture, environmental conservation, and industrial automation.
+
+---
+
+## 2. Education
+
+### Bachelor of Science (B.Sc.) in Robotics and Mechatronics Engineering
+- **Institution:** University of Dhaka, Dhaka, Bangladesh (https://www.du.ac.bd/body/RME)
+- **Period:** January 2022 – June 2026
+- **CGPA:** 3.81 out of 4.00
+- **Undergraduate Thesis:** *Design and Implementation of Cogni-Care: A Socially Assistive Robot for Patients with Mild Cognitive Impairment*
+- **Thesis Advisors:** Md. Jubair Ahmed Sourov (Lecturer, Department of Robotics and Mechatronics Engineering, University of Dhaka) and Dr. Sejuti Rahman (Associate Professor and Former Chairperson, RMEDU)
+
+### Higher Secondary Certificate (HSC)
+- **Institution:** Dhaka Imperial College, Dhaka, Bangladesh
+- **Period:** July 2018 – January 2021
+- **Stream:** Science | **GPA:** 5.00 out of 5.00
+
+### Secondary School Certificate (SSC)
+- **Institution:** Shaheen Academy School and College, Feni, Bangladesh
+- **Period:** January 2016 – March 2018
+- **Stream:** Science | **GPA:** 4.94 out of 5.00
+
+---
+
+## 3. Professional, Research & Leadership Experience
+
+### IoT Developer — ACI PLC
+- **Period:** May 2026 – Present
+- **Responsibilities:**
+  - Designing and developing connected IoT devices and embedded systems across industries including agricultural machinery and automotive vehicles.
+  - Building scalable hardware and cloud architectures to deliver real-time telemetry and data analytics to end users.
+
+### Undergraduate Research Assistant — CogniCare (Socially Assistive Robot)
+- **Period:** August 2025 – April 2026
+- **Project:** Funded research project developing a tabletop Socially Assistive Robot (SAR) to support patients with Mild Cognitive Impairment (MCI).
+- **Responsibilities & Architecture:**
+  - Responsible for full hardware and electronics system design and implementation.
+  - The robot features an articulated pan-and-tilt head, dual display eyes, a 16-inch interactive touchscreen, a servo-driven rotating hip base, and an onboard ITX PC.
+  - Collects patient statistics via smartwatch sensors, synchronizes telemetry to the cloud, collaborates with medical doctors for remote monitoring, and autonomously selects the next best cognitive/rehabilitation exercise for the patient.
+
+### Intern — Bangladesh Satellite Company Limited (BSCL)
+- **Period:** December 2025 – January 2026
+- **Responsibilities:**
+  - **Satellite Research & Planning:** Conducted research on BS-1R and BS-2 to support future satellite missions; assisted in technical feasibility analysis for BS-1 service provisioning focusing on Ku-band and C-band transponder capacity.
+  - **Starlink Integration:** Developed technical documentation for Starlink user terminals, including Bengali installation guidelines, a "Starlink Installation Checkup Form" for field operations, and instructional setup/troubleshooting videos.
+  - **Field Work:** Visited Satellite Ground Stations of Bangabandhu Satellite-1 (BS-1) to study signal transmission chains and broadcasting infrastructure.
+  - **Technical Design:** Designed official branding materials, event backdrops, and invitation cards for stakeholder events including the Business Strategic Dialogue and Annual General Meeting (AGM).
+
+### Undergraduate Research Assistant — IHABOTv2
+- **Period:** December 2023 – August 2025
+- **Responsibilities:**
+  - Led hardware design and system integration for Bangladesh's first intelligent hospital assistant robot.
+  - Integrated autonomous navigation, a robotic delivery arm, BLE vital-sign sensors, and an interactive user interface synchronized via Google Firebase.
+  - Scaled the medicine delivery subsystem to serve up to 8 patients per cycle, reducing nurse workload and improving hospital care efficiency.
+
+### Vice President — RMEDU Student Club (University of Dhaka)
+- **Period:** September 2024 – September 2025
+- **Highlights:**
+  - **Robotronics Fest 2025:** Co-led the organization of a nationwide two-day robotics competition attracting 900+ participants from 50+ institutions; directed the technical section covering SoccerBot, Line Follower, Micromouse, and DU AI Challenge.
+  - Organized the **RMEDU Intra-Department Robotics Competition 2025: Servo Sanctum**.
+  - Conducted and coordinated technical workshops on **Internet of Things (IoT)**, **Git and GitHub**, and **Robot Operating System (ROS)**.
+  - Managed **RMEDU Freshers' Fest 2023** and coordinated flood-relief fundraising initiatives.
+
+### Organizer & Mentor — Bangladesh Robot Olympiad (BdRO)
+- **Period:** September 2022 – April 2024
+- **Highlights:**
+  - Collaborated on organizing and managing the national rounds of BdRO in 2022 and 2023.
+  - Trained and mentored students in robotics hardware and programming to prepare for international competitions.
+
+---
+
+## 4. Peer-Reviewed Publications
+
+1. **"A comprehensive review of marine and coastal waste collection robots covering mobility and waste collection mechanisms"**
+   - **Journal:** *Discover Applied Sciences*, Springer Nature (Volume 8, Issue 10)
+   - **Publication Date:** October 2026
+   - **Authors:** Mirza Afnan Islam, **Tanvir Ahmed**, Md. Mehidi Hasan Rakib, Md. Ariful Islam
+   - **DOI:** `10.1007/s42452-026-09473-5`
+   - **URL:** https://link.springer.com/article/10.1007/s42452-026-09473-5
+
+---
+
+## 5. Detailed Project Case Studies
+
+### 5.1 IHABOTv2: Intelligent Hospital Assistant Robot
+- **URL:** https://tanvir-a0.github.io/project-ihabotv2.html
+- **Timeline:** August 2023 – August 2025
+- **Role:** Research Assistant / Hardware & UI Lead
+- **Technologies:** ROS (Robot Operating System), SLAM, NVIDIA Jetson, Python, Google Firebase, Robotic Arm, BLE Sensors, 2020/2040 Aluminum Profiles, Interactive GUI.
+- **Summary:** Bangladesh's first intelligent hospital assistant robot, engineered to reduce nurse workload and enhance patient care.
+- **Key Subsystems & Capabilities:**
+  - **Autonomous Navigation:** ROS-based SLAM and obstacle avoidance for traversing hospital floors safely.
+  - **Robotic Arm Medicine Delivery:** Automated delivery capable of serving up to 8 patients per cycle.
+  - **Rehabilitation Monitoring:** Assists patients with interactive rehabilitation exercises and real-time evaluation.
+  - **Early Warning System (EWS) with LLM:** Collects patient vital signs via BLE sensors and integrates with an LLM for intelligent clinical interpretation and proactive medical alerts.
+  - **Real-time Firebase Monitoring:** Synchronizes robot telemetry and patient status across embedded, desktop, and mobile interfaces for doctors, nurses, and patients.
+  - **Modular Chassis:** Built on aluminum extrusion profiles for lightweight rigidity and easy future expansion.
+
+### 5.2 Build CogniCare: Interactive Robot Assembly Guide
+- **URL:** https://tanvir-a0.github.io/project-robot-assembly.html
+- **Data Specification:** https://tanvir-a0.github.io/assets/guides/robot-assembly/guide.json
+- **Summary:** A comprehensive, interactive web-based assembly guide for **CogniCare**, a desktop-sized humanoid socially assistive robot developed for patients with Mild Cognitive Impairment (MCI).
+- **Technical Highlights:**
+  - Features **9 chapters** and **95 video-synced assembly steps** paired with interactive 3D previews of all **80 3D-printed parts** (printed in white Creality Hyper PLA, with gears at 70% infill).
+  - **Chapters:**
+    1. *Base Frame:* 2020 aluminum profile structural box using M5 fasteners and drop-in T-nuts.
+    2. *Computer Bay:* Full ITX PC (PSU, motherboard, and dedicated GPU) housed inside the rotating base.
+    3. *Cooling & Top Frame:* Active airflow management, front I/O panel, and upper base frame.
+    4. *Base Panels:* Laser-cut acrylic skins, mains power wiring, and emergency stop integration.
+    5. *Hip Rotation:* Bus-servo-driven (ID 1) lazy-susan bearing rotating the entire upper torso.
+    6. *Core & Torso:* Four core vertical profiles, dedicated servo power supply, and 16-inch touchscreen mount.
+    7. *Neck:* Geared pan (ID 5) and tilt (ID 4) joints driven by serial bus servos.
+    8. *Head:* Visor, dual display eyes, and stereo speakers.
+    9. *Body Shell:* Nine outer 3D-printed body panels mounted with M5 countersunk screws and umbilical cable routing.
+
+### 5.3 AmphiBot: Amphibious Trash Collection Robot with a Unified Drive System
+- **URL:** https://tanvir-a0.github.io/project-amphibot.html
+- **Role:** Lead Developer (Team: Tanvir Ahmed, Md Mehedi Hasan Rakib, Mirza Afnan Islam; Supervisor: Md Ariful Islam, Dept. of Robotics and Mechatronics Engineering, University of Dhaka)
+- **Status:** ~70% Complete (Planned Open-Source Release)
+- **Technologies:** Autodesk Fusion 360, Siemens Simcenter STAR-CCM+ (CFD), 3D Printing (SUNLU PLA+), 2040 Aluminum Profiles, NEO-M8N GPS, MPU-6050 IMU, GY271 Compass, Ultrasonic Sensors, 12V 165W Monocrystalline Solar Panel, LiPo Battery, 37GB 555 Gear Motors, GT3-560mm Belt Transmission.
+- **Summary:** An amphibious robot designed to collect floating and shoreline plastic waste across aquatic and terrestrial transition zones.
+- **Core Innovation — Unified Wheel-Propeller Drive System:**
+  - Eliminates the need for separate land wheels and water thrusters by embedding **NACA0012 airfoil propeller blades** directly inside the wheel hubs.
+  - The outer perimeter operates as a wheel on land, while the internal airfoil blades generate hydrodynamic thrust in water, validated via CFD simulations in Siemens STAR-CCM+.
+  - Built with a modular screw-and-T-nut 2040 aluminum frame (no glue or welding), waterproofed electronics enclosures, solar charging, and GPS/IMU autonomous navigation.
+
+### 5.4 Google Earth Engine Projects with Python
+- **URL:** https://tanvir-a0.github.io/project-gis-earth-engine.html
+- **GitHub Repository:** https://github.com/tanvir-a0/GoogleEarthEngine-
+- **Timeline:** November 2025 – January 2026
+- **Technologies:** Python, Google Earth Engine (GEE), Geemap, GeoPandas, Folium, Sentinel-1 SAR, Optical Satellite Imagery.
+- **Key Analyses & Outputs:**
+  - **High-Resolution Population Density Mapping:** Upazila-level spatial demographic visualizations in Bangladesh.
+  - **Sentinel-1 SAR Flood Detection:** Radar-based flood mapping capable of penetrating cloud cover during monsoon seasons for near-real-time disaster assessment.
+  - **NDWI Water Body Detection:** Automated surface water extent extraction using Normalized Difference Water Index.
+  - **NDVI Vegetation Monitoring:** Time-series vegetation health tracking and monthly median cloud-free satellite timelapses.
+  - **Interactive GIS Utilities:** Dynamic color-coded legends and crosshair spectral pixel inspectors.
+
+### 5.5 TripCost: Group Expense Tracker
+- **URL:** https://tanvir-a0.github.io/project-tripcost.html
+- **Timeline:** March 2025 – April 2025
+- **Role:** Full-Stack Mobile Developer
+- **Technologies:** Flutter, Dart, Google Firebase Firestore (Android & iOS).
+- **Summary:** Real-time group expense management mobile app that tracks shared trip spending, monitors individual contributions ("money spent on others" vs. "money others spent on me"), displays live dashboards, and automatically calculates simplified net debt settlements after a trip.
+
+### 5.6 AgRover: Semi-Autonomous Farming Bot
+- **URL:** https://tanvir-a0.github.io/project-agrover.html
+- **Timeline:** October 2023 – December 2023
+- **Role:** Hardware, Software & Electronics Developer
+- **Technologies:** Python, CustomTkinter, PySerial, Arduino MEGA, C++, L298N Motor Driver, 37GB555 Motors, Stepper Motor, Fusion 360, Environmental Sensors (Soil Moisture, Soil Temperature, Humidity).
+- **Summary:** Conceptual and prototype precision agriculture robot built on a rigid 0.8mm/1.2mm PVC-truss chassis with 130mm off-road wheels. Features a 1-DOF stepper-driven reconfigurable manipulator with interchangeable end effectors for precision seed separation/planting, weed removal, and targeted fertilizer/pesticide spraying, controlled via a CustomTkinter desktop GUI.
+
+### 5.7 Real-time GPS Tracker (ESP + A9G)
+- **URL:** https://tanvir-a0.github.io/project-a9g_based_location_tracker.html
+- **Timeline:** December 2024 – March 2025
+- **Role:** Hardware, Firmware & Custom PCB Designer
+- **Technologies:** ESP32 / ESP8266, AI-Thinker A9G GSM/GPS Module, Custom PCB Design, SMD Soldering, Embedded C/C++, NMEA Parsing.
+- **Summary:** Custom-engineered compact GPS tracking hardware combining an ESP microcontroller with the A9G cellular/GPS module on a custom-fabricated PCB for real-time positioning over cellular networks.
+
+### 5.8 Intelligent Firefighting Robot (Large-Scale)
+- **URL:** https://tanvir-a0.github.io/project-firefighting-robot.html
+- **Timeline:** March 2024 – May 2024
+- **Role:** Full-Stack Hardware & Software Engineer
+- **Technologies:** Autodesk Fusion 360, Embedded C/C++, High-Torque Drive Motors, Suppression Pump System, Thermal Shielding, Python CustomTkinter Desktop Console.
+- **Summary:** A large-format teleoperated firefighting robot capable of carrying 10 liters of fire suppression liquid into hazardous zones. Authored completely in Fusion 360 CAD prior to fabrication and paired with a mission-control desktop GUI streaming live camera imagery, diagnostics, and actuator controls.
+
+### 5.9 Additional Engineering & Software Projects
+- **SerialTest** (https://tanvir-a0.github.io/project-serialtest.html | [GitHub](https://github.com/tanvir-a0/Flutter_android_usb_esp)): Flutter Android app utilizing the Android USB Host API to send and receive raw serial commands to microcontrollers (ESP32, Arduino) directly from a smartphone.
+- **SmartBinV1** (https://tanvir-a0.github.io/project-smartbin-v1.html): IoT waste monitoring system featuring compostable waste gas sensing, ultrasonic fill-level tracking, an integrated mechanical trash crusher, and a cloud-connected smartphone app.
+- **Mbed Application Board with NXP LPC1768** (https://tanvir-a0.github.io/project-mbed-application-board.html | [GitHub](https://github.com/tanvir-a0/Mbed-Application-Board-with-NXP-LPC1768-in-PlatformIO)): ARM Cortex-M3 embedded projects built in PlatformIO featuring LCD mini-games, I2C/SPI/UART sensor interfacing, and USB HID mouse/keyboard emulation.
+- **Small Firefighting Robot** (https://tanvir-a0.github.io/project-small-firefighting-robot.html): First-semester robotics project featuring a CNC-milled chassis, Arduino controller, HC-05 Bluetooth teleoperation, and water pump.
+- **Network Protocol Data Transfer** (https://tanvir-a0.github.io/project-network-protocol.html): Custom Wi-Fi UDP/TCP socket application for low-latency robotic command and telemetry transfer.
+- **PID DC Motor Control** (https://tanvir-a0.github.io/project-pid-dc-motor.html | [GitHub](https://github.com/tanvir-a0/PID_and_DC_Motor)): Closed-loop angular position control of a DC gear motor using hardware interrupt quadrature encoder feedback and a tuned PID algorithm.
+- **To-Do Application** (https://tanvir-a0.github.io/project-todo-app.html): Desktop/mobile task manager inspired by TickTick with CRUD persistence, task categories, and priority levels.
+- **CMS – Class Management System** (https://tanvir-a0.github.io/project-cms-class-management-system.html): Cloud-based Python OOP application that automates academic routine generation based on teacher availability and manages assignments and schedule changes.
+- **Flashlight / LED Brightness Control** (https://tanvir-a0.github.io/project-led-brightness-control.html | [GitHub](https://github.com/tanvir-a0/LED1)): Experimental Flutter application for Google Pixel devices exploring custom flashlight control and taptic feedback patterns.
+- **MDP Value Iteration with GUI** (https://tanvir-a0.github.io/project-mdp-value-iteration.html | [GitHub](https://github.com/tanvir-a0/MDP-Value-Iteration-.git)): Interactive CustomTkinter GUI visualizing grid-world state value convergence under the Markov Decision Process (MDP) Value Iteration reinforcement learning algorithm.
+- **COP-KMeans Clustering with Constraints** (https://tanvir-a0.github.io/project-cop-kmeans-clustering.html | [GitHub](https://github.com/tanvir-a0/cop-k-means-presentation)): Python, NumPy, and scikit-learn implementation of Constrained K-Means clustering using must-link and cannot-link domain constraints (e.g., employee team assignment).
+- **Topographic Elevation Map of Bangladesh** (https://tanvir-a0.github.io/ee_gis_map_bangladesh_elevation.html | [GitHub](https://github.com/tanvir-a0/geemap)): Geospatial visualization of Bangladesh's elevation (-20m to 1020m) using Google Earth Engine and Geemap.
+- **IR-Based Gas Monitoring System**: Experimental multi-sensor workspace hazard detection architecture using infrared (IR) transmitters to relay gas sensor alerts to a centralized IR receiver and decoder.
+
+---
+
+## 6. Open-Source CAD & 3D Printing Footprint
+
+- **Pages:** https://tanvir-a0.github.io/cad.html and https://tanvir-a0.github.io/project-3d-design-printing.html
+- **Overview:** Tanvir actively designs mechanical components, electronics enclosures (such as his popular ESP32-CAM and ESP32-CAM-MB USB programmer casings), and complete robot assemblies in Autodesk Fusion 360 and SolidWorks, publishing them for the global maker community.
+- **Community Impact (as of CV update):**
+  - **GrabCAD:** 5,804+ downloads (Member since June 2022)
+  - **Cults3D:** 14 designs, 593+ downloads
+  - **Printables:** 393+ downloads, 59+ likes
+  - **MakerWorld:** 13 models, 181+ downloads, 33+ prints
+- **Interactive 3D Models Hosted on Website (`cad.html`):**
+  - 12V High Pressure Pump, 37GB 555 Gear Motor, Arduino Nano v6, Complete Soccer Robot, Fingerprint Reader Stand, Fire Fighting Robot, HC-SR04 Ultrasonic Sensor, HTD-85H Servo, Off-Road Tyre, Planetary Motor, 130mm Plastic Wheel, UAV Quadcopter Frame.
+
+---
+
+## 7. Complete Technical Skills Matrix
+
+- **Programming Languages:** Python, C, C++, Dart, C#
+- **Robotics & Control:** ROS (Robot Operating System), SLAM, Autonomous Navigation, PID Control, Kinematics, Niryo Robotic Arm, Festo Pneumatics/Automation, Siemens PLCs & MPS, Woosun PLCs
+- **Embedded Platforms & Hardware:** Espressif ESP32 / ESP8266, STMicroelectronics STM32, Arduino (Uno, Nano, Mega), Raspberry Pi, NVIDIA Jetson, NXP LPC1768 (ARM Cortex-M3), AI-Thinker A9G (GSM/GPRS/GPS), Uni-T Instrumentation
+- **Mobile, Desktop & Cloud Development:** Flutter, Flet, CustomTkinter, Tkinter, Google Firebase (Firestore, Realtime Database, Auth), Google Cloud Platform (GCP), AWS IoT Core, MQTT, Socket Programming (TCP/UDP), PySerial
+- **Data Science, AI & GIS:** Google Earth Engine (GEE), Geemap, GeoPandas, Folium, Google Earth Pro, NumPy, Pandas, SciPy, scikit-learn, Matplotlib, Reinforcement Learning (MDP), Constrained Clustering (COP-KMeans)
+- **CAD, PCB & Engineering Simulation:** Autodesk Fusion 360, SolidWorks, FreeCAD, Tinkercad, Altium Designer, EasyEDA, Siemens Simcenter STAR-CCM+ (CFD), ANSYS, Autodesk CFD
+- **Additive & Subtractive Manufacturing:** Bambu Lab, Creality, FlashForge, OrcaSlicer, FDM 3D Printing (PLA/PLA+), CNC Milling, Laser Cutting (Acrylic/PVC), Aluminum Extrusion Framing (2020/2040)
+- **Developer Tools & OS:** Git, GitHub, PlatformIO, Linux (Ubuntu), Windows
+
+---
+
+## 8. Awards, Competitions & Certifications
+
+### Honors & Competitions
+- **Runner-up** — Robotronics Fest 2025 (Project Showcase Section)
+- **4th Place (National Round)** — 4th Kibo Robot Programming Challenge (Kibo-RPC), organized in collaboration with JAXA
+- **Honorable Mention & Regional Participant** — ICPC Asia Dhaka Regional Contest (2022, 2023, 2024)
+- **Participant** — BEAR Summit & National Semiconductor Symposium (2025)
+- **Participant** — Idea Innovation 4.0 Business Case Competition (2023) & DUEDC Skillneurs 2.0 Business Case Competition (2023)
+
+### Certifications
+- *Using Python to Interact with the Operating System* — Google / Coursera (2023)
+- *Crash Course on Python* — Google / Coursera (2023)
+- *Introduction to Git and GitHub* — Google / Coursera (2023)
+- *Troubleshooting and Debugging Techniques* — Google / Coursera (2023)
+- *Workshop on IoT with Firebase and ESP32* — IEEE EDS SBC University of Dhaka (2023)
+- *IEEE Student Membership* — Active member and event organizer (2022)
+- *Coding Fundamentals I & II* — Grasshopper (2020–2021)
+- *TED-Ed Earth School for Nature* — UN Environment Programme (2020)
+- *Fundamentals of Digital Marketing* — Google Digital Garage (2019)

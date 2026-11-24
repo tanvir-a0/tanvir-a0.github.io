@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Disallow test and backup files
+Disallow: /test.html
+Disallow: /test2.html
+Disallow: /test-model.html
+Disallow: /test_grid.html
+Disallow: /video-test.html
+Disallow: /claymorphism.html
+
+# Sitemap and LLM context files
+Sitemap: https://tanvir-a0.github.io/sitemap.xml
+# LLMs: https://tanvir-a0.github.io/llms.txt
+# LLMs Full: https://tanvir-a0.github.io/llms-full.txt
